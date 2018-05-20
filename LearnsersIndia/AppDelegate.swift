@@ -66,7 +66,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
 //        self.saveContext()
     }
-
+    class func getAppDelegateInstance() -> AppDelegate {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate
+    }
+    
     // MARK: - Core Data stack
 //
 //    lazy var persistentContainer: NSPersistentContainer = {

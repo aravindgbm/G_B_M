@@ -43,11 +43,11 @@ class GetChapterViewController: UIViewController {
         topic_nameArray.removeAll()
         topic_idArray.removeAll()
         
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        self.Get_ChapterWebCall(urlString: url) { (_) in
-            
-        }
-        
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        self.Get_ChapterWebCall(urlString: url) { (_) in
+//            
+//        }
+        self.callGetChapterApi()
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,6 +80,48 @@ class GetChapterViewController: UIViewController {
 
 extension GetChapterViewController
 {
+
+    
+    func callGetChapterApi() {
+        let paramters = ["tocken":tocken,
+                         "syl_id":selectedBoardID,
+                         "class_id":selectedCls_id,
+                         "sub_id":"1"] as [String : AnyObject]
+        LIAPIClient.sharedInstance.callRequest(paramters, httpMethod: .post, shouldAddParams: true, urlString: "get-chapters", shouldAddHeaderParams: false, successBlock: { (reponse) in
+             if let responseDict = reponse {
+                
+                if let chaptersArray = responseDict["chapters_data"] as? [NSDictionary] {
+                    self.chapters_dataArray = chaptersArray
+                    
+                    for i in self.chapters_dataArray
+                    {
+                        if let dic = i as? NSDictionary
+                        {
+                            self.chp_idArray.append(i.object(forKey: "chp_id") as? Int ?? -1)
+                            self.chapterArray.append(i.object(forKey: "chapter") as? String ?? "")
+                        }
+                    }
+                    
+                    self.tableview.reloadData()
+                }
+            }
+            
+        }, failureBlock: { (reponse) in
+            if let responseDict = reponse {
+                if let message = responseDict["response_text"] as? String {
+                    let alert = UIAlertController(title: "Error", message: message, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+          
+        }) { (error) in
+            
+        }
+    }
+    
+    
+    
     func Get_ChapterWebCall(urlString: String, completion: @escaping(Bool) -> Void)
     {
         print(tocken)
