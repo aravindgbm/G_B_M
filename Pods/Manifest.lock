@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.7.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - DropDown (2.3.1)
+  - FLAnimatedImage (1.0.12)
+  - IQKeyboardManagerSwift (5.0.8)
+  - MRCountryPicker (0.0.7)
+  - TextFieldEffects (1.4.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.7)
+  - AlamofireImage (~> 3.3)
+  - DropDown
+  - FLAnimatedImage (~> 1.0)
+  - IQKeyboardManagerSwift
+  - MRCountryPicker (~> 0.0.7)
+  - TextFieldEffects
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireImage
+    - DropDown
+    - FLAnimatedImage
+    - IQKeyboardManagerSwift
+    - MRCountryPicker
+    - TextFieldEffects
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
+  MRCountryPicker: 75edb510153ef446ded70890bc02140a757961dc
+  TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
+
+PODFILE CHECKSUM: 748c5d43a0ef2844a1593fa441e2261675d4e530
+
+COCOAPODS: 1.5.0
