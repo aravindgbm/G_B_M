@@ -10,6 +10,21 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="YZO-1b-f4Y">
+            <objects>
+                <navigationController storyboardIdentifier="loginNavigationController" navigationBarHidden="YES" id="fEP-Oo-f8G" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z6f-DO-92a">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hs4-KZ-LnS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="euX-wL-5Le" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1239" y="106"/>
+        </scene>
         <!--Tutorial Screen View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -249,6 +264,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.019607843137254902" green="0.58823529411764708" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="lkw-3p-kjg"/>
                     <connections>
                         <outlet property="collectionView" destination="yUK-7A-wRj" id="WfY-yp-ZtR"/>
                         <outlet property="pageControl" destination="IOK-ch-v70" id="4gQ-cZ-hkK"/>
@@ -850,17 +866,17 @@
                                                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                         <subviews>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmr-jm-bIa">
-                                                                                <rect key="frame" x="0.0" y="2" width="196" height="171"/>
+                                                                                <rect key="frame" x="0.0" y="2" width="196" height="172"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cube and Cube Roots" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="wYV-lM-bk5">
-                                                                                <rect key="frame" x="0.0" y="182" width="179" height="23"/>
+                                                                                <rect key="frame" x="0.0" y="183" width="179" height="23"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="play" translatesAutoresizingMaskIntoConstraints="NO" id="abC-l9-fQs">
-                                                                                <rect key="frame" x="78" y="72" width="40" height="44"/>
+                                                                                <rect key="frame" x="78" y="73" width="40" height="44"/>
                                                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                                             </imageView>
                                                                         </subviews>
@@ -1730,7 +1746,7 @@ The correct answer of a question is displayed immediately after you answered a q
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEJ-Ux-rgA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1228.125" y="105.63380281690141"/>
+            <point key="canvasLocation" x="-1239" y="-659"/>
         </scene>
         <!--Your Grade View Controller-->
         <scene sceneID="h1s-v4-RqK">

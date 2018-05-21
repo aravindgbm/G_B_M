@@ -30,8 +30,10 @@ class SplashViewController: UIViewController {
             // Check new user or existing user
             if UserDefaults.standard.object(forKey: "LoggedIn") == nil
             {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
-                self.present(vc, animated: true, completion: nil)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
+//                self.present(vc, animated: true, completion: nil)
+                let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+                AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
             }
             else if UserDefaults.standard.bool(forKey: "LoggedIn") == true
             {
@@ -40,8 +42,10 @@ class SplashViewController: UIViewController {
             }
             else if UserDefaults.standard.bool(forKey: "LoggedIn") == false
             {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
-                self.present(vc, animated: true, completion: nil)
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
+//                self.present(vc, animated: true, completion: nil)
+                let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+                AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
             }
         
             }

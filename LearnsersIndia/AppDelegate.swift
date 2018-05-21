@@ -71,6 +71,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return appDelegate
     }
     
+    func changeTheRootViewControllerTo(_ rootVC:UIViewController)  {
+        self.window?.rootViewController = rootVC
+    }
+    
     // MARK: - Core Data stack
 //
 //    lazy var persistentContainer: NSPersistentContainer = {
