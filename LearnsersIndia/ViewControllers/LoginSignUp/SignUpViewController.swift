@@ -76,7 +76,7 @@ class SignUpViewController: UIViewController,navigateProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
   
         
     }

@@ -66,6 +66,9 @@ class LIAPIClient: NSObject {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if response.result.isSuccess {
                 
+                if let responseArray = response.result.value as? [[String:AnyObject]] {
+                    print("\(responseArray)")
+                }
                 if let responseData = response.result.value as? [String:AnyObject],let responseStatusCode = response.response?.statusCode {
                     if responseStatusCode >= HTTP_STATUS_OK && responseStatusCode <= HTTP_STATUS_UNASSIGNED {
                         

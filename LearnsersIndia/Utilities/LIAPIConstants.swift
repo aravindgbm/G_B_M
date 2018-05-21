@@ -18,9 +18,10 @@ public let HTTP_STATUS_BAD_REQUEST     = 400
 public let LIBaseUrlString = "https://appapi.learnersindia.com/"
 
 
-struct SPAPIURL{
+struct LIAPIURL{
     static let signUpURL = ""
     static let loginInURL = ""
     static let forgotPasswordURL = ""
     static let logOutURL = ""
+    static let getBoardURL = "get-board"
 }

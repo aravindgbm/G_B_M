@@ -47,13 +47,12 @@ class TutorialScreenViewController: UIViewController,navigateProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         self.pageControl.transform = CGAffineTransform(scaleX: 1, y: 1);
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {

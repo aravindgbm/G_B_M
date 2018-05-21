@@ -39,6 +39,7 @@
 		C435F1A81F602B00A3501968 /* Pods_LearnsersIndia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE596DED71B34536121FE743 /* Pods_LearnsersIndia.framework */; };
 		D43C76F8207DC51D006BC01B /* MRCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */; };
 		D43C76FA207DC51D006BC01B /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */; };
+		D46F7B2720B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */; };
 		D474D21E207C643B00B460DA /* SessionvideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D21D207C643B00B460DA /* SessionvideoCollectionViewCell.swift */; };
 		D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D21F207C644F00B460DA /* SessionVideoTableViewCell.swift */; };
 		D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */; };
@@ -121,6 +122,7 @@
 		D06C53808856BCE53FE75C93 /* Pods-LearnsersIndia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnsersIndia.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnsersIndia/Pods-LearnsersIndia.release.xcconfig"; sourceTree = "<group>"; };
 		D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MRCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAuthenticationAPIsHandler.swift; sourceTree = "<group>"; };
 		D474D21D207C643B00B460DA /* SessionvideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionvideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D474D21F207C644F00B460DA /* SessionVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVideoTableViewCell.swift; sourceTree = "<group>"; };
 		D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseQuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -299,6 +301,14 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		D46F7B2520B363FD00EBDEE4 /* API Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */,
+			);
+			path = "API Handlers";
+			sourceTree = "<group>";
+		};
 		D474D221207CD03200B460DA /* Excercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -332,6 +342,7 @@
 		D482B9AC20B1DCA300DAB90E /* Webservices */ = {
 			isa = PBXGroup;
 			children = (
+				D46F7B2520B363FD00EBDEE4 /* API Handlers */,
 				D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */,
 			);
 			path = Webservices;
@@ -657,6 +668,7 @@
 				A66D1D22205A33FE009878DA /* HomeViewController.swift in Sources */,
 				FABAA9A0206F2F3E00018AF3 /* RecomentedQuestionsTableViewCell.swift in Sources */,
 				A62802312056885A00A1C244 /* R_Helper.swift in Sources */,
+				D46F7B2720B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift in Sources */,
 				D474D22B207CF1EC00B460DA /* SampleExcerciseViewController.swift in Sources */,
 				FA2D5FD32053AAF900C2FE53 /* LearnsersIndia.xcdatamodeld in Sources */,
 				D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */,

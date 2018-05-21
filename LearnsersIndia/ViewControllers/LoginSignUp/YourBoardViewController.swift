@@ -47,7 +47,15 @@ class YourBoardViewController: UIViewController,navigateProtocol {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.callGetBoardAPI()
+//        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
+//            if isFinished
+//            {
+//                print("Finished")
+//                ActivityIndicator.dismissActivityView()
+//            }
+//        }
         // Do any additional setup after loading the view.
         
 
@@ -55,14 +63,8 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     
     override func viewWillAppear(_ animated: Bool)
     {
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
-            if isFinished
-            {
-                print("Finished")
-                ActivityIndicator.dismissActivityView()
-            }
-        }
+     
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -130,12 +132,29 @@ class YourBoardViewController: UIViewController,navigateProtocol {
 //    
 //    
 //    
-//    
+//
+    func callGetBoardAPI() {
+//        LIAPIClient.sharedInstance.callRequest(nil, httpMethod: .get, shouldAddParams: false, urlString: <#T##String#>, shouldAddHeaderParams: false, successBlock: { (response) in
+//
+//        }, failureBlock: { (response) in
+//
+//        }) { (error) in
+//
+//        }
+        LIAuthenticationAPIsHandler.callGetBoardAPIWith(nil, success: { (reponse) in
+            
+        }, failure: { (response) in
+            
+        }) { (error) in
+            
+        }
+    }
+    
     func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
     {
         print(" Post Call Url \(urlString) \n Parameters \(paramters)")
         
-        
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
         Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
            
             switch(response.result)
@@ -187,6 +206,7 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     
     func arrangeValues(array:NSArray)
     {
+        iconArray = [String]()
         for i in array
         {
            let dic = i as! NSDictionary
@@ -253,7 +273,8 @@ extension YourBoardViewController : UITableViewDataSource,UITableViewDelegate
         selectedBorad = syllabusArray[indexPath.row]
         UserDefaults.standard.set(selectedBoardID, forKey: "selectedBoardID")
         let vc = storyboard?.instantiateViewController(withIdentifier: "YourGradeViewController") as! YourGradeViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

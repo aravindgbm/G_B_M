@@ -46,17 +46,18 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
+            
+        }
         // Do any additional setup after loading the view.
 
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
-            
-        }
+       
+       
     }
     
 
@@ -91,7 +92,7 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     {
         print(" Post Call Url \(urlString) \n Parameters \(paramters)")
         
-        
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
         Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
             
             switch(response.result)
@@ -124,6 +125,8 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     
     func arrangeValues(array:NSArray)
     {
+        classArray = [String]()
+        cls_idArray = [Int]()
         for i in array
         {
             let dic = i as! NSDictionary
@@ -158,7 +161,8 @@ extension YourGradeViewController : UITableViewDataSource,UITableViewDelegate
         selectedClass = classArray[indexPath.row]
         UserDefaults.standard.set(selectedCls_id, forKey: "selectedCls_id")
         let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
