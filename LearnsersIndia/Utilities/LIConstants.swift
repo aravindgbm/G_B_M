@@ -8,6 +8,10 @@
 
 import UIKit
 
-class LIConstants: NSObject {
-
+//class LIConstants: NSObject {
+//    static let sharedInstance = LIConstants()
+//}
+struct LIConstants {
+    static let errorAlertTitle = "Error"
 }
+

@@ -134,19 +134,18 @@ class YourBoardViewController: UIViewController,navigateProtocol {
 //    
 //
     func callGetBoardAPI() {
-//        LIAPIClient.sharedInstance.callRequest(nil, httpMethod: .get, shouldAddParams: false, urlString: <#T##String#>, shouldAddHeaderParams: false, successBlock: { (response) in
-//
-//        }, failureBlock: { (response) in
-//
-//        }) { (error) in
-//
-//        }
-        LIAuthenticationAPIsHandler.callGetBoardAPIWith(nil, success: { (reponse) in
-            
-        }, failure: { (response) in
-            
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        LIAuthenticationAPIsHandler.callGetBoardAPIWith(nil, success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if let responseArray = response as NSArray? {
+                  self.arrangeValues(array: responseArray)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
         }) { (error) in
-            
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     }
     

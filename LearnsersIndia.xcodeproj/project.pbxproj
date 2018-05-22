@@ -57,6 +57,7 @@
 		D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965031207DEB2900480E7F /* TestPaperTableViewCell.swift */; };
 		D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965033207E353E00480E7F /* TestFinalViewController.swift */; };
 		D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */; };
+		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
@@ -140,6 +141,7 @@
 		D4965031207DEB2900480E7F /* TestPaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPaperTableViewCell.swift; sourceTree = "<group>"; };
 		D4965033207E353E00480E7F /* TestFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFinalViewController.swift; sourceTree = "<group>"; };
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
@@ -333,6 +335,7 @@
 			isa = PBXGroup;
 			children = (
 				D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */,
+				D4A164F820B48010000459CF /* LIUtilities.swift */,
 				D482B9B020B1E24400DAB90E /* LIConstants.swift */,
 				D482B9AC20B1DCA300DAB90E /* Webservices */,
 			);
@@ -675,6 +678,7 @@
 				D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */,
 				A628022B2056885A00A1C244 /* ActivityIndicator.swift in Sources */,
 				D4965030207DE1DE00480E7F /* TestPaperViewController.swift in Sources */,
+				D4A164F920B48010000459CF /* LIUtilities.swift in Sources */,
 				D496502A207DD40300480E7F /* TestsViewController.swift in Sources */,
 				A62802322056885A00A1C244 /* R_Webservice.swift in Sources */,
 				D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */,

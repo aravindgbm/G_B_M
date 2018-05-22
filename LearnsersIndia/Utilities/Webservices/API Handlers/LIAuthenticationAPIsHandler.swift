@@ -12,11 +12,19 @@ class LIAuthenticationAPIsHandler: NSObject {
 //class func callSignUpAPIWith(_ request:SPEmailSignUpRequestModel,sucess:((Void) -> Void)?,failure:((Error?) -> Void)?) {
 //    }
     class func callGetBoardAPIWith(_ requestParams:[String:AnyObject]?,success:
-        @escaping (([String:AnyObject]?) -> Void),failure: @escaping (([String:AnyObject]?) ->Void), error:@escaping ((Error)?) ->Void) {
+        @escaping (([[String:AnyObject]]?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
         LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .get, shouldAddParams: false, urlString: LIAPIURL.getBoardURL, shouldAddHeaderParams: false, successBlock: { (response) in
-            success(response)
+            if let reponseDict = response {
+                if let responseArray = reponseDict[LIAPIResponseKeys.responseData] as? [[String:AnyObject]] {
+                    success(responseArray)
+                }
+                
+            }
+            success(nil)
         }, failureBlock: { (response) in
-            failure(response)
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
         }) { (err) in
             error(err)
         }
