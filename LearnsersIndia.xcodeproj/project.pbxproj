@@ -60,6 +60,7 @@
 		D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */; };
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
+		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
 		FA2D5FCB2053AAF900C2FE53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D5FCA2053AAF900C2FE53 /* AppDelegate.swift */; };
@@ -145,6 +146,7 @@
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
+		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
 		EE596DED71B34536121FE743 /* Pods_LearnsersIndia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnsersIndia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -337,6 +339,7 @@
 		D482B9A320B1DAD600DAB90E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */,
 				D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */,
 				A628022B2056885A00A1C244 /* ActivityIndicator.swift in Sources */,
+				D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */,
 				D4965030207DE1DE00480E7F /* TestPaperViewController.swift in Sources */,
 				D4A164F920B48010000459CF /* LIUtilities.swift in Sources */,
 				D496502A207DD40300480E7F /* TestsViewController.swift in Sources */,

@@ -305,7 +305,14 @@ extension SignUpViewController
         
   
         LIAuthenticationAPIsHandler.callSignUpAPIWith(paramters as [String : AnyObject], success: { (response) in
-              ActivityIndicator.dismissActivityView()
+            ActivityIndicator.dismissActivityView()
+            if response == true {
+            
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+            
         }, failure: { (responseMessage) in
             LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
             ActivityIndicator.dismissActivityView()
@@ -313,6 +320,7 @@ extension SignUpViewController
             ActivityIndicator.dismissActivityView()
             LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
+        
         
         
     }
@@ -333,6 +341,8 @@ extension SignUpViewController
                          "board":selectedBoardID,
                          "class":selectedCls_id,
                          "country_tel_code":selectedCountryCode] as [String : Any]
+        
+//            Alamofire.request(urlString, method: .post, parameters: paramters, encoding: URLEncoding.default, headers: <#T##HTTPHeaders?#>)
         
         Alamofire.request(urlString, method: .post, parameters: paramters, headers: nil).responseJSON { (response) in
             

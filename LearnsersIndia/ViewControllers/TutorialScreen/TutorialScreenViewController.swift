@@ -64,10 +64,14 @@ class TutorialScreenViewController: UIViewController,navigateProtocol {
     
     @IBAction func LoginButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "login"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+        //TODO: use this in the next phase
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "login"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+    
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

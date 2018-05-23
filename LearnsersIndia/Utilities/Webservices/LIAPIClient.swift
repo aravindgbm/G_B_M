@@ -19,7 +19,7 @@ class LIAPIClient: NSObject {
     
     func getRequestHeaders() -> Dictionary <String,String>? {
         
-        var header:Dictionary = [headerContentTypeKey:headerContentTypeValue]
+        let header:Dictionary = [headerContentTypeKey:headerContentTypeValue]
         
 //        let headerAuthorisationValue = tokenKey + SPAuthorizationManager.sharedInstance.getAccesToken()!
 //        header.updateValue(headerAuthorisationValue, forKey: headerAuthorisationKey)
@@ -59,7 +59,8 @@ class LIAPIClient: NSObject {
 //            SPUtilities.showOkAlertControllerWith("", message: NSLocalizedString("ERROR_OCCURRED", comment: ""), onViewController: (AppDelegate.getAppDelegateInstance().window?.rootViewController)!)
             return
         }
-        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: JSONEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
+//        JSONEncoding.default
+        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: URLEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
             
             debugPrint("Printing Response- \n",response)
             debugPrint("Printing Requst- \n",response.request?.httpBody ?? "")

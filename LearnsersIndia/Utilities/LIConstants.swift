@@ -13,5 +13,6 @@ import UIKit
 //}
 struct LIConstants {
     static let errorAlertTitle = "Error"
+    static let tryAgainMessage = "Try again later"
 }
 

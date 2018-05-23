@@ -11,7 +11,7 @@ import DropDown
 
 var selectedUserTypeID = ""
 var selectedUserType = ""
-var usertype = ""
+var usertype = "student"//currently setting to student for Phase 1 TODO: change this for phase 2
 
 protocol navigateProtocol
 {

@@ -12,6 +12,7 @@ class LIAccountManager: NSObject {
     static let sharedInstance = LIAccountManager()
     let savedAccessTokenKey = "savedAccessToken"
     let savedUserDetails = "savedUserDetails"
+    let savedOTP = "savedOTP"
     
     func getAccesToken() -> String?{
         
@@ -38,31 +39,31 @@ class LIAccountManager: NSObject {
         
     }
     
-//    func getLoggedInUser() -> SPUserModel?{
-//
-//        if let archievedUserModel = UserDefaults.standard.object(forKey: savedUserDetails) as? Data {
-//
-//            if let userModel = NSKeyedUnarchiver.unarchiveObject(with: archievedUserModel) as? SPUserModel {
-//                return userModel
-//            } else {
-//                return nil
-//            }
-//
-//        } else {
-//            return nil
-//        }
-//    }
+    func getLoggedInUser() -> LIUserModel?{
+
+        if let archievedUserModel = UserDefaults.standard.object(forKey: savedUserDetails) as? Data {
+
+            if let userModel = NSKeyedUnarchiver.unarchiveObject(with: archievedUserModel) as? LIUserModel {
+                return userModel
+            } else {
+                return nil
+            }
+
+        } else {
+            return nil
+        }
+    }
     
-//    func setLoggedInUser(_ userDetails:SPUserModel?){
-//
-//        if userDetails != nil {
-//
-//            let archivedUserModel = NSKeyedArchiver.archivedData(withRootObject: userDetails!)
-//            UserDefaults.standard.set(archivedUserModel, forKey: savedUserDetails)
-//            UserDefaults.standard.synchronize()
-//
-//        }
-//    }
+    func setLoggedInUser(_ userDetails:LIUserModel?){
+
+        if userDetails != nil {
+
+            let archivedUserModel = NSKeyedArchiver.archivedData(withRootObject: userDetails!)
+            UserDefaults.standard.set(archivedUserModel, forKey: savedUserDetails)
+            UserDefaults.standard.synchronize()
+
+        }
+    }
     
     func removeLoggedInUserAndToken() {
         
@@ -75,8 +76,20 @@ class LIAccountManager: NSObject {
         
     }
     
-    
-   
-    
-    
+    func saveOTPForTheUser(_ otp:Int) {
+        UserDefaults.standard.set(otp, forKey: savedOTP)
+        UserDefaults.standard.synchronize()
+    }
+    func shouldShowOTP() ->Bool {
+        if let _ = UserDefaults.standard.object(forKey: savedOTP){
+            return true
+        }
+        return false
+    }
+    func removeOTPForTheUser() {
+        
+        if let _ =  UserDefaults.standard.object(forKey: savedOTP) {
+            UserDefaults.standard.removeObject(forKey: savedOTP)
+        }
+    }
 }
