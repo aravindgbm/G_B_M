@@ -19,11 +19,12 @@ public let HTTP_STATUS_BAD_REQUEST     = 400
 public let LIBaseUrlString = "http://apistaging.learnersindia.com/"
 
 struct LIAPIURL{
-    static let signUpURL = ""
+    static let signUpURL = "signup"
     static let loginInURL = ""
     static let forgotPasswordURL = ""
     static let logOutURL = ""
     static let getBoardURL = "get-board"
+    static let getClassURL = "get-class"
 }
 
 struct LIAPIResponseKeys {

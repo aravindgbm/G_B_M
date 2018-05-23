@@ -149,40 +149,40 @@ class YourBoardViewController: UIViewController,navigateProtocol {
         }
     }
     
-    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
-    {
-        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
-        
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
-           
-            switch(response.result)
-            {
-            case .success(_):
-                
-                if response.result.value != nil
-                {
-                    if let responseArray:NSArray = response.result.value as? NSArray
-                    {
-                        print(responseArray)
-                        self.arrangeValues(array: responseArray)
-
-                    }
-                }
-                
-                break
-                
-            case .failure(_):
-                print("Post call Failed \(response.result.error as Any)")
-                completion(false)
-                break
-                
-             
-            }
-            
-            ActivityIndicator.dismissActivityView()
-        }
-    }
+//    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
+//    {
+//        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
+//
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
+//
+//            switch(response.result)
+//            {
+//            case .success(_):
+//
+//                if response.result.value != nil
+//                {
+//                    if let responseArray:NSArray = response.result.value as? NSArray
+//                    {
+//                        print(responseArray)
+//                        self.arrangeValues(array: responseArray)
+//
+//                    }
+//                }
+//
+//                break
+//
+//            case .failure(_):
+//                print("Post call Failed \(response.result.error as Any)")
+//                completion(false)
+//                break
+//
+//
+//            }
+//
+//            ActivityIndicator.dismissActivityView()
+//        }
+//    }
 //    (
 //    {
 //    icon = "cbse_board.png";
@@ -251,17 +251,18 @@ extension YourBoardViewController : UITableViewDataSource,UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourBoardTableViewCell", for: indexPath) as! YourBoardTableViewCell
         
         cell.label.text = syllabusArray[indexPath.row]
-        Alamofire.request(iconArray[indexPath.row]).responseData { (response) in
-            if response.error == nil {
-                print(response.result)
-                
-                // Show the downloaded image:
-                if let data = response.data
-                {
-                    cell.imageview.image = UIImage(data: data)
-                }
-            }
-        }
+        cell.imageview.setImageWith(iconArray[indexPath.row], and: nil);
+//        Alamofire.request(iconArray[indexPath.row]).responseData { (response) in
+//            if response.error == nil {
+//                print(response.result)
+//
+//                // Show the downloaded image:
+//                if let data = response.data
+//                {
+//                    cell.imageview.image = UIImage(data: data)
+//                }
+//            }
+//        }
         
         return cell
     }

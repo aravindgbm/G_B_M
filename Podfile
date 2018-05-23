@@ -12,4 +12,5 @@ pod 'IQKeyboardManagerSwift'
 pod 'AlamofireImage', '~> 3.3'
 pod 'DropDown'
 pod 'MRCountryPicker', '~> 0.0.7'
+pod 'SDWebImage', '~> 4.0'
 end

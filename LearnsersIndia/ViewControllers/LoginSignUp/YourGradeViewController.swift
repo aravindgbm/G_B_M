@@ -47,9 +47,10 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
-            
-        }
+//        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
+//
+//        }
+        self.callGetClassApi()
         // Do any additional setup after loading the view.
 
     }
@@ -88,39 +89,56 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     }
     */
 
-    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
-    {
-        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
-        
+    func callGetClassApi(){
         ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
-            
-            switch(response.result)
-            {
-            case .success(_):
-                
-                if response.result.value != nil
-                {
-                    if let responseArray:NSArray = response.result.value as? NSArray
-                    {
-                        print(responseArray)
-                        self.arrangeValues(array: responseArray)
-                        
-                    }
-                }
-                
-                break
-                
-            case .failure(_):
-                print("Post call Failed \(response.result.error as Any)")
-                completion(false)
-                break
-                
-                
-            }
+
+        LIAuthenticationAPIsHandler.callGetClassAPIWith(nil, success: { (response) in
             ActivityIndicator.dismissActivityView()
+            if let responseArray = response as NSArray? {
+                 self.arrangeValues(array: responseArray)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     }
+    
+//    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
+//    {
+//        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
+//
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
+//
+//            switch(response.result)
+//            {
+//            case .success(_):
+//
+//                if response.result.value != nil
+//                {
+//                    if let responseArray:NSArray = response.result.value as? NSArray
+//                    {
+//                        print(responseArray)
+//                        self.arrangeValues(array: responseArray)
+//
+//                    }
+//                }
+//
+//                break
+//
+//            case .failure(_):
+//                print("Post call Failed \(response.result.error as Any)")
+//                completion(false)
+//                break
+//
+//
+//            }
+//            ActivityIndicator.dismissActivityView()
+//        }
+//    }
     
     
     func arrangeValues(array:NSArray)

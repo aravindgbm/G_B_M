@@ -120,10 +120,11 @@ class SignUpViewController: UIViewController,navigateProtocol {
         if isValid == true
         {
             // Web call
-            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-            Post_Call_YourBoard(urlString: url) { (isFinisged) in
-                
-            }
+//            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//            Post_Call_YourBoard(urlString: url) { (isFinisged) in
+//
+//            }
+            self.callSignUpAPI()
         }
     }
     
@@ -292,6 +293,30 @@ isMobileValid = true
 
 extension SignUpViewController
 {
+    func callSignUpAPI() {
+        let paramters:[String : Any] = ["usertype":usertype,
+                         "fullname":nameTextFeild.text ?? "",
+                         "email":emailTextFeild.text ?? "",
+                         "mobile":mobileTextFeild.text ?? "",
+                         "password":passwordTextFeild.text ?? "",
+                         "board":selectedBoardID,
+                         "class":selectedCls_id,
+                         "country_tel_code":selectedCountryCode]
+        
+  
+        LIAuthenticationAPIsHandler.callSignUpAPIWith(paramters as [String : AnyObject], success: { (response) in
+              ActivityIndicator.dismissActivityView()
+        }, failure: { (responseMessage) in
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+            ActivityIndicator.dismissActivityView()
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
+        
+        
+    }
+    
     func Post_Call_YourBoard(urlString: String, completion: @escaping(Bool) -> Void)
     {
         print(nameTextFeild.text ?? "")

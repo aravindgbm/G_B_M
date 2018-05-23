@@ -40,6 +40,7 @@
 		D43C76F8207DC51D006BC01B /* MRCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */; };
 		D43C76FA207DC51D006BC01B /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */; };
 		D46F7B2720B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */; };
+		D474C9D020B502AC0031ED1D /* LIUIImageView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474C9CF20B502AB0031ED1D /* LIUIImageView+Additions.swift */; };
 		D474D21E207C643B00B460DA /* SessionvideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D21D207C643B00B460DA /* SessionvideoCollectionViewCell.swift */; };
 		D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D21F207C644F00B460DA /* SessionVideoTableViewCell.swift */; };
 		D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */; };
@@ -124,6 +125,7 @@
 		D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MRCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAuthenticationAPIsHandler.swift; sourceTree = "<group>"; };
+		D474C9CF20B502AB0031ED1D /* LIUIImageView+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LIUIImageView+Additions.swift"; sourceTree = "<group>"; };
 		D474D21D207C643B00B460DA /* SessionvideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionvideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D474D21F207C644F00B460DA /* SessionVideoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionVideoTableViewCell.swift; sourceTree = "<group>"; };
 		D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseQuestionTableViewCell.swift; sourceTree = "<group>"; };
@@ -311,6 +313,14 @@
 			path = "API Handlers";
 			sourceTree = "<group>";
 		};
+		D474C9CC20B4FEFE0031ED1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D474C9CF20B502AB0031ED1D /* LIUIImageView+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D474D221207CD03200B460DA /* Excercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +344,7 @@
 		D482B9AA20B1DCA300DAB90E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D474C9CC20B4FEFE0031ED1D /* Extensions */,
 				D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */,
 				D4A164F820B48010000459CF /* LIUtilities.swift */,
 				D482B9B020B1E24400DAB90E /* LIConstants.swift */,
@@ -623,6 +634,7 @@
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MRCountryPicker/MRCountryPicker.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -633,6 +645,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRCountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +668,7 @@
 				D496502E207DD5AF00480E7F /* TestStartViewController.swift in Sources */,
 				A628022A2056885A00A1C244 /* UserState.swift in Sources */,
 				FA2D5FCB2053AAF900C2FE53 /* AppDelegate.swift in Sources */,
+				D474C9D020B502AC0031ED1D /* LIUIImageView+Additions.swift in Sources */,
 				A6A5DD8B2057CC4200C90569 /* LoginViewController.swift in Sources */,
 				A6769E2D2068CDEA004D8DA7 /* ProfileViewController.swift in Sources */,
 				A628022E2056885A00A1C244 /* Common.swift in Sources */,

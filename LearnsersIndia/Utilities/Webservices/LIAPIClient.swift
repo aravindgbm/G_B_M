@@ -62,7 +62,7 @@ class LIAPIClient: NSObject {
         request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: JSONEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
             
             debugPrint("Printing Response- \n",response)
-            
+            debugPrint("Printing Requst- \n",response.request?.httpBody ?? "")
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if response.result.isSuccess {
                 
