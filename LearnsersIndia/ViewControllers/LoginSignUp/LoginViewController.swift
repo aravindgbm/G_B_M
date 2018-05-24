@@ -87,21 +87,24 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
             else
            {
             
-            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-            self.Post_Call_YourBoard(urlString: url) { (_) in
-                
-            }
-            
+
+//            self.Post_Call_YourBoard(urlString: url) { (_) in
+//
+//            }
+            self.callLoginAPI()
             }
         }
     }
     
     @IBAction func signUpButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "sign"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "sign"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+        //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backButton(_ sender: Any)
@@ -217,6 +220,25 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
 
 extension LoginViewController
 {
+    func callLoginAPI() {
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let paramters:[String:Any] = ["usertype":usertype,
+                         "loginid":emailTextField.text ?? "",
+                         "password":passwordTextField.text ?? ""]
+        
+        LIAuthenticationAPIsHandler.callSignInAPIWith(paramters  as [String : AnyObject], success: { (sucess) in
+             ActivityIndicator.dismissActivityView()
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+          
+        }
+    }
+    
+    
     func Post_Call_YourBoard(urlString: String, completion: @escaping(Bool) -> Void)
     {
         let paramters = ["usertype":"student",

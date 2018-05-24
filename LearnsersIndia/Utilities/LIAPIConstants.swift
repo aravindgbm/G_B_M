@@ -20,7 +20,7 @@ public let LIBaseUrlString = "http://apistaging.learnersindia.com/"
 
 struct LIAPIURL{
     static let signUpURL = "signup"
-    static let loginInURL = ""
+    static let signInURL = "signin"
     static let forgotPasswordURL = ""
     static let logOutURL = ""
     static let getBoardURL = "get-board"

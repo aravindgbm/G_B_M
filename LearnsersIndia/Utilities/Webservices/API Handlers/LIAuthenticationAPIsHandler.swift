@@ -84,5 +84,39 @@ class LIAuthenticationAPIsHandler: NSObject {
         }
         
     }
-    
+    class func callSignInAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.signInURL, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let userId = responseDict["user_id"] as? NSNumber {
+//                    let loggedInUser = LIUserModel()
+//                    loggedInUser.userId = userId
+//                    loggedInUser.email = responseDict["email"] as? String
+//                    loggedInUser.mobileNumber = responseDict["mobile"] as? String
+//                    //                    loggedInUser.fullName = requestParams!["fullname"] as? String
+//                    LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                    if let token = responseDict["tocken"] as? String{
+                        LIAccountManager.sharedInstance.setAccessToken(token)
+                    }
+                    if let otp = responseDict["otp"] as? Int{
+                        LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
+                    }
+                    success(true)
+                }
+                
+                //                if let responseArray = reponseDict[LIAPIResponseKeys.responseData] as? [[String:AnyObject]] {
+                //                    success(responseArray)
+                //                }
+                
+            }
+            success (false)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+        
+    }
 }
