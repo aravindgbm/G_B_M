@@ -32,7 +32,15 @@ class LIAccountManager: NSObject {
         
         let accessToken = getAccesToken()
         if (accessToken?.count)! > 0{
-            return true
+            
+            if let isOtpVerified = getLoggedInUser()?.isOTPVerified {
+                
+                return (accessToken?.count)! > 0 && isOtpVerified
+        }
+            else{
+                return false
+            }
+            
         } else {
             return false
         }
@@ -84,6 +92,9 @@ class LIAccountManager: NSObject {
     func shouldShowOTP() ->Bool {
         if let _ = UserDefaults.standard.object(forKey: savedOTP){
             return true
+        }
+        else if let isOtpverified = self.getLoggedInUser()?.isOTPVerified{
+            return !isOtpverified
         }
         return false
     }

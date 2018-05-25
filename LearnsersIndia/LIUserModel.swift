@@ -29,8 +29,8 @@ class LIUserModel: NSObject,NSCoding {
         email = aDecoder.decodeObject(forKey: "email") as! String?
         userId = aDecoder.decodeObject(forKey: "userId") as! NSNumber?
         mobileNumber = aDecoder.decodeObject(forKey: "mobile") as! String?
-        isOTPVerified = aDecoder.decodeBool(forKey: "isOTPVerified")
-        isPaidUser = aDecoder.decodeBool(forKey: "isPaidUser")
+        isOTPVerified = aDecoder.decodeObject(forKey: "isOTPVerified") as! Bool?//decodeBool(forKey: "isOTPVerified")
+        isPaidUser = aDecoder.decodeObject(forKey: "isPaidUser") as! Bool?
         classId = aDecoder.decodeObject(forKey: "classId") as! NSNumber?
         gradeName = aDecoder.decodeObject(forKey: "gradeName") as! String?
         syllabusId = aDecoder.decodeObject(forKey: "syllabusId") as! NSNumber?

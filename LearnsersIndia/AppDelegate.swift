@@ -71,6 +71,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return appDelegate
     }
     
+    func navigateToHomeScreen() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.HomeNavigationController)
+        self.changeTheRootViewControllerTo(vc)
+    }
+    
+    func navigateToTutorialScreen() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.LoginNavigationController)
+        self.changeTheRootViewControllerTo(vc)
+    }
     func changeTheRootViewControllerTo(_ rootVC:UIViewController)  {
         self.window?.rootViewController = rootVC
     }

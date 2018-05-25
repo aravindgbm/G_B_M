@@ -340,7 +340,8 @@ extension SignUpViewController
         LIAuthenticationAPIsHandler.callSignUpAPIWith(paramters as [String : AnyObject], success: { (response) in
             ActivityIndicator.dismissActivityView()
             if response == true {
-            
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.EnterOTPViewController) as! LIEnterOTPViewController
+                self.navigationController?.present(vc, animated: true, completion: nil)
             }
             else {
                 LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)

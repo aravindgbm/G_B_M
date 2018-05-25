@@ -14,7 +14,7 @@
         <!--Navigation Controller-->
         <scene sceneID="YZO-1b-f4Y">
             <objects>
-                <navigationController storyboardIdentifier="loginNavigationController" id="fEP-Oo-f8G" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LILoginNavigationController" id="fEP-Oo-f8G" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="back" id="Z6f-DO-92a">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2038,6 +2038,22 @@ The correct answer of a question is displayed immediately after you answered a q
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bHB-O8-Y4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="229" y="107"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yqw-io-arb">
+            <objects>
+                <navigationController storyboardIdentifier="LIHomeNavigationController" id="jmv-5W-710" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="G8o-D6-RQZ">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Yo-Zf-Ism" kind="relationship" relationship="rootViewController" id="o0t-AF-TNF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lo8-K0-rJt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2106" y="1107"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="Tud-1O-N1U">
