@@ -129,7 +129,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
     
     @IBAction func forgotPasswordButton(_ sender: Any)
     {
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.LIForgotPasswordViewController) as! LIForgotPasswordViewController
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ForgotPasswordViewController) as! LIForgotPasswordViewController
         self.navigationController?.pushViewController(vc, animated: true)
         
     }

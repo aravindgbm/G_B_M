@@ -20,6 +20,6 @@ struct LIConstants {
 
 struct LIViewControllerIdentifier {
     static let EnterOTPViewController = "LIEnterOTPViewController"
-    static let LIForgotPasswordViewController = "LIForgotPasswordViewController"
+    static let ForgotPasswordViewController = "LIForgotPasswordViewController"
 }
 

@@ -186,6 +186,7 @@ class VPMOTPView: UIView {
         }
         
         // Set the border values if needed
+        otpField.textColor = UIColor.white
         otpField.borderColor = otpFieldDefaultBorderColor
         otpField.borderWidth = otpFieldBorderWidth
         

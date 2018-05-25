@@ -16,7 +16,7 @@ class LIEnterOTPViewController: UIViewController {
     var enteredOTP = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.setUpSubviews()
         // Do any additional setup after loading the view.
     }
 
@@ -25,16 +25,21 @@ class LIEnterOTPViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     //MARK: - SetUp UI
+    func setUpSubviews() {
+        LIUtilities.setBorderColor(.white, For: self.submitOTPButton)
+        self.setUpOTPView()
+    }
     func setUpOTPView() {
+        
         otpView.otpFieldsCount = 5
         otpView.otpFieldDefaultBorderColor = UIColor.gray
-        otpView.otpFieldEnteredBorderColor = UIColor.green
+        otpView.otpFieldEnteredBorderColor = UIColor.white
         otpView.otpFieldErrorBorderColor = UIColor.red
+        otpView.cursorColor = UIColor.white
         otpView.otpFieldBorderWidth = 2
         otpView.delegate = self
         otpView.otpFieldDisplayType = .underlinedBottom
         otpView.otpFieldSize = 20
-        
         // Create the UI
         otpView.initalizeUI()
     }
