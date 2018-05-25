@@ -146,60 +146,60 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
         passwordTextField.delegate = self
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField)
-    {
-        // Textfeild up properties
-        
-        if textField == emailTextField
-        {
-            
-            emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            emailTextField.placeholderColor = R_UIColor.midColor
-        }
-        else
-        {
-            
-            passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            passwordTextField.placeholderColor = R_UIColor.midColor
-        }
-    }
-    
-    
-    
-    func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        // Textfeild Down properties
-        
-        if textField == emailTextField
-        {
-            if textField.text == ""
-            {
-                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
-            }
-            else
-            {
-                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            }
-            emailTextField.placeholderColor = .lightGray
-            emailTextField.borderInactiveColor = .gray
-            username = textField.text!
-        }
-        if textField == passwordTextField
-        {
-            if textField.text == ""
-            {
-                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
-            }
-            else
-            {
-                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            }
-            password = textField.text!
-            passwordTextField.placeholderColor = .lightGray
-            passwordTextField.borderInactiveColor = .gray
-        }
-    }
-    
+//    func textFieldDidBeginEditing(_ textField: UITextField)
+//    {
+//        // Textfeild up properties
+//        
+//        if textField == emailTextField
+//        {
+//            
+//            emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            emailTextField.placeholderColor = R_UIColor.midColor
+//        }
+//        else
+//        {
+//            
+//            passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            passwordTextField.placeholderColor = R_UIColor.midColor
+//        }
+//    }
+//    
+//    
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField)
+//    {
+//        // Textfeild Down properties
+//        
+//        if textField == emailTextField
+//        {
+//            if textField.text == ""
+//            {
+//                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
+//            }
+//            else
+//            {
+//                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            }
+//            emailTextField.placeholderColor = .lightGray
+//            emailTextField.borderInactiveColor = .gray
+//            username = textField.text!
+//        }
+//        if textField == passwordTextField
+//        {
+//            if textField.text == ""
+//            {
+//                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
+//            }
+//            else
+//            {
+//                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            }
+//            password = textField.text!
+//            passwordTextField.placeholderColor = .lightGray
+//            passwordTextField.borderInactiveColor = .gray
+//        }
+//    }
+//    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return false to ignore.
     {
         textField.resignFirstResponder()
@@ -226,8 +226,14 @@ extension LoginViewController
                          "loginid":emailTextField.text ?? "",
                          "password":passwordTextField.text ?? ""]
         
-        LIAuthenticationAPIsHandler.callSignInAPIWith(paramters  as [String : AnyObject], success: { (sucess) in
-             ActivityIndicator.dismissActivityView()
+        LIAuthenticationAPIsHandler.callSignInAPIWith(paramters  as [String : AnyObject], success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if response == true {
+                
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
         }, failure: { (responseMessage) in
             ActivityIndicator.dismissActivityView()
             LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)

@@ -88,7 +88,7 @@ class SignUpViewController: UIViewController,navigateProtocol {
         setUPDropDown()   // drop down
         
         self.selectedCountryCode = labelArray[0]
-        UserDefaults.standard.set(tocken, forKey: "tocken")
+//        UserDefaults.standard.set(tocken, forKey: "tocken")
         syllabusLabel.text = selectedBorad
         classLabel.text = selectedClass
         

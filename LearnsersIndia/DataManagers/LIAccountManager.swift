@@ -80,16 +80,27 @@ class LIAccountManager: NSObject {
         UserDefaults.standard.set(otp, forKey: savedOTP)
         UserDefaults.standard.synchronize()
     }
+    
     func shouldShowOTP() ->Bool {
         if let _ = UserDefaults.standard.object(forKey: savedOTP){
             return true
         }
         return false
     }
+    
     func removeOTPForTheUser() {
         
         if let _ =  UserDefaults.standard.object(forKey: savedOTP) {
             UserDefaults.standard.removeObject(forKey: savedOTP)
+        }
+    }
+    
+    func getSavedOTP() -> String?{
+        
+        if let accessToken:String = UserDefaults.standard.object(forKey: savedOTP) as! String? {
+            return accessToken
+        } else {
+            return ""
         }
     }
 }

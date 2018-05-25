@@ -14,5 +14,11 @@ import UIKit
 struct LIConstants {
     static let errorAlertTitle = "Error"
     static let tryAgainMessage = "Try again later"
+    static let unPaidUserStatus = "unpaid"
+    static let paidUserStatus = "paid"
+}
+
+struct LIViewControllerIdentifier {
+    static let EnterOTPViewController = "LIEnterOTPViewController"
 }
 

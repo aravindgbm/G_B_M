@@ -9,10 +9,15 @@
 import UIKit
 
 class LIUserModel: NSObject,NSCoding {
-    var fullName:String?
-    var email:String?
+    var fullName: String?
+    var email: String?
     var userId : NSNumber?
-    var mobileNumber:String?
+    var mobileNumber: String?
+    var isOTPVerified: Bool?
+    var isPaidUser: Bool?
+    var classId: NSNumber?
+    var gradeName: String?
+    var syllabusId: NSNumber?
     
     required override init() {
         super.init()
@@ -24,6 +29,11 @@ class LIUserModel: NSObject,NSCoding {
         email = aDecoder.decodeObject(forKey: "email") as! String?
         userId = aDecoder.decodeObject(forKey: "userId") as! NSNumber?
         mobileNumber = aDecoder.decodeObject(forKey: "mobile") as! String?
+        isOTPVerified = aDecoder.decodeBool(forKey: "isOTPVerified")
+        isPaidUser = aDecoder.decodeBool(forKey: "isPaidUser")
+        classId = aDecoder.decodeObject(forKey: "classId") as! NSNumber?
+        gradeName = aDecoder.decodeObject(forKey: "gradeName") as! String?
+        syllabusId = aDecoder.decodeObject(forKey: "syllabusId") as! NSNumber?
         
     }
     func encode(with aCoder: NSCoder) {
@@ -32,6 +42,11 @@ class LIUserModel: NSObject,NSCoding {
         aCoder.encode(email, forKey: "email")
         aCoder.encode(userId, forKey: "userId")
         aCoder.encode(mobileNumber, forKey: "mobile")
+        aCoder.encode(isOTPVerified, forKey: "isOTPVerified")
+        aCoder.encode(isPaidUser, forKey: "isPaidUser")
+        aCoder.encode(classId, forKey: "classId")
+        aCoder.encode(gradeName, forKey: "gradeName")
+        aCoder.encode(syllabusId, forKey: "syllabusId")
     }
     
 }
