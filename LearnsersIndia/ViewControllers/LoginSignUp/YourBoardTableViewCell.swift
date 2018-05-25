@@ -10,7 +10,9 @@ import UIKit
 
 class YourBoardTableViewCell: UITableViewCell {
     @IBOutlet var label: UILabel!
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var imageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var imageview: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()

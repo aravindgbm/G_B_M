@@ -17,6 +17,7 @@ import UIKit
 import Alamofire
 import TextFieldEffects
 import DropDown
+import MRCountryPicker
 
 
 var user_id = Int()
@@ -26,7 +27,7 @@ var mobile = Int()
 var email = ""
 
 
-class SignUpViewController: UIViewController,navigateProtocol {
+class SignUpViewController: UIViewController,navigateProtocol,MRCountryPickerDelegate {
     
     func loginNavigateFunction()
     {
@@ -68,6 +69,8 @@ class SignUpViewController: UIViewController,navigateProtocol {
     @IBOutlet var emailTextFeild: HoshiTextField!
     @IBOutlet var mobileTextFeild: HoshiTextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var countryPicker: MRCountryPicker!
     var iconClick : Bool!
     let dropDown = DropDown()
     var imageArray = ["India","kuwait"]
@@ -91,7 +94,8 @@ class SignUpViewController: UIViewController,navigateProtocol {
 //        UserDefaults.standard.set(tocken, forKey: "tocken")
         syllabusLabel.text = selectedBorad
         classLabel.text = selectedClass
-        
+        self.setUpCountryPicker()
+        self.countryPicker.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -149,14 +153,21 @@ class SignUpViewController: UIViewController,navigateProtocol {
     
     @IBAction func showDropDownAction(_ sender: UIButton)
     {
-        if dropDown.isHidden
-        {
-            dropDown.show()
+        
+        
+        self.countryPicker.isHidden = !self.countryPicker.isHidden
+        if !self.countryPicker.isHidden {
+            let dropDownViewFrame = self.dropDown.frame
+            self.scrollView.scrollRectToVisible(CGRect(x: dropDownViewFrame.origin.x, y: dropDownViewFrame.origin.y, width: dropDownViewFrame.size.width, height: dropDownViewFrame.size.height), animated: true)
         }
-        else
-        {
-            dropDown.hide()
-        }
+//        if dropDown.isHidden
+//        {
+//            dropDown.show()
+//        }
+//        else
+//        {
+//            dropDown.hide()
+//        }
     }
     
     
@@ -271,7 +282,25 @@ isMobileValid = true
         
     }
     
-    
+    func setUpCountryPicker(){
+        countryPicker.countryPickerDelegate = self
+        countryPicker.showPhoneNumbers = true
+        countryPicker.setCountry("IN")
+        countryPicker.backgroundColor = UIColor.white
+//        countryPicker.setLocale("sl_SI")
+//        countryPicker.setCountryByName("Canada")
+       
+    }
+    func countryPhoneCodePicker(_ picker: MRCountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+//        self.countryName.text = name
+//        self.countryCode.text = countryCode
+//        self.phoneCode.text = phoneCode
+//        self.countryFlag.image = flag
+        self.flagImageview.image = flag
+        self.countryCodeLabel.text = phoneCode
+        self.countryAlphabetLabel.text = countryCode
+        self.selectedCountryCode = phoneCode
+    }
     
     func setUPDropDown()
     {

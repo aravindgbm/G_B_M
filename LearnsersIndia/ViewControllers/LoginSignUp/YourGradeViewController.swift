@@ -11,6 +11,7 @@ import Alamofire
 
 var selectedCls_id = Int()
 var selectedClass = String()
+let imageViewHeight = 38.0
 let colorArray = ["#ae94cc","#33cc99","#b6927b", "#79c7e0", "#ffb6c1", "#FFE965"]
 
 class YourGradeViewController: UIViewController,navigateProtocol {
@@ -173,6 +174,8 @@ extension YourGradeViewController : UITableViewDataSource,UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourBoardTableViewCell_1", for: indexPath) as! YourBoardTableViewCell
         
         cell.label.text = classArray[indexPath.row]
+        cell.imageViewHeightConstraint.constant = CGFloat(imageViewHeight)
+        cell.imageViewWidthConstraint.constant = CGFloat(imageViewHeight)
         cell.imageview.layer.cornerRadius = cell.imageview.frame.height / 2
         cell.imageview.layer.masksToBounds = true
         let randomIndex = Int(arc4random())  % colorArray.count
