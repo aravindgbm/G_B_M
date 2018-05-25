@@ -36,4 +36,9 @@ class LIUtilities: NSObject {
         
     }
     
+    class func setBorderColor(_ color:UIColor, For view:UIView){
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = 1.0
+    }
+    
 }

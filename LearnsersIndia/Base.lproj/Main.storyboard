@@ -1834,7 +1834,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="110" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="YourBoardTableViewCell" rowHeight="132" id="d7B-Ud-WUM" customClass="YourBoardTableViewCell" customModule="LearnsersIndia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="YourBoardTableViewCell" rowHeight="132" id="d7B-Ud-WUM" customClass="YourBoardTableViewCell" customModule="LearnsersIndia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="375" height="132"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="d7B-Ud-WUM" id="CMq-4l-cBU">
@@ -4879,6 +4879,148 @@ The correct answer of a question is displayed immediately after you answered a q
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vu9-rR-PQC" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4028" y="106"/>
+        </scene>
+        <!--Forgot Password-->
+        <scene sceneID="sge-6z-QPG">
+            <objects>
+                <viewController storyboardIdentifier="LIForgotPasswordViewController" id="FYw-Ng-205" customClass="LIForgotPasswordViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OMi-2k-1C9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKl-1G-ZBC">
+                                <rect key="frame" x="20" y="208.5" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aYX-iJ-4Bx"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="showCountryPickerButtonTapped:" destination="FYw-Ng-205" eventType="touchUpInside" id="gxP-vV-9QJ"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="3YE-9r-k4D">
+                                <rect key="frame" x="339" y="225.5" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="BQT-6F-2tH"/>
+                                    <constraint firstAttribute="width" constant="16" id="El6-RB-vh2"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="OA4-es-0RP">
+                                <rect key="frame" x="180" y="224.5" width="15" height="18"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="India" translatesAutoresizingMaskIntoConstraints="NO" id="XQb-zv-TCE">
+                                <rect key="frame" x="20" y="223.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="3uy-Ps-fgO"/>
+                                    <constraint firstAttribute="width" constant="20" id="GyK-Ur-JJm"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="QtI-VA-xiO">
+                                <rect key="frame" x="196" y="224.5" width="26" height="18"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9SP-9n-Yxn">
+                                <rect key="frame" x="20" y="343.5" width="335" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="shQ-Ol-wWN"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitButtonTapped:" destination="FYw-Ng-205" eventType="touchUpInside" id="onp-xg-IFu"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xiU-0p-5Mu" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                <rect key="frame" x="20" y="278.5" width="335" height="50"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="koO-ep-yzk"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="titleColor">
+                                        <color key="value" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="lineColor">
+                                        <color key="value" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="selectedLineHeight">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                        <color key="value" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="placeholderFontScale">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Kv-st-2QC" customClass="MRCountryPicker" customModule="MRCountryPicker">
+                                <rect key="frame" x="0.0" y="269" width="375" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Fc0-tW-wEB"/>
+                                </constraints>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.019607843137254902" green="0.58823529411764708" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5Kv-st-2QC" firstAttribute="trailing" secondItem="jWo-ZI-Ktl" secondAttribute="trailing" id="AVx-tU-lEA"/>
+                            <constraint firstItem="9SP-9n-Yxn" firstAttribute="leading" secondItem="jWo-ZI-Ktl" secondAttribute="leading" constant="20" id="DA9-kV-Vc0"/>
+                            <constraint firstItem="5Kv-st-2QC" firstAttribute="leading" secondItem="jWo-ZI-Ktl" secondAttribute="leading" id="I4c-pV-wjw"/>
+                            <constraint firstItem="jWo-ZI-Ktl" firstAttribute="trailing" secondItem="xiU-0p-5Mu" secondAttribute="trailing" constant="20" id="NiS-b3-duO"/>
+                            <constraint firstItem="QtI-VA-xiO" firstAttribute="leading" secondItem="OA4-es-0RP" secondAttribute="trailing" constant="1" id="PAy-yi-AKe"/>
+                            <constraint firstItem="xiU-0p-5Mu" firstAttribute="top" secondItem="DKl-1G-ZBC" secondAttribute="bottom" constant="20" id="RNn-43-AGv"/>
+                            <constraint firstItem="DKl-1G-ZBC" firstAttribute="centerY" secondItem="OMi-2k-1C9" secondAttribute="centerY" constant="-100" id="U9P-Z2-xf5"/>
+                            <constraint firstItem="XQb-zv-TCE" firstAttribute="centerY" secondItem="DKl-1G-ZBC" secondAttribute="centerY" id="VXN-Wc-bBv"/>
+                            <constraint firstItem="3YE-9r-k4D" firstAttribute="centerY" secondItem="DKl-1G-ZBC" secondAttribute="centerY" id="ZG1-Dx-clv"/>
+                            <constraint firstItem="9SP-9n-Yxn" firstAttribute="top" secondItem="xiU-0p-5Mu" secondAttribute="bottom" constant="15" id="bV6-Va-bb5"/>
+                            <constraint firstItem="XQb-zv-TCE" firstAttribute="leading" secondItem="OMi-2k-1C9" secondAttribute="leading" constant="20" id="bo4-OT-GUd"/>
+                            <constraint firstItem="jWo-ZI-Ktl" firstAttribute="trailing" secondItem="3YE-9r-k4D" secondAttribute="trailing" constant="20" id="d3h-AG-S2p"/>
+                            <constraint firstItem="jWo-ZI-Ktl" firstAttribute="trailing" secondItem="9SP-9n-Yxn" secondAttribute="trailing" constant="20" id="gcX-bO-2J7"/>
+                            <constraint firstAttribute="trailing" secondItem="DKl-1G-ZBC" secondAttribute="trailing" constant="20" id="hTR-Gt-ceq"/>
+                            <constraint firstItem="DKl-1G-ZBC" firstAttribute="leading" secondItem="OMi-2k-1C9" secondAttribute="leading" constant="20" id="kwf-9D-hmY"/>
+                            <constraint firstItem="QtI-VA-xiO" firstAttribute="centerY" secondItem="OA4-es-0RP" secondAttribute="centerY" id="neC-eG-U14"/>
+                            <constraint firstItem="xiU-0p-5Mu" firstAttribute="leading" secondItem="jWo-ZI-Ktl" secondAttribute="leading" constant="20" id="rOC-Q7-mZJ"/>
+                            <constraint firstItem="OA4-es-0RP" firstAttribute="centerX" secondItem="OMi-2k-1C9" secondAttribute="centerX" id="tpY-oX-nwh"/>
+                            <constraint firstItem="QtI-VA-xiO" firstAttribute="centerY" secondItem="DKl-1G-ZBC" secondAttribute="centerY" id="wW2-Kq-WRe"/>
+                            <constraint firstItem="5Kv-st-2QC" firstAttribute="top" secondItem="DKl-1G-ZBC" secondAttribute="bottom" constant="10" id="x7t-Ul-zZc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jWo-ZI-Ktl"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Forgot Password" id="478-v6-qTe">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="7ZB-2t-hq0">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backButton:" destination="FYw-Ng-205" id="ewm-Nc-rmS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="countryCodeLabel" destination="OA4-es-0RP" id="u0t-Hg-nci"/>
+                        <outlet property="countryPhoneCodeLabel" destination="QtI-VA-xiO" id="XnD-cO-hV0"/>
+                        <outlet property="countryPicker" destination="5Kv-st-2QC" id="KTb-Jc-GOS"/>
+                        <outlet property="flagImageView" destination="XQb-zv-TCE" id="CtE-C1-8L5"/>
+                        <outlet property="submitButton" destination="9SP-9n-Yxn" id="FDt-Xa-gZE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lDG-Sl-hdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4717.6000000000004" y="106.59670164917542"/>
         </scene>
         <!--SIGN IN-->
         <scene sceneID="tzW-1u-2SW">

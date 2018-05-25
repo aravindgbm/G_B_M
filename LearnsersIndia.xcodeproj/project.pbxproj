@@ -41,6 +41,7 @@
 		D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1420B8822E0047E510 /* VPMOTPView.swift */; };
 		D4292B1820B885280047E510 /* LIEnterOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */; };
 		D4292B1A20B895840047E510 /* LIUIColor+LIAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1920B895840047E510 /* LIUIColor+LIAdditions.swift */; };
+		D4292B1C20B8B0FD0047E510 /* LIForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */; };
 		D43C76F8207DC51D006BC01B /* MRCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */; };
 		D43C76FA207DC51D006BC01B /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */; };
 		D46F7B2720B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */; };
@@ -131,6 +132,7 @@
 		D4292B1420B8822E0047E510 /* VPMOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPView.swift; sourceTree = "<group>"; };
 		D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIEnterOTPViewController.swift; sourceTree = "<group>"; };
 		D4292B1920B895840047E510 /* LIUIColor+LIAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUIColor+LIAdditions.swift"; sourceTree = "<group>"; };
+		D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MRCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAuthenticationAPIsHandler.swift; sourceTree = "<group>"; };
@@ -489,6 +491,7 @@
 				A6A5DD922057EDBB00C90569 /* YourGradeViewController.swift */,
 				A6A5DD8E2057D8C200C90569 /* SignUpViewController.swift */,
 				D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */,
+				D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */,
 				A68F4F93205BC7AF005B8E83 /* DropdownCell.swift */,
 				A67C615A20612A7900F7FF7A /* DropdownCell.xib */,
 			);
@@ -690,6 +693,7 @@
 				A68175B0206368F5000A6F30 /* GetChapterViewController.swift in Sources */,
 				FABAA9A2206F871200018AF3 /* PlayVideoViewController.swift in Sources */,
 				D496502E207DD5AF00480E7F /* TestStartViewController.swift in Sources */,
+				D4292B1C20B8B0FD0047E510 /* LIForgotPasswordViewController.swift in Sources */,
 				A628022A2056885A00A1C244 /* UserState.swift in Sources */,
 				FA2D5FCB2053AAF900C2FE53 /* AppDelegate.swift in Sources */,
 				D474C9D020B502AC0031ED1D /* LIUIImageView+Additions.swift in Sources */,
