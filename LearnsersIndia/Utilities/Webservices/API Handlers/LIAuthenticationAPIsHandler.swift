@@ -69,6 +69,7 @@ class LIAuthenticationAPIsHandler: NSObject {
                     loggedInUser.userId = userId
                     loggedInUser.email = responseDict["email"] as? String
                     loggedInUser.mobileNumber = responseDict["mobile"] as? String
+                    loggedInUser.isOTPVerified = false
 //                    loggedInUser.fullName = requestParams!["fullname"] as? String
                     LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
                     if let token = responseDict["tocken"] as? String{
@@ -135,5 +136,77 @@ class LIAuthenticationAPIsHandler: NSObject {
             error(err)
         }
         
+    }
+    
+    class func callValidateOTPAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.validateOTP, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let responseDict = response {
+                if let responseType = responseDict[LIAPIResponseKeys.responseType] as? String{
+                    if responseType == "success" {
+                        LIAccountManager.sharedInstance.removeOTPForTheUser()
+                        let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
+                        loggedInUser?.isOTPVerified = true
+                        LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                        status = true
+                    }
+                }
+                
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callResendOTPAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping  ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.resendOTP, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let reponseDict = response {
+                if let otp = reponseDict["otp"] as? Int {
+                      LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
+                    status = true
+                }
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callSeAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.validateOTP, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let responseDict = response {
+                if let responseType = responseDict[LIAPIResponseKeys.responseType] as? String{
+                    if responseType == "success" {
+                        LIAccountManager.sharedInstance.removeOTPForTheUser()
+                        let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
+                        loggedInUser?.isOTPVerified = true
+                        LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                        status = true
+                    }
+                }
+                
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
     }
 }

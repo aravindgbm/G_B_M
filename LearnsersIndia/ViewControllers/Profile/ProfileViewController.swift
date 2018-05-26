@@ -50,11 +50,11 @@ class ProfileViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool)
     {
-        
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        self.userProfileWebCall(urlString: profileUrl) { (_) in
-            
-        }
+        super.viewWillAppear(animated)
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        self.userProfileWebCall(urlString: profileUrl) { (_) in
+//            
+//        }
     }
     
     override func didReceiveMemoryWarning() {

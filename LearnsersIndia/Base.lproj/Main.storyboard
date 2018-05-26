@@ -171,7 +171,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-ZK-o9z">
-                                                    <rect key="frame" x="0.0" y="284" width="321" height="118"/>
+                                                    <rect key="frame" x="0.0" y="285" width="321" height="118"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBS-qx-K7z" customClass="StandardButton" customModule="LearnsersIndia" customModuleProvider="target">
@@ -242,7 +242,7 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="charactor" translatesAutoresizingMaskIntoConstraints="NO" id="GJZ-tU-I3x">
-                                                    <rect key="frame" x="72" y="20" width="198" height="256"/>
+                                                    <rect key="frame" x="72" y="20" width="198" height="257"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -283,7 +283,7 @@
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="GH0-Or-idJ" customClass="LoginViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jqd-Xi-HhS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZbE-cF-E5m">
@@ -423,7 +423,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="Fbg-nD-eEa">
-                                <rect key="frame" x="102" y="60" width="116" height="116"/>
+                                <rect key="frame" x="129.5" y="60" width="116" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="N2J-Sw-gr5"/>
                                     <constraint firstAttribute="width" constant="116" id="XrI-NN-oc0"/>
@@ -812,7 +812,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-Oc-qJW">
-                                                    <rect key="frame" x="0.0" y="51" width="375" height="241"/>
+                                                    <rect key="frame" x="0.0" y="50" width="375" height="242"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="5hc-oc-XAd">
@@ -823,7 +823,7 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SessionvideoCollectionViewCell" id="bcJ-v1-1ag" customClass="SessionvideoCollectionViewCell" customModule="LearnsersIndia" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="16.5" width="220" height="208"/>
+                                                            <rect key="frame" x="0.0" y="17" width="220" height="208"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="220" height="208"/>
@@ -1470,7 +1470,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CIy-SI-hXl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="CIy-SI-hXl">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIy-SI-hXl" id="IR8-FW-2wV">
@@ -1488,7 +1488,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="118" id="lbW-Z9-u63">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="118" id="lbW-Z9-u63">
                                         <rect key="frame" x="0.0" y="72" width="320" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lbW-Z9-u63" id="N88-2h-YPz">
@@ -1541,7 +1541,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="X1q-ak-d47">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="80" id="X1q-ak-d47">
                                         <rect key="frame" x="0.0" y="190" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X1q-ak-d47" id="ua1-kl-wda">
@@ -1580,7 +1580,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="136" id="Zeu-N9-bWv">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="136" id="Zeu-N9-bWv">
                                         <rect key="frame" x="0.0" y="270" width="320" height="136"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zeu-N9-bWv" id="LBA-z5-9xn">
@@ -1733,7 +1733,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YfQ-qj-QvE">
-                                                            <rect key="frame" x="17" y="11" width="38" height="37"/>
+                                                            <rect key="frame" x="17" y="10.5" width="38" height="38"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="38" id="97t-c1-s1B"/>
                                                                 <constraint firstAttribute="width" constant="38" id="aFI-md-LLF"/>
@@ -2200,15 +2200,15 @@ The correct answer of a question is displayed immediately after you answered a q
                         <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Under Construction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09L-t5-GtK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming Soon.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09L-t5-GtK">
                                 <rect key="frame" x="90" y="292" width="195" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorry !!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-zu-Gqj">
-                                <rect key="frame" x="155" y="247" width="66" height="36"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sorry !!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HTD-zu-Gqj">
+                                <rect key="frame" x="155" y="246" width="66" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -2262,7 +2262,38 @@ The correct answer of a question is displayed immediately after you answered a q
                         <rect key="frame" x="0.0" y="0.0" width="320" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGZ-Cx-TUV">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4XG-Qf-86I">
+                                <rect key="frame" x="0.0" y="20" width="320" height="1080"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0a-8M-DYs">
+                                        <rect key="frame" x="252" y="50" width="48" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="swA-K0-5MC"/>
+                                        </constraints>
+                                        <state key="normal" title="Logout"/>
+                                        <connections>
+                                            <action selector="logoutButtonTapped:" destination="Kr4-sX-BaS" eventType="touchUpInside" id="sQ2-js-h67"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVy-73-2GT">
+                                        <rect key="frame" x="104" y="524.5" width="112.5" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="jCH-0X-STA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="K0a-8M-DYs" secondAttribute="trailing" constant="20" id="FgW-qA-jkK"/>
+                                    <constraint firstItem="YVy-73-2GT" firstAttribute="centerX" secondItem="4XG-Qf-86I" secondAttribute="centerX" id="aJk-e6-87W"/>
+                                    <constraint firstItem="K0a-8M-DYs" firstAttribute="top" secondItem="4XG-Qf-86I" secondAttribute="top" constant="50" id="dMa-eX-Ruu"/>
+                                    <constraint firstItem="YVy-73-2GT" firstAttribute="centerY" secondItem="4XG-Qf-86I" secondAttribute="centerY" id="pSJ-gb-ZHn"/>
+                                </constraints>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGZ-Cx-TUV">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kerala - " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="yHC-Q0-5qX">
@@ -2294,7 +2325,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                     </mask>
                                 </variation>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-OM-Myk">
+                            <scrollView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1Z-OM-Myk">
                                 <rect key="frame" x="0.0" y="75" width="320" height="1025"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RL-AI-j0S" customClass="StandardView" customModule="LearnsersIndia" customModuleProvider="target">
@@ -2773,12 +2804,16 @@ The correct answer of a question is displayed immediately after you answered a q
                         </subviews>
                         <color key="backgroundColor" red="0.95116740470000005" green="0.94694703820000004" blue="0.95049101110000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="4XG-Qf-86I" firstAttribute="leading" secondItem="YdM-od-Itk" secondAttribute="leading" id="63c-Sr-yoJ"/>
+                            <constraint firstItem="YdM-od-Itk" firstAttribute="trailing" secondItem="4XG-Qf-86I" secondAttribute="trailing" id="9El-iz-tON"/>
                             <constraint firstItem="YdM-od-Itk" firstAttribute="trailing" secondItem="ZGZ-Cx-TUV" secondAttribute="trailing" id="Bf5-br-Id8"/>
                             <constraint firstItem="ZGZ-Cx-TUV" firstAttribute="leading" secondItem="YdM-od-Itk" secondAttribute="leading" id="QjC-Mi-tUj"/>
                             <constraint firstItem="R1Z-OM-Myk" firstAttribute="leading" secondItem="YdM-od-Itk" secondAttribute="leading" id="S9M-eB-97T"/>
+                            <constraint firstItem="4XG-Qf-86I" firstAttribute="top" secondItem="YdM-od-Itk" secondAttribute="top" id="Tl1-ri-vak"/>
                             <constraint firstItem="ZGZ-Cx-TUV" firstAttribute="top" secondItem="qfA-bA-Uod" secondAttribute="top" id="Ydd-8U-1aw"/>
                             <constraint firstItem="R1Z-OM-Myk" firstAttribute="top" secondItem="ZGZ-Cx-TUV" secondAttribute="bottom" constant="10" id="fXW-sI-u1T"/>
                             <constraint firstItem="R1Z-OM-Myk" firstAttribute="width" secondItem="qfA-bA-Uod" secondAttribute="width" id="jq0-i4-VZo"/>
+                            <constraint firstItem="YdM-od-Itk" firstAttribute="bottom" secondItem="4XG-Qf-86I" secondAttribute="bottom" id="r3m-ZF-7Jl"/>
                             <constraint firstItem="YdM-od-Itk" firstAttribute="bottom" secondItem="R1Z-OM-Myk" secondAttribute="bottom" id="tMz-jU-ODc"/>
                             <constraint firstItem="YdM-od-Itk" firstAttribute="trailing" secondItem="R1Z-OM-Myk" secondAttribute="trailing" id="vvK-Ef-UPd"/>
                         </constraints>
@@ -2860,7 +2895,16 @@ The correct answer of a question is displayed immediately after you answered a q
                         <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-dF-lHg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coming Soon.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fft-9N-y2t">
+                                <rect key="frame" x="131" y="288.5" width="112.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="sF4-Nm-aZS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-dF-lHg">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="608"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -2904,22 +2948,22 @@ The correct answer of a question is displayed immediately after you answered a q
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-QX-Nks" customClass="StandardView" customModule="LearnsersIndia" customModuleProvider="target">
-                                        <rect key="frame" x="18" y="188" width="336" height="399"/>
+                                        <rect key="frame" x="18" y="188" width="336" height="398"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g pn edt" translatesAutoresizingMaskIntoConstraints="NO" id="VpJ-pO-To1">
-                                                <rect key="frame" x="15" y="34" width="24" height="23"/>
+                                                <rect key="frame" x="15" y="34" width="24" height="22"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6EW-5i-y7p">
-                                                <rect key="frame" x="72" y="33" width="89" height="24"/>
+                                                <rect key="frame" x="72" y="33" width="89" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljq-BV-Ucb">
-                                                <rect key="frame" x="0.0" y="16" width="338" height="54"/>
+                                                <rect key="frame" x="0.0" y="15" width="338" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
@@ -2927,11 +2971,11 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g star" translatesAutoresizingMaskIntoConstraints="NO" id="fZv-b1-fUA">
-                                                <rect key="frame" x="15" y="94" width="24" height="23"/>
+                                                <rect key="frame" x="15" y="93" width="24" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exw-wH-3ZZ">
-                                                <rect key="frame" x="72" y="94" width="144" height="22"/>
+                                                <rect key="frame" x="72" y="93" width="144" height="23"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2946,18 +2990,18 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g talk" translatesAutoresizingMaskIntoConstraints="NO" id="SjR-sB-jOX">
-                                                <rect key="frame" x="15" y="345" width="24" height="25"/>
+                                                <rect key="frame" x="15" y="344" width="24" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="J99-6Y-2sg">
-                                                <rect key="frame" x="72" y="345" width="69" height="25"/>
+                                                <rect key="frame" x="72" y="344" width="69" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                 <color key="textColor" red="0.031372549020000001" green="0.5450980392" blue="0.74901960779999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g pn edt" translatesAutoresizingMaskIntoConstraints="NO" id="AlD-7N-Xsg">
-                                                <rect key="frame" x="15" y="155" width="24" height="24"/>
+                                                <rect key="frame" x="15" y="154" width="24" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-qP-n8B">
@@ -2969,14 +3013,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Questions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GXi-lF-KLE">
-                                                <rect key="frame" x="72" y="155" width="112" height="25"/>
+                                                <rect key="frame" x="72" y="154" width="112" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g pn edt" translatesAutoresizingMaskIntoConstraints="NO" id="ILB-oB-68k">
-                                                <rect key="frame" x="15" y="211" width="24" height="26"/>
+                                                <rect key="frame" x="15" y="210" width="24" height="26"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMa-tH-rX3">
@@ -2988,14 +3032,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Feedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-Tf-g3N">
-                                                <rect key="frame" x="72" y="211" width="79" height="27"/>
+                                                <rect key="frame" x="72" y="210" width="79" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="g pn edt" translatesAutoresizingMaskIntoConstraints="NO" id="lpT-MN-BCB">
-                                                <rect key="frame" x="15" y="277" width="24" height="25"/>
+                                                <rect key="frame" x="15" y="276" width="24" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaT-1t-4Dz">
@@ -3007,7 +3051,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Call Us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2T-8l-UmN">
-                                                <rect key="frame" x="72" y="277" width="58" height="27"/>
+                                                <rect key="frame" x="72" y="276" width="58" height="27"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3019,27 +3063,27 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LGK-Sr-GCX">
-                                                <rect key="frame" x="52" y="131" width="284" height="1"/>
+                                                <rect key="frame" x="52" y="130" width="284" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEk-Id-JTQ">
-                                                <rect key="frame" x="52" y="197" width="284" height="1"/>
+                                                <rect key="frame" x="52" y="196" width="284" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FR2-aa-uDN">
-                                                <rect key="frame" x="52" y="257" width="284" height="1"/>
+                                                <rect key="frame" x="52" y="256" width="284" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1jj-to-X7d">
-                                                <rect key="frame" x="52" y="322" width="284" height="1"/>
+                                                <rect key="frame" x="52" y="321" width="284" height="1"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kO-2m-KRq">
-                                                <rect key="frame" x="0.0" y="330" width="338" height="57"/>
+                                                <rect key="frame" x="0.0" y="329" width="338" height="56"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
@@ -3079,6 +3123,10 @@ The correct answer of a question is displayed immediately after you answered a q
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fft-9N-y2t" firstAttribute="centerX" secondItem="coe-IH-csf" secondAttribute="centerX" id="TU3-tw-NLZ"/>
+                            <constraint firstItem="Fft-9N-y2t" firstAttribute="centerY" secondItem="coe-IH-csf" secondAttribute="centerY" id="ZlS-Z7-bpg"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="GJ2-pE-cB9"/>
                     </view>
                     <navigationItem key="navigationItem" id="5K7-NH-zwn"/>
@@ -3097,24 +3145,24 @@ The correct answer of a question is displayed immediately after you answered a q
             <objects>
                 <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="UG3-8I-1Sk" customClass="ChangePasswordViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k3u-4d-9s2">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XG-el-HvR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VEi-ag-3LS">
-                                <rect key="frame" x="29" y="156" width="260" height="253"/>
+                                <rect key="frame" x="33" y="183" width="305" height="297"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b8i-9g-VTW">
-                                        <rect key="frame" x="0.0" y="0.0" width="260" height="46"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Ws4-CB-5e6">
-                                                <rect key="frame" x="7" y="0.0" width="147" height="46"/>
+                                                <rect key="frame" x="8" y="0.0" width="172" height="54"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -3124,7 +3172,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         <color key="backgroundColor" red="0.85962712760000004" green="0.42683774229999999" blue="0.01765262708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-mX-mpa" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="7" y="58" width="244" height="39"/>
+                                        <rect key="frame" x="8" y="68" width="286" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.91483813520000001" green="0.69923025370000003" blue="0.31952700020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3156,7 +3204,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0ub-Nx-xlo" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="7" y="159" width="244" height="39"/>
+                                        <rect key="frame" x="8" y="186" width="286" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.91483813520000001" green="0.69923025370000003" blue="0.31952700020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3188,11 +3236,11 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUl-aO-ZkO">
-                                        <rect key="frame" x="7" y="207" width="244" height="37"/>
+                                        <rect key="frame" x="8" y="243" width="286" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ff5-JO-80d">
-                                                <rect key="frame" x="0.0" y="0.0" width="113" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="132" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Save">
@@ -3204,7 +3252,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YNG-kr-234">
-                                                <rect key="frame" x="127" y="0.0" width="117" height="37"/>
+                                                <rect key="frame" x="148" y="0.0" width="138" height="43"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Cancel">
@@ -3219,7 +3267,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         <color key="backgroundColor" red="0.85962712760000004" green="0.42683774229999999" blue="0.01765262708" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6pV-wG-TIe" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="7" y="106" width="244" height="39"/>
+                                        <rect key="frame" x="8" y="124" width="286" height="46"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.91483813520000001" green="0.69923025370000003" blue="0.31952700020000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -3307,7 +3355,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SampleTableViewCell" rowHeight="146" id="10n-qh-9Sa" customClass="SampleTableViewCell" customModule="LearnsersIndia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SampleTableViewCell" rowHeight="146" id="10n-qh-9Sa" customClass="SampleTableViewCell" customModule="LearnsersIndia" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="146"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="10n-qh-9Sa" id="TCt-DJ-MhD">
@@ -3964,20 +4012,20 @@ The correct answer of a question is displayed immediately after you answered a q
             <objects>
                 <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="8zF-Hp-a5k" customClass="SignUpViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gzd-ee-p6D">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="H2G-Rn-egW">
-                                <rect key="frame" x="73.5" y="35" width="173.5" height="30"/>
+                                <rect key="frame" x="101" y="35" width="173.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bFE-ed-g7j">
-                                <rect key="frame" x="18" y="71" width="283" height="338"/>
+                                <rect key="frame" x="18" y="71" width="338" height="449"/>
                                 <subviews>
                                     <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full name" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="z0c-at-g4v" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="20" y="0.0" width="243" height="50"/>
+                                        <rect key="frame" x="20" y="0.0" width="298" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gGJ-Nh-Rnu"/>
@@ -4010,7 +4058,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="Riz-gk-vGJ" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="20" y="57" width="243" height="50"/>
+                                        <rect key="frame" x="20" y="57" width="298" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="adr-Nw-sUt"/>
@@ -4043,7 +4091,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="270-Aq-htE" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="20" y="114" width="243" height="50"/>
+                                        <rect key="frame" x="20" y="114" width="298" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="IN8-Ea-J3O"/>
@@ -4076,10 +4124,10 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyeclosed" translatesAutoresizingMaskIntoConstraints="NO" id="Kof-lO-LEV">
-                                        <rect key="frame" x="184" y="107" width="64" height="64"/>
+                                        <rect key="frame" x="239" y="107" width="64" height="64"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AU6-fh-HwL">
-                                        <rect key="frame" x="219" y="114" width="44" height="50"/>
+                                        <rect key="frame" x="274" y="114" width="44" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="44" id="O4T-5F-BuT"/>
                                         </constraints>
@@ -4095,14 +4143,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </constraints>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="HnD-00-rjj">
-                                        <rect key="frame" x="232" y="334" width="16" height="16"/>
+                                        <rect key="frame" x="287" y="334" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="16" id="uq7-bA-QOh"/>
                                             <constraint firstAttribute="width" constant="16" id="wsD-52-yfU"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U70-Oc-5V0">
-                                        <rect key="frame" x="20" y="317" width="243" height="50"/>
+                                        <rect key="frame" x="20" y="317" width="298" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Lgl-pT-Dju"/>
                                         </constraints>
@@ -4111,7 +4159,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </connections>
                                     </button>
                                     <textField opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retype password" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ywY-NN-Ndx" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="20" y="171" width="243" height="50"/>
+                                        <rect key="frame" x="20" y="171" width="298" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="GNQ-9f-Nma"/>
@@ -4185,33 +4233,33 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CBSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWD-Bb-RrO">
-                                        <rect key="frame" x="20" y="241" width="243" height="18"/>
+                                        <rect key="frame" x="20" y="241" width="298" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xp-zv-dH5">
-                                        <rect key="frame" x="20" y="279" width="243" height="18"/>
+                                        <rect key="frame" x="20" y="279" width="298" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="rAm-El-KAr">
-                                        <rect key="frame" x="170" y="333" width="15" height="18"/>
+                                        <rect key="frame" x="225" y="333" width="15" height="18"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="ntt-z3-Ogj">
-                                        <rect key="frame" x="186" y="333" width="26" height="18"/>
+                                        <rect key="frame" x="241" y="333" width="26" height="18"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNU-Bf-pHC">
-                                        <rect key="frame" x="86" y="246" width="187" height="7"/>
+                                        <rect key="frame" x="103" y="328" width="223" height="7"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
@@ -4264,7 +4312,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZG-CS-mO0" customClass="StandardView" customModule="LearnsersIndia" customModuleProvider="target">
-                                <rect key="frame" x="35" y="421" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="532" width="250" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AGREE &amp; JOIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cps-j7-WIs">
                                         <rect key="frame" x="0.0" y="5" width="245" height="21"/>
@@ -4309,7 +4357,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="QVe-ME-gai">
-                                <rect key="frame" x="66" y="488" width="187" height="60"/>
+                                <rect key="frame" x="66" y="599" width="242" height="48"/>
                                 <string key="text">You agree to Learners India's User Agreement, Privacy Policy and Cookie Policy. For phone number and sign ups we will send a verification code via SMS</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -4371,11 +4419,11 @@ The correct answer of a question is displayed immediately after you answered a q
             <objects>
                 <viewController storyboardIdentifier="SignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="A7w-13-P1h" customClass="SignUpViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S7H-jD-hPI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's get started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="13" translatesAutoresizingMaskIntoConstraints="NO" id="fvp-6v-7oN">
-                                <rect key="frame" x="83.5" y="35" width="153" height="26"/>
+                                <rect key="frame" x="111" y="35" width="153" height="26"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="Mfm-vR-R7c"/>
                                 </constraints>
@@ -4384,13 +4432,13 @@ The correct answer of a question is displayed immediately after you answered a q
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0s-em-VJK">
-                                <rect key="frame" x="0.0" y="81" width="320" height="487"/>
+                                <rect key="frame" x="0.0" y="81" width="375" height="586"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rnC-2A-P2P">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
                                         <subviews>
                                             <textField opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full name" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="dEc-Ea-TyC" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="0.0" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="0.0" width="335" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="8mI-Eb-jdb"/>
@@ -4423,7 +4471,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="7fm-AK-3DG" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="57" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="57" width="335" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="IG9-la-QKv"/>
@@ -4456,7 +4504,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <textField opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="ayd-KR-Z8v" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="114" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="114" width="335" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="DzL-Ba-df1"/>
@@ -4489,14 +4537,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyeclosed" translatesAutoresizingMaskIntoConstraints="NO" id="iip-Pb-1oc">
-                                                <rect key="frame" x="284" y="138" width="16" height="16"/>
+                                                <rect key="frame" x="339" y="138" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="16" id="9Dd-gb-G9H"/>
                                                     <constraint firstAttribute="width" constant="16" id="C7O-Qk-X8R"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkR-BD-9fu">
-                                                <rect key="frame" x="256" y="114" width="44" height="50"/>
+                                                <rect key="frame" x="311" y="114" width="44" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="44" id="6sS-aW-Xc4"/>
                                                 </constraints>
@@ -4512,18 +4560,18 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </constraints>
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="iLG-bI-aiy">
-                                                <rect key="frame" x="284" y="338" width="16" height="16"/>
+                                                <rect key="frame" x="339" y="338" width="16" height="16"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="16" id="2T4-DP-Dct"/>
                                                     <constraint firstAttribute="height" constant="16" id="CVM-ui-MqA"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4kQ-5n-waI">
-                                                <rect key="frame" x="20" y="321" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="321" width="335" height="50"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TpM-jg-er9">
-                                                <rect key="frame" x="20" y="321" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="321" width="335" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0gU-C8-djz"/>
                                                 </constraints>
@@ -4532,7 +4580,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Retype password" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="hkr-a6-Ogz" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="171" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="171" width="335" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="DfI-d2-Wic"/>
@@ -4573,7 +4621,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                             </button>
                                             <textField opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Mobile number" textAlignment="natural" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="aYU-5B-sAG" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                                <rect key="frame" x="20" y="378" width="280" height="50"/>
+                                                <rect key="frame" x="20" y="378" width="335" height="50"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="oGt-PK-8lU"/>
@@ -4606,7 +4654,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CBSE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qqU-sg-oNf">
-                                                <rect key="frame" x="20" y="241" width="280" height="20"/>
+                                                <rect key="frame" x="20" y="241" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="m2D-RD-cte"/>
                                                 </constraints>
@@ -4615,7 +4663,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class 10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N4d-0Z-Ukq">
-                                                <rect key="frame" x="20" y="281" width="280" height="20"/>
+                                                <rect key="frame" x="20" y="281" width="335" height="20"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="bKr-32-KJL"/>
                                                 </constraints>
@@ -4624,30 +4672,30 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="bkY-9D-LhO">
-                                                <rect key="frame" x="222" y="337" width="15" height="18"/>
+                                                <rect key="frame" x="158.5" y="337" width="15" height="18"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+91" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="obb-ar-xfK">
-                                                <rect key="frame" x="238" y="337" width="26" height="18"/>
+                                                <rect key="frame" x="174.5" y="337" width="26" height="18"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWi-sZ-Vki" customClass="StandardView" customModule="LearnsersIndia" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="448" width="280" height="30"/>
+                                                <rect key="frame" x="20" y="448" width="335" height="30"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AGREE &amp; JOIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PIq-e0-wMi">
-                                                        <rect key="frame" x="10" y="5" width="260" height="21"/>
+                                                        <rect key="frame" x="10" y="5" width="315" height="21"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebv-pn-pei" customClass="StandardButton" customModule="LearnsersIndia" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <state key="normal">
@@ -4687,14 +4735,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Zrn-mS-39S">
-                                                <rect key="frame" x="20" y="554" width="280" height="36"/>
+                                                <rect key="frame" x="20" y="554" width="335" height="36"/>
                                                 <string key="text">You agree to Learners India's User Agreement, Privacy Policy and Cookie Policy. For phone number and sign ups we will send a verification code via SMS</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wlv-gV-yNy" customClass="MRCountryPicker" customModule="MRCountryPicker">
-                                                <rect key="frame" x="0.0" y="400" width="320" height="162"/>
+                                                <rect key="frame" x="0.0" y="381" width="375" height="150"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="150" id="IS3-z9-bXb"/>
@@ -4886,7 +4934,15 @@ The correct answer of a question is displayed immediately after you answered a q
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sCA-kr-81o"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Gta-PY-MxO">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="Nox-Ez-5u1">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="Obl-sp-X04" id="vAP-KB-EJm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="Nox-Ez-5u1" id="jWp-Wn-zbd"/>
                         <outlet property="otpView" destination="JOd-6s-pfT" id="SBt-xW-c3O"/>
                         <outlet property="resendOTPButton" destination="TMv-u7-luQ" id="3cw-uh-3Fe"/>
                         <outlet property="submitOTPButton" destination="GZd-7T-zA1" id="6Et-d1-yQn"/>
@@ -5043,14 +5099,14 @@ The correct answer of a question is displayed immediately after you answered a q
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AXH-U5-PTL" customClass="LoginViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oZS-PS-yeg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4vP-Ps-mtZ">
-                                <rect key="frame" x="38" y="187" width="244" height="309"/>
+                                <rect key="frame" x="38" y="187" width="299" height="408"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acH-Bl-RGh" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="10" y="15" width="224" height="50"/>
+                                        <rect key="frame" x="10" y="15" width="279" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6wb-9t-AI0"/>
@@ -5083,7 +5139,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9EV-Q5-L2X" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="10" y="75" width="224" height="50"/>
+                                        <rect key="frame" x="10" y="75" width="279" height="50"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0Uk-8F-Omi"/>
@@ -5116,17 +5172,17 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eyeclosed" translatesAutoresizingMaskIntoConstraints="NO" id="KZ0-4T-Y7R">
-                                        <rect key="frame" x="208" y="99" width="16" height="16"/>
+                                        <rect key="frame" x="263" y="99" width="16" height="16"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="16" id="hhW-v3-FwV"/>
                                             <constraint firstAttribute="height" constant="16" id="pnc-YM-ZAu"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqg-uO-9KR" customClass="StandardView" customModule="LearnsersIndia" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="190" width="224" height="40"/>
+                                        <rect key="frame" x="10" y="190" width="279" height="40"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Zuv-dY-ZFF">
-                                                <rect key="frame" x="77" y="8" width="67" height="20"/>
+                                                <rect key="frame" x="96" y="8" width="83" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5150,8 +5206,7 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBL-z0-aLu" customClass="StandardButton" customModule="LearnsersIndia" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="192" width="244" height="77"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="0.0" y="274" width="299" height="77"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                         <state key="normal">
@@ -5167,14 +5222,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mf6-mR-iUJ">
-                                        <rect key="frame" x="184" y="66" width="52" height="47"/>
+                                        <rect key="frame" x="225" y="87" width="64" height="62"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <connections>
                                             <action selector="showPasswordButton:" destination="AXH-U5-PTL" eventType="touchUpInside" id="wEG-Iy-s1X"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0f0-gt-h8W">
-                                        <rect key="frame" x="10" y="135" width="224" height="30"/>
+                                        <rect key="frame" x="10" y="135" width="279" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="7Dk-1T-5ML"/>
                                         </constraints>
@@ -5194,18 +5249,22 @@ The correct answer of a question is displayed immediately after you answered a q
                                     <constraint firstAttribute="trailing" secondItem="KZ0-4T-Y7R" secondAttribute="trailing" constant="20" id="9La-Bd-vIY"/>
                                     <constraint firstItem="Jqg-uO-9KR" firstAttribute="top" secondItem="0f0-gt-h8W" secondAttribute="bottom" constant="25" id="AJQ-ee-eLn"/>
                                     <constraint firstItem="0f0-gt-h8W" firstAttribute="top" secondItem="9EV-Q5-L2X" secondAttribute="bottom" constant="10" id="AyD-ve-IW5"/>
+                                    <constraint firstItem="CBL-z0-aLu" firstAttribute="bottom" secondItem="Jqg-uO-9KR" secondAttribute="bottom" id="E8E-DR-lII"/>
                                     <constraint firstItem="acH-Bl-RGh" firstAttribute="top" secondItem="4vP-Ps-mtZ" secondAttribute="top" constant="15" id="JME-Da-JDT"/>
                                     <constraint firstItem="9EV-Q5-L2X" firstAttribute="leading" secondItem="4vP-Ps-mtZ" secondAttribute="leading" constant="10" id="Kkf-6S-s8V"/>
                                     <constraint firstAttribute="trailing" secondItem="acH-Bl-RGh" secondAttribute="trailing" constant="10" id="O9L-zz-jhw"/>
                                     <constraint firstItem="0f0-gt-h8W" firstAttribute="leading" secondItem="4vP-Ps-mtZ" secondAttribute="leading" constant="10" id="PlZ-xv-wfo"/>
                                     <constraint firstAttribute="trailing" secondItem="Jqg-uO-9KR" secondAttribute="trailing" constant="10" id="cbc-jC-1cr"/>
+                                    <constraint firstItem="CBL-z0-aLu" firstAttribute="top" secondItem="Jqg-uO-9KR" secondAttribute="top" id="fQX-hJ-Pia"/>
                                     <constraint firstItem="9EV-Q5-L2X" firstAttribute="top" secondItem="acH-Bl-RGh" secondAttribute="bottom" constant="10" id="npa-SQ-O6V"/>
                                     <constraint firstItem="Jqg-uO-9KR" firstAttribute="leading" secondItem="4vP-Ps-mtZ" secondAttribute="leading" constant="10" id="oki-XE-G9N"/>
+                                    <constraint firstItem="CBL-z0-aLu" firstAttribute="trailing" secondItem="Jqg-uO-9KR" secondAttribute="trailing" id="qot-Uu-eqn"/>
+                                    <constraint firstItem="CBL-z0-aLu" firstAttribute="leading" secondItem="Jqg-uO-9KR" secondAttribute="leading" id="sGi-1y-nL9"/>
                                     <constraint firstAttribute="trailing" secondItem="9EV-Q5-L2X" secondAttribute="trailing" constant="10" id="ze2-41-KhQ"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_logo" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-zt-ohQ">
-                                <rect key="frame" x="102" y="45" width="116" height="116"/>
+                                <rect key="frame" x="129.5" y="45" width="116" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="T3K-rH-Cj8"/>
                                     <constraint firstAttribute="width" constant="116" id="qzr-rt-4MW"/>

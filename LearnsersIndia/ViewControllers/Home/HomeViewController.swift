@@ -47,12 +47,12 @@ class HomeViewController: UIViewController {
         UserDefaults.standard.set(true, forKey: "LoggedIn")
         // Set up tab bar for first time
         setUpTabBarFirst()
-        
-        tocken = UserDefaults.standard.string(forKey: "tocken") as! String
-        selectedBoardID = UserDefaults.standard.integer(forKey: "selectedBoardID") as! Int
-        selectedCls_id = UserDefaults.standard.integer(forKey: "selectedCls_id") as! Int
-        selectedBorad = UserDefaults.standard.string(forKey: "boardname") as! String
-        selectedClass = UserDefaults.standard.string(forKey: "gradename") as! String
+//
+//        tocken = UserDefaults.standard.string(forKey: "tocken") as! String
+//        selectedBoardID = UserDefaults.standard.integer(forKey: "selectedBoardID") as! Int
+//        selectedCls_id = UserDefaults.standard.integer(forKey: "selectedCls_id") as! Int
+//        selectedBorad = UserDefaults.standard.string(forKey: "boardname") as! String
+//        selectedClass = UserDefaults.standard.string(forKey: "gradename") as! String
         
     }
     

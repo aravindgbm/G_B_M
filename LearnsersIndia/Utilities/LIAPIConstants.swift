@@ -25,6 +25,8 @@ struct LIAPIURL{
     static let logOutURL = ""
     static let getBoardURL = "get-board"
     static let getClassURL = "get-class"
+    static let validateOTP = "validate-otp-student-signup"
+    static let resendOTP = "resend-otp-student-signup"
 }
 
 struct LIAPIResponseKeys {
@@ -32,4 +34,7 @@ struct LIAPIResponseKeys {
     static let responseData = "response_data"
     static let responseType = "response_type"
     static let responseText = "response_text"
+}
+struct LIAPIRequestKeys {
+    static let token = "tocken"
 }

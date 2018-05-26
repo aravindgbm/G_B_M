@@ -90,10 +90,10 @@ class LIAccountManager: NSObject {
     }
     
     func shouldShowOTP() ->Bool {
-        if let _ = UserDefaults.standard.object(forKey: savedOTP){
-            return true
-        }
-        else if let isOtpverified = self.getLoggedInUser()?.isOTPVerified{
+//        if let _ = UserDefaults.standard.object(forKey: savedOTP){
+//            return true
+//        }
+        if let isOtpverified = self.getLoggedInUser()?.isOTPVerified{
             return !isOtpverified
         }
         return false
