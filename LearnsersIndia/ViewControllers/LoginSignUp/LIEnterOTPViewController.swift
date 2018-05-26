@@ -26,7 +26,7 @@ class LIEnterOTPViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     //MARK: - SetUp UI
     func setUpSubviews() {
@@ -46,6 +46,10 @@ class LIEnterOTPViewController: UIViewController {
         otpView.otpFieldSize = 20
         // Create the UI
         otpView.initalizeUI()
+        self.resendOTPButton.isHidden = true
+        if let otpVerified = LIAccountManager.sharedInstance.getLoggedInUser()?.isOTPVerified {
+            self.resendOTPButton.isHidden = !otpVerified
+        }
     }
     //MARK: - IBActions
     @IBAction func submitOTPButtonTapped(_ sender: Any) {
@@ -53,9 +57,9 @@ class LIEnterOTPViewController: UIViewController {
             if otpVerified == false {
                 self.callSubmitOTPAPI()
             }
-            else {
-                
-            }
+        }
+        else {
+            self.callValidateOTPForPasswordRecoveryAPI()
         }
     }
     
@@ -104,6 +108,28 @@ extension LIEnterOTPViewController: VPMOTPViewDelegate {
         LIAuthenticationAPIsHandler.callValidateOTPAPIWith(parameter as [String:AnyObject], success: { (response) in
             if response == true {
                 AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
+    }
+    
+    func callValidateOTPForPasswordRecoveryAPI() {
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let parameter:[String:Any] = [LIAPIRequestKeys.token:LIAccountManager.sharedInstance.getAccesToken()!,
+                                      "otp":enteredOTP]
+        LIAuthenticationAPIsHandler.callValidateOTPForPasswordRecoveryAPIWith(parameter as [String:AnyObject], success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if response == true {
+                let vC = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ResetPasswordViewController) as! LIResetPasswordViewController
+                self.navigationController?.pushViewController(vC, animated: true)
             }
             else {
                 LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)

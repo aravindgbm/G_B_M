@@ -252,7 +252,7 @@ isMobileValid = true
             else
             {
                 isPasswordValid = false
-                print("Password Invalid")
+                print("Both passwords does not match")
                 let alert = UIAlertController(title: "Error", message: "Wrong Password", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -263,7 +263,7 @@ isMobileValid = true
         {
             isPasswordValid = false
             print("Password Invalid")
-            let alert = UIAlertController(title: "Error", message: "Password should be greater than 6 letter", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Error", message: "Password must have more than 6 characters", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }

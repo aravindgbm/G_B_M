@@ -54,6 +54,7 @@
 		D474D229207CEFC500B460DA /* ExcerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */; };
 		D474D22B207CF1EC00B460DA /* SampleExcerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */; };
 		D474D22D207CF71200B460DA /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D22C207CF71200B460DA /* SampleTableViewCell.swift */; };
+		D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
 		D496502A207DD40300480E7F /* TestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965029207DD40200480E7F /* TestsViewController.swift */; };
@@ -145,6 +146,7 @@
 		D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseTableViewCell.swift; sourceTree = "<group>"; };
 		D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleExcerciseViewController.swift; sourceTree = "<group>"; };
 		D474D22C207CF71200B460DA /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
 		D4965029207DD40200480E7F /* TestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsViewController.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				A6A5DD8E2057D8C200C90569 /* SignUpViewController.swift */,
 				D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */,
 				D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */,
+				D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */,
 				A68F4F93205BC7AF005B8E83 /* DropdownCell.swift */,
 				A67C615A20612A7900F7FF7A /* DropdownCell.xib */,
 			);
@@ -687,6 +690,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4292B1820B885280047E510 /* LIEnterOTPViewController.swift in Sources */,
+				D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */,
 				FA2D5FE02053AFCD00C2FE53 /* TutorialScreenViewController.swift in Sources */,
 				FA2D5FCD2053AAF900C2FE53 /* ViewController.swift in Sources */,
 				A68943642058DB9C00CE42AA /* UserTypePopUpViewController.swift in Sources */,

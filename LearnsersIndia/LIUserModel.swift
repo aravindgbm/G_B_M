@@ -11,7 +11,7 @@ import UIKit
 class LIUserModel: NSObject,NSCoding {
     var fullName: String?
     var email: String?
-    var userId : NSNumber?
+    var userId : String?
     var mobileNumber: String?
     var isOTPVerified: Bool?
     var isPaidUser: Bool?
@@ -27,7 +27,7 @@ class LIUserModel: NSObject,NSCoding {
         
         fullName = aDecoder.decodeObject(forKey: "fullName") as! String?
         email = aDecoder.decodeObject(forKey: "email") as! String?
-        userId = aDecoder.decodeObject(forKey: "userId") as! NSNumber?
+        userId = aDecoder.decodeObject(forKey: "userId") as! String?
         mobileNumber = aDecoder.decodeObject(forKey: "mobile") as! String?
         isOTPVerified = aDecoder.decodeObject(forKey: "isOTPVerified") as! Bool?//decodeBool(forKey: "isOTPVerified")
         isPaidUser = aDecoder.decodeObject(forKey: "isPaidUser") as! Bool?

@@ -27,6 +27,9 @@ struct LIAPIURL{
     static let getClassURL = "get-class"
     static let validateOTP = "validate-otp-student-signup"
     static let resendOTP = "resend-otp-student-signup"
+    static let sendOTPForPasswordRecoveryURL = "send-otp-student-password-recovery"
+    static let validateOTPForPasswordRecoveryURL = "validate-otp-student-password-recovery"
+    static let resetPasswordURL = "reset-password-student"
 }
 
 struct LIAPIResponseKeys {

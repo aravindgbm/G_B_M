@@ -16,6 +16,7 @@ struct LIConstants {
     static let tryAgainMessage = "Try again later"
     static let unPaidUserStatus = "unpaid"
     static let paidUserStatus = "paid"
+    static let successAlertTitle = "Success"
 }
 
 struct LIViewControllerIdentifier {
@@ -23,5 +24,6 @@ struct LIViewControllerIdentifier {
     static let ForgotPasswordViewController = "LIForgotPasswordViewController"
     static let HomeNavigationController = "LIHomeNavigationController"
     static let LoginNavigationController = "LILoginNavigationController"
+    static let ResetPasswordViewController = "LIResetPasswordViewController"
 }
 

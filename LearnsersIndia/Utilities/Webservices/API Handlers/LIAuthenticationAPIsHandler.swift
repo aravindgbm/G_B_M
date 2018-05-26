@@ -63,8 +63,9 @@ class LIAuthenticationAPIsHandler: NSObject {
     class func callSignUpAPIWith(_ requestParams:[String:AnyObject]?,success:
         @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
         LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.signUpURL, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
             if let responseDict = response {
-                if let userId = responseDict["user_id"] as? NSNumber {
+                if let userId = responseDict["user_id"] as? String {
                     let loggedInUser = LIUserModel()
                     loggedInUser.userId = userId
                     loggedInUser.email = responseDict["email"] as? String
@@ -78,16 +79,11 @@ class LIAuthenticationAPIsHandler: NSObject {
                     if let otp = responseDict["otp"] as? Int{
                         LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
                     }
-                    success(true)
-                }
-                
-                else {
-                    success(false)
+                    status = true
                 }
             }
-            else {
-                success (false)
-            }
+            success(status)
+
         }, failureBlock: { (response) in
             if let responseDict = response {
                 failure(responseDict[LIAPIResponseKeys.responseText] as? String)
@@ -184,17 +180,16 @@ class LIAuthenticationAPIsHandler: NSObject {
         }
     }
     
-    class func callSeAPIWith(_ requestParams:[String:AnyObject]?,success:
+    class func callSendOTPForPasswordRecoveryAPIWith(_ requestParams:[String:AnyObject]?,success:
         @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
-        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.validateOTP, shouldAddHeaderParams: false, successBlock: { (response) in
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.sendOTPForPasswordRecoveryURL, shouldAddHeaderParams: false, successBlock: { (response) in
             var status = false
             if let responseDict = response {
                 if let responseType = responseDict[LIAPIResponseKeys.responseType] as? String{
                     if responseType == "success" {
-                        LIAccountManager.sharedInstance.removeOTPForTheUser()
-                        let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
-                        loggedInUser?.isOTPVerified = true
-                        LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                        if let token = responseDict["tocken"] as? String{
+                            LIAccountManager.sharedInstance.setAccessToken(token)
+                        }
                         status = true
                     }
                 }
@@ -209,4 +204,55 @@ class LIAuthenticationAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callValidateOTPForPasswordRecoveryAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.validateOTPForPasswordRecoveryURL, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let responseDict = response {
+                if let responseType = responseDict[LIAPIResponseKeys.responseType] as? String{
+                    if responseType == "success" {
+                        if let token = responseDict["tocken"] as? String{
+                            LIAccountManager.sharedInstance.setAccessToken(token)
+                        }
+                        status = true
+                    }
+                }
+                
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callResetForPasswordAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.resetPasswordURL, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let responseDict = response {
+                if let responseType = responseDict[LIAPIResponseKeys.responseType] as? String{
+                    if responseType == "success" {
+                        if let token = responseDict["tocken"] as? String{
+                            LIAccountManager.sharedInstance.setAccessToken(token)
+                        }
+                        status = true
+                    }
+                }
+                
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+
 }
