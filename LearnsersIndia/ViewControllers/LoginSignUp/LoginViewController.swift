@@ -235,7 +235,7 @@ extension LoginViewController
                     self.navigationController?.present(vc, animated: true, completion: nil)
                 }
                 else {
-                    
+                    AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
                 }
             }
             else {
