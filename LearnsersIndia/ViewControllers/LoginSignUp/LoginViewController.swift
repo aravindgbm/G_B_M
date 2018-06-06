@@ -18,19 +18,22 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
     func loginNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func boardNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func signUPNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -47,8 +50,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
     }
     
@@ -85,26 +87,30 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
             else
            {
             
-            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-            self.Post_Call_YourBoard(urlString: url) { (_) in
-                
-            }
-            
+
+//            self.Post_Call_YourBoard(urlString: url) { (_) in
+//
+//            }
+            self.callLoginAPI()
             }
         }
     }
     
     @IBAction func signUpButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "sign"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "sign"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+        //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func backButton(_ sender: Any)
     {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func showPasswordButton(_ sender: Any)
@@ -123,7 +129,8 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
     
     @IBAction func forgotPasswordButton(_ sender: Any)
     {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ForgotPasswordViewController) as! LIForgotPasswordViewController
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -140,60 +147,60 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
         passwordTextField.delegate = self
     }
     
-    func textFieldDidBeginEditing(_ textField: UITextField)
-    {
-        // Textfeild up properties
-        
-        if textField == emailTextField
-        {
-            
-            emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            emailTextField.placeholderColor = R_UIColor.midColor
-        }
-        else
-        {
-            
-            passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            passwordTextField.placeholderColor = R_UIColor.midColor
-        }
-    }
-    
-    
-    
-    func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        // Textfeild Down properties
-        
-        if textField == emailTextField
-        {
-            if textField.text == ""
-            {
-                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
-            }
-            else
-            {
-                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            }
-            emailTextField.placeholderColor = .lightGray
-            emailTextField.borderInactiveColor = .gray
-            username = textField.text!
-        }
-        if textField == passwordTextField
-        {
-            if textField.text == ""
-            {
-                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
-            }
-            else
-            {
-                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
-            }
-            password = textField.text!
-            passwordTextField.placeholderColor = .lightGray
-            passwordTextField.borderInactiveColor = .gray
-        }
-    }
-    
+//    func textFieldDidBeginEditing(_ textField: UITextField)
+//    {
+//        // Textfeild up properties
+//        
+//        if textField == emailTextField
+//        {
+//            
+//            emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            emailTextField.placeholderColor = R_UIColor.midColor
+//        }
+//        else
+//        {
+//            
+//            passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            passwordTextField.placeholderColor = R_UIColor.midColor
+//        }
+//    }
+//    
+//    
+//    
+//    func textFieldDidEndEditing(_ textField: UITextField)
+//    {
+//        // Textfeild Down properties
+//        
+//        if textField == emailTextField
+//        {
+//            if textField.text == ""
+//            {
+//                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
+//            }
+//            else
+//            {
+//                emailTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            }
+//            emailTextField.placeholderColor = .lightGray
+//            emailTextField.borderInactiveColor = .gray
+//            username = textField.text!
+//        }
+//        if textField == passwordTextField
+//        {
+//            if textField.text == ""
+//            {
+//                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 15)
+//            }
+//            else
+//            {
+//                passwordTextField.placeholderLabel.font = UIFont.systemFont(ofSize: 11)
+//            }
+//            password = textField.text!
+//            passwordTextField.placeholderColor = .lightGray
+//            passwordTextField.borderInactiveColor = .gray
+//        }
+//    }
+//    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return false to ignore.
     {
         textField.resignFirstResponder()
@@ -214,6 +221,37 @@ class LoginViewController: UIViewController,UITextFieldDelegate,navigateProtocol
 
 extension LoginViewController
 {
+    func callLoginAPI() {
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let paramters:[String:Any] = ["usertype":usertype,
+                         "loginid":emailTextField.text ?? "",
+                         "password":passwordTextField.text ?? ""]
+        
+        LIAuthenticationAPIsHandler.callSignInAPIWith(paramters  as [String : AnyObject], success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if response == true {
+                if LIAccountManager.sharedInstance.shouldShowOTP() == true {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.EnterOTPViewController) as! LIEnterOTPViewController
+                    self.navigationController?.present(vc, animated: true, completion: nil)
+                }
+                else {
+                    AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+                }
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+          
+        }
+    }
+    
+    
     func Post_Call_YourBoard(urlString: String, completion: @escaping(Bool) -> Void)
     {
         let paramters = ["usertype":"student",

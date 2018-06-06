@@ -17,19 +17,21 @@ class TutorialScreenViewController: UIViewController,navigateProtocol {
     func loginNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func boardNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func signUPNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+//        self.present(vc, animated: true, completion: nil)
     }
     
     
@@ -45,13 +47,12 @@ class TutorialScreenViewController: UIViewController,navigateProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
         self.pageControl.transform = CGAffineTransform(scaleX: 1, y: 1);
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,19 +64,27 @@ class TutorialScreenViewController: UIViewController,navigateProtocol {
     
     @IBAction func LoginButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "login"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+        //TODO: use this in the next phase
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "login"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+    
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
     @IBAction func SignUpButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "sign"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+        
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "sign"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+        //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     

@@ -8,6 +8,22 @@
 
 import UIKit
 
-class LIConstants: NSObject {
-
+//class LIConstants: NSObject {
+//    static let sharedInstance = LIConstants()
+//}
+struct LIConstants {
+    static let errorAlertTitle = "Error"
+    static let tryAgainMessage = "Try again later"
+    static let unPaidUserStatus = "unpaid"
+    static let paidUserStatus = "paid"
+    static let successAlertTitle = "Success"
 }
+
+struct LIViewControllerIdentifier {
+    static let EnterOTPViewController = "LIEnterOTPViewController"
+    static let ForgotPasswordViewController = "LIForgotPasswordViewController"
+    static let HomeNavigationController = "LIHomeNavigationController"
+    static let LoginNavigationController = "LILoginNavigationController"
+    static let ResetPasswordViewController = "LIResetPasswordViewController"
+}
+

@@ -18,19 +18,22 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     func loginNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func boardNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func signUPNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -44,7 +47,15 @@ class YourBoardViewController: UIViewController,navigateProtocol {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.callGetBoardAPI()
+//        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
+//            if isFinished
+//            {
+//                print("Finished")
+//                ActivityIndicator.dismissActivityView()
+//            }
+//        }
         // Do any additional setup after loading the view.
         
 
@@ -52,14 +63,8 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     
     override func viewWillAppear(_ animated: Bool)
     {
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
-            if isFinished
-            {
-                print("Finished")
-                ActivityIndicator.dismissActivityView()
-            }
-        }
+     
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,15 +74,20 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     
     @IBAction func backButton(_ sender: Any)
     {
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func loginButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "login"
-        vc.delegate = self
-        self.navigationController?.present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "login"
+//        vc.delegate = self
+//        self.navigationController?.present(vc, animated: true, completion: nil)
+        //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        //        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 //    func Get_WebCall()
@@ -126,41 +136,57 @@ class YourBoardViewController: UIViewController,navigateProtocol {
 //    
 //    
 //    
-//    
-    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
-    {
-        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
-        
-        
-        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
-           
-            switch(response.result)
-            {
-            case .success(_):
-                
-                if response.result.value != nil
-                {
-                    if let responseArray:NSArray = response.result.value as? NSArray
-                    {
-                        print(responseArray)
-                        self.arrangeValues(array: responseArray)
-
-                    }
-                }
-                
-                break
-                
-            case .failure(_):
-                print("Post call Failed \(response.result.error as Any)")
-                completion(false)
-                break
-                
-             
-            }
-            
+//
+    func callGetBoardAPI() {
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        LIAuthenticationAPIsHandler.callGetBoardAPIWith(nil, success: { (response) in
             ActivityIndicator.dismissActivityView()
+            if let responseArray = response as NSArray? {
+                  self.arrangeValues(array: responseArray)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     }
+    
+//    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
+//    {
+//        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
+//
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
+//
+//            switch(response.result)
+//            {
+//            case .success(_):
+//
+//                if response.result.value != nil
+//                {
+//                    if let responseArray:NSArray = response.result.value as? NSArray
+//                    {
+//                        print(responseArray)
+//                        self.arrangeValues(array: responseArray)
+//
+//                    }
+//                }
+//
+//                break
+//
+//            case .failure(_):
+//                print("Post call Failed \(response.result.error as Any)")
+//                completion(false)
+//                break
+//
+//
+//            }
+//
+//            ActivityIndicator.dismissActivityView()
+//        }
+//    }
 //    (
 //    {
 //    icon = "cbse_board.png";
@@ -183,6 +209,7 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     
     func arrangeValues(array:NSArray)
     {
+        iconArray = [String]()
         for i in array
         {
            let dic = i as! NSDictionary
@@ -228,17 +255,18 @@ extension YourBoardViewController : UITableViewDataSource,UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourBoardTableViewCell", for: indexPath) as! YourBoardTableViewCell
         
         cell.label.text = syllabusArray[indexPath.row]
-        Alamofire.request(iconArray[indexPath.row]).responseData { (response) in
-            if response.error == nil {
-                print(response.result)
-                
-                // Show the downloaded image:
-                if let data = response.data
-                {
-                    cell.imageview.image = UIImage(data: data)
-                }
-            }
-        }
+        cell.imageview.setImageWith(iconArray[indexPath.row], and: nil);
+//        Alamofire.request(iconArray[indexPath.row]).responseData { (response) in
+//            if response.error == nil {
+//                print(response.result)
+//
+//                // Show the downloaded image:
+//                if let data = response.data
+//                {
+//                    cell.imageview.image = UIImage(data: data)
+//                }
+//            }
+//        }
         
         return cell
     }
@@ -249,7 +277,8 @@ extension YourBoardViewController : UITableViewDataSource,UITableViewDelegate
         selectedBorad = syllabusArray[indexPath.row]
         UserDefaults.standard.set(selectedBoardID, forKey: "selectedBoardID")
         let vc = storyboard?.instantiateViewController(withIdentifier: "YourGradeViewController") as! YourGradeViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

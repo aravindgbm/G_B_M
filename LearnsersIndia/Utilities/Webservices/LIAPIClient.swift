@@ -19,7 +19,7 @@ class LIAPIClient: NSObject {
     
     func getRequestHeaders() -> Dictionary <String,String>? {
         
-        var header:Dictionary = [headerContentTypeKey:headerContentTypeValue]
+        let header:Dictionary = [headerContentTypeKey:headerContentTypeValue]
         
 //        let headerAuthorisationValue = tokenKey + SPAuthorizationManager.sharedInstance.getAccesToken()!
 //        header.updateValue(headerAuthorisationValue, forKey: headerAuthorisationKey)
@@ -59,18 +59,22 @@ class LIAPIClient: NSObject {
 //            SPUtilities.showOkAlertControllerWith("", message: NSLocalizedString("ERROR_OCCURRED", comment: ""), onViewController: (AppDelegate.getAppDelegateInstance().window?.rootViewController)!)
             return
         }
-        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: JSONEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
+//        JSONEncoding.default
+        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: URLEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
             
             debugPrint("Printing Response- \n",response)
-            
+            debugPrint("Printing Requst- \n",response.request?.httpBody ?? "")
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if response.result.isSuccess {
                 
+                if let responseArray = response.result.value as? [[String:AnyObject]] {
+                    print("\(responseArray)")
+                }
                 if let responseData = response.result.value as? [String:AnyObject],let responseStatusCode = response.response?.statusCode {
                     if responseStatusCode >= HTTP_STATUS_OK && responseStatusCode <= HTTP_STATUS_UNASSIGNED {
                         
                         if let responseDict = responseData as [String:AnyObject]? {
-                            if responseDict[ "response_type"] as? String == "error" {
+                            if responseDict[LIAPIResponseKeys.responseType] as? String == "error" {
                                 failureBlock!(responseDict)
                             }
                             else {

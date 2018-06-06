@@ -56,22 +56,27 @@ class FeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool)
     {
-        self.subView1HeightConstraint.constant = self.view.frame.size.height/1.68
-        syllabusLabel.text = selectedBorad + " - " + selectedClass
-        //classLabel.text = selectedClass
-        
-        adjustingHeight() // height of view
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        self.GetRecommededVideo(urlString: url) { (_) in
-            
-        }
-        
-        self.GetRecommededQuestions(urlString: questionURL){ (_) in
-            
-        }
+        super.viewWillAppear(animated)
+//        self.subView1HeightConstraint.constant = self.view.frame.size.height/1.68
+//        syllabusLabel.text = selectedBorad + " - " + selectedClass
+//        //classLabel.text = selectedClass
+//
+//        adjustingHeight() // height of view
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        self.GetRecommededVideo(urlString: url) { (_) in
+//
+//        }
+//
+//        self.GetRecommededQuestions(urlString: questionURL){ (_) in
+//
+//        }
         
     }
     
+    @IBAction func logoutButtonTapped(_ sender: Any) {
+        LIAccountManager.sharedInstance.removeLoggedInUserAndToken()
+        AppDelegate.getAppDelegateInstance().navigateToTutorialScreen()
+    }
     
     func adjustingHeight()
     {

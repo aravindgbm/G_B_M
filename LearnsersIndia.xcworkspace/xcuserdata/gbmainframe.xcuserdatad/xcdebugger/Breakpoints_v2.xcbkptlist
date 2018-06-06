@@ -115,5 +115,85 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
+            timestampString = "548740700.654837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "307"
+            endingLineNumber = "307"
+            landmarkName = "callSignUpAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LearnsersIndia.SignUpViewController.callSignUpAPI() -&gt; ()"
+                  moduleName = "LearnsersIndia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
+                  timestampString = "548738613.12389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "307"
+                  endingLineNumber = "307"
+                  offsetFromSymbolStart = "4146">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;&gt;) -&gt; () in LearnsersIndia.SignUpViewController.callSignUpAPI() -&gt; ()"
+                  moduleName = "LearnsersIndia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
+                  timestampString = "548738613.125909"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "308"
+                  endingLineNumber = "308"
+                  offsetFromSymbolStart = "14">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "548740700.655187"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "callSignUpAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "548740700.655435"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "callSignUpAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

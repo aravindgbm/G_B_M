@@ -26,27 +26,51 @@ class SplashViewController: UIViewController {
         // Timer
         Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { (_) in
             
+//
+//            // Check new user or existing user
+//            if UserDefaults.standard.object(forKey: "LoggedIn") == nil
+//            {
+////                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
+////                self.present(vc, animated: true, completion: nil)
+//                let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+//                AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
+//            }
+//            else if UserDefaults.standard.bool(forKey: "LoggedIn") == true
+//            {
+//                let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//            else if UserDefaults.standard.bool(forKey: "LoggedIn") == false
+//            {
+////                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
+////                self.present(vc, animated: true, completion: nil)
+//                let rootVC = self.storyboard?.instantiateViewController(withIdentifier: "loginNavigationController")
+//                AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
+//            }
+//
             
-            // Check new user or existing user
-            if UserDefaults.standard.object(forKey: "LoggedIn") == nil
-            {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-            else if UserDefaults.standard.bool(forKey: "LoggedIn") == true
-            {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomeViewController") as! HomeViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-            else if UserDefaults.standard.bool(forKey: "LoggedIn") == false
-            {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "TutorialScreenViewController") as! TutorialScreenViewController
-                self.present(vc, animated: true, completion: nil)
-            }
-        
+            
+            self.checkAndNavigateToScreen()
             }
             
         }
+    
+    func checkAndNavigateToScreen(){
+        if LIAccountManager.sharedInstance.isUserLoggedIn() {
+            AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+        }
+        else if LIAccountManager.sharedInstance.shouldShowOTP() {
+            let rootVC = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.LoginNavigationController)
+            AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
+            let otpVC = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.EnterOTPViewController) as! LIEnterOTPViewController
+            rootVC?.present(otpVC, animated: true, completion: {
+                
+            })
+        }
+        else {
+            AppDelegate.getAppDelegateInstance().navigateToTutorialScreen()
+        }
+    }
     
     
     override func didReceiveMemoryWarning() {

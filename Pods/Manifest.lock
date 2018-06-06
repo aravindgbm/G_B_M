@@ -6,6 +6,9 @@ PODS:
   - FLAnimatedImage (1.0.12)
   - IQKeyboardManagerSwift (5.0.8)
   - MRCountryPicker (0.0.7)
+  - SDWebImage (4.3.3):
+    - SDWebImage/Core (= 4.3.3)
+  - SDWebImage/Core (4.3.3)
   - TextFieldEffects (1.4.0)
 
 DEPENDENCIES:
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - FLAnimatedImage (~> 1.0)
   - IQKeyboardManagerSwift
   - MRCountryPicker (~> 0.0.7)
+  - SDWebImage (~> 4.0)
   - TextFieldEffects
 
 SPEC REPOS:
@@ -25,6 +29,7 @@ SPEC REPOS:
     - FLAnimatedImage
     - IQKeyboardManagerSwift
     - MRCountryPicker
+    - SDWebImage
     - TextFieldEffects
 
 SPEC CHECKSUMS:
@@ -34,8 +39,9 @@ SPEC CHECKSUMS:
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   MRCountryPicker: 75edb510153ef446ded70890bc02140a757961dc
+  SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 748c5d43a0ef2844a1593fa441e2261675d4e530
+PODFILE CHECKSUM: 298154a6354beb44c053a3e8ed6c898a6194fd9c
 
 COCOAPODS: 1.5.0

@@ -11,25 +11,30 @@ import Alamofire
 
 var selectedCls_id = Int()
 var selectedClass = String()
+let imageViewHeight = 38.0
+let colorArray = ["#ae94cc","#33cc99","#b6927b", "#79c7e0", "#ffb6c1", "#FFE965"]
 
 class YourGradeViewController: UIViewController,navigateProtocol {
     
     func loginNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func boardNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func signUPNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -43,17 +48,19 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+//        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
+//
+//        }
+        self.callGetClassApi()
         // Do any additional setup after loading the view.
 
     }
     
     override func viewWillAppear(_ animated: Bool)
     {
-        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-        Post_Call_YourBoard(urlString: url, paramters: ["":""]) { (isFinished) in
-            
-        }
+       
+       
     }
     
 
@@ -63,14 +70,18 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     }
     @IBAction func backButton(_ sender: Any)
     {
-       self.dismiss(animated: true, completion: nil)
+//       self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func loginButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "login"
-        vc.delegate = self
-        self.navigationController?.present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "login"
+//        vc.delegate = self
+//        self.navigationController?.present(vc, animated: true, completion: nil)
+        //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     /*
@@ -83,43 +94,62 @@ class YourGradeViewController: UIViewController,navigateProtocol {
     }
     */
 
-    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
-    {
-        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
-        
-        
-        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
-            
-            switch(response.result)
-            {
-            case .success(_):
-                
-                if response.result.value != nil
-                {
-                    if let responseArray:NSArray = response.result.value as? NSArray
-                    {
-                        print(responseArray)
-                        self.arrangeValues(array: responseArray)
-                        
-                    }
-                }
-                
-                break
-                
-            case .failure(_):
-                print("Post call Failed \(response.result.error as Any)")
-                completion(false)
-                break
-                
-                
-            }
+    func callGetClassApi(){
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+
+        LIAuthenticationAPIsHandler.callGetClassAPIWith(nil, success: { (response) in
             ActivityIndicator.dismissActivityView()
+            if let responseArray = response as NSArray? {
+                 self.arrangeValues(array: responseArray)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     }
+    
+//    func Post_Call_YourBoard(urlString: String, paramters: [String: Any], completion: @escaping(Bool) -> Void)
+//    {
+//        print(" Post Call Url \(urlString) \n Parameters \(paramters)")
+//
+//        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//        Alamofire.request(urlString, method: .get, parameters: paramters, headers: nil).responseJSON { (response) in
+//
+//            switch(response.result)
+//            {
+//            case .success(_):
+//
+//                if response.result.value != nil
+//                {
+//                    if let responseArray:NSArray = response.result.value as? NSArray
+//                    {
+//                        print(responseArray)
+//                        self.arrangeValues(array: responseArray)
+//
+//                    }
+//                }
+//
+//                break
+//
+//            case .failure(_):
+//                print("Post call Failed \(response.result.error as Any)")
+//                completion(false)
+//                break
+//
+//
+//            }
+//            ActivityIndicator.dismissActivityView()
+//        }
+//    }
     
     
     func arrangeValues(array:NSArray)
     {
+        classArray = [String]()
+        cls_idArray = [Int]()
         for i in array
         {
             let dic = i as! NSDictionary
@@ -144,6 +174,12 @@ extension YourGradeViewController : UITableViewDataSource,UITableViewDelegate
         let cell = tableView.dequeueReusableCell(withIdentifier: "YourBoardTableViewCell_1", for: indexPath) as! YourBoardTableViewCell
         
         cell.label.text = classArray[indexPath.row]
+        cell.imageViewHeightConstraint.constant = CGFloat(imageViewHeight)
+        cell.imageViewWidthConstraint.constant = CGFloat(imageViewHeight)
+        cell.imageview.layer.cornerRadius = cell.imageview.frame.height / 2
+        cell.imageview.layer.masksToBounds = true
+        let randomIndex = Int(arc4random())  % colorArray.count
+        cell.imageview.backgroundColor = UIColor(hexString: colorArray[randomIndex])
 
         return cell
     }
@@ -154,13 +190,13 @@ extension YourGradeViewController : UITableViewDataSource,UITableViewDelegate
         selectedClass = classArray[indexPath.row]
         UserDefaults.standard.set(selectedCls_id, forKey: "selectedCls_id")
         let vc = storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return tableview.frame.size.height/6.8
+       return tableview.frame.size.height/8
     }
-    
 }
 

@@ -17,6 +17,7 @@ import UIKit
 import Alamofire
 import TextFieldEffects
 import DropDown
+import MRCountryPicker
 
 
 var user_id = Int()
@@ -26,24 +27,27 @@ var mobile = Int()
 var email = ""
 
 
-class SignUpViewController: UIViewController,navigateProtocol {
+class SignUpViewController: UIViewController,navigateProtocol,MRCountryPickerDelegate {
     
     func loginNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func boardNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "YourBoardViewController") as! YourBoardViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func signUPNavigateFunction()
     {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-        self.present(vc, animated: true, completion: nil)
+//        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -65,6 +69,8 @@ class SignUpViewController: UIViewController,navigateProtocol {
     @IBOutlet var emailTextFeild: HoshiTextField!
     @IBOutlet var mobileTextFeild: HoshiTextField!
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var countryPicker: MRCountryPicker!
     var iconClick : Bool!
     let dropDown = DropDown()
     var imageArray = ["India","kuwait"]
@@ -73,7 +79,7 @@ class SignUpViewController: UIViewController,navigateProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
   
         
     }
@@ -85,10 +91,11 @@ class SignUpViewController: UIViewController,navigateProtocol {
         setUPDropDown()   // drop down
         
         self.selectedCountryCode = labelArray[0]
-        UserDefaults.standard.set(tocken, forKey: "tocken")
+//        UserDefaults.standard.set(tocken, forKey: "tocken")
         syllabusLabel.text = selectedBorad
         classLabel.text = selectedClass
-        
+        self.setUpCountryPicker()
+        self.countryPicker.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
@@ -98,15 +105,20 @@ class SignUpViewController: UIViewController,navigateProtocol {
     
     @IBAction func loginButton(_ sender: Any)
     {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
-        loginORSign = "login"
-        vc.delegate = self
-        self.present(vc, animated: true, completion: nil)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "UserTypePopUpViewController") as! UserTypePopUpViewController
+//        loginORSign = "login"
+//        vc.delegate = self
+//        self.present(vc, animated: true, completion: nil)
+    //TODO: uncomment the above code and remove the bottom code for phase 2
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func backButton(_ sender: Any)
     {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func signUpButton(_ sender: Any)
@@ -116,10 +128,11 @@ class SignUpViewController: UIViewController,navigateProtocol {
         if isValid == true
         {
             // Web call
-            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
-            Post_Call_YourBoard(urlString: url) { (isFinisged) in
-                
-            }
+//            ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+//            Post_Call_YourBoard(urlString: url) { (isFinisged) in
+//
+//            }
+            self.callSignUpAPI()
         }
     }
     
@@ -140,14 +153,21 @@ class SignUpViewController: UIViewController,navigateProtocol {
     
     @IBAction func showDropDownAction(_ sender: UIButton)
     {
-        if dropDown.isHidden
-        {
-            dropDown.show()
+        
+        
+        self.countryPicker.isHidden = !self.countryPicker.isHidden
+        if !self.countryPicker.isHidden {
+            let dropDownViewFrame = self.dropDown.frame
+            self.scrollView.scrollRectToVisible(CGRect(x: dropDownViewFrame.origin.x, y: dropDownViewFrame.origin.y, width: dropDownViewFrame.size.width, height: dropDownViewFrame.size.height), animated: true)
         }
-        else
-        {
-            dropDown.hide()
-        }
+//        if dropDown.isHidden
+//        {
+//            dropDown.show()
+//        }
+//        else
+//        {
+//            dropDown.hide()
+//        }
     }
     
     
@@ -232,7 +252,7 @@ isMobileValid = true
             else
             {
                 isPasswordValid = false
-                print("Password Invalid")
+                print("Both passwords does not match")
                 let alert = UIAlertController(title: "Error", message: "Wrong Password", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
                 self.present(alert, animated: true, completion: nil)
@@ -243,7 +263,7 @@ isMobileValid = true
         {
             isPasswordValid = false
             print("Password Invalid")
-            let alert = UIAlertController(title: "Error", message: "Password should be greater than 6 letter", preferredStyle: UIAlertControllerStyle.alert)
+            let alert = UIAlertController(title: "Error", message: "Password must have more than 6 characters", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
@@ -262,7 +282,25 @@ isMobileValid = true
         
     }
     
-    
+    func setUpCountryPicker(){
+        countryPicker.countryPickerDelegate = self
+        countryPicker.showPhoneNumbers = true
+        countryPicker.setCountry("IN")
+        countryPicker.backgroundColor = UIColor.white
+//        countryPicker.setLocale("sl_SI")
+//        countryPicker.setCountryByName("Canada")
+       
+    }
+    func countryPhoneCodePicker(_ picker: MRCountryPicker, didSelectCountryWithName name: String, countryCode: String, phoneCode: String, flag: UIImage) {
+//        self.countryName.text = name
+//        self.countryCode.text = countryCode
+//        self.phoneCode.text = phoneCode
+//        self.countryFlag.image = flag
+        self.flagImageview.image = flag
+        self.countryCodeLabel.text = phoneCode
+        self.countryAlphabetLabel.text = countryCode
+        self.selectedCountryCode = phoneCode
+    }
     
     func setUPDropDown()
     {
@@ -288,6 +326,39 @@ isMobileValid = true
 
 extension SignUpViewController
 {
+    func callSignUpAPI() {
+        let paramters:[String : Any] = ["usertype":usertype,
+                         "fullname":nameTextFeild.text ?? "",
+                         "email":emailTextFeild.text ?? "",
+                         "mobile":mobileTextFeild.text ?? "",
+                         "password":passwordTextFeild.text ?? "",
+                         "board":selectedBoardID,
+                         "class":selectedCls_id,
+                         "country_tel_code":selectedCountryCode]
+        
+  
+        LIAuthenticationAPIsHandler.callSignUpAPIWith(paramters as [String : AnyObject], success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if response == true {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: LIViewControllerIdentifier.EnterOTPViewController) as! LIEnterOTPViewController
+                self.navigationController?.present(vc, animated: true, completion: nil)
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+            
+        }, failure: { (responseMessage) in
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+            ActivityIndicator.dismissActivityView()
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
+        
+        
+        
+    }
+    
     func Post_Call_YourBoard(urlString: String, completion: @escaping(Bool) -> Void)
     {
         print(nameTextFeild.text ?? "")
@@ -304,6 +375,8 @@ extension SignUpViewController
                          "board":selectedBoardID,
                          "class":selectedCls_id,
                          "country_tel_code":selectedCountryCode] as [String : Any]
+        
+//            Alamofire.request(urlString, method: .post, parameters: paramters, encoding: URLEncoding.default, headers: <#T##HTTPHeaders?#>)
         
         Alamofire.request(urlString, method: .post, parameters: paramters, headers: nil).responseJSON { (response) in
             
