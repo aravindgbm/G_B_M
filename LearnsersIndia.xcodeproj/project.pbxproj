@@ -37,10 +37,14 @@
 		A6E1B8D120623ABC00FE580B /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E1B8CE20623AB900FE580B /* iTunesArtwork@2x.png */; };
 		A6E1B8D220623ABC00FE580B /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E1B8CF20623ABA00FE580B /* iTunesArtwork@3x.png */; };
 		C435F1A81F602B00A3501968 /* Pods_LearnsersIndia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE596DED71B34536121FE743 /* Pods_LearnsersIndia.framework */; };
+		D4155BC720C81CB70017D93A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4155BC620C81CB70017D93A /* Home.storyboard */; };
+		D4155BCA20C82A560017D93A /* LIFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4155BC920C82A560017D93A /* LIFeedViewController.swift */; };
+		D4155BCD20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */; };
+		D4155BCF20C84B660017D93A /* LIUIView+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4155BCE20C84B660017D93A /* LIUIView+Additions.swift */; };
 		D4292B1520B8822F0047E510 /* VPMOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1320B8822E0047E510 /* VPMOTPTextField.swift */; };
 		D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1420B8822E0047E510 /* VPMOTPView.swift */; };
 		D4292B1820B885280047E510 /* LIEnterOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */; };
-		D4292B1A20B895840047E510 /* LIUIColor+LIAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1920B895840047E510 /* LIUIColor+LIAdditions.swift */; };
+		D4292B1A20B895840047E510 /* LIUIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1920B895840047E510 /* LIUIColor+Additions.swift */; };
 		D4292B1C20B8B0FD0047E510 /* LIForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */; };
 		D43C76F8207DC51D006BC01B /* MRCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */; };
 		D43C76FA207DC51D006BC01B /* TextFieldEffects.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */; };
@@ -129,10 +133,14 @@
 		A6E1B8CE20623AB900FE580B /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Appicon/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
 		A6E1B8CF20623ABA00FE580B /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@3x.png"; path = "Appicon/iTunesArtwork@3x.png"; sourceTree = SOURCE_ROOT; };
 		D06C53808856BCE53FE75C93 /* Pods-LearnsersIndia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnsersIndia.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnsersIndia/Pods-LearnsersIndia.release.xcconfig"; sourceTree = "<group>"; };
+		D4155BC620C81CB70017D93A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		D4155BC920C82A560017D93A /* LIFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedViewController.swift; sourceTree = "<group>"; };
+		D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedUtilitiesTableViewCell.swift; sourceTree = "<group>"; };
+		D4155BCE20C84B660017D93A /* LIUIView+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUIView+Additions.swift"; sourceTree = "<group>"; };
 		D4292B1320B8822E0047E510 /* VPMOTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPTextField.swift; sourceTree = "<group>"; };
 		D4292B1420B8822E0047E510 /* VPMOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPView.swift; sourceTree = "<group>"; };
 		D4292B1720B885280047E510 /* LIEnterOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIEnterOTPViewController.swift; sourceTree = "<group>"; };
-		D4292B1920B895840047E510 /* LIUIColor+LIAdditions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUIColor+LIAdditions.swift"; sourceTree = "<group>"; };
+		D4292B1920B895840047E510 /* LIUIColor+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUIColor+Additions.swift"; sourceTree = "<group>"; };
 		D4292B1B20B8B0FD0047E510 /* LIForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		D43C76F7207DC51D006BC01B /* MRCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MRCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43C76F9207DC51D006BC01B /* TextFieldEffects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TextFieldEffects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,6 +328,34 @@
 			path = Gifs;
 			sourceTree = "<group>";
 		};
+		D4155BC520C81C6F0017D93A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				FA2D5FCE2053AAF900C2FE53 /* Main.storyboard */,
+				D4155BC620C81CB70017D93A /* Home.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		D4155BC820C82A370017D93A /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				FA31585F206E4ABC005282F9 /* FeedViewController.swift */,
+				FA315861206E83B0005282F9 /* PopularVideosCollectionViewCell.swift */,
+				FABAA99F206F2F3E00018AF3 /* RecomentedQuestionsTableViewCell.swift */,
+				FABAA9A1206F871100018AF3 /* PlayVideoViewController.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		D4155BCB20C849550017D93A /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
 		D4292B1220B8822E0047E510 /* VPMOTPView */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,7 +377,8 @@
 			isa = PBXGroup;
 			children = (
 				D474C9CF20B502AB0031ED1D /* LIUIImageView+Additions.swift */,
-				D4292B1920B895840047E510 /* LIUIColor+LIAdditions.swift */,
+				D4292B1920B895840047E510 /* LIUIColor+Additions.swift */,
+				D4155BCE20C84B660017D93A /* LIUIView+Additions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -445,6 +482,7 @@
 		FA2D5FC92053AAF900C2FE53 /* LearnsersIndia */ = {
 			isa = PBXGroup;
 			children = (
+				D4155BC520C81C6F0017D93A /* Storyboard */,
 				D4E8C4FB20B3460300E0D770 /* DataManagers */,
 				D482B9AA20B1DCA300DAB90E /* Utilities */,
 				D482B9A320B1DAD600DAB90E /* Models */,
@@ -456,7 +494,6 @@
 				A6E1B8CC206235B300FE580B /* Gifs */,
 				A62802182056885A00A1C244 /* Helper Class */,
 				A6E1B8CB2062357900FE580B /* ViewControllers */,
-				FA2D5FCE2053AAF900C2FE53 /* Main.storyboard */,
 				FA2D5FD42053AAF900C2FE53 /* Assets.xcassets */,
 				FA2D5FD62053AAF900C2FE53 /* LaunchScreen.storyboard */,
 				FA2D5FD92053AAF900C2FE53 /* Info.plist */,
@@ -512,10 +549,9 @@
 		FAF05073207786BB0091B710 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
-				FA31585F206E4ABC005282F9 /* FeedViewController.swift */,
-				FA315861206E83B0005282F9 /* PopularVideosCollectionViewCell.swift */,
-				FABAA99F206F2F3E00018AF3 /* RecomentedQuestionsTableViewCell.swift */,
-				FABAA9A1206F871100018AF3 /* PlayVideoViewController.swift */,
+				D4155BCB20C849550017D93A /* TableView Cells */,
+				D4155BC820C82A370017D93A /* Old */,
+				D4155BC920C82A560017D93A /* LIFeedViewController.swift */,
 			);
 			path = Feed;
 			sourceTree = "<group>";
@@ -618,6 +654,7 @@
 				FA2D5FF22054191D00C2FE53 /* gif_two.gif in Resources */,
 				FA2D5FD52053AAF900C2FE53 /* Assets.xcassets in Resources */,
 				FA2D5FF62054191D00C2FE53 /* loading_animation-iphone-game-design-ramotion.gif in Resources */,
+				D4155BC720C81CB70017D93A /* Home.storyboard in Resources */,
 				FA2D5FF32054191D00C2FE53 /* gdsgdfsg.gif in Resources */,
 				FA2D5FF12054191D00C2FE53 /* sgsgd.gif in Resources */,
 				A6E1B8D220623ABC00FE580B /* iTunesArtwork@3x.png in Resources */,
@@ -696,6 +733,7 @@
 				A68943642058DB9C00CE42AA /* UserTypePopUpViewController.swift in Sources */,
 				A68175B0206368F5000A6F30 /* GetChapterViewController.swift in Sources */,
 				FABAA9A2206F871200018AF3 /* PlayVideoViewController.swift in Sources */,
+				D4155BCF20C84B660017D93A /* LIUIView+Additions.swift in Sources */,
 				D496502E207DD5AF00480E7F /* TestStartViewController.swift in Sources */,
 				D4292B1C20B8B0FD0047E510 /* LIForgotPasswordViewController.swift in Sources */,
 				A628022A2056885A00A1C244 /* UserState.swift in Sources */,
@@ -739,13 +777,15 @@
 				A62802292056885A00A1C244 /* Models.swift in Sources */,
 				D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */,
 				A68F4F95205BC7AF005B8E83 /* DropdownCell.swift in Sources */,
-				D4292B1A20B895840047E510 /* LIUIColor+LIAdditions.swift in Sources */,
+				D4292B1A20B895840047E510 /* LIUIColor+Additions.swift in Sources */,
 				A6801A57206A1D09003A740F /* VideoViewController.swift in Sources */,
 				A6A5DD932057EDBB00C90569 /* YourGradeViewController.swift in Sources */,
+				D4155BCD20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift in Sources */,
 				D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */,
 				FAF05077207787B70091B710 /* GetChapterTableViewCell.swift in Sources */,
 				D474D22D207CF71200B460DA /* SampleTableViewCell.swift in Sources */,
 				A67BC471207343C80075729C /* ChangePasswordViewController.swift in Sources */,
+				D4155BCA20C82A560017D93A /* LIFeedViewController.swift in Sources */,
 				A62802302056885A00A1C244 /* R_Classes + Extensions.swift in Sources */,
 				D474D229207CEFC500B460DA /* ExcerciseTableViewCell.swift in Sources */,
 				D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */,

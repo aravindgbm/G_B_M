@@ -48,9 +48,9 @@ class SplashViewController: UIViewController {
 //                AppDelegate.getAppDelegateInstance().changeTheRootViewControllerTo(rootVC!);
 //            }
 //
-            
-            
-            self.checkAndNavigateToScreen()
+        //TODO:- Uncomment the below code and remove this
+            AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+//            self.checkAndNavigateToScreen()
             }
             
         }

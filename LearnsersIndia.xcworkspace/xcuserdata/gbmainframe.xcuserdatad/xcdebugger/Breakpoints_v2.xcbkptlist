@@ -121,61 +121,45 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
-            timestampString = "548740700.654837"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922199"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "307"
-            endingLineNumber = "307"
-            landmarkName = "callSignUpAPI()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "callGetClassAPIWith(_:success:failure:error:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "LearnsersIndia.SignUpViewController.callSignUpAPI() -&gt; ()"
-                  moduleName = "LearnsersIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
-                  timestampString = "548738613.12389"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "307"
-                  endingLineNumber = "307"
-                  offsetFromSymbolStart = "4146">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Swift.AnyObject&gt;&gt;&gt;) -&gt; () in LearnsersIndia.SignUpViewController.callSignUpAPI() -&gt; ()"
-                  moduleName = "LearnsersIndia"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
-                  timestampString = "548738613.125909"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "308"
-                  endingLineNumber = "308"
-                  offsetFromSymbolStart = "14">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "548740700.655187"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
+            timestampString = "549016671.922292"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "callSignUpAPIWith(_:success:failure:error:)"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "showDropDownAction(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/Splash/SplashViewController.swift"
+            timestampString = "549997875.624911"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "checkAndNavigateToScreen()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -186,11 +170,251 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "548740700.655435"
+            timestampString = "549016671.9224"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "callValidateOTPAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+            timestampString = "549016671.922473"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "callSubmitOTPAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/DataManagers/LIAccountManager.swift"
+            timestampString = "549016671.922543"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "shouldShowOTP()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+            timestampString = "549016671.922594"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "submitOTPButtonTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+            timestampString = "549016671.922657"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "callSubmitOTPAPI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "LearnsersIndia.LIEnterOTPViewController.callSubmitOTPAPI() -&gt; ()"
+                  moduleName = "LearnsersIndia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+                  timestampString = "549008196.699852"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "104"
+                  endingLineNumber = "104"
+                  offsetFromSymbolStart = "946">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in LearnsersIndia.LIEnterOTPViewController.callSubmitOTPAPI() -&gt; ()"
+                  moduleName = "LearnsersIndia"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gbmainframe/Desktop/LearnersIndia_AR/G_B_M/LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+                  timestampString = "549008196.701552"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
+                  offsetFromSymbolStart = "22">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922719"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "callSignInAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922783"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
+            landmarkName = "callSignInAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922848"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "169"
+            endingLineNumber = "169"
+            landmarkName = "callResendOTPAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922907"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "callValidateOTPAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.922964"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
+            landmarkName = "callSendOTPForPasswordRecoveryAPIWith(_:success:failure:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/LIEnterOTPViewController.swift"
+            timestampString = "549016671.9230191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "130"
+            endingLineNumber = "130"
+            landmarkName = "callValidateOTPForPasswordRecoveryAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/LIForgotPasswordViewController.swift"
+            timestampString = "549016671.923069"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "backButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LoginSignUp/SignUpViewController.swift"
+            timestampString = "549016671.923113"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "342"
+            endingLineNumber = "342"
+            landmarkName = "callSignUpAPI()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
+            timestampString = "549016671.923155"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "callSignUpAPIWith(_:success:failure:error:)"
             landmarkType = "7">
          </BreakpointContent>

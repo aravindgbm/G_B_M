@@ -22,8 +22,22 @@ struct LIConstants {
 struct LIViewControllerIdentifier {
     static let EnterOTPViewController = "LIEnterOTPViewController"
     static let ForgotPasswordViewController = "LIForgotPasswordViewController"
-    static let HomeNavigationController = "LIHomeNavigationController"
+//    static let HomeNavigationController = "LIHomeNavigationController"
+    static let HomeTabBarController = "LIHomeTabBarController"
     static let LoginNavigationController = "LILoginNavigationController"
     static let ResetPasswordViewController = "LIResetPasswordViewController"
+    static let FeedViewController = "LIFeedViewController"
 }
 
+struct LIStoryboards {
+    static let Main = "Main"
+    static let Home = "Home"
+}
+
+struct LIColors {
+    static let ThemeColor = "#0596CF"
+}
+
+struct LITableViewCellIdentifiers {
+    static let FeedUtilitiesCell = "feedUtilitiesCell"
+}

@@ -19,9 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UINavigationBar.appearance().barTintColor = UIColor(hexString: LIColors.ThemeColor)
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.lightGray], for: .normal)
+    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor(hexString: LIColors.ThemeColor)], for: .selected)
+        
+        UITabBar.appearance().tintColor = UIColor(hexString: LIColors.ThemeColor)
+    
         
         // Status bar color
-        UIApplication.shared.statusBarView?.backgroundColor = R_UIColor.darkColor
+//        UIApplication.shared.statusBarView?.backgroundColor = R_UIColor.darkColor
         
         // Keyboard podforKey
         IQKeyboardManager.sharedManager().enable = true
@@ -72,13 +80,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func navigateToHomeScreen() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.HomeNavigationController)
-        self.changeTheRootViewControllerTo(vc)
+        let storyBoard = UIStoryboard(name: LIStoryboards.Home, bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.HomeTabBarController) as? UITabBarController
+        vc?.selectedIndex = 1
+        self.changeTheRootViewControllerTo(vc!)
     }
     
     func navigateToTutorialScreen() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let storyBoard = UIStoryboard(name: LIStoryboards.Main, bundle: nil)
         let vc = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.LoginNavigationController)
         self.changeTheRootViewControllerTo(vc)
     }
