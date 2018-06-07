@@ -38,6 +38,5 @@ struct LIColors {
     static let ThemeColor = "#0596CF"
 }
 
-struct LITableViewCellIdentifiers {
-    static let FeedUtilitiesCell = "feedUtilitiesCell"
-}
+let screenSize = UIScreen.main.bounds.size
+

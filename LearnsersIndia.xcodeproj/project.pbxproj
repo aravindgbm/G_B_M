@@ -73,6 +73,8 @@
 		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
+		D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */; };
+		D4EEEDF920C9A240002C9808 /* LIFeedBannerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEEDF820C9A240002C9808 /* LIFeedBannerTableViewCell.swift */; };
 		FA2D5FCB2053AAF900C2FE53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D5FCA2053AAF900C2FE53 /* AppDelegate.swift */; };
 		FA2D5FCD2053AAF900C2FE53 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D5FCC2053AAF900C2FE53 /* ViewController.swift */; };
 		FA2D5FD02053AAF900C2FE53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2D5FCE2053AAF900C2FE53 /* Main.storyboard */; };
@@ -169,6 +171,8 @@
 		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
+		D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedPremiumDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		D4EEEDF820C9A240002C9808 /* LIFeedBannerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedBannerTableViewCell.swift; sourceTree = "<group>"; };
 		EE596DED71B34536121FE743 /* Pods_LearnsersIndia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LearnsersIndia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2D5FC72053AAF900C2FE53 /* LearnsersIndia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnsersIndia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2D5FCA2053AAF900C2FE53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -352,6 +356,8 @@
 			isa = PBXGroup;
 			children = (
 				D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */,
+				D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */,
+				D4EEEDF820C9A240002C9808 /* LIFeedBannerTableViewCell.swift */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -768,12 +774,14 @@
 				D496502A207DD40300480E7F /* TestsViewController.swift in Sources */,
 				A62802322056885A00A1C244 /* R_Webservice.swift in Sources */,
 				D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */,
+				D4EEEDF920C9A240002C9808 /* LIFeedBannerTableViewCell.swift in Sources */,
 				FA315860206E4ABD005282F9 /* FeedViewController.swift in Sources */,
 				FA858AE12056E2B600F9B142 /* YourBoardViewController.swift in Sources */,
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,
 				A6A5DD8F2057D8C200C90569 /* SignUpViewController.swift in Sources */,
 				D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */,
 				D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */,
+				D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */,
 				A62802292056885A00A1C244 /* Models.swift in Sources */,
 				D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */,
 				A68F4F95205BC7AF005B8E83 /* DropdownCell.swift in Sources */,

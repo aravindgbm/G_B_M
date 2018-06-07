@@ -18,7 +18,12 @@ class SplashViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool)
     {
-         setupTimer()
+//         setupTimer()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            //TODO:- Uncomment the below code and remove this
+            AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+//            self.checkAndNavigateToScreen()
+        }
     }
     
     func setupTimer()

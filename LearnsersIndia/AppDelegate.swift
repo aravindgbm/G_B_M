@@ -22,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(hexString: LIColors.ThemeColor)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.lightGray], for: .normal)
-    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor(hexString: LIColors.ThemeColor)], for: .selected)
+//    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.lightGray], for: .normal)
+//    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor(hexString: LIColors.ThemeColor)], for: .selected)
         
         UITabBar.appearance().tintColor = UIColor(hexString: LIColors.ThemeColor)
     

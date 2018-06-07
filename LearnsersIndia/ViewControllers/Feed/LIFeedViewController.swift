@@ -8,7 +8,21 @@
 
 import UIKit
 
+enum FeedTableviewCellTypes:Int {
+    case FeedTableviewCellTypeUtilities
+    case FeedTableviewCellTypePremiumDetails
+    case FeedTableviewCellTypeBanner
+}
+
+struct LITableViewCellIdentifiers {
+    static let FeedUtilitiesCell = "feedUtilitiesCell"
+    static let PremiumDetailsCell = "premiumDetailsCell"
+    static let FeedBannerCell = "feedBannerCell"
+}
+
+
 class LIFeedViewController: UIViewController {
+    
     @IBOutlet weak var feedTableView: UITableView!
     
     override func viewDidLoad() {
@@ -24,7 +38,10 @@ class LIFeedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        feedTableView.reloadData()
+    }
     
 
     /*
@@ -42,17 +59,24 @@ class LIFeedViewController: UIViewController {
 extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
     
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedUtilitiesCell, for: indexPath) as? LIFeedUtilitiesTableViewCell
-        return cell ?? UITableViewCell()
+        switch indexPath.row {
+        case FeedTableviewCellTypes.FeedTableviewCellTypeUtilities.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedUtilitiesCell, for: indexPath) as? LIFeedUtilitiesTableViewCell
+            return cell ?? UITableViewCell()
+        case FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.PremiumDetailsCell, for: indexPath) as? LIFeedPremiumDetailsTableViewCell
+            cell?.refreshCell()
+            return cell ?? UITableViewCell()
+        case FeedTableviewCellTypes.FeedTableviewCellTypeBanner.rawValue:
+        let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedBannerCell, for: indexPath) as? LIFeedBannerTableViewCell
+            return cell ?? UITableViewCell()
+        default:
+            return UITableViewCell()
+        }
+      
     }
 }
