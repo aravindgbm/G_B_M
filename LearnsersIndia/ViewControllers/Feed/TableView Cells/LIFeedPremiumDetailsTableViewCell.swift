@@ -15,7 +15,7 @@ class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var tryPremiumButton: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
+//        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
         // Initialization code
     }
     func refreshCell() {

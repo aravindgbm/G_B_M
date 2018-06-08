@@ -71,6 +71,9 @@
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
 		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
+		D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */; };
+		D4D8510120CB046600B01564 /* LIFeedVideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */; };
+		D4D8510420CB0B3300B01564 /* LIShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510320CB0B3300B01564 /* LIShadowView.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
 		D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */; };
@@ -169,6 +172,9 @@
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
 		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
+		D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosTableViewCell.swift; sourceTree = "<group>"; };
+		D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4D8510320CB0B3300B01564 /* LIShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIShadowView.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
 		D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedPremiumDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -358,6 +364,7 @@
 				D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */,
 				D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */,
 				D4EEEDF820C9A240002C9808 /* LIFeedBannerTableViewCell.swift */,
+				D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 		D482B9AA20B1DCA300DAB90E /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D4D8510220CB0B1700B01564 /* Views */,
 				D474C9CC20B4FEFE0031ED1D /* Extensions */,
 				D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */,
 				D4A164F820B48010000459CF /* LIUtilities.swift */,
@@ -450,6 +458,22 @@
 				D4C560F5207F1D63003C9762 /* AskViewController.swift */,
 			);
 			path = Ask;
+			sourceTree = "<group>";
+		};
+		D4D850FF20CB045000B01564 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		D4D8510220CB0B1700B01564 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4D8510320CB0B3300B01564 /* LIShadowView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D4E8C4FA20B3446200E0D770 /* RootNavigationControllers */ = {
@@ -555,6 +579,7 @@
 		FAF05073207786BB0091B710 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				D4D850FF20CB045000B01564 /* CollectionViewCell */,
 				D4155BCB20C849550017D93A /* TableView Cells */,
 				D4155BC820C82A370017D93A /* Old */,
 				D4155BC920C82A560017D93A /* LIFeedViewController.swift */,
@@ -765,6 +790,7 @@
 				D46F7B2720B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift in Sources */,
 				D474D22B207CF1EC00B460DA /* SampleExcerciseViewController.swift in Sources */,
 				FA2D5FD32053AAF900C2FE53 /* LearnsersIndia.xcdatamodeld in Sources */,
+				D4D8510120CB046600B01564 /* LIFeedVideosCollectionViewCell.swift in Sources */,
 				D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */,
 				D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */,
 				A628022B2056885A00A1C244 /* ActivityIndicator.swift in Sources */,
@@ -783,6 +809,7 @@
 				D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */,
 				D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */,
 				A62802292056885A00A1C244 /* Models.swift in Sources */,
+				D4D8510420CB0B3300B01564 /* LIShadowView.swift in Sources */,
 				D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */,
 				A68F4F95205BC7AF005B8E83 /* DropdownCell.swift in Sources */,
 				D4292B1A20B895840047E510 /* LIUIColor+Additions.swift in Sources */,
@@ -792,6 +819,7 @@
 				D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */,
 				FAF05077207787B70091B710 /* GetChapterTableViewCell.swift in Sources */,
 				D474D22D207CF71200B460DA /* SampleTableViewCell.swift in Sources */,
+				D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */,
 				A67BC471207343C80075729C /* ChangePasswordViewController.swift in Sources */,
 				D4155BCA20C82A560017D93A /* LIFeedViewController.swift in Sources */,
 				A62802302056885A00A1C244 /* R_Classes + Extensions.swift in Sources */,

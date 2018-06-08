@@ -13,7 +13,7 @@ class LIFeedUtilitiesTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
+//        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
         // Initialization code
     }
     @IBAction func videosButtonTapped(_ sender: Any) {

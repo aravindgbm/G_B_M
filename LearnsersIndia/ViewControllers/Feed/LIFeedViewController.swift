@@ -12,12 +12,14 @@ enum FeedTableviewCellTypes:Int {
     case FeedTableviewCellTypeUtilities
     case FeedTableviewCellTypePremiumDetails
     case FeedTableviewCellTypeBanner
+    case FeedTableviewCellTypeVideos
 }
 
 struct LITableViewCellIdentifiers {
     static let FeedUtilitiesCell = "feedUtilitiesCell"
     static let PremiumDetailsCell = "premiumDetailsCell"
     static let FeedBannerCell = "feedBannerCell"
+    static let FeedVideoCell = "feedVideosTableViewCell"
 }
 
 
@@ -59,7 +61,7 @@ class LIFeedViewController: UIViewController {
 extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -74,6 +76,10 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
         case FeedTableviewCellTypes.FeedTableviewCellTypeBanner.rawValue:
         let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedBannerCell, for: indexPath) as? LIFeedBannerTableViewCell
             return cell ?? UITableViewCell()
+        case FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIFeedVideosTableViewCell
+            return cell ?? UITableViewCell()
+            
         default:
             return UITableViewCell()
         }
