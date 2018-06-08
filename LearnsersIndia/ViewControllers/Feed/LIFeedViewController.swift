@@ -13,13 +13,16 @@ enum FeedTableviewCellTypes:Int {
     case FeedTableviewCellTypePremiumDetails
     case FeedTableviewCellTypeBanner
     case FeedTableviewCellTypeVideos
+    case FeedTableviewCellTypeRecommendedQuestions
 }
 
-struct LITableViewCellIdentifiers {
+struct LIFeedTableViewCellIdentifiers {
     static let FeedUtilitiesCell = "feedUtilitiesCell"
     static let PremiumDetailsCell = "premiumDetailsCell"
     static let FeedBannerCell = "feedBannerCell"
     static let FeedVideoCell = "feedVideosTableViewCell"
+    static let FeedRecommendedQuestionsCell = "feedRecommendedQuestionsCell"
+    static let FeedQuestionsCell = "feedQuestionsCell"
 }
 
 
@@ -61,26 +64,32 @@ class LIFeedViewController: UIViewController {
 extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return 8
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case FeedTableviewCellTypes.FeedTableviewCellTypeUtilities.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedUtilitiesCell, for: indexPath) as? LIFeedUtilitiesTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedUtilitiesCell, for: indexPath) as? LIFeedUtilitiesTableViewCell
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.PremiumDetailsCell, for: indexPath) as? LIFeedPremiumDetailsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.PremiumDetailsCell, for: indexPath) as? LIFeedPremiumDetailsTableViewCell
             cell?.refreshCell()
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeBanner.rawValue:
-        let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedBannerCell, for: indexPath) as? LIFeedBannerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedBannerCell, for: indexPath) as? LIFeedBannerTableViewCell
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LITableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIFeedVideosTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIFeedVideosTableViewCell
             return cell ?? UITableViewCell()
-            
+        case FeedTableviewCellTypes.FeedTableviewCellTypeRecommendedQuestions.rawValue:
+            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedRecommendedQuestionsCell, for: indexPath) as? LIFeedRecommendedQuestionsTableViewCell
+            return cell ?? UITableViewCell()
         default:
+            if indexPath.row > FeedTableviewCellTypes.FeedTableviewCellTypeRecommendedQuestions.rawValue {
+                let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedQuestionsCell, for: indexPath) as? LIFeedQuestionsTableViewCell
+                return cell!
+            }
             return UITableViewCell()
         }
       

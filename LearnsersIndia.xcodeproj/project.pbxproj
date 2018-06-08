@@ -74,6 +74,8 @@
 		D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */; };
 		D4D8510120CB046600B01564 /* LIFeedVideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */; };
 		D4D8510420CB0B3300B01564 /* LIShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510320CB0B3300B01564 /* LIShadowView.swift */; };
+		D4D8510620CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510520CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift */; };
+		D4D8510820CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510720CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
 		D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */; };
@@ -175,6 +177,8 @@
 		D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosTableViewCell.swift; sourceTree = "<group>"; };
 		D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4D8510320CB0B3300B01564 /* LIShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIShadowView.swift; sourceTree = "<group>"; };
+		D4D8510520CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedRecommendedQuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		D4D8510720CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
 		D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedPremiumDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -365,6 +369,8 @@
 				D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */,
 				D4EEEDF820C9A240002C9808 /* LIFeedBannerTableViewCell.swift */,
 				D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */,
+				D4D8510520CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift */,
+				D4D8510720CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -778,6 +784,7 @@
 				FA2D5FE22053B7EF00C2FE53 /* TutorialScreenCollectionViewCell.swift in Sources */,
 				FAEBA09720709821002F4EFC /* EditProfileViewController.swift in Sources */,
 				D474D21E207C643B00B460DA /* SessionvideoCollectionViewCell.swift in Sources */,
+				D4D8510820CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift in Sources */,
 				D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */,
 				A628022F2056885A00A1C244 /* Model.swift in Sources */,
 				D496502C207DD4E900480E7F /* TestsTableViewCell.swift in Sources */,
@@ -793,6 +800,7 @@
 				D4D8510120CB046600B01564 /* LIFeedVideosCollectionViewCell.swift in Sources */,
 				D474D220207C644F00B460DA /* SessionVideoTableViewCell.swift in Sources */,
 				D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */,
+				D4D8510620CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift in Sources */,
 				A628022B2056885A00A1C244 /* ActivityIndicator.swift in Sources */,
 				D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */,
 				D4965030207DE1DE00480E7F /* TestPaperViewController.swift in Sources */,
