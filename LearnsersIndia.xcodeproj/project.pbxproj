@@ -76,6 +76,8 @@
 		D4D8510420CB0B3300B01564 /* LIShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510320CB0B3300B01564 /* LIShadowView.swift */; };
 		D4D8510620CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510520CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift */; };
 		D4D8510820CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510720CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift */; };
+		D4E0EC5720CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0EC5620CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift */; };
+		D4E0EC5920CBB0BA00DAD519 /* LIVideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E0EC5820CBB0BA00DAD519 /* LIVideoModel.swift */; };
 		D4E8C4F920B3419D00E0D770 /* LIAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */; };
 		D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */; };
 		D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */; };
@@ -179,6 +181,8 @@
 		D4D8510320CB0B3300B01564 /* LIShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIShadowView.swift; sourceTree = "<group>"; };
 		D4D8510520CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedRecommendedQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		D4D8510720CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedQuestionsTableViewCell.swift; sourceTree = "<group>"; };
+		D4E0EC5620CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserStudentAPIsHandler.swift; sourceTree = "<group>"; };
+		D4E0EC5820CBB0BA00DAD519 /* LIVideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIVideoModel.swift; sourceTree = "<group>"; };
 		D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIClient.swift; sourceTree = "<group>"; };
 		D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAccountManager.swift; sourceTree = "<group>"; };
 		D4EEEDF620C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedPremiumDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -388,6 +392,7 @@
 			isa = PBXGroup;
 			children = (
 				D46F7B2620B3643900EBDEE4 /* LIAuthenticationAPIsHandler.swift */,
+				D4E0EC5620CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift */,
 			);
 			path = "API Handlers";
 			sourceTree = "<group>";
@@ -413,14 +418,6 @@
 				D474D224207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift */,
 			);
 			path = Excercise;
-			sourceTree = "<group>";
-		};
-		D482B9A320B1DAD600DAB90E /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		D482B9AA20B1DCA300DAB90E /* Utilities */ = {
@@ -482,6 +479,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		D4E0EC5A20CBB0CD00DAD519 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */,
+				D4E0EC5820CBB0BA00DAD519 /* LIVideoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		D4E8C4FA20B3446200E0D770 /* RootNavigationControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,10 +524,10 @@
 		FA2D5FC92053AAF900C2FE53 /* LearnsersIndia */ = {
 			isa = PBXGroup;
 			children = (
+				D4E0EC5A20CBB0CD00DAD519 /* Model */,
 				D4155BC520C81C6F0017D93A /* Storyboard */,
 				D4E8C4FB20B3460300E0D770 /* DataManagers */,
 				D482B9AA20B1DCA300DAB90E /* Utilities */,
-				D482B9A320B1DAD600DAB90E /* Models */,
 				A6E1B8CD20623AB800FE580B /* iTunesArtwork@1x.png */,
 				A6E1B8CE20623AB900FE580B /* iTunesArtwork@2x.png */,
 				A6E1B8CF20623ABA00FE580B /* iTunesArtwork@3x.png */,
@@ -771,6 +777,7 @@
 				A68175B0206368F5000A6F30 /* GetChapterViewController.swift in Sources */,
 				FABAA9A2206F871200018AF3 /* PlayVideoViewController.swift in Sources */,
 				D4155BCF20C84B660017D93A /* LIUIView+Additions.swift in Sources */,
+				D4E0EC5920CBB0BA00DAD519 /* LIVideoModel.swift in Sources */,
 				D496502E207DD5AF00480E7F /* TestStartViewController.swift in Sources */,
 				D4292B1C20B8B0FD0047E510 /* LIForgotPasswordViewController.swift in Sources */,
 				A628022A2056885A00A1C244 /* UserState.swift in Sources */,
@@ -809,6 +816,7 @@
 				A62802322056885A00A1C244 /* R_Webservice.swift in Sources */,
 				D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */,
 				D4EEEDF920C9A240002C9808 /* LIFeedBannerTableViewCell.swift in Sources */,
+				D4E0EC5720CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift in Sources */,
 				FA315860206E4ABD005282F9 /* FeedViewController.swift in Sources */,
 				FA858AE12056E2B600F9B142 /* YourBoardViewController.swift in Sources */,
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,

@@ -30,6 +30,8 @@ struct LIAPIURL{
     static let sendOTPForPasswordRecoveryURL = "send-otp-student-password-recovery"
     static let validateOTPForPasswordRecoveryURL = "validate-otp-student-password-recovery"
     static let resetPasswordURL = "reset-password-student"
+    static let getDemoVideosURL = "get-free-videos"
+    static let getRecommendedQuestionsURL = "reccomented-questions"
 }
 
 struct LIAPIResponseKeys {

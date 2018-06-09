@@ -32,9 +32,10 @@ class LIFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Class 8"
+        self.navigationItem.title = LIAccountManager.sharedInstance.getLoggedInUser()?.gradeName
         self.feedTableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.feedTableView.rowHeight = UITableViewAutomaticDimension
+        self.callGetDemoVideosApi()
         // Do any additional setup after loading the view.
     }
 
@@ -59,6 +60,25 @@ class LIFeedViewController: UIViewController {
     }
     */
 
+}
+
+extension LIFeedViewController {
+    func callGetRecommendedQuestionsApi() {
+        
+    }
+    
+    func callGetDemoVideosApi(){
+        let paramters = ["syl_id":1,   //selectedBoardID,
+            "class_id":10,     //selectedCls_id,
+            "sub_id":1] as [String : Any]
+        LIUserStudentAPIsHandler.callGetDemoVideosAPIWith(paramters, shouldAddToken: true, success: { (response) in
+            
+        }, failure: { (response) in
+            
+        }) { (error) in
+            
+        }
+    }
 }
 
 extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {

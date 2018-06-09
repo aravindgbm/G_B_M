@@ -21,8 +21,8 @@ class SplashViewController: UIViewController {
 //         setupTimer()
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
             //TODO:- Uncomment the below code and remove this
-            AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
-//            self.checkAndNavigateToScreen()
+//            AppDelegate.getAppDelegateInstance().navigateToHomeScreen()
+            self.checkAndNavigateToScreen()
         }
     }
     

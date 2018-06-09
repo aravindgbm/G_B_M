@@ -26,7 +26,7 @@ class LIAPIClient: NSObject {
         return header
     }
     
-    func callRequest(_ requestParams:[String:AnyObject]?, httpMethod:HTTPMethod, shouldAddParams:Bool,urlString:String,shouldAddHeaderParams:Bool, successBlock:
+    func callRequest(_ requestParams:[String:Any]?, httpMethod:HTTPMethod, shouldAddParams:Bool,urlString:String,shouldAddHeaderParams:Bool, successBlock:
         (([String:AnyObject]?) -> Void)?,failureBlock: (([String:AnyObject]?) ->Void)?, errorBlock:@escaping ((Error)?) ->Void) {
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
