@@ -39,6 +39,7 @@ struct LIAPIResponseKeys {
     static let responseData = "response_data"
     static let responseType = "response_type"
     static let responseText = "response_text"
+    static let videoData = "video_data"
 }
 struct LIAPIRequestKeys {
     static let token = "tocken"

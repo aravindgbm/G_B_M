@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVKit
 enum FeedTableviewCellTypes:Int {
     case FeedTableviewCellTypeUtilities
     case FeedTableviewCellTypePremiumDetails
@@ -29,13 +29,13 @@ struct LIFeedTableViewCellIdentifiers {
 class LIFeedViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView!
-    
+    var demoVideosArray:[LIVideoModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = LIAccountManager.sharedInstance.getLoggedInUser()?.gradeName
         self.feedTableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.feedTableView.rowHeight = UITableViewAutomaticDimension
-        self.callGetDemoVideosApi()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -46,6 +46,7 @@ class LIFeedViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.callGetDemoVideosApi()
         feedTableView.reloadData()
     }
     
@@ -68,15 +69,37 @@ extension LIFeedViewController {
     }
     
     func callGetDemoVideosApi(){
-        let paramters = ["syl_id":1,   //selectedBoardID,
-            "class_id":10,     //selectedCls_id,
-            "sub_id":1] as [String : Any]
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
+        let paramters = ["syl_id":loggedInUser?.syllabusId ?? 0,   //selectedBoardID,
+            "class_id":loggedInUser?.classId ?? 0,
+            "sub_id":1] as [String : Any] //"sub_id":1
         LIUserStudentAPIsHandler.callGetDemoVideosAPIWith(paramters, shouldAddToken: true, success: { (response) in
-            
-        }, failure: { (response) in
-            
+            ActivityIndicator.dismissActivityView()
+            if let _ = response {
+                self.demoVideosArray = response
+                self.feedTableView.reloadData()
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
         }) { (error) in
-            
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
+    }
+}
+
+extension LIFeedViewController:feedVideosCellDelegate {
+    func playVideoWithUrl(_ videoUrl: URL) {
+        let player = AVPlayer(url: videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
         }
     }
 }
@@ -101,6 +124,8 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIFeedVideosTableViewCell
+            cell?.refreshCellWith(self.demoVideosArray)
+            cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeRecommendedQuestions.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedRecommendedQuestionsCell, for: indexPath) as? LIFeedRecommendedQuestionsTableViewCell
