@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol feedBannerCellDelegate:class {
+    func shareAppDetails()
+}
+
 class LIFeedBannerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
+    var delegate:feedBannerCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
@@ -23,6 +28,7 @@ class LIFeedBannerTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func shareButtonTapped(_ sender: Any) {
+        self.delegate?.shareAppDetails()
     }
     
 }

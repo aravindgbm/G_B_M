@@ -19,20 +19,7 @@
         var videoId:Int?
         var videoUrl:String?
         var videoThumbnailUrl:String?
-        //    "" = "<null>";
-        //    "sub_id" = 1;
-        //     = Maths;
-        //    "syl_id" = 1;
-        //     = "Euclid's Division Lemma";
-        //    "ved_category" = free;
-        //    "" = "Class 10\\\\\\\\\\\\\\\\r\\\\\\\\\\\\\\\\nChapter 1\\\\\\\\\\\\\\\\r\\\\\\\\\\\\\\\\nReal Numbers";
-        //    "" = 253;
-        //    "ved_tags" = "Real Numbers,Class 10 Chapter 1,Euclid\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\'s division algorithm";
-        //    "" = "Euclid\\'s division algorithm";
-        //    "ved_type" = vimeo;
-        //    "ved_url" = "https://vimeo.com/265716071";
-        //    "video_id" = "";
-        //    "video_image" = "http://i.vimeocdn.com/video/695797588_640.jpg";
+
         
         convenience init?(_ response:[String:Any]?) {
             self.init()
