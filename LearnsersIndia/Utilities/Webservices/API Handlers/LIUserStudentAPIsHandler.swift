@@ -96,7 +96,7 @@ class LIUserStudentAPIsHandler: NSObject {
             if let reponseDict = response {
                 if let paymentStatus = reponseDict["payment_status"] as? String {
                     let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
-                    loggedInUser?.isPaidUser = paymentStatus == LIConstants.unPaidUserStatus
+                    loggedInUser?.isPaidUser = paymentStatus == LIConstants.paidUserStatus
                     LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
                 }
             }
