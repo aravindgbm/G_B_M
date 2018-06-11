@@ -96,11 +96,44 @@ class LIUserStudentAPIsHandler: NSObject {
             if let reponseDict = response {
                 if let paymentStatus = reponseDict["payment_status"] as? String {
                     let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
-                    loggedInUser?.isPaidUser = paymentStatus == LIConstants.paidUserStatus
+                    loggedInUser?.isPaidUser = paymentStatus == LIConstants.unPaidUserStatus
                     LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
                 }
             }
             success()
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callGetUserProfileAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((LIUserModel?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getUserProfile, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let userData = reponseDict[LIAPIResponseKeys.userData] as? [String:AnyObject] {
+                    let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
+                    loggedInUser?.updateUserObjectWith(userData)
+                    LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                    success(loggedInUser)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
         }, failureBlock: { (response) in
             if let responseDict = response {
                 failure(responseDict[LIAPIResponseKeys.responseText] as? String)

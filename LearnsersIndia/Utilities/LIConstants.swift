@@ -27,6 +27,7 @@ struct LIViewControllerIdentifier {
     static let LoginNavigationController = "LILoginNavigationController"
     static let ResetPasswordViewController = "LIResetPasswordViewController"
     static let FeedViewController = "LIFeedViewController"
+    static let ProfileViewController  = "LIProfileViewController"
 }
 
 struct LIStoryboards {
@@ -36,6 +37,10 @@ struct LIStoryboards {
 
 struct LIColors {
     static let ThemeColor = "#0596CF"
+}
+
+struct LIUserTypes {
+    static let Student = "student"
 }
 
 let screenSize = UIScreen.main.bounds.size
