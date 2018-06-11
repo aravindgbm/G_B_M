@@ -41,6 +41,11 @@ class LIUtilities: NSObject {
         view.layer.borderWidth = 1.0
     }
     
+    class func setBorderColor(_ color:UIColor,with borderWidth:CGFloat,For view:UIView) {
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = borderWidth
+    }
+    
     class func getQuestionAskedTextWith(_ subject:String?,timestamp:String?) -> String? {
         if let _ = timestamp {
             let doubleTimestamp = Double(timestamp!)

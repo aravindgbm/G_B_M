@@ -72,6 +72,7 @@
 		D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965033207E353E00480E7F /* TestFinalViewController.swift */; };
 		D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */; };
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
+		D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
 		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
 		D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */; };
@@ -181,6 +182,7 @@
 		D4965033207E353E00480E7F /* TestFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFinalViewController.swift; sourceTree = "<group>"; };
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
+		D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileItem.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
 		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
 		D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosTableViewCell.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */,
 				D4E0EC5820CBB0BA00DAD519 /* LIVideoModel.swift */,
 				D4E1700F20CD1F8700BDD90F /* LIQuestionsModel.swift */,
+				D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -816,6 +819,7 @@
 				A6A5DD8B2057CC4200C90569 /* LoginViewController.swift in Sources */,
 				A6769E2D2068CDEA004D8DA7 /* ProfileViewController.swift in Sources */,
 				D4292B1520B8822F0047E510 /* VPMOTPTextField.swift in Sources */,
+				D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */,
 				A628022E2056885A00A1C244 /* Common.swift in Sources */,
 				FAF0506E2077859D0091B710 /* SessionVideoViewController.swift in Sources */,
 				FA2D5FE22053B7EF00C2FE53 /* TutorialScreenCollectionViewCell.swift in Sources */,

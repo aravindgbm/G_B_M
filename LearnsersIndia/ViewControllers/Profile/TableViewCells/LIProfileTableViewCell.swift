@@ -9,7 +9,12 @@
 import UIKit
 
 class LIProfileTableViewCell: UITableViewCell {
-
+    var profileItem:LIProfileItem?
+   
+    @IBOutlet weak var profileItemTitleLabel: UILabel!
+    @IBOutlet weak var profileItemImageView: UIImageView!
+    
+    @IBOutlet weak var separatorView: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +26,12 @@ class LIProfileTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func refreshCellWith(_ item:LIProfileItem?){
+        self.profileItem = item
+        self.profileItemImageView.image = self.profileItem?.itemIcon
+        self.profileItemTitleLabel.text = self.profileItem?.itemTitle
+        self.separatorView.isHidden = self.profileItem?.profileItemType == LIProfileItemType.LIProfileItemTypeLogout
+        self.profileItemTitleLabel.textColor = self.profileItem?.profileItemType == LIProfileItemType.LIProfileItemTypeLogout ? UIColor(hexString: LIColors.LogoutLabelTextColor) : UIColor.black
+        
+    }
 }

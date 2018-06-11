@@ -18,6 +18,9 @@ class LIProfileViewController: UIViewController {
     @IBOutlet weak var userGradeLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
+    var profileItemsArray:[LIProfileItem]?
+    var editProfileItemsArray:[LIProfileItem]?
+    var isEditProfileSreen = false
     let profileCellIdentifier = "profileCell"
     let paidUserlabelText = "You are a premium member"
     let unpaidUserlabelText = "Unlock the rest of the list with premium"
@@ -27,6 +30,7 @@ class LIProfileViewController: UIViewController {
 //        self.profileScrollView.delegate = self
         self.callGetUserProfileApi()
         self.refreshSubViews()
+        self.initialiseProfileItems()
         // Do any additional setup after loading the view.
     }
 
@@ -38,6 +42,7 @@ class LIProfileViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.callGetPaidStatusApi()
+        self.updateNavigationBarAppearance()
     }
 
     /*
@@ -51,9 +56,25 @@ class LIProfileViewController: UIViewController {
     */
     //MARK:- Adjust Views
     func refreshSubViews(){
-        LIUtilities.setBorderColor(.white, For: self.profileImageContainerView)
+        LIUtilities.setBorderColor(.white, with: 2.0, For: self.profileImageContainerView)
+//        LIUtilities.setBorderColor(.white, For: self.profileImageContainerView)
     }
     
+    func updateNavigationBarAppearance() {
+        if self.isEditProfileSreen {
+            self.navigationController?.setNavigationBarHidden(false, animated: true)
+            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationController?.navigationBar.shadowImage = UIImage()
+            self.navigationController?.navigationBar.isTranslucent = true
+            let backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
+            self.navigationItem.leftBarButtonItem = backBarButtonItem
+            //            self.navigationController?.navigationItem.setLeftBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: nil), animated: true)
+        }
+        else {
+              self.navigationController?.setNavigationBarHidden(true, animated: true)
+        }
+        self.profileScrollView.scrollsToTop = true
+    }
     func updateValues(){
         
         self.profileImage.setImageWith(self.loggedInUser?.profilePicUrl, and: #imageLiteral(resourceName: "character_white_bg"))
@@ -79,46 +100,122 @@ class LIProfileViewController: UIViewController {
         self.premiumDetailsLabel.text = isPaidUser != nil && isPaidUser == true ? self.paidUserlabelText : self.unpaidUserlabelText
     }
     
+    //MARK:- Initialise Profile Items
+    
+    func initialiseProfileItems(){
+        if self.profileItemsArray == nil {
+            self.profileItemsArray = [LIProfileItem]()
+            let profileItemEdit = LIProfileItem(LIProfileItemIcons.Profile, title: LIProfileItemTitles.Profile, type: LIProfileItemType.LIProfileItemTypeEditProfile)
+            self.profileItemsArray?.append(profileItemEdit)
+            
+            let profileItemQuestions = LIProfileItem(LIProfileItemIcons.Questions, title: LIProfileItemTitles.Questions, type: LIProfileItemType.LIProfileItemTypeQuestions)
+            self.profileItemsArray?.append(profileItemQuestions)
+            
+            let profileItemVideos = LIProfileItem(LIProfileItemIcons.Videos, title: LIProfileItemTitles.Videos, type: LIProfileItemType.LIProfileItemTypeVideos)
+            self.profileItemsArray?.append(profileItemVideos)
+            
+            let profileItemCallUs = LIProfileItem(LIProfileItemIcons.CallUs, title: LIProfileItemTitles.CallUs, type: LIProfileItemType.LIProfileItemTypeCallUs)
+            self.profileItemsArray?.append(profileItemCallUs)
+            
+            let profileItemLogout = LIProfileItem(LIProfileItemIcons.Logout, title: LIProfileItemTitles.Logout, type: LIProfileItemType.LIProfileItemTypeLogout)
+            self.profileItemsArray?.append(profileItemLogout)
+            
+            self.profileTableView.reloadData()
+        }
+    }
+    
+    func initialiseEditProfileItems(){
+        self.editProfileItemsArray = [LIProfileItem]()
+        
+        let profileItemPhone = LIProfileItem(LIProfileItemIcons.CallUs, title: self.loggedInUser?.phonenumber, type: LIProfileItemType.LIProfileItemTypePhoneNumber)
+        self.editProfileItemsArray?.append(profileItemPhone)
+        
+        let profileItemEmail = LIProfileItem(LIProfileItemIcons.Email, title: self.loggedInUser?.email, type: LIProfileItemType.LIProfileItemTypeEmail)
+        self.editProfileItemsArray?.append(profileItemEmail)
+        
+        let profileItemAddress = LIProfileItem(LIProfileItemIcons.Address, title: self.loggedInUser?.address, type: LIProfileItemType.LIProfileItemTypeAddress)
+        self.editProfileItemsArray?.append(profileItemAddress)
+        
+        let profileItemDob = LIProfileItem(LIProfileItemIcons.DateOfBirth, title: self.loggedInUser?.dateOfBirth, type: LIProfileItemType.LIProfileItemTypeDateOfBirth)
+        self.editProfileItemsArray?.append(profileItemDob)
+    }
     //MARK:- IBActions
     @IBAction func premiumButtonTapped(_ sender: Any) {
         
     }
+    //MARK:- Navigations
     
+    @objc func backButtonTapped(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func navigateToProfileEditScreen(){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let profileVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ProfileViewController) as? LIProfileViewController
+        profileVC?.isEditProfileSreen = true
+        profileVC?.editProfileItemsArray = self.editProfileItemsArray
+        self.navigationController?.pushViewController(profileVC!, animated: true)
+    }
 }
 
-extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource,UIScrollViewDelegate {
+extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if self.isEditProfileSreen {
+            return self.editProfileItemsArray?.count ?? 0
+        }
+        else {
+            return self.profileItemsArray?.count ?? 0
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: profileCellIdentifier, for: indexPath) as? LIProfileTableViewCell
+        let profileItem = self.isEditProfileSreen ? self.editProfileItemsArray?[indexPath.row] : self.profileItemsArray?[indexPath.row]
+        cell?.refreshCellWith(profileItem)
         return cell!
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if self.isEditProfileSreen {
+            
+        }
+        else {
+            let profileItem = self.profileItemsArray?[indexPath.row]
+            switch profileItem?.profileItemType {
+            case LIProfileItemType.LIProfileItemTypeEditProfile?:
+                self.navigateToProfileEditScreen()
+                break
+            default:
+                break
+            }
+        }
+    }
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        scrollView.bounces = scrollView.contentOffset.y > 100.0
-//    }
+
 }
 
 extension LIProfileViewController {
     
     func callGetUserProfileApi(){
         let parameters:[String:Any] = ["usertype":LIUserTypes.Student]
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
         LIUserStudentAPIsHandler.callGetUserProfileAPIWith(parameters, shouldAddToken: true, success: { (response) in
+            ActivityIndicator.dismissActivityView()
             if let userObject = response {
                 self.loggedInUser = userObject
                 self.updateValues()
+                self.initialiseEditProfileItems()
+                
             }
             else {
+                
                 LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
             }
         }, failure: { (responseMessage) in
             
-            //            ActivityIndicator.dismissActivityView()
+            ActivityIndicator.dismissActivityView()
             LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
         }) { (error) in
 
-//            ActivityIndicator.dismissActivityView()
+            ActivityIndicator.dismissActivityView()
             LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     
