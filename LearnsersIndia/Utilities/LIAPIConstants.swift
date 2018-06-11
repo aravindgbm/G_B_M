@@ -17,6 +17,7 @@ public let HTTP_STATUS_UNAUTHORIZED    = 401
 public let HTTP_STATUS_BAD_REQUEST     = 400
 //public let LIBaseUrlString = "https://appapi.learnersindia.com/"
 public let LIBaseUrlString = "http://apistaging.learnersindia.com/"
+public let LIImageBaseUrlString = "https://www.learnersindia.com/"
 
 struct LIAPIURL{
     static let signUpURL = "signup"
@@ -30,6 +31,9 @@ struct LIAPIURL{
     static let sendOTPForPasswordRecoveryURL = "send-otp-student-password-recovery"
     static let validateOTPForPasswordRecoveryURL = "validate-otp-student-password-recovery"
     static let resetPasswordURL = "reset-password-student"
+    static let getDemoVideosURL = "get-free-videos"
+    static let getRecommendedQuestionsURL = "reccomented-questions"
+    static let checkPaidStatus = "check-paid-status"
 }
 
 struct LIAPIResponseKeys {
@@ -37,6 +41,8 @@ struct LIAPIResponseKeys {
     static let responseData = "response_data"
     static let responseType = "response_type"
     static let responseText = "response_text"
+    static let videoData = "video_data"
+    static let questionsData = "questions_data"
 }
 struct LIAPIRequestKeys {
     static let token = "tocken"

@@ -41,4 +41,17 @@ class LIUtilities: NSObject {
         view.layer.borderWidth = 1.0
     }
     
+    class func getQuestionAskedTextWith(_ subject:String?,timestamp:String?) -> String? {
+        if let _ = timestamp {
+            let doubleTimestamp = Double(timestamp!)
+            if let _ = doubleTimestamp {
+                let date = Date(timeIntervalSince1970: doubleTimestamp!)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy"
+                let stringDate = dateFormatter.string(from: date)
+                return "Asked in \(subject ?? "") on \(stringDate)"
+            }
+        }
+        return nil
+    }
 }
