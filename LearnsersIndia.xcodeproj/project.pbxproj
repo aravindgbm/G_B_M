@@ -74,6 +74,8 @@
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
+		D4D06C1020CF72DD00FE572C /* LIQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */; };
+		D4D06C1320CF731A00FE572C /* LIQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D06C1220CF731A00FE572C /* LIQuestionsTableViewCell.swift */; };
 		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
 		D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */; };
 		D4D8510120CB046600B01564 /* LIFeedVideosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */; };
@@ -184,6 +186,8 @@
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileItem.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
+		D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIQuestionsViewController.swift; sourceTree = "<group>"; };
+		D4D06C1220CF731A00FE572C /* LIQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
 		D4D850FD20CB034500B01564 /* LIFeedVideosTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosTableViewCell.swift; sourceTree = "<group>"; };
 		D4D8510020CB046600B01564 /* LIFeedVideosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedVideosCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -327,7 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E8C4FA20B3446200E0D770 /* RootNavigationControllers */,
-				D4C560F4207F1D41003C9762 /* Ask */,
+				D4C560F4207F1D41003C9762 /* Ask & Ans */,
 				D4965028207DD3E700480E7F /* Tests */,
 				D474D221207CD03200B460DA /* Excercise */,
 				FAF0506F207786180091B710 /* Splash */,
@@ -483,12 +487,30 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		D4C560F4207F1D41003C9762 /* Ask */ = {
+		D4C560F4207F1D41003C9762 /* Ask & Ans */ = {
+			isa = PBXGroup;
+			children = (
+				D4D06C1120CF72FF00FE572C /* Questions TableView Cells */,
+				D4D06C0E20CF72C300FE572C /* Old */,
+				D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */,
+			);
+			path = "Ask & Ans";
+			sourceTree = "<group>";
+		};
+		D4D06C0E20CF72C300FE572C /* Old */ = {
 			isa = PBXGroup;
 			children = (
 				D4C560F5207F1D63003C9762 /* AskViewController.swift */,
 			);
-			path = Ask;
+			path = Old;
+			sourceTree = "<group>";
+		};
+		D4D06C1120CF72FF00FE572C /* Questions TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4D06C1220CF731A00FE572C /* LIQuestionsTableViewCell.swift */,
+			);
+			path = "Questions TableView Cells";
 			sourceTree = "<group>";
 		};
 		D4D850FF20CB045000B01564 /* CollectionViewCell */ = {
@@ -851,6 +873,7 @@
 				D496502A207DD40300480E7F /* TestsViewController.swift in Sources */,
 				A62802322056885A00A1C244 /* R_Webservice.swift in Sources */,
 				D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */,
+				D4D06C1020CF72DD00FE572C /* LIQuestionsViewController.swift in Sources */,
 				D4EEEDF920C9A240002C9808 /* LIFeedBannerTableViewCell.swift in Sources */,
 				D4E0EC5720CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift in Sources */,
 				FA315860206E4ABD005282F9 /* FeedViewController.swift in Sources */,
@@ -871,6 +894,7 @@
 				D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */,
 				FAF05077207787B70091B710 /* GetChapterTableViewCell.swift in Sources */,
 				D474D22D207CF71200B460DA /* SampleTableViewCell.swift in Sources */,
+				D4D06C1320CF731A00FE572C /* LIQuestionsTableViewCell.swift in Sources */,
 				D4D850FE20CB034500B01564 /* LIFeedVideosTableViewCell.swift in Sources */,
 				A67BC471207343C80075729C /* ChangePasswordViewController.swift in Sources */,
 				D4155BCA20C82A560017D93A /* LIFeedViewController.swift in Sources */,

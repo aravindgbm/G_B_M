@@ -94,6 +94,7 @@ extension LIFeedViewController {
             "class_id":loggedInUser?.classId ?? 0,
             "sub_id":1] as [String : Any]
         LIUserStudentAPIsHandler.callGetRecommendedQuestionsAPIWith(paramters, shouldAddToken: true, success: { (response) in
+            ActivityIndicator.dismissActivityView()
             if let _ = response {
                 self.recommendedQuestionArray = response
                 self.feedTableView.reloadData()

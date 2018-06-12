@@ -45,15 +45,6 @@ class LIProfileViewController: UIViewController {
         self.updateNavigationBarAppearance()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     //MARK:- Adjust Views
     func refreshSubViews(){
         LIUtilities.setBorderColor(.white, with: 2.0, For: self.profileImageContainerView)
@@ -156,6 +147,13 @@ class LIProfileViewController: UIViewController {
         profileVC?.editProfileItemsArray = self.editProfileItemsArray
         self.navigationController?.pushViewController(profileVC!, animated: true)
     }
+    
+    func navigateToQuestionsScreen(){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let questionsVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.QuestionsViewController) as? LIQuestionsViewController
+        questionsVC?.isFromProfileScreen = true
+        self.navigationController?.pushViewController(questionsVC!, animated: true)
+    }
 }
 
 extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
@@ -182,6 +180,9 @@ extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
             switch profileItem?.profileItemType {
             case LIProfileItemType.LIProfileItemTypeEditProfile?:
                 self.navigateToProfileEditScreen()
+                break
+            case LIProfileItemType.LIProfileItemTypeQuestions?:
+                self.navigateToQuestionsScreen()
                 break
             default:
                 break

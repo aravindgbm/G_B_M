@@ -28,6 +28,7 @@ struct LIViewControllerIdentifier {
     static let ResetPasswordViewController = "LIResetPasswordViewController"
     static let FeedViewController = "LIFeedViewController"
     static let ProfileViewController  = "LIProfileViewController"
+    static let QuestionsViewController = "LIQuestionsViewController"
 }
 
 struct LIStoryboards {
