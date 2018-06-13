@@ -19,23 +19,35 @@ class LIShadowRoundCorneredView: UIView {
     */
     
     var shadowLayer: CAShapeLayer!
+    var shouldRefreshView:Bool = true
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         if shadowLayer == nil {
-            shadowLayer = CAShapeLayer()
-            shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
-            shadowLayer.fillColor = UIColor.white.cgColor
-            
-            shadowLayer.shadowColor = UIColor.darkGray.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.8
-            shadowLayer.shadowRadius = 2
-            
-            layer.insertSublayer(shadowLayer, at: 0)
+            self.dropShadow()
             //layer.insertSublayer(shadowLayer, below: nil) // also works
+        }
+    }
+    
+    func dropShadow(){
+        shadowLayer = CAShapeLayer()
+        shadowLayer.path = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
+        shadowLayer.fillColor = UIColor.white.cgColor
+        
+        shadowLayer.shadowColor = UIColor.darkGray.cgColor
+        shadowLayer.shadowPath = shadowLayer.path
+        shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+        shadowLayer.shadowOpacity = 0.8
+        shadowLayer.shadowRadius = 2
+        layer.insertSublayer(shadowLayer, at: 0)
+    }
+    
+    func refreshView(){
+        if shouldRefreshView && self.shadowLayer != nil {
+            self.shadowLayer.removeFromSuperlayer()
+            self.dropShadow()
+            self.shouldRefreshView = false
         }
     }
 

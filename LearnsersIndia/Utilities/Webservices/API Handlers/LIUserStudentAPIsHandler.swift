@@ -57,8 +57,8 @@ class LIUserStudentAPIsHandler: NSObject {
                 if let responseArray = responseDict[LIAPIResponseKeys.questionsData] as? [[String:AnyObject]] {
                     var questionsArray:Array<LIQuestionsModel> = Array()
                     for object in responseArray {
-                        if let videoObject = LIQuestionsModel(object) {
-                            questionsArray.append(videoObject)
+                        if let questionObject = LIQuestionsModel(object) {
+                            questionsArray.append(questionObject)
                         }
                     }
                     success(questionsArray)
@@ -145,21 +145,22 @@ class LIUserStudentAPIsHandler: NSObject {
     
     
     class func callGetChaptersAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
-        @escaping (([String:Any]?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        @escaping ((Array<LIChapterModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
         var request = requestParams
         if shouldAddToken && requestParams != nil{
             request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
         }
         LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getChaptersUrl, shouldAddHeaderParams: false, successBlock: { (response) in
             if let responseDict = response {
-                if let responseArray = responseDict[LIAPIResponseKeys.chaptersData] as? [[String:AnyObject]] {
-//                    var questionsArray:Array<LIQuestionsModel> = Array()
-//                    for object in responseArray {
-//                        if let videoObject = LIQuestionsModel(object) {
-//                            questionsArray.append(videoObject)
-//                        }
-//                    }
-                    success(responseDict)
+                if let responseArray = responseDict[LIAPIResponseKeys.chaptersData] as? [[String:Any]] {
+                    var chaptersArray:Array<LIChapterModel> = Array()
+                    for object in responseArray {
+                      
+                        if let chapterObject = LIChapterModel(object) {
+                            chaptersArray.append(chapterObject)
+                        }
+                    }
+                    success(chaptersArray)
                 }
                 else{
                     success(nil)
