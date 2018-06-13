@@ -13,7 +13,7 @@ struct LIFeedTableViewCellIdentifiers {
     static let FeedUtilitiesCell = "feedUtilitiesCell"
     static let PremiumDetailsCell = "premiumDetailsCell"
     static let FeedBannerCell = "feedBannerCell"
-    static let FeedVideoCell = "feedVideosTableViewCell"
+    static let FeedVideoCell = "videosTableViewCell"
     static let FeedRecommendedQuestionsCell = "feedRecommendedQuestionsCell"
     static let FeedQuestionsCell = "feedQuestionsCell"
 }
@@ -137,7 +137,7 @@ extension LIFeedViewController {
     }
 }
 
-extension LIFeedViewController:feedVideosCellDelegate,feedBannerCellDelegate {
+extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate {
     func playVideoWithUrl(_ videoUrl: URL) {
         let player = AVPlayer(url: videoUrl)
         let playerViewController = AVPlayerViewController()
@@ -145,6 +145,13 @@ extension LIFeedViewController:feedVideosCellDelegate,feedBannerCellDelegate {
         self.present(playerViewController, animated: true) {
             playerViewController.player?.play()
         }
+    }
+    
+    func navigateToChaptersViewControlerWith(_ chapterType: LIChapterType) {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let chaptersVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ChaptersViewController) as? LIChaptersViewController
+        chaptersVC?.chapterType = chapterType
+        self.navigationController?.pushViewController(chaptersVC!, animated: true)
     }
     
     func shareAppDetails() {
@@ -174,6 +181,7 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
         switch indexPath.row {
         case FeedTableviewCellTypes.FeedTableviewCellTypeUtilities.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedUtilitiesCell, for: indexPath) as? LIFeedUtilitiesTableViewCell
+            cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.PremiumDetailsCell, for: indexPath) as? LIFeedPremiumDetailsTableViewCell
@@ -184,8 +192,8 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
             cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue:
-            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIFeedVideosTableViewCell
-            cell?.refreshCellWith(self.demoVideosArray)
+            let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIVideosTableViewCell
+            cell?.refreshCellWith(self.demoVideosArray, and: demoVideoTitleText)
             cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeRecommendedQuestions.rawValue:

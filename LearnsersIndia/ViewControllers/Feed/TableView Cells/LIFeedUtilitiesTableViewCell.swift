@@ -7,25 +7,38 @@
 //
 
 import UIKit
-
+protocol feedUtilitiesTableViewCellDelegate:class {
+    func navigateToChaptersViewControlerWith(_ chapterType:LIChapterType)
+}
 class LIFeedUtilitiesTableViewCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
+    weak var delegate:feedUtilitiesTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
         // Initialization code
     }
     @IBAction func videosButtonTapped(_ sender: Any) {
+        self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeVideos)
+    }
+  
+    
+    @IBAction func notificationButtonTapped(_ sender: Any) {
     }
     
-    @IBOutlet weak var notificationButtonTapped: UIButton!
-    @IBOutlet weak var testButtonTapped: UIButton!
+    @IBAction func testButtonTapped(_ sender: Any) {
+         self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeTests)
+    }
+    
     @IBAction func askDoubtButtonTapped(_ sender: Any) {
     }
     @IBAction func exerciseButtonTapped(_ sender: Any) {
+        self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeExercises)
     }
-    @IBOutlet weak var gameButtonTapped: UIButton!
+  
+    @IBAction func gameButtonTapped(_ sender: Any) {
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

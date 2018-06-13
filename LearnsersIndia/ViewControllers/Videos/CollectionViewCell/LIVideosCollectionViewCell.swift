@@ -1,5 +1,5 @@
 //
-//  LIFeedVideosCollectionViewCell.swift
+//  LIVideosCollectionViewCell.swift
 //  LearnsersIndia
 //
 //  Created by GB Mainframe LLP on 09/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LIFeedVideosCollectionViewCell: UICollectionViewCell {
+class LIVideosCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgVideoThumbnail: UIImageView!
     @IBOutlet weak var videoTitleLabel: UILabel!
     var videoObject:LIVideoModel?

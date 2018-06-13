@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import AVKit
 
 class LIUtilities: NSObject {
     
@@ -59,4 +60,15 @@ class LIUtilities: NSObject {
         }
         return nil
     }
+    
+    class func playVideoWithUrl(_ videoUrl:URL, on viewController:UIViewController) {
+        
+        let player = AVPlayer(url: videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        viewController.present(playerViewController, animated: true) {
+            playerViewController.player?.play()
+        }
+    }
+    
 }

@@ -36,6 +36,7 @@ struct LIAPIURL{
     static let checkPaidStatus = "check-paid-status"
     static let getUserProfile = "get-user-profile"
     static let getChaptersUrl = "get-chapters"
+    static let getVideosUrl = "get-videos"
 }
 
 struct LIAPIResponseKeys {

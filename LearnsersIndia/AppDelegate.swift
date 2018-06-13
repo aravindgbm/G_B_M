@@ -22,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = UIColor(hexString: LIColors.ThemeColor)
         UINavigationBar.appearance().tintColor = UIColor.white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        let backImage = UIImage(named: "back")?.resizableImage(withCapInsets: UIEdgeInsetsMake(0, 0, 10.0, 0))
+        UINavigationBar.appearance().backIndicatorImage = backImage
+        UINavigationBar.appearance().backIndicatorTransitionMaskImage = backImage
+        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -80.0), for: .default)
+//        UIBarButtonItem.appearance().setBackButtonBackgroundVerticalPositionAdjustment(-5.0,
+//                                                                                       for:.default)
 //    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor.lightGray], for: .normal)
 //    UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.foregroundColor:UIColor(hexString: LIColors.ThemeColor)], for: .selected)
         

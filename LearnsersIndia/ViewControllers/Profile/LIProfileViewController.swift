@@ -157,7 +157,7 @@ class LIProfileViewController: UIViewController {
     func navigateToChaptersScreen(){
         let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
         let chaptersVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ChaptersViewController) as? LIChaptersViewController
-//        questionsVC?.isFromProfileScreen = true
+        chaptersVC?.chapterType = .LIChapterTypeVideos
         self.navigationController?.pushViewController(chaptersVC!, animated: true)
     }
     

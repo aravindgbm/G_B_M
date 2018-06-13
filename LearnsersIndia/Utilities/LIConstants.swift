@@ -30,6 +30,7 @@ struct LIViewControllerIdentifier {
     static let ProfileViewController  = "LIProfileViewController"
     static let QuestionsViewController = "LIQuestionsViewController"
     static let ChaptersViewController = "LIChaptersViewController"
+    static let VideosViewController = "LIVideosViewController"
 }
 
 struct LIStoryboards {
@@ -75,5 +76,12 @@ enum LIProfileItemType {
     case LIProfileItemTypeDateOfBirth
 }
 let screenSize = UIScreen.main.bounds.size
+let demoVideoTitleText = "Demo Videos"
+
+enum LIChapterType {
+    case LIChapterTypeVideos
+    case LIChapterTypeExercises
+    case LIChapterTypeTests
+}
 
 

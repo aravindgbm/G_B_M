@@ -8,20 +8,20 @@
 
 import UIKit
 
-protocol feedVideosCellDelegate:class {
+protocol videosTableViewCellDelegate:class {
     func playVideoWithUrl(_ videoUrl:URL)
 }
 
-class LIFeedVideosTableViewCell: UITableViewCell {
+class LIVideosTableViewCell: UITableViewCell {
 
     @IBOutlet weak var feedVideosCollectionView: UICollectionView!
-    @IBOutlet weak var videosHeaderTitle: UILabel!
+    @IBOutlet weak var videosHeaderTitleLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
     let collectionViewCellWidth = 200
     let collectionViewCellHeight = 150
-    let feedVideosCollectionViewCellIdentifier = "feedVideosCollectionViewCell"
+    let feedVideosCollectionViewCellIdentifier = "videosCollectionViewCell"
     var videoArray:[LIVideoModel]?
-    weak var delegate:feedVideosCellDelegate?
+    weak var delegate:videosTableViewCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -35,22 +35,23 @@ class LIFeedVideosTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func refreshCellWith(_ videos:[LIVideoModel]?){
+    func refreshCellWith(_ videos:[LIVideoModel]?, and topicTitle:String?){
         self.videoArray = videos
         self.feedVideosCollectionView.reloadData()
+        self.videosHeaderTitleLabel.text = topicTitle
     }
 //    feedVideosCollectionViewCell
 
 }
 
-extension LIFeedVideosTableViewCell:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+extension LIVideosTableViewCell:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     //MARK:- CollectionView Datasource and Delegate
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.videoArray?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedVideosCollectionViewCellIdentifier, for: indexPath) as? LIFeedVideosCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: feedVideosCollectionViewCellIdentifier, for: indexPath) as? LIVideosCollectionViewCell
         cell?.refreshCellWith(self.videoArray?[indexPath.row])
         return cell!
     }

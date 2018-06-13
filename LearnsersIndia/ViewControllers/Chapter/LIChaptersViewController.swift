@@ -11,7 +11,7 @@ import UIKit
 class LIChaptersViewController: UIViewController {
     static let chaptersCell = "chaptersCell"
     @IBOutlet weak var chaptersTableView: UITableView!
-    var isForVideos:Bool = true
+    var chapterType:LIChapterType = LIChapterType.LIChapterTypeVideos
     var chaptersArray:[LIChapterModel]?
     
     override func viewDidLoad() {
@@ -19,12 +19,13 @@ class LIChaptersViewController: UIViewController {
         chaptersTableView.estimatedRowHeight = 100.0
         chaptersTableView.rowHeight = UITableViewAutomaticDimension
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.callGetChaptersApi()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.callGetChaptersApi()
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -35,8 +36,16 @@ class LIChaptersViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+     // MARK: - Navigation
+    
+    func navigateToVideosViewControllerWith(_ chapter:LIChapterModel?){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let videosVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.VideosViewController) as? LIVideosViewController
+        videosVC?.chapterObject = chapter
+        self.navigationController?.pushViewController(videosVC!, animated: true)
+    }
     /*
-    // MARK: - Navigation
+  
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -65,6 +74,13 @@ extension LIChaptersViewController:UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let chapter = self.chaptersArray?[indexPath.row]
+        switch self.chapterType {
+        case .LIChapterTypeVideos:
+            self.navigateToVideosViewControllerWith(chapter)
+            break
+        default:
+            break
+        }
     }
 }
 
