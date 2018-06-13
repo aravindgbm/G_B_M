@@ -35,6 +35,7 @@ struct LIAPIURL{
     static let getRecommendedQuestionsURL = "reccomented-questions"
     static let checkPaidStatus = "check-paid-status"
     static let getUserProfile = "get-user-profile"
+    static let getChaptersUrl = "get-chapters"
 }
 
 struct LIAPIResponseKeys {
@@ -45,6 +46,7 @@ struct LIAPIResponseKeys {
     static let videoData = "video_data"
     static let questionsData = "questions_data"
     static let userData = "user_data"
+    static let chaptersData = "chapters_data"
 }
 struct LIAPIRequestKeys {
     static let token = "tocken"

@@ -28,6 +28,7 @@ class LIUserModel: NSObject,NSCoding {
     var profilePicUrl:String?
     var stateName:String?
     var studentId:NSNumber?
+    var subjectId:NSNumber? = 1
     
     required override init() {
         super.init()
@@ -54,6 +55,7 @@ class LIUserModel: NSObject,NSCoding {
         profilePicUrl = aDecoder.decodeObject(forKey: "profilePicUrl") as! String?
         stateName = aDecoder.decodeObject(forKey: "stateName") as! String?
         studentId = aDecoder.decodeObject(forKey: "studentId") as! NSNumber?
+        subjectId = aDecoder.decodeObject(forKey: "subjectId") as! NSNumber?
         
     }
     func encode(with aCoder: NSCoder) {
@@ -77,6 +79,7 @@ class LIUserModel: NSObject,NSCoding {
         aCoder.encode(profilePicUrl, forKey: "profilePicUrl")
         aCoder.encode(stateName, forKey: "stateName")
         aCoder.encode(studentId, forKey: "studentId")
+        aCoder.encode(subjectId, forKey: "subjectId")
     }
     
     func updateUserObjectWith(_ response:[String:Any]) {

@@ -29,6 +29,7 @@ struct LIViewControllerIdentifier {
     static let FeedViewController = "LIFeedViewController"
     static let ProfileViewController  = "LIProfileViewController"
     static let QuestionsViewController = "LIQuestionsViewController"
+    static let ChaptersViewController = "LIChaptersViewController"
 }
 
 struct LIStoryboards {

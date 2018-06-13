@@ -53,8 +53,8 @@ class LIUserStudentAPIsHandler: NSObject {
             request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
         }
         LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getRecommendedQuestionsURL, shouldAddHeaderParams: false, successBlock: { (response) in
-            if let reponseDict = response {
-                if let responseArray = reponseDict[LIAPIResponseKeys.questionsData] as? [[String:AnyObject]] {
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.questionsData] as? [[String:AnyObject]] {
                     var questionsArray:Array<LIQuestionsModel> = Array()
                     for object in responseArray {
                         if let videoObject = LIQuestionsModel(object) {
@@ -143,4 +143,40 @@ class LIUserStudentAPIsHandler: NSObject {
         }
     }
     
+    
+    class func callGetChaptersAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping (([String:Any]?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getChaptersUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.chaptersData] as? [[String:AnyObject]] {
+//                    var questionsArray:Array<LIQuestionsModel> = Array()
+//                    for object in responseArray {
+//                        if let videoObject = LIQuestionsModel(object) {
+//                            questionsArray.append(videoObject)
+//                        }
+//                    }
+                    success(responseDict)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

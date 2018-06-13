@@ -122,7 +122,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757205"
+            timestampString = "550383156.875524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -170,7 +170,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757336"
+            timestampString = "550383156.875625"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
@@ -282,7 +282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757439"
+            timestampString = "550383156.875718"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "118"
@@ -298,7 +298,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757484"
+            timestampString = "550383156.87576"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
@@ -314,7 +314,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757525"
+            timestampString = "550383156.8757989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "169"
@@ -330,7 +330,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757566"
+            timestampString = "550383156.875837"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "148"
@@ -346,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.757605"
+            timestampString = "550383156.875874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
@@ -410,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIAuthenticationAPIsHandler.swift"
-            timestampString = "550319168.7576849"
+            timestampString = "550383156.8759511"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.139271"
+            timestampString = "550555775.846307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "173"
-            endingLineNumber = "173"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -522,11 +522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.139762"
+            timestampString = "550555775.846426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "callGetDemoVideosApi()"
             landmarkType = "7">
             <Locations>
@@ -602,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "550321347.1401531"
+            timestampString = "550555775.846513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -618,7 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "550321347.140211"
+            timestampString = "550555775.849059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -634,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.1402659"
+            timestampString = "550555775.849324"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -650,11 +650,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.140524"
+            timestampString = "550555775.8493789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "195"
-            endingLineNumber = "195"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -666,11 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.140767"
+            timestampString = "550555775.8494231"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "197"
-            endingLineNumber = "197"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -682,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/TableView Cells/LIFeedQuestionsTableViewCell.swift"
-            timestampString = "550321347.141011"
+            timestampString = "550469235.328546"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -698,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.141062"
+            timestampString = "550555775.849494"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "81"
@@ -746,12 +746,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Feed/LIFeedViewController.swift"
-            timestampString = "550321347.141287"
+            timestampString = "550555775.849538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "shareAppDetails()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
+            timestampString = "550555775.849582"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "updatePremiumStatus()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
+            timestampString = "550555775.849624"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "updateNavigationBarAppearance()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
+            timestampString = "550555775.849664"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "updateNavigationBarAppearance()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/Chapter/LIChaptersViewController.swift"
+            timestampString = "550555775.8497061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "callGetChaptersApi()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
+            timestampString = "550555775.849748"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "callGetChaptersAPIWith(_:shouldAddToken:success:failure:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

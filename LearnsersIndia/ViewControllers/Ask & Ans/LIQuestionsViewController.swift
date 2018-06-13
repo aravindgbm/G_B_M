@@ -81,7 +81,7 @@ extension LIQuestionsViewController {
         let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
         let paramters = ["syl_id":loggedInUser?.syllabusId ?? 0 ,   //selectedBoardID,
             "class_id":loggedInUser?.classId ?? 0,
-            "sub_id":1] as [String : Any]
+            "sub_id":loggedInUser?.subjectId ?? 1] as [String : Any]
         LIUserStudentAPIsHandler.callGetRecommendedQuestionsAPIWith(paramters, shouldAddToken: true, success: { (response) in
             ActivityIndicator.dismissActivityView()
             if let _ = response {

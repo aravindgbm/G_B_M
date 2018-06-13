@@ -74,6 +74,8 @@
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
+		D4CC7E1920D0C0A000F4C92E /* LIChaptersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC7E1820D0C0A000F4C92E /* LIChaptersViewController.swift */; };
+		D4CC7E1C20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CC7E1B20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift */; };
 		D4D06C1020CF72DD00FE572C /* LIQuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */; };
 		D4D06C1320CF731A00FE572C /* LIQuestionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D06C1220CF731A00FE572C /* LIQuestionsTableViewCell.swift */; };
 		D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */; };
@@ -186,6 +188,8 @@
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileItem.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
+		D4CC7E1820D0C0A000F4C92E /* LIChaptersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIChaptersViewController.swift; sourceTree = "<group>"; };
+		D4CC7E1B20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIChaptersTableViewCell.swift; sourceTree = "<group>"; };
 		D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIQuestionsViewController.swift; sourceTree = "<group>"; };
 		D4D06C1220CF731A00FE572C /* LIQuestionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIQuestionsTableViewCell.swift; sourceTree = "<group>"; };
 		D4D824E120B5CBFB00A0CB47 /* LIUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUserModel.swift; sourceTree = "<group>"; };
@@ -497,6 +501,23 @@
 			path = "Ask & Ans";
 			sourceTree = "<group>";
 		};
+		D4CC7E1720D0C05300F4C92E /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				A68175AF206368F5000A6F30 /* GetChapterViewController.swift */,
+				FAF05076207787B70091B710 /* GetChapterTableViewCell.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		D4CC7E1A20D0C0A400F4C92E /* Chapters TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D4CC7E1B20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift */,
+			);
+			path = "Chapters TableView Cells";
+			sourceTree = "<group>";
+		};
 		D4D06C0E20CF72C300FE572C /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -676,8 +697,9 @@
 		FAF05078207787BF0091B710 /* Chapter */ = {
 			isa = PBXGroup;
 			children = (
-				A68175AF206368F5000A6F30 /* GetChapterViewController.swift */,
-				FAF05076207787B70091B710 /* GetChapterTableViewCell.swift */,
+				D4CC7E1A20D0C0A400F4C92E /* Chapters TableView Cells */,
+				D4CC7E1720D0C05300F4C92E /* Old */,
+				D4CC7E1820D0C0A000F4C92E /* LIChaptersViewController.swift */,
 			);
 			path = Chapter;
 			sourceTree = "<group>";
@@ -852,6 +874,7 @@
 				A628022F2056885A00A1C244 /* Model.swift in Sources */,
 				D496502C207DD4E900480E7F /* TestsTableViewCell.swift in Sources */,
 				D48C11D020CE199D0057650C /* LIShadowRoundCorneredView.swift in Sources */,
+				D4CC7E1920D0C0A000F4C92E /* LIChaptersViewController.swift in Sources */,
 				FA315862206E83B1005282F9 /* PopularVideosCollectionViewCell.swift in Sources */,
 				A628022C2056885A00A1C244 /* JSONParser.swift in Sources */,
 				D474D225207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift in Sources */,
@@ -905,6 +928,7 @@
 				D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */,
 				A628023820569E7E00A1C244 /* StandardUIElements.swift in Sources */,
 				FA858AE32056E36800F9B142 /* YourBoardTableViewCell.swift in Sources */,
+				D4CC7E1C20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift in Sources */,
 				A6A5DD8D2057D35C00C90569 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

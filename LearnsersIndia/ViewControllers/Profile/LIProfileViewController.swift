@@ -59,7 +59,6 @@ class LIProfileViewController: UIViewController {
             self.navigationController?.navigationBar.isTranslucent = true
             let backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: #selector(backButtonTapped))
             self.navigationItem.leftBarButtonItem = backBarButtonItem
-            //            self.navigationController?.navigationItem.setLeftBarButton(UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action: nil), animated: true)
         }
         else {
               self.navigationController?.setNavigationBarHidden(true, animated: true)
@@ -154,6 +153,14 @@ class LIProfileViewController: UIViewController {
         questionsVC?.isFromProfileScreen = true
         self.navigationController?.pushViewController(questionsVC!, animated: true)
     }
+    
+    func navigateToChaptersScreen(){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let chaptersVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ChaptersViewController) as? LIChaptersViewController
+//        questionsVC?.isFromProfileScreen = true
+        self.navigationController?.pushViewController(chaptersVC!, animated: true)
+    }
+    
 }
 
 extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
@@ -183,6 +190,9 @@ extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
                 break
             case LIProfileItemType.LIProfileItemTypeQuestions?:
                 self.navigateToQuestionsScreen()
+                break
+            case LIProfileItemType.LIProfileItemTypeVideos?:
+                self.navigateToChaptersScreen()
                 break
             default:
                 break
