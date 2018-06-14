@@ -79,7 +79,8 @@ extension LIFeedViewController {
     func callGetPaidStatusApi() {
         
         LIUserStudentAPIsHandler.callGetPaidStatusAPIWith(nil, shouldAddToken: true, success: { () in
-            self.feedTableView.reloadRows(at: [IndexPath(row: FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue, section: 0)], with: .none)
+//            self.feedTableView.reloadRows(at: [IndexPath(row: FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue, section: 0)], with: .none)
+            self.feedTableView.reloadData()
         }, failure: { (response) in
             
         }) { (error) in
@@ -122,7 +123,8 @@ extension LIFeedViewController {
             ActivityIndicator.dismissActivityView()
             if let _ = response {
                 self.demoVideosArray = response
-                self.feedTableView.reloadRows(at: [IndexPath(row: FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue, section: 0)], with: .none)
+                self.feedTableView.reloadData()
+//                self.feedTableView.reloadRows(at: [IndexPath(row: FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue, section: 0)], with: .none)
             }
             else {
                 LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
@@ -193,7 +195,7 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeVideos.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedVideoCell, for: indexPath) as? LIVideosTableViewCell
-            cell?.refreshCellWith(self.demoVideosArray, and: demoVideoTitleText)
+            cell?.refreshCellWith(self.demoVideosArray, and: LIConstants.demoVideoTitleText)
             cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeRecommendedQuestions.rawValue:

@@ -70,5 +70,19 @@ class LIUtilities: NSObject {
             playerViewController.player?.play()
         }
     }
+    class func showLogoutAlertOnViewController(_ viewController:UIViewController){
+        let alert = UIAlertController(title: LIConstants.logoutAlertTitle, message: LIConstants.logoutAlertMessage, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addAction(noAction)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            LIUtilities.logoutTheUser()
+        }
+        alert.addAction(yesAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    class func logoutTheUser(){
+        LIAccountManager.sharedInstance.removeLoggedInUserAndToken()
+        AppDelegate.getAppDelegateInstance().navigateToTutorialScreen()
+    }
     
 }

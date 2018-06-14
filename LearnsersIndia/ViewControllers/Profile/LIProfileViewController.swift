@@ -161,6 +161,15 @@ class LIProfileViewController: UIViewController {
         self.navigationController?.pushViewController(chaptersVC!, animated: true)
     }
     
+    func openDialer(){
+        if let url = URL(string: "tel://\(LIConstants.contactNumber)"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+        }
+        else{
+            LIUtilities.showOkAlertControllerWith(nil, message: "Sorry your device doesn't support this feature", onViewController: self)
+        }
+    }
+    
 }
 
 extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
@@ -193,6 +202,12 @@ extension LIProfileViewController:UITableViewDelegate,UITableViewDataSource {
                 break
             case LIProfileItemType.LIProfileItemTypeVideos?:
                 self.navigateToChaptersScreen()
+                break
+            case LIProfileItemType.LIProfileItemTypeCallUs?:
+                self.openDialer()
+                break
+            case LIProfileItemType.LIProfileItemTypeLogout?:
+                LIUtilities.showLogoutAlertOnViewController(self)
                 break
             default:
                 break

@@ -17,6 +17,11 @@ struct LIConstants {
     static let unPaidUserStatus = "unpaid"
     static let paidUserStatus = "paid"
     static let successAlertTitle = "Success"
+    static let logoutAlertTitle = "Logout"
+    static let logoutAlertMessage = "Are you sure you want to logout?"
+    static let demoVideoTitleText = "Demo Videos"
+    static let contactNumber = "04714015515"
+
 }
 
 struct LIViewControllerIdentifier {
@@ -76,7 +81,7 @@ enum LIProfileItemType {
     case LIProfileItemTypeDateOfBirth
 }
 let screenSize = UIScreen.main.bounds.size
-let demoVideoTitleText = "Demo Videos"
+
 
 enum LIChapterType {
     case LIChapterTypeVideos
