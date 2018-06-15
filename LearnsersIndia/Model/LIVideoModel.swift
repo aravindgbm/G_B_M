@@ -19,6 +19,7 @@
         var videoId:Int?
         var videoUrl:String?
         var videoThumbnailUrl:String?
+        var isPaidVideo:Bool?
 
         
         convenience init?(_ response:[String:Any]?) {
@@ -30,6 +31,7 @@
                     self.subjectName = response?["subjectname"] as? String
                     self.topicName = response?["topicname"] as? String
                     self.videoCategory = response?["ved_category"] as? String
+                    self.isPaidVideo = self.videoCategory != nil && self.videoCategory == LIConstants.paidUserStatus
                     self.videoDiscription = response?["ved_desc"] as? String
                     self.videoTitle = response?["ved_title"] as? String
                     self.videoId = response?["ved_id"] as? Int

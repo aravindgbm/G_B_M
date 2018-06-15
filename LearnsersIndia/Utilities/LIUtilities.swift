@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import AVKit
 
 class LIUtilities: NSObject {
     
@@ -41,6 +42,11 @@ class LIUtilities: NSObject {
         view.layer.borderWidth = 1.0
     }
     
+    class func setBorderColor(_ color:UIColor,with borderWidth:CGFloat,For view:UIView) {
+        view.layer.borderColor = color.cgColor
+        view.layer.borderWidth = borderWidth
+    }
+    
     class func getQuestionAskedTextWith(_ subject:String?,timestamp:String?) -> String? {
         if let _ = timestamp {
             let doubleTimestamp = Double(timestamp!)
@@ -54,4 +60,42 @@ class LIUtilities: NSObject {
         }
         return nil
     }
+    
+    class func playVideoWithObject(_ videoObject:LIVideoModel?, on viewController:UIViewController) {
+        if let _ = videoObject {
+            let paidUser = LIAccountManager.sharedInstance.getLoggedInUser()?.isPaidUser ?? false
+            let paidVideo = videoObject?.isPaidVideo ?? true
+            if (paidVideo && paidUser) || !paidVideo {
+                if let videoUrlString = videoObject?.videoPrivateUrl{
+                    if let videoUrl = URL(string: videoUrlString){
+                        let player = AVPlayer(url: videoUrl)
+                        let playerViewController = AVPlayerViewController()
+                        playerViewController.player = player
+                        viewController.present(playerViewController, animated: true) {
+                            playerViewController.player?.play()
+                        }
+                    }
+                }
+            }
+            else {
+                LIUtilities.showOkAlertControllerWith(LIConstants.titleSorry, message: LIConstants.paidVideoAlertMessage, onViewController: viewController)
+            }
+        }
+        
+    }
+    class func showLogoutAlertOnViewController(_ viewController:UIViewController){
+        let alert = UIAlertController(title: LIConstants.logoutAlertTitle, message: LIConstants.logoutAlertMessage, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addAction(noAction)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            LIUtilities.logoutTheUser()
+        }
+        alert.addAction(yesAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
+    class func logoutTheUser(){
+        LIAccountManager.sharedInstance.removeLoggedInUserAndToken()
+        AppDelegate.getAppDelegateInstance().navigateToTutorialScreen()
+    }
+    
 }

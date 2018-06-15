@@ -53,12 +53,12 @@ class LIUserStudentAPIsHandler: NSObject {
             request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
         }
         LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getRecommendedQuestionsURL, shouldAddHeaderParams: false, successBlock: { (response) in
-            if let reponseDict = response {
-                if let responseArray = reponseDict[LIAPIResponseKeys.questionsData] as? [[String:AnyObject]] {
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.questionsData] as? [[String:AnyObject]] {
                     var questionsArray:Array<LIQuestionsModel> = Array()
                     for object in responseArray {
-                        if let videoObject = LIQuestionsModel(object) {
-                            questionsArray.append(videoObject)
+                        if let questionObject = LIQuestionsModel(object) {
+                            questionsArray.append(questionObject)
                         }
                     }
                     success(questionsArray)
@@ -110,4 +110,112 @@ class LIUserStudentAPIsHandler: NSObject {
         }
     }
     
+    class func callGetUserProfileAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((LIUserModel?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getUserProfile, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let userData = reponseDict[LIAPIResponseKeys.userData] as? [String:AnyObject] {
+                    let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
+                    loggedInUser?.updateUserObjectWith(userData)
+                    LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
+                    success(loggedInUser)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    
+    class func callGetChaptersAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LIChapterModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getChaptersUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.chaptersData] as? [[String:Any]] {
+                    var chaptersArray:Array<LIChapterModel> = Array()
+                    for object in responseArray {
+                      
+                        if let chapterObject = LIChapterModel(object) {
+                            chaptersArray.append(chapterObject)
+                        }
+                    }
+                    success(chaptersArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    
+    class func callGetVideosAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LITopicModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getVideosUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.responseData] as? [[String:Any]] {
+                    var topicsArray:Array<LITopicModel> = Array()
+                    for object in responseArray {
+                        
+                        if let topicObject = LITopicModel(object) {
+                            topicsArray.append(topicObject)
+                        }
+                    }
+                    success(topicsArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }
