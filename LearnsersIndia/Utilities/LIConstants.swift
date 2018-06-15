@@ -23,6 +23,7 @@ struct LIConstants {
     static let contactNumber = "04714015515"
     static let titleSorry = "Sorry"
     static let paidVideoAlertMessage = "Unlock this video by upgrading to premium"
+    static let exerciseHeader = "Question "
 
 }
 
@@ -38,6 +39,7 @@ struct LIViewControllerIdentifier {
     static let QuestionsViewController = "LIQuestionsViewController"
     static let ChaptersViewController = "LIChaptersViewController"
     static let VideosViewController = "LIVideosViewController"
+    static let ExercisesViewController = "LIExercisesViewController"
 }
 
 struct LIStoryboards {
@@ -48,6 +50,9 @@ struct LIStoryboards {
 struct LIColors {
     static let ThemeColor = "#0596CF"
     static let LogoutLabelTextColor = "#b6927b"
+    static let exerciseEvenIndexBgColor = "#fff3e0"
+    static let exerciseOddIndexBgColor = "#8F8F8F"
+    static let lighterAlpha:CGFloat = 0.08
 }
 
 struct LIUserTypes {

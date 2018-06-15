@@ -93,9 +93,22 @@ class LIUtilities: NSObject {
         alert.addAction(yesAction)
         viewController.present(alert, animated: true, completion: nil)
     }
+    
     class func logoutTheUser(){
         LIAccountManager.sharedInstance.removeLoggedInUserAndToken()
         AppDelegate.getAppDelegateInstance().navigateToTutorialScreen()
+    }
+    
+    class func getAttributedStringFromHtmlString( _ htmlString:String) -> NSAttributedString?{
+        if let htmlData = htmlString.data(using: String.Encoding.unicode) {
+            do {
+                return try NSAttributedString(data: htmlData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
+            } catch let e as NSError {
+                print("Couldn't translate \(htmlString): \(e.localizedDescription) ")
+                return nil
+            }
+        }
+        return nil
     }
     
 }

@@ -61,6 +61,9 @@
 		D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
+		D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B2D20D435230074860D /* LIExercisesViewController.swift */; };
+		D4899B3120D43E490074860D /* LIExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B3020D43E490074860D /* LIExerciseTableViewCell.swift */; };
+		D4899B3320D43F720074860D /* LIExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B3220D43F720074860D /* LIExerciseModel.swift */; };
 		D48C11D020CE199D0057650C /* LIShadowRoundCorneredView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C11CF20CE199D0057650C /* LIShadowRoundCorneredView.swift */; };
 		D48C11D320CE1A250057650C /* LIProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C11D220CE1A250057650C /* LIProfileViewController.swift */; };
 		D48C11D720CE1CD00057650C /* LIProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C11D620CE1CD00057650C /* LIProfileTableViewCell.swift */; };
@@ -178,6 +181,9 @@
 		D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
+		D4899B2D20D435230074860D /* LIExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExercisesViewController.swift; sourceTree = "<group>"; };
+		D4899B3020D43E490074860D /* LIExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		D4899B3220D43F720074860D /* LIExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExerciseModel.swift; sourceTree = "<group>"; };
 		D48C11CF20CE199D0057650C /* LIShadowRoundCorneredView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LIShadowRoundCorneredView.swift; path = LearnsersIndia/Utilities/Views/LIShadowRoundCorneredView.swift; sourceTree = SOURCE_ROOT; };
 		D48C11D220CE1A250057650C /* LIProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileViewController.swift; sourceTree = "<group>"; };
 		D48C11D620CE1CD00057650C /* LIProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileTableViewCell.swift; sourceTree = "<group>"; };
@@ -433,12 +439,9 @@
 		D474D221207CD03200B460DA /* Excercise */ = {
 			isa = PBXGroup;
 			children = (
-				D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */,
-				D474D22C207CF71200B460DA /* SampleTableViewCell.swift */,
-				D474D226207CD12100B460DA /* ExcerciseViewController.swift */,
-				D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */,
-				D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */,
-				D474D224207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift */,
+				D4899B2F20D43E300074860D /* Exercise TableView Cell */,
+				D4899B2C20D435020074860D /* Old */,
+				D4899B2D20D435230074860D /* LIExercisesViewController.swift */,
 			);
 			path = Excercise;
 			sourceTree = "<group>";
@@ -463,6 +466,27 @@
 				D4E8C4F820B3419D00E0D770 /* LIAPIClient.swift */,
 			);
 			path = Webservices;
+			sourceTree = "<group>";
+		};
+		D4899B2C20D435020074860D /* Old */ = {
+			isa = PBXGroup;
+			children = (
+				D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */,
+				D474D22C207CF71200B460DA /* SampleTableViewCell.swift */,
+				D474D226207CD12100B460DA /* ExcerciseViewController.swift */,
+				D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */,
+				D474D222207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift */,
+				D474D224207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift */,
+			);
+			path = Old;
+			sourceTree = "<group>";
+		};
+		D4899B2F20D43E300074860D /* Exercise TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D4899B3020D43E490074860D /* LIExerciseTableViewCell.swift */,
+			);
+			path = "Exercise TableView Cell";
 			sourceTree = "<group>";
 		};
 		D48C11D120CE1A070057650C /* Old */ = {
@@ -584,6 +608,7 @@
 				D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */,
 				D49254B420D1664400889460 /* LIChapterModel.swift */,
 				D49254BC20D1928900889460 /* LITopicModel.swift */,
+				D4899B3220D43F720074860D /* LIExerciseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -887,6 +912,7 @@
 				D474C9D020B502AC0031ED1D /* LIUIImageView+Additions.swift in Sources */,
 				A6A5DD8B2057CC4200C90569 /* LoginViewController.swift in Sources */,
 				A6769E2D2068CDEA004D8DA7 /* ProfileViewController.swift in Sources */,
+				D4899B3120D43E490074860D /* LIExerciseTableViewCell.swift in Sources */,
 				D4292B1520B8822F0047E510 /* VPMOTPTextField.swift in Sources */,
 				D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */,
 				A628022E2056885A00A1C244 /* Common.swift in Sources */,
@@ -898,6 +924,7 @@
 				D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */,
 				A628022F2056885A00A1C244 /* Model.swift in Sources */,
 				D496502C207DD4E900480E7F /* TestsTableViewCell.swift in Sources */,
+				D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */,
 				D48C11D020CE199D0057650C /* LIShadowRoundCorneredView.swift in Sources */,
 				D4CC7E1920D0C0A000F4C92E /* LIChaptersViewController.swift in Sources */,
 				FA315862206E83B1005282F9 /* PopularVideosCollectionViewCell.swift in Sources */,
@@ -929,6 +956,7 @@
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,
 				A6A5DD8F2057D8C200C90569 /* SignUpViewController.swift in Sources */,
 				D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */,
+				D4899B3320D43F720074860D /* LIExerciseModel.swift in Sources */,
 				D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */,
 				D4EEEDF720C98BA0002C9808 /* LIFeedPremiumDetailsTableViewCell.swift in Sources */,
 				A62802292056885A00A1C244 /* Models.swift in Sources */,

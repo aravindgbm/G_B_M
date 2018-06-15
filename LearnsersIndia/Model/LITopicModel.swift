@@ -12,6 +12,7 @@ class LITopicModel: NSObject {
     var topicId:Int?
     var topicName:String?
     var videoArray:[LIVideoModel]?
+    var exercisesArray:[LIExerciseModel]?
 //    "": 63,
 //    "": "Classification of polygons",
     
@@ -34,10 +35,20 @@ class LITopicModel: NSObject {
                 }
             }
         }
-        else {
-            return nil
+        if let exercisesArray = response[LIAPIResponseKeys.exercisesData] as? [[String:AnyObject]] {
+            for object in exercisesArray {
+                if let exerciseObject = LIExerciseModel(object) {
+                    if self.exercisesArray == nil {
+                        self.exercisesArray = [LIExerciseModel]()
+                    }
+                    self.exercisesArray?.append(exerciseObject)
+                }
+            }
         }
-        if self.videoArray == nil {
+//        else {
+//            return nil
+//        }
+        if self.videoArray == nil && self.exercisesArray == nil{
             return nil
         }
     }

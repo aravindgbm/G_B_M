@@ -44,6 +44,13 @@ class LIChaptersViewController: UIViewController {
         videosVC?.chapterObject = chapter
         self.navigationController?.pushViewController(videosVC!, animated: true)
     }
+    
+    func navigateToExercisesViewControllerWith(_ chapter:LIChapterModel?){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let exercisesVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.ExercisesViewController) as? LIExercisesViewController
+        exercisesVC?.chapterObject = chapter
+        self.navigationController?.pushViewController(exercisesVC!, animated: true)
+    }
     /*
   
 
@@ -78,6 +85,9 @@ extension LIChaptersViewController:UITableViewDelegate, UITableViewDataSource {
         case .LIChapterTypeVideos:
             self.navigateToVideosViewControllerWith(chapter)
             break
+        case .LIChapterTypeExercises:
+            self.navigateToExercisesViewControllerWith(chapter)
+            break
         default:
             break
         }
@@ -109,4 +119,5 @@ extension LIChaptersViewController {
             LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
     }
+    
 }

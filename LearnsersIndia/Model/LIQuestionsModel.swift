@@ -23,7 +23,7 @@ class LIQuestionsModel: NSObject {
     convenience init?(_ response:[String:Any]) {
         self.init()
         if  let htmlQuestionTitle = response["qst_title"] as? String{
-            if let questionText = self.getQuestionTitleWithHtmlString(htmlQuestionTitle) {
+            if let questionText = LIUtilities.getAttributedStringFromHtmlString(htmlQuestionTitle) {
                 self.questionTitle = questionText
                 self.totalAnswerCount = response["Total_answers"] as? Int
                 self.studentProfilPicUrl = LIImageBaseUrlString + (response["profile_pic"] as? String ?? "")
@@ -41,16 +41,5 @@ class LIQuestionsModel: NSObject {
         }
         
     }
-    
-    func getQuestionTitleWithHtmlString( _ htmlString:String) -> NSAttributedString?{
-        if let htmlData = htmlString.data(using: String.Encoding.unicode) {
-            do {
-               return try NSAttributedString(data: htmlData, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)
-            } catch let e as NSError {
-                print("Couldn't translate \(htmlString): \(e.localizedDescription) ")
-                return nil
-            }
-        }
-        return nil
-    }
+
 }

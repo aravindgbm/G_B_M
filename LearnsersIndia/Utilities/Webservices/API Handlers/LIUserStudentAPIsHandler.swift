@@ -218,4 +218,41 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callGetExercisesAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LITopicModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getExercisesUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.responseData] as? [[String:Any]] {
+                    var topicsArray:Array<LITopicModel> = Array()
+                    for object in responseArray {
+                        
+                        if let topicObject = LITopicModel(object) {
+                            topicsArray.append(topicObject)
+                        }
+                    }
+                    success(topicsArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

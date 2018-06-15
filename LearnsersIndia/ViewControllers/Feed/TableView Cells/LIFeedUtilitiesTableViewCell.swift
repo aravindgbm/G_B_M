@@ -28,15 +28,13 @@ class LIFeedUtilitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func testButtonTapped(_ sender: Any) {
-        //TODO:- uncomment this
-//         self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeTests)
+         self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeTests)
     }
     
     @IBAction func askDoubtButtonTapped(_ sender: Any) {
     }
     @IBAction func exerciseButtonTapped(_ sender: Any) {
-        //TODO:- uncomment this
-//        self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeExercises)
+        self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeExercises)
     }
   
     @IBAction func gameButtonTapped(_ sender: Any) {
