@@ -17,9 +17,7 @@ class LIQuestionsViewController: UIViewController {
     var isFromProfileScreen:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.questionsTableView.estimatedRowHeight = 100.0
-        self.questionsTableView.rowHeight = UITableViewAutomaticDimension
-        self.questionsTableView.tableFooterView = UIView(frame: .zero)
+        self.setUpViews()
         // Do any additional setup after loading the view.
     }
     
@@ -42,6 +40,26 @@ class LIQuestionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(LIQuestionsViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+        //        refreshControl.tintColor = UIColor.red
+        
+        return refreshControl
+    }()
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.callGetRecommendedQuestionsApi()
+        refreshControl.endRefreshing()
+    }
+    
+    func setUpViews(){
+        self.questionsTableView.estimatedRowHeight = 100.0
+        self.questionsTableView.rowHeight = UITableViewAutomaticDimension
+        self.questionsTableView.tableFooterView = UIView(frame: .zero)
+        self.questionsTableView.addSubview(refreshControl)
+    }
     //MARK:- IBactions
     @IBAction func addQuestionButtonTapped(_ sender: Any) {
         

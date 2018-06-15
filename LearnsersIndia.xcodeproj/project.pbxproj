@@ -636,7 +636,6 @@
 				A6E1B8CC206235B300FE580B /* Gifs */,
 				A62802182056885A00A1C244 /* Helper Class */,
 				A6E1B8CB2062357900FE580B /* ViewControllers */,
-				FA2D5FD42053AAF900C2FE53 /* Assets.xcassets */,
 				FA2D5FD62053AAF900C2FE53 /* LaunchScreen.storyboard */,
 				FA2D5FD92053AAF900C2FE53 /* Info.plist */,
 				FA2D5FD12053AAF900C2FE53 /* LearnsersIndia.xcdatamodeld */,
@@ -715,6 +714,7 @@
 				D49254B920D18A4800889460 /* Videos TableView Cell */,
 				D49254B620D187A100889460 /* Old */,
 				D49254B720D187C700889460 /* LIVideosViewController.swift */,
+				FA2D5FD42053AAF900C2FE53 /* Assets.xcassets */,
 			);
 			path = Videos;
 			sourceTree = "<group>";

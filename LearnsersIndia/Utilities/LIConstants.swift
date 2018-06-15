@@ -21,6 +21,8 @@ struct LIConstants {
     static let logoutAlertMessage = "Are you sure you want to logout?"
     static let demoVideoTitleText = "Demo Videos"
     static let contactNumber = "04714015515"
+    static let titleSorry = "Sorry"
+    static let paidVideoAlertMessage = "Unlock this video by upgrading to premium"
 
 }
 

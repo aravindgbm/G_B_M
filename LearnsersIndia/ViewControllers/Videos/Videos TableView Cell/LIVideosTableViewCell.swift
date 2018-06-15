@@ -9,7 +9,7 @@
 import UIKit
 
 protocol videosTableViewCellDelegate:class {
-    func playVideoWithUrl(_ videoUrl:URL)
+    func playVideoWithObject(_ videoObject:LIVideoModel?)
 }
 
 class LIVideosTableViewCell: UITableViewCell {
@@ -58,11 +58,12 @@ extension LIVideosTableViewCell:UICollectionViewDelegate,UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
        
-        if let videoUrlString = self.videoArray?[indexPath.row].videoPrivateUrl{
-            if let videoUrl = URL(string: videoUrlString){
-                self.delegate?.playVideoWithUrl(videoUrl)
-            }
-        }
+        self.delegate?.playVideoWithObject(self.videoArray?[indexPath.row])
+//        if let videoUrlString = self.videoArray?[indexPath.row].videoPrivateUrl{
+//            if let videoUrl = URL(string: videoUrlString){
+//
+//            }
+//        }
     }
     
     //MARK:- CollectionViewDelegateFlow Layout

@@ -41,26 +41,46 @@ class LIFeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = LIAccountManager.sharedInstance.getLoggedInUser()?.gradeName
-        self.feedTableView.estimatedRowHeight = UITableViewAutomaticDimension
-        self.feedTableView.rowHeight = UITableViewAutomaticDimension
-        
+        self.setUpViews()
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+//        feedTableView.reloadData()
+    }
+    
+    
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(LIFeedViewController.handleRefresh(_:)), for: UIControlEvents.valueChanged)
+
+        
+        return refreshControl
+    }()
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.callGetDemoVideosApi()
         self.callGetRecommendedQuestionsApi()
         self.callGetPaidStatusApi()
-        feedTableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
+    func setUpViews(){
+        self.navigationItem.title = LIAccountManager.sharedInstance.getLoggedInUser()?.gradeName
+        self.feedTableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.feedTableView.rowHeight = UITableViewAutomaticDimension
+        feedTableView.addSubview(refreshControl)
+        self.callGetDemoVideosApi()
+        self.callGetRecommendedQuestionsApi()
+        self.callGetPaidStatusApi()
+    }
     
     /*
      // MARK: - Navigation
@@ -140,14 +160,17 @@ extension LIFeedViewController {
 }
 
 extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate {
-    func playVideoWithUrl(_ videoUrl: URL) {
-        let player = AVPlayer(url: videoUrl)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true) {
-            playerViewController.player?.play()
-        }
+    func playVideoWithObject(_ videoObject: LIVideoModel?) {
+        LIUtilities.playVideoWithObject(videoObject, on: self)
     }
+//    func playVideoWithUrl(_ videoUrl: URL) {
+//        let player = AVPlayer(url: videoUrl)
+//        let playerViewController = AVPlayerViewController()
+//        playerViewController.player = player
+//        self.present(playerViewController, animated: true) {
+//            playerViewController.player?.play()
+//        }
+//    }
     
     func navigateToChaptersViewControlerWith(_ chapterType: LIChapterType) {
         let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)

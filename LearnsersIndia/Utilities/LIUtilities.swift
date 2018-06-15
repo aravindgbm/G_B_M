@@ -61,14 +61,27 @@ class LIUtilities: NSObject {
         return nil
     }
     
-    class func playVideoWithUrl(_ videoUrl:URL, on viewController:UIViewController) {
-        
-        let player = AVPlayer(url: videoUrl)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        viewController.present(playerViewController, animated: true) {
-            playerViewController.player?.play()
+    class func playVideoWithObject(_ videoObject:LIVideoModel?, on viewController:UIViewController) {
+        if let _ = videoObject {
+            let paidUser = LIAccountManager.sharedInstance.getLoggedInUser()?.isPaidUser ?? false
+            let paidVideo = videoObject?.isPaidVideo ?? true
+            if (paidVideo && paidUser) || !paidVideo {
+                if let videoUrlString = videoObject?.videoPrivateUrl{
+                    if let videoUrl = URL(string: videoUrlString){
+                        let player = AVPlayer(url: videoUrl)
+                        let playerViewController = AVPlayerViewController()
+                        playerViewController.player = player
+                        viewController.present(playerViewController, animated: true) {
+                            playerViewController.player?.play()
+                        }
+                    }
+                }
+            }
+            else {
+                LIUtilities.showOkAlertControllerWith(LIConstants.titleSorry, message: LIConstants.paidVideoAlertMessage, onViewController: viewController)
+            }
         }
+        
     }
     class func showLogoutAlertOnViewController(_ viewController:UIViewController){
         let alert = UIAlertController(title: LIConstants.logoutAlertTitle, message: LIConstants.logoutAlertMessage, preferredStyle: .alert)

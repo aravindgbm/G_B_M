@@ -64,8 +64,8 @@ extension LIVideosViewController:UITableViewDelegate, UITableViewDataSource {
 }
 
 extension LIVideosViewController:videosTableViewCellDelegate {
-    func playVideoWithUrl(_ videoUrl: URL) {
-        LIUtilities.playVideoWithUrl(videoUrl, on: self)
+    func playVideoWithObject(_ videoObject: LIVideoModel?) {
+        LIUtilities.playVideoWithObject(videoObject, on: self)
     }
 }
 
