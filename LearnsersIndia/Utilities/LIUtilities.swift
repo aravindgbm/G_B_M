@@ -111,4 +111,14 @@ class LIUtilities: NSObject {
         return nil
     }
     
+    class func showQuitGameALertOnViewController(_ viewController:UIViewController){
+        let alert = UIAlertController(title: LIConstants.quitGameAlertTitle, message: LIConstants.quitGameAlertMessage, preferredStyle: .alert)
+        let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addAction(noAction)
+        let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            viewController.navigationController?.popToRootViewController(animated: true)
+        }
+        alert.addAction(yesAction)
+        viewController.present(alert, animated: true, completion: nil)
+    }
 }

@@ -24,6 +24,12 @@ struct LIConstants {
     static let titleSorry = "Sorry"
     static let paidVideoAlertMessage = "Unlock this video by upgrading to premium"
     static let exerciseHeader = "Question "
+    static let titleTest = "Tests"
+    static let titleGame = "Games"
+    static let instructionGame = "How to Play"
+    static let instructionTest = "Instructions for the Test"
+    static let quitGameAlertTitle = "Exit Game"
+    static let quitGameAlertMessage = "Do you really want to quit the game"
 
 }
 
@@ -40,6 +46,7 @@ struct LIViewControllerIdentifier {
     static let ChaptersViewController = "LIChaptersViewController"
     static let VideosViewController = "LIVideosViewController"
     static let ExercisesViewController = "LIExercisesViewController"
+    static let StartTestOrGameViewController = "LIStartTestOrGameViewController"
 }
 
 struct LIStoryboards {

@@ -77,6 +77,7 @@
 		D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965031207DEB2900480E7F /* TestPaperTableViewCell.swift */; };
 		D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965033207E353E00480E7F /* TestFinalViewController.swift */; };
 		D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */; };
+		D4A05E2220D55AF200414D53 /* LIStartTestOrGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */; };
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
@@ -197,6 +198,7 @@
 		D4965031207DEB2900480E7F /* TestPaperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPaperTableViewCell.swift; sourceTree = "<group>"; };
 		D4965033207E353E00480E7F /* TestFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFinalViewController.swift; sourceTree = "<group>"; };
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIStartTestOrGameViewController.swift; sourceTree = "<group>"; };
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileItem.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +348,7 @@
 		A6E1B8CB2062357900FE580B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D4A05E2020D55AB900414D53 /* Common */,
 				D4E8C4FA20B3446200E0D770 /* RootNavigationControllers */,
 				D4C560F4207F1D41003C9762 /* Ask & Ans */,
 				D4965028207DD3E700480E7F /* Tests */,
@@ -529,6 +532,14 @@
 		D4965028207DD3E700480E7F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D4A05E1E20D55A2900414D53 /* Old */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		D4A05E1E20D55A2900414D53 /* Old */ = {
+			isa = PBXGroup;
+			children = (
 				D496502D207DD5AF00480E7F /* TestStartViewController.swift */,
 				D496502F207DE1DE00480E7F /* TestPaperViewController.swift */,
 				D4965031207DEB2900480E7F /* TestPaperTableViewCell.swift */,
@@ -536,7 +547,15 @@
 				D4965029207DD40200480E7F /* TestsViewController.swift */,
 				D496502B207DD4E900480E7F /* TestsTableViewCell.swift */,
 			);
-			path = Tests;
+			path = Old;
+			sourceTree = "<group>";
+		};
+		D4A05E2020D55AB900414D53 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		D4C560F4207F1D41003C9762 /* Ask & Ans */ = {
@@ -632,6 +651,7 @@
 			isa = PBXGroup;
 			children = (
 				FA2D5FC92053AAF900C2FE53 /* LearnsersIndia */,
+				FA2D5FD42053AAF900C2FE53 /* Assets.xcassets */,
 				FA2D5FC82053AAF900C2FE53 /* Products */,
 				68184DE0E106A167BE6140CC /* Pods */,
 				65C58F4344F26CB31E5162EC /* Frameworks */,
@@ -739,7 +759,6 @@
 				D49254B920D18A4800889460 /* Videos TableView Cell */,
 				D49254B620D187A100889460 /* Old */,
 				D49254B720D187C700889460 /* LIVideosViewController.swift */,
-				FA2D5FD42053AAF900C2FE53 /* Assets.xcassets */,
 			);
 			path = Videos;
 			sourceTree = "<group>";
@@ -894,6 +913,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A05E2220D55AF200414D53 /* LIStartTestOrGameViewController.swift in Sources */,
 				D4292B1820B885280047E510 /* LIEnterOTPViewController.swift in Sources */,
 				D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */,
 				FA2D5FE02053AFCD00C2FE53 /* TutorialScreenViewController.swift in Sources */,

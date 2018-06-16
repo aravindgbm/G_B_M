@@ -9,6 +9,7 @@
 import UIKit
 protocol feedUtilitiesTableViewCellDelegate:class {
     func navigateToChaptersViewControlerWith(_ chapterType:LIChapterType)
+    func navigateToStartGameViewController()
 }
 class LIFeedUtilitiesTableViewCell: UITableViewCell {
 
@@ -25,6 +26,7 @@ class LIFeedUtilitiesTableViewCell: UITableViewCell {
   
     
     @IBAction func notificationButtonTapped(_ sender: Any) {
+        
     }
     
     @IBAction func testButtonTapped(_ sender: Any) {
@@ -32,12 +34,14 @@ class LIFeedUtilitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func askDoubtButtonTapped(_ sender: Any) {
+        
     }
     @IBAction func exerciseButtonTapped(_ sender: Any) {
         self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeExercises)
     }
   
     @IBAction func gameButtonTapped(_ sender: Any) {
+        self.delegate?.navigateToStartGameViewController()
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

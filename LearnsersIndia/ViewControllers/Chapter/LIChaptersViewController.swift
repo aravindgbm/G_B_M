@@ -51,9 +51,16 @@ class LIChaptersViewController: UIViewController {
         exercisesVC?.chapterObject = chapter
         self.navigationController?.pushViewController(exercisesVC!, animated: true)
     }
-    /*
+    
+    func navigateToStartTestViewControllerWith(_ chapter:LIChapterModel?){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let startTestVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.StartTestOrGameViewController) as? LIStartTestOrGameViewController
+        startTestVC?.chapterObject = chapter
+        startTestVC?.isForGame = false
+        self.navigationController?.pushViewController(startTestVC!, animated: true)
+    }
   
-
+/*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -88,7 +95,8 @@ extension LIChaptersViewController:UITableViewDelegate, UITableViewDataSource {
         case .LIChapterTypeExercises:
             self.navigateToExercisesViewControllerWith(chapter)
             break
-        default:
+        case .LIChapterTypeTests:
+            self.navigateToStartTestViewControllerWith(chapter)
             break
         }
     }

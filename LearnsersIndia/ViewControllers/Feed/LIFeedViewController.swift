@@ -160,17 +160,14 @@ extension LIFeedViewController {
 }
 
 extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate {
+    
+    // MARK:- videosTableViewCellDelegate
+    
     func playVideoWithObject(_ videoObject: LIVideoModel?) {
         LIUtilities.playVideoWithObject(videoObject, on: self)
     }
-//    func playVideoWithUrl(_ videoUrl: URL) {
-//        let player = AVPlayer(url: videoUrl)
-//        let playerViewController = AVPlayerViewController()
-//        playerViewController.player = player
-//        self.present(playerViewController, animated: true) {
-//            playerViewController.player?.play()
-//        }
-//    }
+    
+    // MARK:- feedUtilitiesTableViewCellDelegate
     
     func navigateToChaptersViewControlerWith(_ chapterType: LIChapterType) {
         let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
@@ -178,6 +175,15 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
         chaptersVC?.chapterType = chapterType
         self.navigationController?.pushViewController(chaptersVC!, animated: true)
     }
+    
+    func navigateToStartGameViewController() {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let startGameVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.StartTestOrGameViewController) as? LIStartTestOrGameViewController
+        startGameVC?.isForGame = true
+        self.navigationController?.pushViewController(startGameVC!, animated: true)
+    }
+    
+    // MARK:- feedBannerCellDelegate
     
     func shareAppDetails() {
         let text = LIImageBaseUrlString
