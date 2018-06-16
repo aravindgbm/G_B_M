@@ -9,17 +9,6 @@
 import UIKit
 import AVKit
 
-struct LIFeedTableViewCellIdentifiers {
-    static let FeedUtilitiesCell = "feedUtilitiesCell"
-    static let PremiumDetailsCell = "premiumDetailsCell"
-    static let FeedBannerCell = "feedBannerCell"
-    static let FeedVideoCell = "videosTableViewCell"
-    static let FeedRecommendedQuestionsCell = "feedRecommendedQuestionsCell"
-    static let FeedQuestionsCell = "feedQuestionsCell"
-}
-
-
-
 class LIFeedViewController: UIViewController {
     
     @IBOutlet weak var feedTableView: UITableView!
@@ -32,6 +21,15 @@ class LIFeedViewController: UIViewController {
         case FeedTableviewCellTypeBanner
         case FeedTableviewCellTypeVideos
         case FeedTableviewCellTypeRecommendedQuestions
+    }
+    
+    struct LIFeedTableViewCellIdentifiers {
+        static let FeedUtilitiesCell = "feedUtilitiesCell"
+        static let PremiumDetailsCell = "premiumDetailsCell"
+        static let FeedBannerCell = "feedBannerCell"
+        static let FeedVideoCell = "videosTableViewCell"
+        static let FeedRecommendedQuestionsCell = "feedRecommendedQuestionsCell"
+        static let FeedQuestionsCell = "feedQuestionsCell"
     }
     
     enum FeedTableViewCellStaticRowCount:Int {

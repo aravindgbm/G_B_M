@@ -27,9 +27,11 @@ class LIQuestionsViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(false, animated: true)
         if self.isFromProfileScreen {
             let backBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back"), style: .plain, target: self, action:  #selector(backButtonTapped(_:)))
+            self.tabBarController?.tabBar.isHidden = true
             self.navigationItem.leftBarButtonItem = backBarButtonItem
         }
         else {
+            self.tabBarController?.tabBar.isHidden = false
             self.navigationController?.navigationItem.leftBarButtonItem = nil
         }
 

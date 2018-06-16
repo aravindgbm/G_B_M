@@ -38,6 +38,7 @@ struct LIAPIURL{
     static let getChaptersUrl = "get-chapters"
     static let getVideosUrl = "get-videos"
     static let getExercisesUrl = "get-exercises"
+    static let getTestQuestionsUrl = "get-testpaper-questions"
 }
 
 struct LIAPIResponseKeys {

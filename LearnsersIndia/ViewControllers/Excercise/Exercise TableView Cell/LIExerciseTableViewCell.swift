@@ -22,7 +22,7 @@ class LIExerciseTableViewCell: UITableViewCell {
 //    @IBOutlet weak var exerciseWebvView: WKWebView!
     @IBOutlet weak var exerciseHeadingLabel: UILabel!
     
-    var delegate:exerciseTableViewCellDelegate?
+    weak var delegate:exerciseTableViewCellDelegate?
     
     var isExpanded:Bool = false
     var exerciseObject:LIExerciseModel?

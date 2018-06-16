@@ -255,4 +255,41 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callGetTestQuestionsAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LITestModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getTestQuestionsUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.responseData] as? [[String:Any]] {
+                    var testDetailsArray:Array<LITestModel> = Array()
+                    for object in responseArray {
+                        
+                        if let testObject = LITestModel(object) {
+                            testDetailsArray.append(testObject)
+                        }
+                    }
+                    success(testDetailsArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

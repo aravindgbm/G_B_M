@@ -30,6 +30,7 @@ struct LIConstants {
     static let instructionTest = "Instructions for the Test"
     static let quitGameAlertTitle = "Exit Game"
     static let quitGameAlertMessage = "Do you really want to quit the game"
+    static let markText = "Marks: "
 
 }
 
@@ -47,6 +48,7 @@ struct LIViewControllerIdentifier {
     static let VideosViewController = "LIVideosViewController"
     static let ExercisesViewController = "LIExercisesViewController"
     static let StartTestOrGameViewController = "LIStartTestOrGameViewController"
+    static let TestsViewController = "LITestsViewController"
 }
 
 struct LIStoryboards {
@@ -101,6 +103,13 @@ enum LIChapterType {
     case LIChapterTypeVideos
     case LIChapterTypeExercises
     case LIChapterTypeTests
+}
+
+enum LIAnswerOptionId:Int {
+    case option1 = 1
+    case option2
+    case option3
+    case option4
 }
 
 

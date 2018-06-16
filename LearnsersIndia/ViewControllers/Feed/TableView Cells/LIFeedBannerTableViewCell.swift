@@ -15,7 +15,7 @@ protocol feedBannerCellDelegate:class {
 class LIFeedBannerTableViewCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
-    var delegate:feedBannerCellDelegate?
+    weak var delegate:feedBannerCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))

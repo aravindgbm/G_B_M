@@ -61,8 +61,11 @@ class LIProfileViewController: UIViewController {
             self.navigationItem.leftBarButtonItem = backBarButtonItem
         }
         else {
-              self.navigationController?.setNavigationBarHidden(true, animated: true)
+            
+            self.navigationController?.navigationBar.isTranslucent = false
+            self.navigationController?.setNavigationBarHidden(true, animated: true)
         }
+        self.tabBarController?.tabBar.isHidden = false
         self.profileScrollView.scrollsToTop = true
     }
     func updateValues(){

@@ -78,6 +78,14 @@
 		D4965034207E353E00480E7F /* TestFinalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4965033207E353E00480E7F /* TestFinalViewController.swift */; };
 		D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */; };
 		D4A05E2220D55AF200414D53 /* LIStartTestOrGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */; };
+		D4A05E2420D56DB600414D53 /* LITestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2320D56DB600414D53 /* LITestModel.swift */; };
+		D4A05E2620D5748A00414D53 /* LITestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2520D5748A00414D53 /* LITestsViewController.swift */; };
+		D4A05E2920D574B700414D53 /* LITestQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2820D574B700414D53 /* LITestQuestionTableViewCell.swift */; };
+		D4A05E2B20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2A20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift */; };
+		D4A05E2D20D5753900414D53 /* LINextQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2C20D5753900414D53 /* LINextQuestionTableViewCell.swift */; };
+		D4A05E2F20D5754500414D53 /* LISolutionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E2E20D5754500414D53 /* LISolutionTableViewCell.swift */; };
+		D4A05E3120D57F1000414D53 /* LIAnswerOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E3020D57F1000414D53 /* LIAnswerOptionModel.swift */; };
+		D4A05E3320D58EE500414D53 /* LITestQuestionsDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A05E3220D58EE500414D53 /* LITestQuestionsDataManager.swift */; };
 		D4A164F920B48010000459CF /* LIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A164F820B48010000459CF /* LIUtilities.swift */; };
 		D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */; };
 		D4C560F6207F1D63003C9762 /* AskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C560F5207F1D63003C9762 /* AskViewController.swift */; };
@@ -199,6 +207,14 @@
 		D4965033207E353E00480E7F /* TestFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFinalViewController.swift; sourceTree = "<group>"; };
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIStartTestOrGameViewController.swift; sourceTree = "<group>"; };
+		D4A05E2320D56DB600414D53 /* LITestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestModel.swift; sourceTree = "<group>"; };
+		D4A05E2520D5748A00414D53 /* LITestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestsViewController.swift; sourceTree = "<group>"; };
+		D4A05E2820D574B700414D53 /* LITestQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		D4A05E2A20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestAnswerOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		D4A05E2C20D5753900414D53 /* LINextQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LINextQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		D4A05E2E20D5754500414D53 /* LISolutionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LISolutionTableViewCell.swift; sourceTree = "<group>"; };
+		D4A05E3020D57F1000414D53 /* LIAnswerOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAnswerOptionModel.swift; sourceTree = "<group>"; };
+		D4A05E3220D58EE500414D53 /* LITestQuestionsDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestQuestionsDataManager.swift; sourceTree = "<group>"; };
 		D4A164F820B48010000459CF /* LIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIUtilities.swift; sourceTree = "<group>"; };
 		D4A1791320CEBE1300A5F525 /* LIProfileItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIProfileItem.swift; sourceTree = "<group>"; };
 		D4C560F5207F1D63003C9762 /* AskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AskViewController.swift; sourceTree = "<group>"; };
@@ -532,7 +548,9 @@
 		D4965028207DD3E700480E7F /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				D4A05E2720D5748F00414D53 /* Tests TableView Cell */,
 				D4A05E1E20D55A2900414D53 /* Old */,
+				D4A05E2520D5748A00414D53 /* LITestsViewController.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -556,6 +574,17 @@
 				D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D4A05E2720D5748F00414D53 /* Tests TableView Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D4A05E2820D574B700414D53 /* LITestQuestionTableViewCell.swift */,
+				D4A05E2A20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift */,
+				D4A05E2C20D5753900414D53 /* LINextQuestionTableViewCell.swift */,
+				D4A05E2E20D5754500414D53 /* LISolutionTableViewCell.swift */,
+			);
+			path = "Tests TableView Cell";
 			sourceTree = "<group>";
 		};
 		D4C560F4207F1D41003C9762 /* Ask & Ans */ = {
@@ -628,6 +657,8 @@
 				D49254B420D1664400889460 /* LIChapterModel.swift */,
 				D49254BC20D1928900889460 /* LITopicModel.swift */,
 				D4899B3220D43F720074860D /* LIExerciseModel.swift */,
+				D4A05E3020D57F1000414D53 /* LIAnswerOptionModel.swift */,
+				D4A05E2320D56DB600414D53 /* LITestModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -643,6 +674,7 @@
 			isa = PBXGroup;
 			children = (
 				D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */,
+				D4A05E3220D58EE500414D53 /* LITestQuestionsDataManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -919,9 +951,12 @@
 				FA2D5FE02053AFCD00C2FE53 /* TutorialScreenViewController.swift in Sources */,
 				FA2D5FCD2053AAF900C2FE53 /* ViewController.swift in Sources */,
 				D48C11D720CE1CD00057650C /* LIProfileTableViewCell.swift in Sources */,
+				D4A05E2420D56DB600414D53 /* LITestModel.swift in Sources */,
 				A68943642058DB9C00CE42AA /* UserTypePopUpViewController.swift in Sources */,
 				A68175B0206368F5000A6F30 /* GetChapterViewController.swift in Sources */,
+				D4A05E3320D58EE500414D53 /* LITestQuestionsDataManager.swift in Sources */,
 				FABAA9A2206F871200018AF3 /* PlayVideoViewController.swift in Sources */,
+				D4A05E2620D5748A00414D53 /* LITestsViewController.swift in Sources */,
 				D4155BCF20C84B660017D93A /* LIUIView+Additions.swift in Sources */,
 				D4E0EC5920CBB0BA00DAD519 /* LIVideoModel.swift in Sources */,
 				D496502E207DD5AF00480E7F /* TestStartViewController.swift in Sources */,
@@ -936,6 +971,7 @@
 				D4292B1520B8822F0047E510 /* VPMOTPTextField.swift in Sources */,
 				D4A1791420CEBE1300A5F525 /* LIProfileItem.swift in Sources */,
 				A628022E2056885A00A1C244 /* Common.swift in Sources */,
+				D4A05E2F20D5754500414D53 /* LISolutionTableViewCell.swift in Sources */,
 				FAF0506E2077859D0091B710 /* SessionVideoViewController.swift in Sources */,
 				FA2D5FE22053B7EF00C2FE53 /* TutorialScreenCollectionViewCell.swift in Sources */,
 				FAEBA09720709821002F4EFC /* EditProfileViewController.swift in Sources */,
@@ -945,8 +981,10 @@
 				A628022F2056885A00A1C244 /* Model.swift in Sources */,
 				D496502C207DD4E900480E7F /* TestsTableViewCell.swift in Sources */,
 				D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */,
+				D4A05E3120D57F1000414D53 /* LIAnswerOptionModel.swift in Sources */,
 				D48C11D020CE199D0057650C /* LIShadowRoundCorneredView.swift in Sources */,
 				D4CC7E1920D0C0A000F4C92E /* LIChaptersViewController.swift in Sources */,
+				D4A05E2920D574B700414D53 /* LITestQuestionTableViewCell.swift in Sources */,
 				FA315862206E83B1005282F9 /* PopularVideosCollectionViewCell.swift in Sources */,
 				A628022C2056885A00A1C244 /* JSONParser.swift in Sources */,
 				D474D225207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift in Sources */,
@@ -962,6 +1000,7 @@
 				D4D8510620CB144D00B01564 /* LIFeedRecommendedQuestionsTableViewCell.swift in Sources */,
 				A628022B2056885A00A1C244 /* ActivityIndicator.swift in Sources */,
 				D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */,
+				D4A05E2B20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift in Sources */,
 				D4965030207DE1DE00480E7F /* TestPaperViewController.swift in Sources */,
 				D4E1701020CD1F8700BDD90F /* LIQuestionsModel.swift in Sources */,
 				D4A164F920B48010000459CF /* LIUtilities.swift in Sources */,
@@ -1000,6 +1039,7 @@
 				D474D229207CEFC500B460DA /* ExcerciseTableViewCell.swift in Sources */,
 				D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */,
 				D474D227207CD12100B460DA /* ExcerciseViewController.swift in Sources */,
+				D4A05E2D20D5753900414D53 /* LINextQuestionTableViewCell.swift in Sources */,
 				D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */,
 				A628023820569E7E00A1C244 /* StandardUIElements.swift in Sources */,
 				FA858AE32056E36800F9B142 /* YourBoardTableViewCell.swift in Sources */,
