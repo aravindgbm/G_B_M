@@ -31,6 +31,7 @@ struct LIConstants {
     static let quitGameAlertTitle = "Exit Game"
     static let quitGameAlertMessage = "Do you really want to quit the game"
     static let markText = "Marks: "
+    static let finalScore = "Your Score: "
 
 }
 
@@ -49,6 +50,7 @@ struct LIViewControllerIdentifier {
     static let ExercisesViewController = "LIExercisesViewController"
     static let StartTestOrGameViewController = "LIStartTestOrGameViewController"
     static let TestsViewController = "LITestsViewController"
+    static let FinalScoreViewController = "LIFinalScoreViewController"
 }
 
 struct LIStoryboards {

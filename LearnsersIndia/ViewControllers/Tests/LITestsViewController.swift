@@ -90,6 +90,9 @@ class LITestsViewController: UIViewController {
         self.testTableView.reloadData()
     }
     
+    func updateMarksWithOption(_ option:LIAnswerOptionModel?){
+         LITestQuestionsDataManager.sharedInstance.updateMarkWithSelectedOption(option, and: self.testObject?.markString)
+    }
     /*
      // MARK: - Navigation
      
@@ -105,13 +108,19 @@ class LITestsViewController: UIViewController {
 extension LITestsViewController:nextQuestionCellDelegate {
     func navigateToNextScreen() {
         if let orderNumber = self.testObject?.orderNumber {
-            let (testObject,islastQuestion) = LITestQuestionsDataManager.sharedInstance.getNextQuestionAndEndStatusWithCurrentOrder(orderNumber)
+            let (testObject,islastQuestion) = LITestQuestionsDataManager.sharedInstance.getNextQuestionAndEndStatusWithCurrentOrder(orderNumber, and: self.isQuestionAnswered )
+            
             if !islastQuestion && testObject != nil {
                 let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
                 let testsVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.TestsViewController) as? LITestsViewController
                 testsVC?.testObject = testObject
                 testsVC?.isLastQuestion = islastQuestion
                 self.navigationController?.pushViewController(testsVC!, animated: true)
+            }
+            else {
+                let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+                let finalScoreVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.FinalScoreViewController) as? LIFinalScoreViewController
+                self.navigationController?.pushViewController(finalScoreVC!, animated: true)
             }
         }
     }
@@ -166,6 +175,12 @@ extension LITestsViewController:UITableViewDelegate,UITableViewDataSource {
         let optionsArrayCount = self.testObject?.optionsArray?.count ?? 0
         if indexPath.row > LITestTableViewCellType.LITestTableViewCellTypeQuestion.rawValue && indexPath.row < LITestTableViewCellType.LITestTableViewCellTypeOptions.rawValue + optionsArrayCount && !self.isQuestionAnswered{
             self.isQuestionAnswered = true
+            let optionIndex = indexPath.row - LITestTableViewCellType.LITestTableViewCellTypeOptions.rawValue
+            if let count = self.testObject?.optionsArray?.count{
+                if optionIndex < count {
+                    self.updateMarksWithOption(self.testObject?.optionsArray?[optionIndex])
+                }
+            }
             self.selectedOptionRowIndex = indexPath.row
             tableView.reloadData()
         }

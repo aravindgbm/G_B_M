@@ -101,6 +101,7 @@ extension LIStartTestOrGameViewController{
                 self.testQuestionsArray = [LITestModel]()
                 self.testQuestionsArray = response?.sorted(by:{ $0.orderNumber! < $1.orderNumber!})
                 LITestQuestionsDataManager.sharedInstance.testQuestionsArray = self.testQuestionsArray
+                LITestQuestionsDataManager.sharedInstance.resetMarks()
                 self.navigateToTestViewController()
             }
             else {
