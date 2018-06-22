@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FLAnimatedImage
 
 class LIFinalScoreViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class LIFinalScoreViewController: UIViewController {
     
     @IBOutlet weak var skippedQuestionCountLabel: UILabel!
     
+    @IBOutlet weak var imageView: FLAnimatedImageView!
     @IBOutlet weak var finalScoreLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2281,6 +2281,7 @@ The correct answer of a question is displayed immediately after you answered a q
                     </view>
                     <connections>
                         <outlet property="finalScoreLabel" destination="PIJ-6W-szM" id="FQz-c6-stk"/>
+                        <outlet property="imageView" destination="bUB-iN-h6x" id="j9l-IM-xre"/>
                         <outlet property="rightAnswerCountLabel" destination="WLN-9Z-xdo" id="MRK-tf-eNX"/>
                         <outlet property="skippedQuestionCountLabel" destination="iwr-zH-cFO" id="zds-lP-Z6w"/>
                         <outlet property="wrongAnswerCountLabel" destination="TUg-qH-njM" id="I2L-sa-0H0"/>
