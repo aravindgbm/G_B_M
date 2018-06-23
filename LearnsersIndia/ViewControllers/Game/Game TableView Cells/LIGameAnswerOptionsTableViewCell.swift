@@ -23,7 +23,7 @@ class LIGameAnswerOptionsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func refreshCellWith(_ option:LIAnswerOptionModel?, isQuestionAnswered:Bool, and isSelectedOption:Bool) {
+    func refreshCellWith(_ option:LIAnswerOptionModel?, isQuestionAnswered:Bool, isSelectedOption:Bool, and isExtraLifeTaken:Bool) {
         self.optionObject = option
         self.optionLabel.attributedText = option?.optionString
         if isQuestionAnswered {
@@ -32,9 +32,17 @@ class LIGameAnswerOptionsTableViewCell: UITableViewCell {
             }
             if isSelectedOption {
                 if !(self.optionObject?.isCorrectOption ?? false) {
-                    self.containerView.backgroundColor = UIColor.red
+                    self.containerView.backgroundColor = UIColor.orange
                 }
             }
+            else if (!isSelectedOption && isExtraLifeTaken) {
+                if self.optionObject?.isCorrectOption ?? false{
+                    self.containerView.backgroundColor = UIColor.white
+                }
+            }
+        }
+        else {
+             self.containerView.backgroundColor = UIColor.white
         }
     }
 

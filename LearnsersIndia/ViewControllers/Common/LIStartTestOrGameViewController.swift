@@ -129,7 +129,7 @@ extension LIStartTestOrGameViewController{
                 self.gameLevelsArray = [LIGameLevelModel]()
                 self.gameLevelsArray = response?.sorted(by:{ $0.levelId! < $1.levelId!})
                 LIGameManager.sharedInstance.gameLevelsArray = self.gameLevelsArray
-                LIGameManager.sharedInstance.resetScore()
+                LIGameManager.sharedInstance.resetValues()
                 self.navigateToGameViewController()
             }
             else {

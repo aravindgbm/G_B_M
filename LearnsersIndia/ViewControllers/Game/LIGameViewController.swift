@@ -18,6 +18,8 @@ class LIGameViewController: UIViewController {
     
     @IBOutlet weak var gameTableView: UITableView!
     @IBOutlet weak var fiftyFiftyButton: UIButton!
+    @IBOutlet weak var extraLifeButtonDisabledImageView: UIImageView!
+    @IBOutlet weak var fiftyFiftyButtonDisabledImageView: UIImageView!
     @IBOutlet weak var extraLifeButton: UIButton!
     
     var levelDetailsView:LIShowLevelView?
@@ -28,6 +30,10 @@ class LIGameViewController: UIViewController {
     var isQuestionAnswered:Bool = false
     var selectedOptionRowIndex:Int?
     var player = AVPlayer()
+    var isExtralifeTaken:Bool = false
+    var isFiftyFiftyTaken:Bool = false
+    var wrongOptionIndexes:[Int]?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,6 +80,7 @@ class LIGameViewController: UIViewController {
         if !firstAudioPlayed {
             self.playAudioFrom(self.gameObject?.firstAudioUrl)
         }
+        self.updateButtons()
         self.gameTableView.estimatedRowHeight = 40.0
         self.gameTableView.rowHeight = UITableViewAutomaticDimension
         self.gameTableView.estimatedSectionHeaderHeight = 50.0
@@ -82,7 +89,15 @@ class LIGameViewController: UIViewController {
         self.gameTableView.delegate = self
         self.gameTableView.reloadData()
     }
-    
+   
+    func updateButtons(){
+        self.extraLifeButton.isEnabled = !LIGameManager.sharedInstance.isExtraLifeTaken
+        self.extraLifeButtonDisabledImageView.isHidden = !LIGameManager.sharedInstance.isExtraLifeTaken
+        self.fiftyFiftyButton.isEnabled = !LIGameManager.sharedInstance.isFiftyFiftyTaken
+        self.fiftyFiftyButtonDisabledImageView.isHidden = !LIGameManager.sharedInstance.isFiftyFiftyTaken
+        self.extraLifeButton.backgroundColor = LIGameManager.sharedInstance.isExtraLifeTaken ? UIColor(red: 0, green: 0, blue: 0, alpha: 0.03) : UIColor.white
+        self.fiftyFiftyButton.backgroundColor = LIGameManager.sharedInstance.isFiftyFiftyTaken ? UIColor(red: 0, green: 0, blue: 0, alpha: 0.03) : UIColor.white
+    }
     //   MARK: - Navigation
     func navigateToNextScreen(){
         self.player.pause()
@@ -111,16 +126,16 @@ class LIGameViewController: UIViewController {
                     NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(notif:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: playerItem)
                 }
                 self.player = AVPlayer(playerItem: playerItem)
-        
+                
                 player.volume = 5.0
                 player.play()
-
+                
             }
         }
     }
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//
-//    }
+    //    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    //
+    //    }
     
     @objc func playerDidFinishPlaying(notif: NSNotification) {
         if !firstAudioPlayed {
@@ -144,19 +159,28 @@ class LIGameViewController: UIViewController {
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
-
+    
     func updateSelectedOptionAt(_ index:Int){
         self.isQuestionAnswered = true
         self.selectedOptionRowIndex = index
         self.gameTableView.reloadData()
-        LIGameManager.sharedInstance.updateScoreWithSelectedOption(self.gameObject?.optionsArray?[index], and: self.gameLevelObject?.levelId
-        )
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(500)) {
             
-            if self.gameObject?.optionsArray?[index].isCorrectOption ?? false{
+            if self.gameObject?.optionsArray?[index].isCorrectOption ?? false {
+                LIGameManager.sharedInstance.updateScoreWithSelectedOption(self.gameObject?.optionsArray?[index], and: self.gameLevelObject?.levelId
+                )
                 self.navigateToNextScreen()
             }
+            else if (self.isExtralifeTaken) {
+                self.isQuestionAnswered = false
+                self.selectedOptionRowIndex = nil
+                self.isExtralifeTaken = false
+                LIUtilities.showOkAlertControllerWith(nil, message: LIConstants.extraLifeMessage, onViewController: self)
+                self.gameTableView.reloadData()
+            }
             else {
+                LIGameManager.sharedInstance.updateScoreWithSelectedOption(self.gameObject?.optionsArray?[index], and: self.gameLevelObject?.levelId
+                )
                 self.navigateToFinalScoreScreen()
             }
         }
@@ -181,8 +205,20 @@ class LIGameViewController: UIViewController {
     }
     
     @IBAction func fiftyFiftyButtonTapped(_ sender: Any) {
+        if !LIGameManager.sharedInstance.isFiftyFiftyTaken {
+            LIGameManager.sharedInstance.isFiftyFiftyTaken = true
+            self.isFiftyFiftyTaken = true
+            self.wrongOptionIndexes = LIGameManager.sharedInstance.getWrongOptionIndexToBeRemoved(self.gameObject?.optionsArray)
+            self.updateButtons()
+            self.gameTableView.reloadData()
+        }
     }
     @IBAction func extraLifeButtonTapped(_ sender: Any) {
+        if !LIGameManager.sharedInstance.isExtraLifeTaken {
+            LIGameManager.sharedInstance.isExtraLifeTaken = true
+            self.isExtralifeTaken = true
+            self.updateButtons()
+        }
     }
 }
 
@@ -229,13 +265,27 @@ extension LIGameViewController: UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LIGameTableViewCellIdentifiers.AnswerOption, for: indexPath) as? LIGameAnswerOptionsTableViewCell
-        cell?.refreshCellWith(self.gameObject?.optionsArray?[indexPath.row], isQuestionAnswered: self.isQuestionAnswered, and: self.selectedOptionRowIndex == indexPath.row)
+        cell?.refreshCellWith(self.gameObject?.optionsArray?[indexPath.row], isQuestionAnswered: self.isQuestionAnswered, isSelectedOption: self.selectedOptionRowIndex == indexPath.row,and: self.isExtralifeTaken)
+        if self.isFiftyFiftyTaken {
+            if self.wrongOptionIndexes?.contains(indexPath.row) ?? false {
+                cell?.containerView.isHidden = true
+            }
+        }
         return cell ?? UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row < self.gameObject?.optionsArray?.count ?? 0 {
-            if !self.isQuestionAnswered {
-                self.updateSelectedOptionAt(indexPath.row)
+            if self.isFiftyFiftyTaken {
+                if !(self.wrongOptionIndexes?.contains(indexPath.row) ?? false) && !self.isQuestionAnswered{
+                    self.updateSelectedOptionAt(indexPath.row)
+                    
+                }
+            }
+            else {
+                if !self.isQuestionAnswered {
+                    self.updateSelectedOptionAt(indexPath.row)
+                    
+                }
             }
         }
     }

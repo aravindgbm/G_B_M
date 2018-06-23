@@ -2140,7 +2140,7 @@ The correct answer of a question is displayed immediately after you answered a q
         <!--Game View Controller-->
         <scene sceneID="Sp5-sm-QGj">
             <objects>
-                <viewController storyboardIdentifier="LIGameViewController" id="6ex-f6-PkJ" customClass="LIGameViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LIGameViewController" hidesBottomBarWhenPushed="YES" id="6ex-f6-PkJ" customClass="LIGameViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sUm-jX-7y8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2195,6 +2195,14 @@ The correct answer of a question is displayed immediately after you answered a q
                                             <action selector="fiftyFiftyButtonTapped:" destination="6ex-f6-PkJ" eventType="touchUpInside" id="AGa-QP-IMl"/>
                                         </connections>
                                     </button>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_optionDisabled" translatesAutoresizingMaskIntoConstraints="NO" id="hLm-de-6uu">
+                                        <rect key="frame" x="305" y="30" width="20" height="20"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="nai-c6-Inp"/>
+                                            <constraint firstAttribute="height" constant="20" id="ruC-a8-elj"/>
+                                        </constraints>
+                                    </imageView>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Tp-ZZY">
                                         <rect key="frame" x="285" y="80" width="60" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2213,18 +2221,29 @@ The correct answer of a question is displayed immediately after you answered a q
                                             <action selector="extraLifeButtonTapped:" destination="6ex-f6-PkJ" eventType="touchUpInside" id="zEx-6g-8s0"/>
                                         </connections>
                                     </button>
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="game_optionDisabled" translatesAutoresizingMaskIntoConstraints="NO" id="64V-lt-oc8">
+                                        <rect key="frame" x="305" y="90" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="YuM-X3-9j7"/>
+                                            <constraint firstAttribute="height" constant="20" id="ayP-zl-oxn"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="leading" secondItem="5bx-Z3-gP6" secondAttribute="leading" id="2FG-J7-KRG"/>
                                     <constraint firstItem="zA7-ha-KX1" firstAttribute="centerY" secondItem="2t8-Ea-Eaj" secondAttribute="centerY" id="44A-mv-1gd"/>
+                                    <constraint firstItem="hLm-de-6uu" firstAttribute="centerX" secondItem="5bx-Z3-gP6" secondAttribute="centerX" id="83K-6J-cfL"/>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="trailing" secondItem="5bx-Z3-gP6" secondAttribute="trailing" id="Mky-Ih-dfs"/>
+                                    <constraint firstItem="hLm-de-6uu" firstAttribute="centerY" secondItem="5bx-Z3-gP6" secondAttribute="centerY" id="USh-fa-cwJ"/>
                                     <constraint firstAttribute="trailing" secondItem="5bx-Z3-gP6" secondAttribute="trailing" constant="30" id="Xvc-QO-RXM"/>
                                     <constraint firstItem="a2u-n4-0Qj" firstAttribute="leading" secondItem="2t8-Ea-Eaj" secondAttribute="leading" constant="40" id="h0R-a5-PFC"/>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="top" secondItem="5bx-Z3-gP6" secondAttribute="bottom" constant="20" id="iyw-bo-hK0"/>
                                     <constraint firstItem="zA7-ha-KX1" firstAttribute="centerX" secondItem="2t8-Ea-Eaj" secondAttribute="centerX" id="jp1-ok-Giu"/>
                                     <constraint firstAttribute="height" constant="160" id="kmI-es-CcB"/>
+                                    <constraint firstItem="64V-lt-oc8" firstAttribute="centerX" secondItem="gY5-Tp-ZZY" secondAttribute="centerX" id="plh-yV-HnF"/>
                                     <constraint firstItem="5bx-Z3-gP6" firstAttribute="centerY" secondItem="a2u-n4-0Qj" secondAttribute="centerY" id="sUv-0T-k2T"/>
+                                    <constraint firstItem="64V-lt-oc8" firstAttribute="centerY" secondItem="gY5-Tp-ZZY" secondAttribute="centerY" id="xSa-px-uPA"/>
                                     <constraint firstItem="a2u-n4-0Qj" firstAttribute="top" secondItem="2t8-Ea-Eaj" secondAttribute="top" constant="20" id="yVO-Wc-aea"/>
                                 </constraints>
                             </view>
@@ -2340,7 +2359,9 @@ The correct answer of a question is displayed immediately after you answered a q
                     </navigationItem>
                     <connections>
                         <outlet property="extraLifeButton" destination="gY5-Tp-ZZY" id="QaY-Jl-Mbi"/>
+                        <outlet property="extraLifeButtonDisabledImageView" destination="64V-lt-oc8" id="XUc-bz-ka4"/>
                         <outlet property="fiftyFiftyButton" destination="5bx-Z3-gP6" id="uQL-Z8-cZ2"/>
+                        <outlet property="fiftyFiftyButtonDisabledImageView" destination="hLm-de-6uu" id="wgm-6T-4gC"/>
                         <outlet property="gameTableView" destination="JJC-bf-o3h" id="FA4-b9-km3"/>
                     </connections>
                 </viewController>
@@ -2515,8 +2536,9 @@ The correct answer of a question is displayed immediately after you answered a q
         <image name="character_white_bg" width="72" height="48"/>
         <image name="exercise" width="42" height="42"/>
         <image name="gameFeed" width="42" height="42"/>
-        <image name="game_extraLife" width="20" height="20"/>
+        <image name="game_extraLife" width="30" height="30"/>
         <image name="game_logo" width="80" height="80"/>
+        <image name="game_optionDisabled" width="20" height="20"/>
         <image name="logo new" width="132" height="150"/>
         <image name="notification" width="42" height="42"/>
         <image name="play" width="30" height="30"/>
