@@ -18,6 +18,7 @@ class LIStartTestOrGameViewController: UIViewController {
     var testQuestionsArray:[LITestModel]?
     var isForGame:Bool = true
     var chapterObject:LIChapterModel?
+    var gameLevelsArray:[LIGameLevelModel]?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
@@ -31,7 +32,7 @@ class LIStartTestOrGameViewController: UIViewController {
     @IBAction func startButtonTapped(_ sender: Any) {
         
         if self.isForGame {
-            
+            self.callGetGameLevelsApi()
         }
         else {
             self.callGetTestQuestionsApi()
@@ -67,15 +68,16 @@ class LIStartTestOrGameViewController: UIViewController {
         testsVC?.testObject = self.testQuestionsArray?.first
         testsVC?.isLastQuestion = false
         self.navigationController?.pushViewController(testsVC!, animated: true)
-//        if let orderNumber = self.testQuestionsArray?.first?.orderNumber {
-//            let (testObject,islastQuestion) = LITestQuestionsDataManager.sharedInstance.getNextQuestionAndEndStatusWithCurrentOrder(orderNumber)
-//            testsVC?.testObject = testObject
-//            testsVC?.isLastQuestion = islastQuestion
-//            self.navigationController?.pushViewController(testsVC!, animated: true)
-//        }
         
     }
     
+    func navigateToGameViewController(){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let gameVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.GameViewController) as? LIGameViewController
+        gameVC?.gameLevelObject = self.gameLevelsArray?.first
+        gameVC?.isLastLevel = false
+        self.navigationController?.pushViewController(gameVC!, animated: true)
+    }
      
      /*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -117,5 +119,29 @@ extension LIStartTestOrGameViewController{
             LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
         }
         
+    }
+    
+    func callGetGameLevelsApi(){
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        LIUserStudentAPIsHandler.callGetGameLevelsAPIWith(nil, shouldAddToken: false, success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            if let _ = response {
+                self.gameLevelsArray = [LIGameLevelModel]()
+                self.gameLevelsArray = response?.sorted(by:{ $0.levelId! < $1.levelId!})
+                LIGameManager.sharedInstance.gameLevelsArray = self.gameLevelsArray
+                LIGameManager.sharedInstance.resetScore()
+                self.navigateToGameViewController()
+            }
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+            
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
     }
 }

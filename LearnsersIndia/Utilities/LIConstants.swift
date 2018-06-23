@@ -51,6 +51,7 @@ struct LIViewControllerIdentifier {
     static let StartTestOrGameViewController = "LIStartTestOrGameViewController"
     static let TestsViewController = "LITestsViewController"
     static let FinalScoreViewController = "LIFinalScoreViewController"
+    static let GameViewController = "LIGameViewController"
 }
 
 struct LIStoryboards {
@@ -58,6 +59,9 @@ struct LIStoryboards {
     static let Home = "Home"
 }
 
+struct LINibs {
+    static let ShowLevel = "LIShowLevelView"
+}
 struct LIColors {
     static let ThemeColor = "#0596CF"
     static let LogoutLabelTextColor = "#b6927b"

@@ -37,6 +37,8 @@
 		A6E1B8D120623ABC00FE580B /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E1B8CE20623AB900FE580B /* iTunesArtwork@2x.png */; };
 		A6E1B8D220623ABC00FE580B /* iTunesArtwork@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = A6E1B8CF20623ABA00FE580B /* iTunesArtwork@3x.png */; };
 		C435F1A81F602B00A3501968 /* Pods_LearnsersIndia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE596DED71B34536121FE743 /* Pods_LearnsersIndia.framework */; };
+		D404F6C920DE3CA9006795EF /* LIShowLevelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D404F6C820DE3CA9006795EF /* LIShowLevelView.xib */; };
+		D404F6CB20DE3D74006795EF /* LIShowLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D404F6CA20DE3D74006795EF /* LIShowLevelView.swift */; };
 		D4155BC720C81CB70017D93A /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4155BC620C81CB70017D93A /* Home.storyboard */; };
 		D4155BCA20C82A560017D93A /* LIFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4155BC920C82A560017D93A /* LIFeedViewController.swift */; };
 		D4155BCD20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */; };
@@ -58,6 +60,12 @@
 		D474D229207CEFC500B460DA /* ExcerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */; };
 		D474D22B207CF1EC00B460DA /* SampleExcerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */; };
 		D474D22D207CF71200B460DA /* SampleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D474D22C207CF71200B460DA /* SampleTableViewCell.swift */; };
+		D47A45BC20DE418F009AB9A8 /* LIGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45BB20DE418F009AB9A8 /* LIGameViewController.swift */; };
+		D47A45BF20DE4A17009AB9A8 /* LIGameQuestionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45BE20DE4A17009AB9A8 /* LIGameQuestionHeaderTableViewCell.swift */; };
+		D47A45C120DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C020DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift */; };
+		D47A45C320DE4E48009AB9A8 /* LIGameLevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C220DE4E48009AB9A8 /* LIGameLevelModel.swift */; };
+		D47A45C520DE4FBE009AB9A8 /* LIGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */; };
+		D47A45C720DE5673009AB9A8 /* LIGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C620DE5673009AB9A8 /* LIGameManager.swift */; };
 		D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
@@ -167,6 +175,8 @@
 		A6E1B8CE20623AB900FE580B /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@2x.png"; path = "Appicon/iTunesArtwork@2x.png"; sourceTree = SOURCE_ROOT; };
 		A6E1B8CF20623ABA00FE580B /* iTunesArtwork@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iTunesArtwork@3x.png"; path = "Appicon/iTunesArtwork@3x.png"; sourceTree = SOURCE_ROOT; };
 		D06C53808856BCE53FE75C93 /* Pods-LearnsersIndia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LearnsersIndia.release.xcconfig"; path = "Pods/Target Support Files/Pods-LearnsersIndia/Pods-LearnsersIndia.release.xcconfig"; sourceTree = "<group>"; };
+		D404F6C820DE3CA9006795EF /* LIShowLevelView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LIShowLevelView.xib; sourceTree = "<group>"; };
+		D404F6CA20DE3D74006795EF /* LIShowLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIShowLevelView.swift; sourceTree = "<group>"; };
 		D4155BC620C81CB70017D93A /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		D4155BC920C82A560017D93A /* LIFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedViewController.swift; sourceTree = "<group>"; };
 		D4155BCC20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFeedUtilitiesTableViewCell.swift; sourceTree = "<group>"; };
@@ -188,6 +198,12 @@
 		D474D228207CEFC500B460DA /* ExcerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseTableViewCell.swift; sourceTree = "<group>"; };
 		D474D22A207CF1EC00B460DA /* SampleExcerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleExcerciseViewController.swift; sourceTree = "<group>"; };
 		D474D22C207CF71200B460DA /* SampleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleTableViewCell.swift; sourceTree = "<group>"; };
+		D47A45BB20DE418F009AB9A8 /* LIGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameViewController.swift; sourceTree = "<group>"; };
+		D47A45BE20DE4A17009AB9A8 /* LIGameQuestionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameQuestionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D47A45C020DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameAnswerOptionsTableViewCell.swift; sourceTree = "<group>"; };
+		D47A45C220DE4E48009AB9A8 /* LIGameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameLevelModel.swift; sourceTree = "<group>"; };
+		D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameModel.swift; sourceTree = "<group>"; };
+		D47A45C620DE5673009AB9A8 /* LIGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameManager.swift; sourceTree = "<group>"; };
 		D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIResetPasswordViewController.swift; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
@@ -366,6 +382,7 @@
 		A6E1B8CB2062357900FE580B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				D404F6C720DE3C6C006795EF /* Game */,
 				D4E3459020DD5D67009AF92F /* Score */,
 				D4A05E2020D55AB900414D53 /* Common */,
 				D4E8C4FA20B3446200E0D770 /* RootNavigationControllers */,
@@ -396,6 +413,17 @@
 				FA2D5FE92054191C00C2FE53 /* sggd.gif */,
 			);
 			path = Gifs;
+			sourceTree = "<group>";
+		};
+		D404F6C720DE3C6C006795EF /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				D47A45BD20DE49EB009AB9A8 /* Game TableView Cells */,
+				D404F6C820DE3CA9006795EF /* LIShowLevelView.xib */,
+				D404F6CA20DE3D74006795EF /* LIShowLevelView.swift */,
+				D47A45BB20DE418F009AB9A8 /* LIGameViewController.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		D4155BC520C81C6F0017D93A /* Storyboard */ = {
@@ -466,6 +494,15 @@
 				D4899B2D20D435230074860D /* LIExercisesViewController.swift */,
 			);
 			path = Excercise;
+			sourceTree = "<group>";
+		};
+		D47A45BD20DE49EB009AB9A8 /* Game TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D47A45BE20DE4A17009AB9A8 /* LIGameQuestionHeaderTableViewCell.swift */,
+				D47A45C020DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift */,
+			);
+			path = "Game TableView Cells";
 			sourceTree = "<group>";
 		};
 		D482B9AA20B1DCA300DAB90E /* Utilities */ = {
@@ -662,6 +699,8 @@
 				D4899B3220D43F720074860D /* LIExerciseModel.swift */,
 				D4A05E3020D57F1000414D53 /* LIAnswerOptionModel.swift */,
 				D4A05E2320D56DB600414D53 /* LITestModel.swift */,
+				D47A45C220DE4E48009AB9A8 /* LIGameLevelModel.swift */,
+				D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,6 +725,7 @@
 			children = (
 				D4E8C4FC20B3463A00E0D770 /* LIAccountManager.swift */,
 				D4A05E3220D58EE500414D53 /* LITestQuestionsDataManager.swift */,
+				D47A45C620DE5673009AB9A8 /* LIGameManager.swift */,
 			);
 			path = DataManagers;
 			sourceTree = "<group>";
@@ -884,6 +924,7 @@
 				FA2D5FF22054191D00C2FE53 /* gif_two.gif in Resources */,
 				FA2D5FD52053AAF900C2FE53 /* Assets.xcassets in Resources */,
 				FA2D5FF62054191D00C2FE53 /* loading_animation-iphone-game-design-ramotion.gif in Resources */,
+				D404F6C920DE3CA9006795EF /* LIShowLevelView.xib in Resources */,
 				D4155BC720C81CB70017D93A /* Home.storyboard in Resources */,
 				FA2D5FF32054191D00C2FE53 /* gdsgdfsg.gif in Resources */,
 				FA2D5FF12054191D00C2FE53 /* sgsgd.gif in Resources */,
@@ -961,6 +1002,7 @@
 				D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */,
 				FA2D5FE02053AFCD00C2FE53 /* TutorialScreenViewController.swift in Sources */,
 				FA2D5FCD2053AAF900C2FE53 /* ViewController.swift in Sources */,
+				D47A45C120DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift in Sources */,
 				D48C11D720CE1CD00057650C /* LIProfileTableViewCell.swift in Sources */,
 				D4A05E2420D56DB600414D53 /* LITestModel.swift in Sources */,
 				A68943642058DB9C00CE42AA /* UserTypePopUpViewController.swift in Sources */,
@@ -999,6 +1041,7 @@
 				FA315862206E83B1005282F9 /* PopularVideosCollectionViewCell.swift in Sources */,
 				A628022C2056885A00A1C244 /* JSONParser.swift in Sources */,
 				D474D225207CD0FE00B460DA /* ExcerciseSolutionTableViewCell.swift in Sources */,
+				D47A45C520DE4FBE009AB9A8 /* LIGameModel.swift in Sources */,
 				A66D1D22205A33FE009878DA /* HomeViewController.swift in Sources */,
 				FABAA9A0206F2F3E00018AF3 /* RecomentedQuestionsTableViewCell.swift in Sources */,
 				A62802312056885A00A1C244 /* R_Helper.swift in Sources */,
@@ -1021,6 +1064,7 @@
 				D4D06C1020CF72DD00FE572C /* LIQuestionsViewController.swift in Sources */,
 				D4EEEDF920C9A240002C9808 /* LIFeedBannerTableViewCell.swift in Sources */,
 				D4E0EC5720CBAB5E00DAD519 /* LIUserStudentAPIsHandler.swift in Sources */,
+				D404F6CB20DE3D74006795EF /* LIShowLevelView.swift in Sources */,
 				FA315860206E4ABD005282F9 /* FeedViewController.swift in Sources */,
 				FA858AE12056E2B600F9B142 /* YourBoardViewController.swift in Sources */,
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,
@@ -1037,7 +1081,9 @@
 				A68F4F95205BC7AF005B8E83 /* DropdownCell.swift in Sources */,
 				D4292B1A20B895840047E510 /* LIUIColor+Additions.swift in Sources */,
 				A6801A57206A1D09003A740F /* VideoViewController.swift in Sources */,
+				D47A45C320DE4E48009AB9A8 /* LIGameLevelModel.swift in Sources */,
 				A6A5DD932057EDBB00C90569 /* YourGradeViewController.swift in Sources */,
+				D47A45BC20DE418F009AB9A8 /* LIGameViewController.swift in Sources */,
 				D4155BCD20C849780017D93A /* LIFeedUtilitiesTableViewCell.swift in Sources */,
 				D4292B1620B8822F0047E510 /* VPMOTPView.swift in Sources */,
 				FAF05077207787B70091B710 /* GetChapterTableViewCell.swift in Sources */,
@@ -1050,6 +1096,8 @@
 				A62802302056885A00A1C244 /* R_Classes + Extensions.swift in Sources */,
 				D474D229207CEFC500B460DA /* ExcerciseTableViewCell.swift in Sources */,
 				D4E8C4FD20B3463A00E0D770 /* LIAccountManager.swift in Sources */,
+				D47A45C720DE5673009AB9A8 /* LIGameManager.swift in Sources */,
+				D47A45BF20DE4A17009AB9A8 /* LIGameQuestionHeaderTableViewCell.swift in Sources */,
 				D474D227207CD12100B460DA /* ExcerciseViewController.swift in Sources */,
 				D4A05E2D20D5753900414D53 /* LINextQuestionTableViewCell.swift in Sources */,
 				D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */,

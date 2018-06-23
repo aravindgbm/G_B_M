@@ -24,14 +24,7 @@ class LITestsViewController: UIViewController {
         case LITestTableViewCellTypeOptions
         case LITestTableViewCellTypeNextQuestion
         case LITestTableViewCellTypeSolution
-//        mutating func updateNextQuestionValue(_ value:Int) -> LITestTableViewCellType{
-//            switch self {
-//            case .LITestTableViewCellTypeNextQuestion:
-//                return LITestsViewController.LITestTableViewCellType(rawValue: self.rawValue + value)!
-//            default:
-//                return self
-//            }
-//        }
+
     }
     
     enum TestTableViewCellStaticRowCount:Int {
@@ -120,6 +113,7 @@ extension LITestsViewController:nextQuestionCellDelegate {
             else {
                 let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
                 let finalScoreVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.FinalScoreViewController) as? LIFinalScoreViewController
+                finalScoreVC?.isFromGame = false
                 self.navigationController?.pushViewController(finalScoreVC!, animated: true)
             }
         }

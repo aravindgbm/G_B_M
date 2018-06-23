@@ -292,4 +292,76 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callGetGameLevelsAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LIGameLevelModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        else if shouldAddToken && requestParams == nil {
+            request = [String:Any]()
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getGameLevelUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.responseData] as? [[String:Any]] {
+                    var gameLevelsArray:Array<LIGameLevelModel> = Array()
+                    for object in responseArray {
+                        
+                        if let levelObject = LIGameLevelModel(object) {
+                            gameLevelsArray.append(levelObject)
+                        }
+                    }
+                    success(gameLevelsArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callGetGameQuestionAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((LIGameModel?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getGameQuestionUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let gameData = reponseDict[LIAPIResponseKeys.questionData] as? [String:AnyObject] {
+                    let gameObject = LIGameModel(gameData)
+                    success(gameObject)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+                
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

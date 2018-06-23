@@ -11,6 +11,7 @@ import FLAnimatedImage
 
 class LIFinalScoreViewController: UIViewController {
 
+    @IBOutlet weak var marksContainerView: LIShadowRoundCorneredView!
     @IBOutlet weak var rightAnswerCountLabel: UILabel!
     @IBOutlet weak var wrongAnswerCountLabel: UILabel!
     
@@ -18,6 +19,7 @@ class LIFinalScoreViewController: UIViewController {
     
     @IBOutlet weak var imageView: FLAnimatedImageView!
     @IBOutlet weak var finalScoreLabel: UILabel!
+    var isFromGame:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpViews()
@@ -36,11 +38,18 @@ class LIFinalScoreViewController: UIViewController {
     //MARK: - SetUp Views
     
     func setUpViews(){
-         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        self.rightAnswerCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.rightAnswerCount)
-        self.wrongAnswerCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.wrongAnswerCount)
-        self.skippedQuestionCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.skippedQuestionCount)
-        self.finalScoreLabel.text = LIConstants.finalScore + String(LITestQuestionsDataManager.sharedInstance.totalMark)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.marksContainerView.isHidden = isFromGame
+        if isFromGame {
+            self.finalScoreLabel.text = LIConstants.finalScore + String(LIGameManager.sharedInstance.totalScore)
+        }
+        
+        else {
+            self.rightAnswerCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.rightAnswerCount)
+            self.wrongAnswerCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.wrongAnswerCount)
+            self.skippedQuestionCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.skippedQuestionCount)
+            self.finalScoreLabel.text = LIConstants.finalScore + String(LITestQuestionsDataManager.sharedInstance.totalMark)
+        }
     }
     /*
     // MARK: - Navigation
