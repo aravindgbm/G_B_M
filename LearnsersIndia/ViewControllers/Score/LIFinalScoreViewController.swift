@@ -8,6 +8,7 @@
 
 import UIKit
 import FLAnimatedImage
+//import SAConfettiView
 
 class LIFinalScoreViewController: UIViewController {
 
@@ -17,9 +18,12 @@ class LIFinalScoreViewController: UIViewController {
     
     @IBOutlet weak var skippedQuestionCountLabel: UILabel!
     
+    @IBOutlet weak var finishButton: UIButton!
     @IBOutlet weak var imageView: FLAnimatedImageView!
     @IBOutlet weak var finalScoreLabel: UILabel!
     var isFromGame:Bool = false
+    var confettiView: SAConfettiView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpViews()
@@ -38,6 +42,7 @@ class LIFinalScoreViewController: UIViewController {
     //MARK: - SetUp Views
     
     func setUpViews(){
+        
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.marksContainerView.isHidden = isFromGame
         if isFromGame {
@@ -50,6 +55,27 @@ class LIFinalScoreViewController: UIViewController {
             self.skippedQuestionCountLabel.text = String(LITestQuestionsDataManager.sharedInstance.skippedQuestionCount)
             self.finalScoreLabel.text = LIConstants.finalScore + String(LITestQuestionsDataManager.sharedInstance.totalMark)
         }
+        self.setUpConfetti()
+    }
+    
+    func setUpConfetti(){
+        confettiView = SAConfettiView(frame: self.view.bounds)
+        
+        confettiView.colors = [UIColor(red:0.95, green:0.40, blue:0.27, alpha:1.0),
+                               UIColor(red:1.00, green:0.78, blue:0.36, alpha:1.0),
+                               UIColor(red:0.48, green:0.78, blue:0.64, alpha:1.0),
+                               UIColor(red:0.30, green:0.76, blue:0.85, alpha:1.0),
+                               UIColor(red:0.58, green:0.39, blue:0.55, alpha:1.0)]
+        
+        confettiView.intensity = 1
+        
+        confettiView.type = .diamond
+        
+        // For custom image
+        // confettiView.type = .Image(UIImage(named: "diamond")!)
+        view.addSubview(confettiView)
+        confettiView.startConfetti()
+        self.view.bringSubview(toFront: self.finishButton)
     }
     /*
     // MARK: - Navigation

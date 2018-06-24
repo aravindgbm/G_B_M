@@ -67,6 +67,13 @@
 		D47A45C520DE4FBE009AB9A8 /* LIGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */; };
 		D47A45C720DE5673009AB9A8 /* LIGameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A45C620DE5673009AB9A8 /* LIGameManager.swift */; };
 		D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */; };
+		D47CD1C120DF67710088C63A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1B920DF67710088C63A /* .gitkeep */; };
+		D47CD1C220DF67710088C63A /* confetti.png in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BA20DF67710088C63A /* confetti.png */; };
+		D47CD1C320DF67710088C63A /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BB20DF67710088C63A /* diamond.png */; };
+		D47CD1C420DF67710088C63A /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BC20DF67710088C63A /* star.png */; };
+		D47CD1C520DF67710088C63A /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BD20DF67710088C63A /* triangle.png */; };
+		D47CD1C620DF67710088C63A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BF20DF67710088C63A /* .gitkeep */; };
+		D47CD1C720DF67710088C63A /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CD1C020DF67710088C63A /* SAConfettiView.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
 		D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B2D20D435230074860D /* LIExercisesViewController.swift */; };
@@ -205,6 +212,13 @@
 		D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameModel.swift; sourceTree = "<group>"; };
 		D47A45C620DE5673009AB9A8 /* LIGameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIGameManager.swift; sourceTree = "<group>"; };
 		D47A98C020B94122002CD341 /* LIResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIResetPasswordViewController.swift; sourceTree = "<group>"; };
+		D47CD1B920DF67710088C63A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D47CD1BA20DF67710088C63A /* confetti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = confetti.png; sourceTree = "<group>"; };
+		D47CD1BB20DF67710088C63A /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
+		D47CD1BC20DF67710088C63A /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		D47CD1BD20DF67710088C63A /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
+		D47CD1BF20DF67710088C63A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		D47CD1C020DF67710088C63A /* SAConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAConfettiView.swift; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
 		D4899B2D20D435230074860D /* LIExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExercisesViewController.swift; sourceTree = "<group>"; };
@@ -329,14 +343,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A62802182056885A00A1C244 /* Helper Class */ = {
+		A62802182056885A00A1C244 /* External Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				D438259E20DF62F000928909 /* Confetti */,
 				D4292B1220B8822E0047E510 /* VPMOTPView */,
 				A62802192056885A00A1C244 /* Used In Autograde */,
 				A62802222056885A00A1C244 /* Used In Romana */,
 			);
-			path = "Helper Class";
+			path = "External Libraries";
 			sourceTree = SOURCE_ROOT;
 		};
 		A62802192056885A00A1C244 /* Used In Autograde */ = {
@@ -467,6 +482,14 @@
 			path = VPMOTPView;
 			sourceTree = "<group>";
 		};
+		D438259E20DF62F000928909 /* Confetti */ = {
+			isa = PBXGroup;
+			children = (
+				D47CD1B720DF67710088C63A /* SAConfettiView */,
+			);
+			path = Confetti;
+			sourceTree = "<group>";
+		};
 		D46F7B2520B363FD00EBDEE4 /* API Handlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -503,6 +526,36 @@
 				D47A45C020DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift */,
 			);
 			path = "Game TableView Cells";
+			sourceTree = "<group>";
+		};
+		D47CD1B720DF67710088C63A /* SAConfettiView */ = {
+			isa = PBXGroup;
+			children = (
+				D47CD1B820DF67710088C63A /* Assets */,
+				D47CD1BE20DF67710088C63A /* Classes */,
+			);
+			path = SAConfettiView;
+			sourceTree = "<group>";
+		};
+		D47CD1B820DF67710088C63A /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D47CD1B920DF67710088C63A /* .gitkeep */,
+				D47CD1BA20DF67710088C63A /* confetti.png */,
+				D47CD1BB20DF67710088C63A /* diamond.png */,
+				D47CD1BC20DF67710088C63A /* star.png */,
+				D47CD1BD20DF67710088C63A /* triangle.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		D47CD1BE20DF67710088C63A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				D47CD1BF20DF67710088C63A /* .gitkeep */,
+				D47CD1C020DF67710088C63A /* SAConfettiView.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D482B9AA20B1DCA300DAB90E /* Utilities */ = {
@@ -762,7 +815,7 @@
 				FA2D5FCA2053AAF900C2FE53 /* AppDelegate.swift */,
 				FA2D5FCC2053AAF900C2FE53 /* ViewController.swift */,
 				A6E1B8CC206235B300FE580B /* Gifs */,
-				A62802182056885A00A1C244 /* Helper Class */,
+				A62802182056885A00A1C244 /* External Libraries */,
 				A6E1B8CB2062357900FE580B /* ViewControllers */,
 				FA2D5FD62053AAF900C2FE53 /* LaunchScreen.storyboard */,
 				FA2D5FD92053AAF900C2FE53 /* Info.plist */,
@@ -919,20 +972,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6DFCED92061354F00680771 /* DropdownCell.xib in Resources */,
+				D47CD1C420DF67710088C63A /* star.png in Resources */,
 				FA2D5FD82053AAF900C2FE53 /* LaunchScreen.storyboard in Resources */,
 				FA2D5FF02054191D00C2FE53 /* sggd.gif in Resources */,
 				FA2D5FF22054191D00C2FE53 /* gif_two.gif in Resources */,
 				FA2D5FD52053AAF900C2FE53 /* Assets.xcassets in Resources */,
+				D47CD1C220DF67710088C63A /* confetti.png in Resources */,
 				FA2D5FF62054191D00C2FE53 /* loading_animation-iphone-game-design-ramotion.gif in Resources */,
 				D404F6C920DE3CA9006795EF /* LIShowLevelView.xib in Resources */,
+				D47CD1C320DF67710088C63A /* diamond.png in Resources */,
 				D4155BC720C81CB70017D93A /* Home.storyboard in Resources */,
 				FA2D5FF32054191D00C2FE53 /* gdsgdfsg.gif in Resources */,
 				FA2D5FF12054191D00C2FE53 /* sgsgd.gif in Resources */,
+				D47CD1C620DF67710088C63A /* .gitkeep in Resources */,
 				A6E1B8D220623ABC00FE580B /* iTunesArtwork@3x.png in Resources */,
+				D47CD1C120DF67710088C63A /* .gitkeep in Resources */,
 				FA2D5FF52054191D00C2FE53 /* gif_onerrr.gif in Resources */,
 				FA2D5FF42054191D00C2FE53 /* gif_one.gif in Resources */,
 				A6E1B8D120623ABC00FE580B /* iTunesArtwork@2x.png in Resources */,
 				A6E1B8D020623ABC00FE580B /* iTunesArtwork@1x.png in Resources */,
+				D47CD1C520DF67710088C63A /* triangle.png in Resources */,
 				FA2D5FD02053AAF900C2FE53 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,6 +1090,7 @@
 				D474D21E207C643B00B460DA /* SessionvideoCollectionViewCell.swift in Sources */,
 				D4D8510820CB145B00B01564 /* LIFeedQuestionsTableViewCell.swift in Sources */,
 				D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */,
+				D47CD1C720DF67710088C63A /* SAConfettiView.swift in Sources */,
 				A628022F2056885A00A1C244 /* Model.swift in Sources */,
 				D496502C207DD4E900480E7F /* TestsTableViewCell.swift in Sources */,
 				D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */,
