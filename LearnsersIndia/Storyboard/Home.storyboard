@@ -421,7 +421,7 @@
                                         <rect key="frame" x="0.0" y="1252" width="375" height="241"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="sAK-Qt-wxt" id="JMl-HP-pzx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="241"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="240.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zKU-Ij-R59" customClass="LIShadowView" customModule="LearnsersIndia" customModuleProvider="target">
@@ -488,7 +488,7 @@
                                         <rect key="frame" x="0.0" y="1493" width="375" height="389"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eP9-Ti-DCw" id="lVu-kd-I57">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="389"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="388.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCY-Xq-JUg" customClass="LIShadowView" customModule="LearnsersIndia" customModuleProvider="target">
@@ -2228,15 +2228,24 @@ The correct answer of a question is displayed immediately after you answered a q
                                             <constraint firstAttribute="height" constant="20" id="ayP-zl-oxn"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="Wnm-St-aQC">
+                                        <rect key="frame" x="187" y="130" width="0.0" height="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.97741509508896141" green="0.35816993464052282" blue="0.90638602373819888" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="leading" secondItem="5bx-Z3-gP6" secondAttribute="leading" id="2FG-J7-KRG"/>
                                     <constraint firstItem="zA7-ha-KX1" firstAttribute="centerY" secondItem="2t8-Ea-Eaj" secondAttribute="centerY" id="44A-mv-1gd"/>
                                     <constraint firstItem="hLm-de-6uu" firstAttribute="centerX" secondItem="5bx-Z3-gP6" secondAttribute="centerX" id="83K-6J-cfL"/>
+                                    <constraint firstItem="Wnm-St-aQC" firstAttribute="centerX" secondItem="2t8-Ea-Eaj" secondAttribute="centerX" id="FMn-il-Sik"/>
+                                    <constraint firstItem="Wnm-St-aQC" firstAttribute="top" secondItem="zA7-ha-KX1" secondAttribute="bottom" constant="10" id="KCu-0R-09W"/>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="trailing" secondItem="5bx-Z3-gP6" secondAttribute="trailing" id="Mky-Ih-dfs"/>
                                     <constraint firstItem="hLm-de-6uu" firstAttribute="centerY" secondItem="5bx-Z3-gP6" secondAttribute="centerY" id="USh-fa-cwJ"/>
                                     <constraint firstAttribute="trailing" secondItem="5bx-Z3-gP6" secondAttribute="trailing" constant="30" id="Xvc-QO-RXM"/>
+                                    <constraint firstAttribute="bottom" secondItem="Wnm-St-aQC" secondAttribute="bottom" constant="10" id="eBQ-NG-k9j"/>
                                     <constraint firstItem="a2u-n4-0Qj" firstAttribute="leading" secondItem="2t8-Ea-Eaj" secondAttribute="leading" constant="40" id="h0R-a5-PFC"/>
                                     <constraint firstItem="gY5-Tp-ZZY" firstAttribute="top" secondItem="5bx-Z3-gP6" secondAttribute="bottom" constant="20" id="iyw-bo-hK0"/>
                                     <constraint firstItem="zA7-ha-KX1" firstAttribute="centerX" secondItem="2t8-Ea-Eaj" secondAttribute="centerX" id="jp1-ok-Giu"/>
@@ -2363,6 +2372,7 @@ The correct answer of a question is displayed immediately after you answered a q
                         <outlet property="fiftyFiftyButton" destination="5bx-Z3-gP6" id="uQL-Z8-cZ2"/>
                         <outlet property="fiftyFiftyButtonDisabledImageView" destination="hLm-de-6uu" id="wgm-6T-4gC"/>
                         <outlet property="gameTableView" destination="JJC-bf-o3h" id="FA4-b9-km3"/>
+                        <outlet property="timeLeftLabel" destination="Wnm-St-aQC" id="piy-0L-Jgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s5D-Wl-SUH" userLabel="First Responder" sceneMemberID="firstResponder"/>

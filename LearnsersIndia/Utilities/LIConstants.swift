@@ -33,6 +33,7 @@ struct LIConstants {
     static let markText = "Marks: "
     static let finalScore = "Your Score: "
     static let extraLifeMessage = "You have taken your extra life"
+    static let timeRemaining = "Time Remaining: "
 
 }
 

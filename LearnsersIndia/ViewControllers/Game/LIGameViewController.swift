@@ -22,6 +22,7 @@ class LIGameViewController: UIViewController {
     @IBOutlet weak var fiftyFiftyButtonDisabledImageView: UIImageView!
     @IBOutlet weak var extraLifeButton: UIButton!
     
+    @IBOutlet weak var timeLeftLabel: UILabel!
     var levelDetailsView:LIShowLevelView?
     var gameLevelObject:LIGameLevelModel?
     var isLastLevel:Bool = false
@@ -33,8 +34,8 @@ class LIGameViewController: UIViewController {
     var isExtralifeTaken:Bool = false
     var isFiftyFiftyTaken:Bool = false
     var wrongOptionIndexes:[Int]?
-    
-    
+    var timeLeftTimer:Timer?
+    var timeLeft:Int = 0
     override func viewDidLoad() {
         super.viewDidLoad()
         self.showlevelDetails()
@@ -88,6 +89,9 @@ class LIGameViewController: UIViewController {
         self.gameTableView.dataSource = self
         self.gameTableView.delegate = self
         self.gameTableView.reloadData()
+        if let _ = self.gameObject?.levelDuration {
+              self.setUpTimer()
+        }
     }
    
     func updateButtons(){
@@ -98,6 +102,30 @@ class LIGameViewController: UIViewController {
         self.extraLifeButton.backgroundColor = LIGameManager.sharedInstance.isExtraLifeTaken ? UIColor(red: 0, green: 0, blue: 0, alpha: 0.03) : UIColor.white
         self.fiftyFiftyButton.backgroundColor = LIGameManager.sharedInstance.isFiftyFiftyTaken ? UIColor(red: 0, green: 0, blue: 0, alpha: 0.03) : UIColor.white
     }
+    
+    func setUpTimer(){
+        if self.timeLeftTimer == nil || !(self.timeLeftTimer?.isValid ?? false) {
+            self.timeLeftTimer = Timer()
+            self.timeLeft = (self.gameObject?.levelDuration)!
+            self.timeLeftTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimeLeftLabel), userInfo: nil, repeats: true)
+        }
+    }
+    
+    @objc func updateTimeLeftLabel(){
+        if self.timeLeft <= 0 {
+            self.timeLeftTimer?.invalidate()
+            self.timeLeftTimer = nil
+            self.navigateToFinalScoreScreen()
+        }
+        else {
+            let hourRemaining = self.timeLeft / 3600
+            let minutesRemaining = self.timeLeft / 60
+            let secondsRemaining = self.timeLeft % 60
+            self.timeLeftLabel.text = LIConstants.timeRemaining + String(format: "%02d:%02d:%02d", abs(hourRemaining),abs(minutesRemaining),abs(secondsRemaining))
+            self.timeLeft -= 1
+        }
+    }
+    
     //   MARK: - Navigation
     func navigateToNextScreen(){
         self.player.pause()
