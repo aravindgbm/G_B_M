@@ -7,8 +7,11 @@
 //
 
 import UIKit
-
+protocol questionsTableViewCellDelegate:class {
+    func showAnswerForQuestion(_ question:LIQuestionsModel?)
+}
 class LIQuestionsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var userProfilePic: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     
@@ -17,6 +20,7 @@ class LIQuestionsTableViewCell: UITableViewCell {
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var questionTimestampLabel: UILabel!
     var questionModel:LIQuestionsModel?
+    weak var delegate:questionsTableViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,9 +39,10 @@ class LIQuestionsTableViewCell: UITableViewCell {
         self.userNameLabel.text = self.questionModel?.studentName
         self.questionTimestampLabel.text = LIUtilities.getQuestionAskedTextWith(self.questionModel?.subjectName, timestamp: self.questionModel?.questionTimeStamp)
         self.moreButton.isHidden = self.questionModel?.totalAnswerCount != nil && (self.questionModel?.totalAnswerCount)! > 0 ? false : true
+        self.answerCountDetailsLabel.text = LIUtilities.getAnswerCountLabelTextWith(self.questionModel?.totalAnswerCount)
     }
     @IBAction func moreButtonTapped(_ sender: Any) {
-        
+        self.delegate?.showAnswerForQuestion(self.questionModel)
     }
     
 }

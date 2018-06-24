@@ -37,6 +37,9 @@ struct LIConstants {
     static let askQuestionPlaceholder = "Ask Question"
     static let enterValidQuestionMessage = "Please enter a valid Question"
     static let questionPostedMessage = "Your question has been posted"
+    static let noAnswerString = "No Answers"
+    static let multipleAnswerString = " Answers"
+    static let singleAnswerString = " Answer"
 
 }
 
@@ -58,6 +61,7 @@ struct LIViewControllerIdentifier {
     static let FinalScoreViewController = "LIFinalScoreViewController"
     static let GameViewController = "LIGameViewController"
     static let AskQuestionViewController = "LIAskQuestionViewController"
+    static let AnswerViewController = "LIAnswerViewController"
 }
 
 struct LIStoryboards {

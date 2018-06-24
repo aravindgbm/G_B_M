@@ -81,7 +81,7 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
-   
+    
     class func callGetPaidStatusAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
         @escaping (() -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
         var request = requestParams
@@ -155,7 +155,7 @@ class LIUserStudentAPIsHandler: NSObject {
                 if let responseArray = responseDict[LIAPIResponseKeys.chaptersData] as? [[String:Any]] {
                     var chaptersArray:Array<LIChapterModel> = Array()
                     for object in responseArray {
-                      
+                        
                         if let chapterObject = LIChapterModel(object) {
                             chaptersArray.append(chapterObject)
                         }
@@ -381,12 +381,47 @@ class LIUserStudentAPIsHandler: NSObject {
                     success(true)
                 }
                 else {
-                     success(false)
+                    success(false)
                 }
             }
             else {
                 success(false)
             }
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callGetAllAnswersAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LIAnswerModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getAllAnswersUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.answerData] as? [[String:Any]] {
+                    var answerArray:Array<LIAnswerModel> = Array()
+                    for object in responseArray {
+                        
+                        if let answerObject = LIAnswerModel(object) {
+                            answerArray.append(answerObject)
+                        }
+                    }
+                    success(answerArray)
+                }
+                else{
+                    success(nil)
+                }
+            }
+            else{
+                success(nil)
+            }
+            
         }, failureBlock: { (response) in
             if let responseDict = response {
                 failure(responseDict[LIAPIResponseKeys.responseText] as? String)

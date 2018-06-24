@@ -83,6 +83,29 @@ class LIUtilities: NSObject {
         }
         return nil
     }
+    class func getAnswerCountLabelTextWith(_ answerCount:Int?) -> String{
+        var answerCountDetailsText = LIConstants.noAnswerString
+        if let answers = answerCount {
+            if answers == 1 {
+                answerCountDetailsText = String(answers) + LIConstants.singleAnswerString
+            }
+            else if (answers > 1) {
+                answerCountDetailsText = String(answers) + LIConstants.multipleAnswerString
+            }
+        }
+        return answerCountDetailsText
+    }
+    class func getAnsweredTextWith(_ timestamp:Int?) -> String? {
+        if let _ = timestamp {
+            let doubleTimestamp = Double(timestamp!)
+                let date = Date(timeIntervalSince1970: doubleTimestamp)
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "dd-MM-yyyy"
+                let stringDate = dateFormatter.string(from: date)
+                return "Answered on \(stringDate)"
+        }
+        return nil
+    }
     
     class func playVideoWithObject(_ videoObject:LIVideoModel?, on viewController:UIViewController) {
         if let _ = videoObject {

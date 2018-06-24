@@ -42,6 +42,7 @@ struct LIAPIURL{
     static let getGameLevelUrl = "get-game-level"
     static let getGameQuestionUrl = "get-game-question"
     static let askQuestionUrl = "ask-question"
+    static let getAllAnswersUrl = "get-all-answers"
 }
 
 struct LIAPIResponseKeys {
@@ -55,6 +56,7 @@ struct LIAPIResponseKeys {
     static let chaptersData = "chapters_data"
     static let exercisesData = "exercises_data"
     static let questionData = "question_data"
+    static let answerData = "answer_data"
 }
 
 struct LIAPIResponse {

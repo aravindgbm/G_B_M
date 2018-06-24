@@ -78,6 +78,10 @@
 		D47CD1CB20DF75750088C63A /* LIUITextView+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CD1CA20DF75750088C63A /* LIUITextView+Placeholder.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
+		D4847A8C20DFE470000BB1E0 /* LIAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4847A8B20DFE470000BB1E0 /* LIAnswerViewController.swift */; };
+		D4847A8F20DFE4F7000BB1E0 /* LIQuestionHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4847A8E20DFE4F7000BB1E0 /* LIQuestionHeaderTableViewCell.swift */; };
+		D4847A9120DFE516000BB1E0 /* LIAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4847A9020DFE516000BB1E0 /* LIAnswerTableViewCell.swift */; };
+		D4847A9320DFE67E000BB1E0 /* LIAnswerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4847A9220DFE67E000BB1E0 /* LIAnswerModel.swift */; };
 		D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B2D20D435230074860D /* LIExercisesViewController.swift */; };
 		D4899B3120D43E490074860D /* LIExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B3020D43E490074860D /* LIExerciseTableViewCell.swift */; };
 		D4899B3320D43F720074860D /* LIExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B3220D43F720074860D /* LIExerciseModel.swift */; };
@@ -225,6 +229,10 @@
 		D47CD1CA20DF75750088C63A /* LIUITextView+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUITextView+Placeholder.swift"; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
+		D4847A8B20DFE470000BB1E0 /* LIAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAnswerViewController.swift; sourceTree = "<group>"; };
+		D4847A8E20DFE4F7000BB1E0 /* LIQuestionHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIQuestionHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		D4847A9020DFE516000BB1E0 /* LIAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		D4847A9220DFE67E000BB1E0 /* LIAnswerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAnswerModel.swift; sourceTree = "<group>"; };
 		D4899B2D20D435230074860D /* LIExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExercisesViewController.swift; sourceTree = "<group>"; };
 		D4899B3020D43E490074860D /* LIExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExerciseTableViewCell.swift; sourceTree = "<group>"; };
 		D4899B3220D43F720074860D /* LIExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExerciseModel.swift; sourceTree = "<group>"; };
@@ -585,6 +593,15 @@
 			path = Webservices;
 			sourceTree = "<group>";
 		};
+		D4847A8D20DFE4DA000BB1E0 /* Answer TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				D4847A8E20DFE4F7000BB1E0 /* LIQuestionHeaderTableViewCell.swift */,
+				D4847A9020DFE516000BB1E0 /* LIAnswerTableViewCell.swift */,
+			);
+			path = "Answer TableViewCells";
+			sourceTree = "<group>";
+		};
 		D4899B2C20D435020074860D /* Old */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,10 +705,12 @@
 		D4C560F4207F1D41003C9762 /* Ask & Ans */ = {
 			isa = PBXGroup;
 			children = (
+				D4847A8D20DFE4DA000BB1E0 /* Answer TableViewCells */,
 				D4D06C1120CF72FF00FE572C /* Questions TableView Cells */,
 				D4D06C0E20CF72C300FE572C /* Old */,
 				D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */,
 				D47CD1C820DF749E0088C63A /* LIAskQuestionViewController.swift */,
+				D4847A8B20DFE470000BB1E0 /* LIAnswerViewController.swift */,
 			);
 			path = "Ask & Ans";
 			sourceTree = "<group>";
@@ -760,6 +779,7 @@
 				D4A05E2320D56DB600414D53 /* LITestModel.swift */,
 				D47A45C220DE4E48009AB9A8 /* LIGameLevelModel.swift */,
 				D47A45C420DE4FBE009AB9A8 /* LIGameModel.swift */,
+				D4847A9220DFE67E000BB1E0 /* LIAnswerModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1066,6 +1086,7 @@
 				D4292B1820B885280047E510 /* LIEnterOTPViewController.swift in Sources */,
 				D47A98C120B94122002CD341 /* LIResetPasswordViewController.swift in Sources */,
 				FA2D5FE02053AFCD00C2FE53 /* TutorialScreenViewController.swift in Sources */,
+				D4847A9320DFE67E000BB1E0 /* LIAnswerModel.swift in Sources */,
 				FA2D5FCD2053AAF900C2FE53 /* ViewController.swift in Sources */,
 				D47A45C120DE4A2B009AB9A8 /* LIGameAnswerOptionsTableViewCell.swift in Sources */,
 				D48C11D720CE1CD00057650C /* LIProfileTableViewCell.swift in Sources */,
@@ -1083,6 +1104,7 @@
 				FA2D5FCB2053AAF900C2FE53 /* AppDelegate.swift in Sources */,
 				D48C11D320CE1A250057650C /* LIProfileViewController.swift in Sources */,
 				D474C9D020B502AC0031ED1D /* LIUIImageView+Additions.swift in Sources */,
+				D4847A8F20DFE4F7000BB1E0 /* LIQuestionHeaderTableViewCell.swift in Sources */,
 				A6A5DD8B2057CC4200C90569 /* LoginViewController.swift in Sources */,
 				A6769E2D2068CDEA004D8DA7 /* ProfileViewController.swift in Sources */,
 				D4899B3120D43E490074860D /* LIExerciseTableViewCell.swift in Sources */,
@@ -1134,6 +1156,7 @@
 				D404F6CB20DE3D74006795EF /* LIShowLevelView.swift in Sources */,
 				FA315860206E4ABD005282F9 /* FeedViewController.swift in Sources */,
 				FA858AE12056E2B600F9B142 /* YourBoardViewController.swift in Sources */,
+				D4847A8C20DFE470000BB1E0 /* LIAnswerViewController.swift in Sources */,
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,
 				A6A5DD8F2057D8C200C90569 /* SignUpViewController.swift in Sources */,
 				D47CD1CB20DF75750088C63A /* LIUITextView+Placeholder.swift in Sources */,
@@ -1170,6 +1193,7 @@
 				D4A05E2D20D5753900414D53 /* LINextQuestionTableViewCell.swift in Sources */,
 				D4965032207DEB2900480E7F /* TestPaperTableViewCell.swift in Sources */,
 				A628023820569E7E00A1C244 /* StandardUIElements.swift in Sources */,
+				D4847A9120DFE516000BB1E0 /* LIAnswerTableViewCell.swift in Sources */,
 				FA858AE32056E36800F9B142 /* YourBoardTableViewCell.swift in Sources */,
 				D49254B820D187C700889460 /* LIVideosViewController.swift in Sources */,
 				D4CC7E1C20D0C0BF00F4C92E /* LIChaptersTableViewCell.swift in Sources */,

@@ -157,7 +157,7 @@ extension LIFeedViewController {
     }
 }
 
-extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate {
+extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate,questionsTableViewCellDelegate {
     
     // MARK:- videosTableViewCellDelegate
     
@@ -197,6 +197,14 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
         activityViewController.excludedActivityTypes = [ UIActivityType.airDrop ]
         self.present(activityViewController, animated: true) {
         }
+    }
+    
+    // MARK:- QuestionsTableViewCell delegate
+    func showAnswerForQuestion(_ question: LIQuestionsModel?) {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let answerVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.AnswerViewController) as? LIAnswerViewController
+        answerVC?.questionObject = question
+        self.navigationController?.pushViewController(answerVC!, animated: true)
     }
     
 }
@@ -239,6 +247,7 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
                 let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedQuestionsCell, for: indexPath) as? LIFeedQuestionsTableViewCell
                 let questionIndex = indexPath.row - FeedTableViewCellStaticRowCount.FeedTableViewCellStaticRowCountWithQuestions.rawValue
                 cell?.refreshCellWith(self.recommendedQuestionArray?[questionIndex])
+                cell?.delegate = self
                 return cell ?? UITableViewCell()
             }
             return UITableViewCell()

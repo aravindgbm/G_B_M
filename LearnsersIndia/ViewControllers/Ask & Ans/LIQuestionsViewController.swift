@@ -71,9 +71,17 @@ class LIQuestionsViewController: UIViewController {
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    /*
+ 
      // MARK: - Navigation
+    
+    func navigateToAnswerScreenWith(_ question:LIQuestionsModel?){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let answerVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.AnswerViewController) as? LIAnswerViewController
+        answerVC?.questionObject = question
+        self.navigationController?.pushViewController(answerVC!, animated: true)
+    }
      
+        /*
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
@@ -81,6 +89,12 @@ class LIQuestionsViewController: UIViewController {
      }
      */
     
+}
+
+extension LIQuestionsViewController:questionsTableViewCellDelegate {
+    func showAnswerForQuestion(_ question: LIQuestionsModel?) {
+        self.navigateToAnswerScreenWith(question)
+    }
 }
 
 extension LIQuestionsViewController:UITableViewDelegate,UITableViewDataSource {
@@ -92,6 +106,7 @@ extension LIQuestionsViewController:UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LIQuestionsViewController.questionCellIdentifier, for: indexPath) as? LIQuestionsTableViewCell
         cell?.refreshCellWith(self.questionArray?[indexPath.row])
+        cell?.delegate = self
         return cell!
     }
 }
