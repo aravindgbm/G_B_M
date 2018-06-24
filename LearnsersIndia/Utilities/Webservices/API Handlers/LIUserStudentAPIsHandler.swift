@@ -364,4 +364,35 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callAskQuestionAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        else if (shouldAddToken) {
+            request = [String:Any]()
+            request?[LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.askQuestionUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if responseDict[LIAPIResponseKeys.responseType] as? String == LIAPIResponse.sucessResponse {
+                    success(true)
+                }
+                else {
+                     success(false)
+                }
+            }
+            else {
+                success(false)
+            }
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

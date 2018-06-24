@@ -64,7 +64,9 @@ class LIQuestionsViewController: UIViewController {
     }
     //MARK:- IBactions
     @IBAction func addQuestionButtonTapped(_ sender: Any) {
-        
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let askQuestionVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.AskQuestionViewController) as? LIAskQuestionViewController
+        self.navigationController?.pushViewController(askQuestionVC!, animated: true)
     }
     @IBAction func backButtonTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

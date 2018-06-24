@@ -181,6 +181,12 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
         self.navigationController?.pushViewController(startGameVC!, animated: true)
     }
     
+    func navigateToAskQuestionViewController() {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let askQuestionVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.AskQuestionViewController) as? LIAskQuestionViewController
+        self.navigationController?.pushViewController(askQuestionVC!, animated: true)
+    }
+    
     // MARK:- feedBannerCellDelegate
     
     func shareAppDetails() {

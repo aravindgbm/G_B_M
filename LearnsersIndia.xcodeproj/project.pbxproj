@@ -74,6 +74,8 @@
 		D47CD1C520DF67710088C63A /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BD20DF67710088C63A /* triangle.png */; };
 		D47CD1C620DF67710088C63A /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = D47CD1BF20DF67710088C63A /* .gitkeep */; };
 		D47CD1C720DF67710088C63A /* SAConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CD1C020DF67710088C63A /* SAConfettiView.swift */; };
+		D47CD1C920DF749E0088C63A /* LIAskQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CD1C820DF749E0088C63A /* LIAskQuestionViewController.swift */; };
+		D47CD1CB20DF75750088C63A /* LIUITextView+Placeholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47CD1CA20DF75750088C63A /* LIUITextView+Placeholder.swift */; };
 		D482B9AE20B1DCA300DAB90E /* LIAPIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */; };
 		D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D482B9B020B1E24400DAB90E /* LIConstants.swift */; };
 		D4899B2E20D435230074860D /* LIExercisesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4899B2D20D435230074860D /* LIExercisesViewController.swift */; };
@@ -219,6 +221,8 @@
 		D47CD1BD20DF67710088C63A /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		D47CD1BF20DF67710088C63A /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		D47CD1C020DF67710088C63A /* SAConfettiView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SAConfettiView.swift; sourceTree = "<group>"; };
+		D47CD1C820DF749E0088C63A /* LIAskQuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIAskQuestionViewController.swift; sourceTree = "<group>"; };
+		D47CD1CA20DF75750088C63A /* LIUITextView+Placeholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LIUITextView+Placeholder.swift"; sourceTree = "<group>"; };
 		D482B9AB20B1DCA300DAB90E /* LIAPIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIAPIConstants.swift; sourceTree = "<group>"; };
 		D482B9B020B1E24400DAB90E /* LIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIConstants.swift; sourceTree = "<group>"; };
 		D4899B2D20D435230074860D /* LIExercisesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIExercisesViewController.swift; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 				D474C9CF20B502AB0031ED1D /* LIUIImageView+Additions.swift */,
 				D4292B1920B895840047E510 /* LIUIColor+Additions.swift */,
 				D4155BCE20C84B660017D93A /* LIUIView+Additions.swift */,
+				D47CD1CA20DF75750088C63A /* LIUITextView+Placeholder.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -686,6 +691,7 @@
 				D4D06C1120CF72FF00FE572C /* Questions TableView Cells */,
 				D4D06C0E20CF72C300FE572C /* Old */,
 				D4D06C0F20CF72DD00FE572C /* LIQuestionsViewController.swift */,
+				D47CD1C820DF749E0088C63A /* LIAskQuestionViewController.swift */,
 			);
 			path = "Ask & Ans";
 			sourceTree = "<group>";
@@ -1116,6 +1122,7 @@
 				D4D824E220B5CBFB00A0CB47 /* LIUserModel.swift in Sources */,
 				D4A05E2B20D5750B00414D53 /* LITestAnswerOptionsTableViewCell.swift in Sources */,
 				D4965030207DE1DE00480E7F /* TestPaperViewController.swift in Sources */,
+				D47CD1C920DF749E0088C63A /* LIAskQuestionViewController.swift in Sources */,
 				D4E1701020CD1F8700BDD90F /* LIQuestionsModel.swift in Sources */,
 				D4A164F920B48010000459CF /* LIUtilities.swift in Sources */,
 				D496502A207DD40300480E7F /* TestsViewController.swift in Sources */,
@@ -1129,6 +1136,7 @@
 				FA858AE12056E2B600F9B142 /* YourBoardViewController.swift in Sources */,
 				D482B9B120B1E24400DAB90E /* LIConstants.swift in Sources */,
 				A6A5DD8F2057D8C200C90569 /* SignUpViewController.swift in Sources */,
+				D47CD1CB20DF75750088C63A /* LIUITextView+Placeholder.swift in Sources */,
 				D49A5438207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift in Sources */,
 				D4899B3320D43F720074860D /* LIExerciseModel.swift in Sources */,
 				D474D223207CD0A500B460DA /* ExcerciseQuestionTableViewCell.swift in Sources */,

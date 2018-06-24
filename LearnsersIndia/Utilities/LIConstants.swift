@@ -34,6 +34,9 @@ struct LIConstants {
     static let finalScore = "Your Score: "
     static let extraLifeMessage = "You have taken your extra life"
     static let timeRemaining = "Time Remaining: "
+    static let askQuestionPlaceholder = "Ask Question"
+    static let enterValidQuestionMessage = "Please enter a valid Question"
+    static let questionPostedMessage = "Your question has been posted"
 
 }
 
@@ -54,6 +57,7 @@ struct LIViewControllerIdentifier {
     static let TestsViewController = "LITestsViewController"
     static let FinalScoreViewController = "LIFinalScoreViewController"
     static let GameViewController = "LIGameViewController"
+    static let AskQuestionViewController = "LIAskQuestionViewController"
 }
 
 struct LIStoryboards {

@@ -74,7 +74,7 @@ class LIAPIClient: NSObject {
                     if responseStatusCode >= HTTP_STATUS_OK && responseStatusCode <= HTTP_STATUS_UNASSIGNED {
                         
                         if let responseDict = responseData as [String:AnyObject]? {
-                            if responseDict[LIAPIResponseKeys.responseType] as? String == "error" {
+                            if responseDict[LIAPIResponseKeys.responseType] as? String == LIAPIResponse.errorResponse {
                                 failureBlock!(responseDict)
                             }
                             else {

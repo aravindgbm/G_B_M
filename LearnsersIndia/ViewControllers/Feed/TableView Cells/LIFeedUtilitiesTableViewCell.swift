@@ -10,6 +10,7 @@ import UIKit
 protocol feedUtilitiesTableViewCellDelegate:class {
     func navigateToChaptersViewControlerWith(_ chapterType:LIChapterType)
     func navigateToStartGameViewController()
+    func navigateToAskQuestionViewController()
 }
 class LIFeedUtilitiesTableViewCell: UITableViewCell {
 
@@ -34,7 +35,7 @@ class LIFeedUtilitiesTableViewCell: UITableViewCell {
     }
     
     @IBAction func askDoubtButtonTapped(_ sender: Any) {
-        
+        self.delegate?.navigateToAskQuestionViewController()
     }
     @IBAction func exerciseButtonTapped(_ sender: Any) {
         self.delegate?.navigateToChaptersViewControlerWith(.LIChapterTypeExercises)
