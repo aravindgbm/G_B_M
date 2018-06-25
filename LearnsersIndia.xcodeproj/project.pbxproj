@@ -254,6 +254,7 @@
 		D4965033207E353E00480E7F /* TestFinalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFinalViewController.swift; sourceTree = "<group>"; };
 		D49A5437207B5A07005D0F80 /* TutorialScreenCharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialScreenCharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		D49D148A20E178B000FD9FE3 /* LIPayuModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIPayuModel.swift; sourceTree = "<group>"; };
+		D49D149320E1807000FD9FE3 /* LearnsersIndia-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LearnsersIndia-Bridging-Header.h"; sourceTree = "<group>"; };
 		D4A05E2120D55AF200414D53 /* LIStartTestOrGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIStartTestOrGameViewController.swift; sourceTree = "<group>"; };
 		D4A05E2320D56DB600414D53 /* LITestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestModel.swift; sourceTree = "<group>"; };
 		D4A05E2520D5748A00414D53 /* LITestsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LITestsViewController.swift; sourceTree = "<group>"; };
@@ -418,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				D4D00FCB20E155AC00EA3357 /* Payment Details */,
+				D4D00FCC20E155D100EA3357 /* LIPaymentPackagesViewController.swift */,
 				D404F6C720DE3C6C006795EF /* Game */,
 				D4E3459020DD5D67009AF92F /* Score */,
 				D4A05E2020D55AB900414D53 /* Common */,
@@ -745,7 +747,6 @@
 			isa = PBXGroup;
 			children = (
 				D4D00FCE20E155D700EA3357 /* PaymentDetails Cell */,
-				D4D00FCC20E155D100EA3357 /* LIPaymentPackagesViewController.swift */,
 			);
 			path = "Payment Details";
 			sourceTree = "<group>";
@@ -859,6 +860,7 @@
 		FA2D5FC92053AAF900C2FE53 /* LearnsersIndia */ = {
 			isa = PBXGroup;
 			children = (
+				D49D149320E1807000FD9FE3 /* LearnsersIndia-Bridging-Header.h */,
 				D4E0EC5A20CBB0CD00DAD519 /* Model */,
 				D4155BC520C81C6F0017D93A /* Storyboard */,
 				D4E8C4FB20B3460300E0D770 /* DataManagers */,
@@ -998,6 +1000,7 @@
 				TargetAttributes = {
 					FA2D5FC62053AAF800C2FE53 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1080,10 +1083,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LearnsersIndia/Pods-LearnsersIndia-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${PODS_ROOT}/CitrusGraphics/Framework/graphics-sdk/CitrusGraphics.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/MRCountryPicker/MRCountryPicker.framework",
+				"${PODS_ROOT}/PayUmoney_CoreSDK/CoreSDK/PayUMoneyCoreSDK.framework",
+				"${PODS_ROOT}/PayUmoney_PnP/PlugNPlay/PlugNPlay.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
@@ -1091,10 +1097,13 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CitrusGraphics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MRCountryPicker.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PayUMoneyCoreSDK.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PlugNPlay.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
@@ -1367,6 +1376,7 @@
 			baseConfigurationReference = 715650FA8F49E99DFC12AAC8 /* Pods-LearnsersIndia.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1378,6 +1388,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "444ed214-4bd3-4913-bce8-825d7d2e8f74";
 				PROVISIONING_PROFILE_SPECIFIER = LeranersGbmProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "LearnsersIndia/LearnsersIndia-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1388,6 +1400,7 @@
 			baseConfigurationReference = D06C53808856BCE53FE75C93 /* Pods-LearnsersIndia.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -1399,6 +1412,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "444ed214-4bd3-4913-bce8-825d7d2e8f74";
 				PROVISIONING_PROFILE_SPECIFIER = LeranersGbmProfile;
+				SWIFT_OBJC_BRIDGING_HEADER = "LearnsersIndia/LearnsersIndia-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

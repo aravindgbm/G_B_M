@@ -2,10 +2,15 @@ PODS:
   - Alamofire (4.7.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - CitrusGraphics (2.1.0)
   - DropDown (2.3.1)
   - FLAnimatedImage (1.0.12)
   - IQKeyboardManagerSwift (5.0.8)
   - MRCountryPicker (0.0.7)
+  - PayUmoney_CoreSDK (3.2)
+  - PayUmoney_PnP (2.2):
+    - CitrusGraphics
+    - PayUmoney_CoreSDK
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
@@ -18,6 +23,7 @@ DEPENDENCIES:
   - FLAnimatedImage (~> 1.0)
   - IQKeyboardManagerSwift
   - MRCountryPicker (~> 0.0.7)
+  - PayUmoney_PnP
   - SDWebImage (~> 4.0)
   - TextFieldEffects
 
@@ -25,23 +31,29 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - CitrusGraphics
     - DropDown
     - FLAnimatedImage
     - IQKeyboardManagerSwift
     - MRCountryPicker
+    - PayUmoney_CoreSDK
+    - PayUmoney_PnP
     - SDWebImage
     - TextFieldEffects
 
 SPEC CHECKSUMS:
   Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  CitrusGraphics: 21ca86e16760e4226d48f6e2bfbf0d40d5f8c285
   DropDown: 20499c7b2731b0d21609af924e47c7677a2be50d
   FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   IQKeyboardManagerSwift: 2e7dc7f98c111458c1ea2b373f893e8cf95e2b97
   MRCountryPicker: 75edb510153ef446ded70890bc02140a757961dc
+  PayUmoney_CoreSDK: cfb8fca58220ce424a37b9d83400efbc411b1d25
+  PayUmoney_PnP: 0aaec816e992fd6b67d34514204f4bc5b0c14388
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 17aa5538779080fda1ec00e8c0dedfd85374a0ed
+PODFILE CHECKSUM: 9aab0271a9a49a5c392774725c789c56044ba4c5
 
 COCOAPODS: 1.5.0

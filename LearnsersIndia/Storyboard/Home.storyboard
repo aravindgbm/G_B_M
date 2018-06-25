@@ -175,6 +175,9 @@
                                                             <state key="normal" title="CHECKOUT">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="checkOutButtonTapped:" destination="8GN-Wp-II9" eventType="touchUpInside" id="aAL-4i-AQS"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

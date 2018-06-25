@@ -19,6 +19,8 @@ public let HTTP_STATUS_BAD_REQUEST     = 400
 public let LIBaseUrlString = "http://apistaging.learnersindia.com/"
 public let LIImageBaseUrlString = "https://www.learnersindia.com/"
 
+public let PayuMoneySucessUrl = "https://www.payumoney.com/mobileapp/payumoney/success.php"
+public let PayuMoneyFailureUrl = "https://www.payumoney.com/mobileapp/payumoney/failure.php"
 struct LIAPIURL{
     static let signUpURL = "signup"
     static let signInURL = "signin"
