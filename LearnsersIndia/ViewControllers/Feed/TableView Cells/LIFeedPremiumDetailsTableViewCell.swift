@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol premiumDetailsTableViewCellDelegate:class {
+    func showPaymentPackageViewController()
+}
+
 class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
 
     @IBOutlet weak var containerView: UIView!
@@ -15,6 +19,8 @@ class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var tryPremiumButton: UIButton!
     let paidUserlabelText = "You are a premium member"
     let unpaidUserlabelText = "Unlock the rest of the list with premium"
+    weak var delegate:premiumDetailsTableViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 //        self.containerView.dropShadowOnAllSideWithSize(CGSize(width: screenSize.width - 40, height: self.containerView.frame.size.height))
@@ -32,6 +38,7 @@ class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     @IBAction func tryPremiumButtonTapped(_ sender: Any) {
+        self.delegate?.showPaymentPackageViewController()
     }
     
 }

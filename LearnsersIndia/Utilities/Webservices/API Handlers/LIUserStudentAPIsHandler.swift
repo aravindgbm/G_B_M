@@ -430,4 +430,75 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    
+    class func callPackagesAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Array<LIPaymentPackageModel>?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getPackagesUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let responseDict = response {
+                if let responseArray = responseDict[LIAPIResponseKeys.responseData] as? [[String:Any]] {
+                    var packageArray:Array<LIPaymentPackageModel> = Array()
+                    for object in responseArray {
+                        
+                        if let packageObject = LIPaymentPackageModel(object) {
+                            packageArray.append(packageObject)
+                        }
+                    }
+                    success(packageArray)
+                }
+                else{
+                    success(nil)
+                }
+            }
+            else{
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
+    class func callGeneratePayuHashAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((LIPayuModel?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getPackagesUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let payuData = reponseDict[LIAPIResponseKeys.responseData] as? [String:AnyObject] {
+                    if let payuObject = LIPayuModel(payuData) {
+                         success(payuObject)
+                    }
+                    else {
+                        success(nil)
+                    }
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
 }

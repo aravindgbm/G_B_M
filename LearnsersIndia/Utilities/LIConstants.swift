@@ -62,6 +62,7 @@ struct LIViewControllerIdentifier {
     static let GameViewController = "LIGameViewController"
     static let AskQuestionViewController = "LIAskQuestionViewController"
     static let AnswerViewController = "LIAnswerViewController"
+    static let PaymentPackagesViewController = "LIPaymentPackagesViewController"
 }
 
 struct LIStoryboards {
@@ -89,6 +90,13 @@ struct LIProfileItemTitles {
     static let Videos = "My Videos"
     static let CallUs = "Call Us"
     static let Logout = "Logout"
+}
+
+struct LIPackageDenominationType {
+    static let USD = "USD - "
+    static let KWD = "KWD - "
+    static let AED = "AED - "
+    static let INR = "INR - "
 }
 
 struct LIProfileItemIcons {

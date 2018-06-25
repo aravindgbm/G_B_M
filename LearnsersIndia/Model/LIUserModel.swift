@@ -101,4 +101,20 @@ class LIUserModel: NSObject,NSCoding {
         self.stateName = response["state"] as? String
         self.studentId = response ["std_id"] as? NSNumber
     }
+    convenience init?(_ response:[String:Any]) {
+    self.init()
+    self.userId = response["user_id"] as? String
+    self.email = response["email_id"] as? String
+    self.mobileNumber = response["phoneno"] as? String
+    self.fullName = response["full_name"] as? String
+    self.classId = response["cls_id"] as? NSNumber
+    self.gradeName = response["gradename"] as? String
+    self.syllabusId = response["syl_id"] as? NSNumber
+    if let otpVerificationStatus = response["verified"] as? Int{
+        self.isOTPVerified = otpVerificationStatus == 1
+    }
+    if let paymentStatus = response["paidstatus"] as? String {
+        self.isPaidUser = paymentStatus == LIConstants.paidUserStatus
+    }
+    }
 }

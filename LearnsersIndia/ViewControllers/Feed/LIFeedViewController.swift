@@ -157,7 +157,7 @@ extension LIFeedViewController {
     }
 }
 
-extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate,questionsTableViewCellDelegate {
+extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate,questionsTableViewCellDelegate, premiumDetailsTableViewCellDelegate {
     
     // MARK:- videosTableViewCellDelegate
     
@@ -207,6 +207,12 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
         self.navigationController?.pushViewController(answerVC!, animated: true)
     }
     
+    // MARK:- PremiumDetailsTableViewCell Delegate
+    func showPaymentPackageViewController() {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let packagesVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.PaymentPackagesViewController) as? LIPaymentPackagesViewController
+        self.navigationController?.pushViewController(packagesVC!, animated: true)
+    }
 }
 
 extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
@@ -229,6 +235,7 @@ extension LIFeedViewController: UITableViewDelegate,UITableViewDataSource {
         case FeedTableviewCellTypes.FeedTableviewCellTypePremiumDetails.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.PremiumDetailsCell, for: indexPath) as? LIFeedPremiumDetailsTableViewCell
             cell?.refreshCell()
+            cell?.delegate = self
             return cell ?? UITableViewCell()
         case FeedTableviewCellTypes.FeedTableviewCellTypeBanner.rawValue:
             let cell = tableView.dequeueReusableCell(withIdentifier: LIFeedTableViewCellIdentifiers.FeedBannerCell, for: indexPath) as? LIFeedBannerTableViewCell

@@ -167,4 +167,24 @@ class LIUtilities: NSObject {
         alert.addAction(yesAction)
         viewController.present(alert, animated: true, completion: nil)
     }
+    class func getPackageAmountStringWith(_ amount:Int?, and offerAmount:Int?, and denomination:String) -> NSAttributedString? {
+        var finalAmountString:NSMutableAttributedString?
+        if let _ = amount {
+            if offerAmount != nil && offerAmount! > 0 {
+                let amountString = String(amount!)
+                let offerAmountString = String(offerAmount!)
+                finalAmountString = NSMutableAttributedString(string: denomination + amountString + " " + offerAmountString)
+                finalAmountString?.addAttribute(.strikethroughStyle, value: 1, range: NSMakeRange(denomination.count, amountString.count))
+                finalAmountString?.addAttribute(.foregroundColor, value: UIColor.black, range: NSMakeRange(denomination.count + amountString.count + 1, offerAmountString.count))
+                return finalAmountString
+            }
+            else {
+                let amountString = String(amount!)
+                finalAmountString = NSMutableAttributedString(string: denomination + amountString)
+                finalAmountString?.addAttribute(.foregroundColor, value: UIColor.black, range: NSMakeRange(denomination.count, amountString.count))
+                return finalAmountString
+            }
+        }
+        return nil
+    }
 }

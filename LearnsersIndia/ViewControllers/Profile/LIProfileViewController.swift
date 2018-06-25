@@ -134,12 +134,18 @@ class LIProfileViewController: UIViewController {
     }
     //MARK:- IBActions
     @IBAction func premiumButtonTapped(_ sender: Any) {
-        
+        self.navigateToPaymentPackageViewController()
     }
     //MARK:- Navigations
     
     @objc func backButtonTapped(){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func navigateToPaymentPackageViewController() {
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let packagesVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.PaymentPackagesViewController) as? LIPaymentPackagesViewController
+        self.navigationController?.pushViewController(packagesVC!, animated: true)
     }
     
     func navigateToProfileEditScreen(){

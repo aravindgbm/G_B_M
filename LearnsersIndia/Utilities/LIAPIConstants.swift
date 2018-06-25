@@ -43,6 +43,8 @@ struct LIAPIURL{
     static let getGameQuestionUrl = "get-game-question"
     static let askQuestionUrl = "ask-question"
     static let getAllAnswersUrl = "get-all-answers"
+    static let getPackagesUrl = "get-packages"
+    static let generatePayuHashUrl = "generate-payuhash"
 }
 
 struct LIAPIResponseKeys {
