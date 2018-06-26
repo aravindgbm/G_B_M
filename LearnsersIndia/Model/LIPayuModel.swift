@@ -28,6 +28,11 @@ class LIPayuModel: NSObject {
     var udf3:String?
     var udf4:String?
     var udf5:String?
+    var udf6:String?
+    var udf7:String?
+    var udf8:String?
+    var udf9:String?
+    var udf10:String?
     
     override init() {
         super.init()
@@ -56,11 +61,18 @@ class LIPayuModel: NSObject {
                 self.udf1 = String(udf)
             }
             
+            else {
+                self.udf1 = ""
+            }
+            
             if let _ = response["udf2"] as? String {
                 self.udf2 = response["udf2"] as? String
             }
             else if let udf = response["udf2"] as? Int {
                 self.udf2 = String(udf)
+            }
+            else {
+                self.udf2 = ""
             }
             
             if let _ = response["udf3"] as? String {
@@ -70,11 +82,19 @@ class LIPayuModel: NSObject {
                 self.udf3 = String(udf)
             }
             
+            else {
+                self.udf3 = ""
+            }
+            
             if let _ = response["udf4"] as? String{
                  self.udf4 = response["udf4"] as? String
             }
             else if let udf = response["udf4"] as? Int {
                 self.udf4 = String(udf)
+            }
+            
+            else {
+                self.udf4 = ""
             }
             
             if let _ = response["udf5"] as? String{
@@ -83,6 +103,69 @@ class LIPayuModel: NSObject {
             else if let udf = response["udf5"] as? Int {
                 self.udf5 = String(udf)
             }
+            else {
+                self.udf5 = ""
+            }
+            
+            
+            if let _ = response["udf6"] as? String{
+                self.udf6 = response["udf6"] as? String
+            }
+            else if let udf = response["udf6"] as? Int {
+                self.udf6 = String(udf)
+            }
+                
+            else {
+                self.udf6 = ""
+            }
+            
+            
+            if let _ = response["udf7"] as? String{
+                self.udf7 = response["udf7"] as? String
+            }
+            else if let udf = response["udf7"] as? Int {
+                self.udf7 = String(udf)
+            }
+                
+            else {
+                self.udf7 = ""
+            }
+            
+            
+            if let _ = response["udf8"] as? String{
+                self.udf8 = response["udf8"] as? String
+            }
+            else if let udf = response["udf8"] as? Int {
+                self.udf8 = String(udf)
+            }
+                
+            else {
+                self.udf8 = ""
+            }
+            
+            
+            if let _ = response["udf9"] as? String{
+                self.udf9 = response["udf9"] as? String
+            }
+            else if let udf = response["udf9"] as? Int {
+                self.udf9 = String(udf)
+            }
+                
+            else {
+                self.udf9 = ""
+            }
+            
+            if let _ = response["udf10"] as? String{
+                self.udf10 = response["udf10"] as? String
+            }
+            else if let udf = response["udf10"] as? Int {
+                self.udf10 = String(udf)
+            }
+                
+            else {
+                self.udf10 = ""
+            }
+            
         }
         else {
             return nil

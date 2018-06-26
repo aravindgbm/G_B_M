@@ -16,7 +16,7 @@ class LIPaymentPackagesViewController: UIViewController {
     var selectedPackage:LIPaymentPackageModel?
     var payuObject:LIPayuModel?
     var transactionParam:PUMTxnParam?
-    
+    var payuResponseHash:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.callPaymentPackagesApi()
@@ -51,7 +51,15 @@ class LIPaymentPackagesViewController: UIViewController {
         self.transactionParam?.udf3 = self.payuObject?.udf3
         self.transactionParam?.udf4 = self.payuObject?.udf4
         self.transactionParam?.udf5 = self.payuObject?.udf5
+        self.transactionParam?.udf6 = self.payuObject?.udf6
+        self.transactionParam?.udf7 = self.payuObject?.udf7
+        self.transactionParam?.udf8 = self.payuObject?.udf8
+        self.transactionParam?.udf9 = self.payuObject?.udf9
+        self.transactionParam?.udf10 = self.payuObject?.udf10
         self.transactionParam?.hashValue = self.payuObject?.payuHash
+      
+//        let hashSequence = self.transactionParam?.key! | self.transactionParam?.txnID |   self.transactionParam?.amount | self.transactionParam?.productinfo | self.transactionParam?.firstname | self.transactionParam?.email | self.transactionParam?.udf1 | self.transactionParam?.udf2 | self.transactionParam?.udf3 | self.transactionParam?.udf4 | self.transactionParam?.udf5 | self.transactionParam?.udf6 | self.transactionParam?.udf7 | self.transactionParam?.udf8 | self.transactionParam?.udf9 | self.transactionParam?.udf510 | "Gm8yCJSx5G"
+        
         self.updateViewsOfPayUMoneyScreen()
     }
     
@@ -67,8 +75,12 @@ class LIPaymentPackagesViewController: UIViewController {
         self.presentPayuMoneyController()
     }
     func presentPayuMoneyController(){
-        PlugNPlay.presentPaymentViewController(withTxnParams: self.transactionParam, on: self) { (response, error, extraParams) in
-            
+        PlugNPlay.presentPaymentViewController(withTxnParams: self.transactionParam!, on: self) { (response, error, extraParams) in
+            if let payuResponse = response as? [String:Any] {
+                if let payuResult = payuResponse["result"]  as? [String:Any] {
+                    self.payuResponseHash = payuResult["hash"] as? String
+                }
+            }
             if error != nil {
                 LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
             }
