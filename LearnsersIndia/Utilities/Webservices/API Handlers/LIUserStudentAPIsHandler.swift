@@ -501,4 +501,33 @@ class LIUserStudentAPIsHandler: NSObject {
         }
     }
     
+    
+    class func callPayuPaymentSucessAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((Bool) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.payuPaymentSucessUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            var status = false
+            if let responseDict = response {
+                if responseDict[LIAPIResponseKeys.responseType] as? String == LIAPIResponse.sucessResponse {
+                    status = true
+                }
+                else {
+                    status = false
+                }
+            }
+            else {
+                status = false
+            }
+            success(status)
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

@@ -22,8 +22,7 @@ class LIProfileViewController: UIViewController {
     var editProfileItemsArray:[LIProfileItem]?
     var isEditProfileSreen = false
     let profileCellIdentifier = "profileCell"
-    let paidUserlabelText = "You are a premium member"
-    let unpaidUserlabelText = "Unlock the rest of the list with premium"
+
     var loggedInUser:LIUserModel?
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,7 +89,7 @@ class LIProfileViewController: UIViewController {
         
         let isPaidUser = LIAccountManager.sharedInstance.getLoggedInUser()?.isPaidUser
         self.premiumButton.isHidden = isPaidUser ?? false
-        self.premiumDetailsLabel.text = isPaidUser != nil && isPaidUser == true ? self.paidUserlabelText : self.unpaidUserlabelText
+        self.premiumDetailsLabel.text = isPaidUser != nil && isPaidUser == true ? LIConstants.paidUserlabelText : LIConstants.unpaidUserlabelText
     }
     
     //MARK:- Initialise Profile Items

@@ -554,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.399599"
+            timestampString = "552848437.074903"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -570,7 +570,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.399662"
+            timestampString = "552848437.0749789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -682,11 +682,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
-            timestampString = "551647237.465485"
+            timestampString = "552848437.075074"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "updatePremiumStatus()"
             landmarkType = "7">
          </BreakpointContent>
@@ -698,11 +698,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
-            timestampString = "551647237.465523"
+            timestampString = "552848437.075121"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "updateNavigationBarAppearance()"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/Profile/LIProfileViewController.swift"
-            timestampString = "551647237.465559"
+            timestampString = "552848437.075165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "updateNavigationBarAppearance()"
             landmarkType = "7">
          </BreakpointContent>
@@ -746,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.399845"
+            timestampString = "552848437.07524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -794,7 +794,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.3999259"
+            timestampString = "552848437.075326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "195"
@@ -826,7 +826,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.399991"
+            timestampString = "552848437.075386"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
@@ -842,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/API Handlers/LIUserStudentAPIsHandler.swift"
-            timestampString = "551651823.400032"
+            timestampString = "552848437.075429"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
@@ -1232,7 +1232,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/Utilities/Webservices/LIAPIClient.swift"
@@ -1284,11 +1284,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
-            timestampString = "551651823.400442"
+            timestampString = "552848437.075906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "showPaymentGatewaySelectionAlert()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
+            timestampString = "552848437.0764329"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "updateViewsOfPayUMoneyScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
+            timestampString = "552848437.076718"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "updateTransactionParameters()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1296,15 +1328,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
-            timestampString = "551651823.400772"
+            timestampString = "552848437.07697"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "presentPayuMoneyController()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1312,16 +1344,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
-            timestampString = "551651823.400991"
+            timestampString = "552848437.0772949"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "updateViewsOfPayUMoneyScreen()"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "presentPayuMoneyController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
+            timestampString = "552848437.077574"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "presentPayuMoneyController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
+            timestampString = "552848437.077912"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "presentPayuMoneyController()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LearnsersIndia/ViewControllers/LIPaymentPackagesViewController.swift"
+            timestampString = "552848549.685831"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "203"
+            endingLineNumber = "203"
+            landmarkName = "callPayuPaymentSucessApiWithSucessStatus(_:and:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

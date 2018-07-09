@@ -17,8 +17,7 @@ class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var premiumDetailsLabel: UILabel!
     @IBOutlet weak var tryPremiumButton: UIButton!
-    let paidUserlabelText = "You are a premium member"
-    let unpaidUserlabelText = "Unlock the rest of the list with premium"
+
     weak var delegate:premiumDetailsTableViewCellDelegate?
     
     override func awakeFromNib() {
@@ -29,7 +28,7 @@ class LIFeedPremiumDetailsTableViewCell: UITableViewCell {
     func refreshCell() {
         let isPaidUser = LIAccountManager.sharedInstance.getLoggedInUser()?.isPaidUser
         self.tryPremiumButton.isHidden = isPaidUser ?? false
-        self.premiumDetailsLabel.text = isPaidUser != nil && isPaidUser == true ? self.paidUserlabelText : self.unpaidUserlabelText
+        self.premiumDetailsLabel.text = isPaidUser != nil && isPaidUser == true ? LIConstants.paidUserlabelText : LIConstants.unpaidUserlabelText
         
     }
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -40,6 +40,8 @@ struct LIConstants {
     static let noAnswerString = "No Answers"
     static let multipleAnswerString = " Answers"
     static let singleAnswerString = " Answer"
+    static let paidUserlabelText = "You are a premium member"
+    static let unpaidUserlabelText = "Unlock the rest of the list with premium"
 
 }
 
