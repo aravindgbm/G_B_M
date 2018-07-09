@@ -26,12 +26,12 @@ class LIPaymentPackageCollectionViewCell: UICollectionViewCell {
         self.paymentPackageObject = package
         self.packageImageView.setImageWith(self.paymentPackageObject?.packageImageUrl, and: nil)
         self.packageTitleLabel.text = self.paymentPackageObject?.packageTitle
-        self.packageAmountINRLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageINRAmount, and: self.paymentPackageObject?.packageINROfferAmount, and: LIPackageDenominationType.AED)
+        self.packageAmountINRLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageINRAmount, and: self.paymentPackageObject?.packageINROfferAmount, and: LIPackageDenominationType.INR)
         
         self.packageAmountAEDLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageAEDAmount, and: self.paymentPackageObject?.packageAEDOfferAmount, and: LIPackageDenominationType.AED)
        
-        self.packageAmountKWDLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageKWDAmount, and: self.paymentPackageObject?.packageKWDOfferAmount, and: LIPackageDenominationType.AED)
-        self.packageAmountUSDLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageUSDAmount, and: self.paymentPackageObject?.packageUSDOfferAmount, and: LIPackageDenominationType.AED)
+        self.packageAmountKWDLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageKWDAmount, and: self.paymentPackageObject?.packageKWDOfferAmount, and: LIPackageDenominationType.KWD)
+        self.packageAmountUSDLabel.attributedText = LIUtilities.getPackageAmountStringWith(self.paymentPackageObject?.packageUSDAmount, and: self.paymentPackageObject?.packageUSDOfferAmount, and: LIPackageDenominationType.USD)
         
     }
     

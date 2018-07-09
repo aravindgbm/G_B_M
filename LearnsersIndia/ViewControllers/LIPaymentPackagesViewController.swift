@@ -85,22 +85,23 @@ class LIPaymentPackagesViewController: UIViewController {
         PlugNPlay.presentPaymentViewController(withTxnParams: self.transactionParam!, on: self) { (response, error, extraParams) in
             if let payuResponse = response as? [String:Any] {
                 if let payuResult = payuResponse["result"]  as? [String:Any] {
+//                    print("Payu response \(payuResult)")
                     let message = payuResult["error_Message"] as? String
                     if message == nil || message?.count == 0 || message == "No Error" {
                         if let _ = payuResult["hash"] as? String {
                             self.payuResponseHash = payuResult["hash"] as? String
-                            self.callPayuPaymentSucessApiWithSucessStatus(true, and: self.payuResponseHash!)
+                            self.callPayuPaymentSucessApiWithSucessStatus(true, and: payuResult)
                             print("Sucess")
                         }
                         else {
                             LIUtilities.showOkAlertControllerWith(LIConstants.errorAlertTitle, message: self.payuMoneyHashError, onViewController: self, with: { (action) in
-                                self.callPayuPaymentSucessApiWithSucessStatus(false, and: self.payuMoneyHashError)
+                                self.callPayuPaymentSucessApiWithSucessStatus(false, and: payuResult)
                             })
                         }
                     }
                     else if message != nil {
                        LIUtilities.showOkAlertControllerWith(LIConstants.errorAlertTitle, message: message, onViewController: self, with: { (action) in
-                        self.callPayuPaymentSucessApiWithSucessStatus(false, and: message!)
+                        self.callPayuPaymentSucessApiWithSucessStatus(false, and: payuResult)
                         })
                     }
                 }
@@ -118,9 +119,6 @@ class LIPaymentPackagesViewController: UIViewController {
         }
         let ccAvenueAction = UIAlertAction(title: "Pay using CCAvenue", style: .default) { (action) in
             LIUtilities.showOkAlertControllerWith("Sorry", message: "This feature will be available soon", onViewController: self)
-            
-            //TODO: remove this
-//           self.callPayuPaymentSucessApiWithSucessStatus(true, and: "b3fbefb6e2d7a507bdbacc6632d8c10b3aa4b47c47a9fb8e11af6e68d9ae9f859cebaeb7c4d8c46195d5ff2be6968e3c67d960154f3c38c653bca54021a5dc22")
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(payuMoneyAction)
@@ -195,16 +193,16 @@ extension LIPaymentPackagesViewController {
         
     }
     
-    func callPayuPaymentSucessApiWithSucessStatus(_ status:Bool, and message:String){
-
+    func callPayuPaymentSucessApiWithSucessStatus(_ status:Bool, and result:[String:Any]){
+//        let responseData:[String:Any] = ["result":result]
         let parameters:[String:Any] = ["package_id":self.selectedPackage?.packageId as Any,
                                        LIAPIResponseKeys.responseType: status ? LIAPIResponse.sucessResponse : LIAPIResponse.errorResponse,
-                                       LIAPIResponseKeys.responseData : message]
+                                       LIAPIResponseKeys.responseData : result]
         ActivityIndicator.setUpActivityIndicator(baseView: self.view)
         LIUserStudentAPIsHandler.callPayuPaymentSucessAPIWith(parameters, shouldAddToken: true, success: { (sucess) in
             ActivityIndicator.dismissActivityView()
             if sucess {
-                LIUtilities.showOkAlertControllerWith("Greetings", message: LIConstants.paidUserlabelText, onViewController: self, with: { (action) in
+                LIUtilities.showOkAlertControllerWith("Greetings", message: LIConstants.premiumUpradeSucessMessage, onViewController: self, with: { (action) in
                      self.navigateToHomeScreen()
                 })
             }

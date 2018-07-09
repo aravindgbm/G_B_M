@@ -42,6 +42,7 @@ struct LIConstants {
     static let singleAnswerString = " Answer"
     static let paidUserlabelText = "You are a premium member"
     static let unpaidUserlabelText = "Unlock the rest of the list with premium"
+    static let premiumUpradeSucessMessage = "You account has been upgraded to premium membership"
 
 }
 
