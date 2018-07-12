@@ -65,18 +65,20 @@ class LIAuthenticationAPIsHandler: NSObject {
         LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.signUpURL, shouldAddHeaderParams: false, successBlock: { (response) in
             var status = false
             if let responseDict = response {
-                if let _ = responseDict["user_id"] as? String {
-                    let loggedInUser = LIUserModel(responseDict)
+                if let userData = responseDict["user_data"] as? [String:AnyObject] {
+                    let loggedInUser = LIUserModel(userData)
+//                if let _ = responseDict["user_id"] as? String {
+//                    let loggedInUser = LIUserModel(responseDict)
 //                    loggedInUser.userId = userId
 //                    loggedInUser.email = responseDict["email"] as? String
 //                    loggedInUser.mobileNumber = responseDict["mobile"] as? String
                     loggedInUser?.isOTPVerified = false
 //                    loggedInUser.fullName = requestParams!["fullname"] as? String
                     LIAccountManager.sharedInstance.setLoggedInUser(loggedInUser)
-                    if let token = responseDict["tocken"] as? String{
+                    if let token = userData["tocken"] as? String{
                         LIAccountManager.sharedInstance.setAccessToken(token)
                     }
-                    if let otp = responseDict["otp"] as? Int{
+                    if let otp = userData["verification_key"] as? String{
                         LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
                     }
                     status = true
@@ -117,7 +119,7 @@ class LIAuthenticationAPIsHandler: NSObject {
                     if let token = userData["tocken"] as? String{
                         LIAccountManager.sharedInstance.setAccessToken(token)
                     }
-                    if let otp = responseDict["verification_key"] as? Int{
+                    if let otp = responseDict["verification_key"] as? String{
                         LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
                     }
                     status = true
@@ -165,7 +167,7 @@ class LIAuthenticationAPIsHandler: NSObject {
         LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .post, shouldAddParams: true, urlString: LIAPIURL.resendOTP, shouldAddHeaderParams: false, successBlock: { (response) in
             var status = false
             if let reponseDict = response {
-                if let otp = reponseDict["otp"] as? Int {
+                if let otp = reponseDict["otp"] as? String {
                       LIAccountManager.sharedInstance.saveOTPForTheUser(otp)
                     status = true
                 }

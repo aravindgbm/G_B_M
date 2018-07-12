@@ -14,7 +14,7 @@ class LIFeedViewController: UIViewController {
     @IBOutlet weak var feedTableView: UITableView!
     var demoVideosArray:[LIVideoModel]?
     var recommendedQuestionArray:[LIQuestionsModel]?
-    
+    var shouldRefreshPaymentStatus:Bool = false
     enum FeedTableviewCellTypes:Int {
         case FeedTableviewCellTypeUtilities
         case FeedTableviewCellTypePremiumDetails
@@ -40,6 +40,7 @@ class LIFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpViews()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -52,6 +53,9 @@ class LIFeedViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
+        if self.shouldRefreshPaymentStatus {
+            self.callGetPaidStatusApi()
+        }
 //        feedTableView.reloadData()
     }
     
@@ -157,7 +161,7 @@ extension LIFeedViewController {
     }
 }
 
-extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate,questionsTableViewCellDelegate, premiumDetailsTableViewCellDelegate {
+extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegate,feedUtilitiesTableViewCellDelegate,questionsTableViewCellDelegate, premiumDetailsTableViewCellDelegate, paymentPackagesDelegate {
     
     // MARK:- videosTableViewCellDelegate
     
@@ -211,7 +215,13 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
     func showPaymentPackageViewController() {
         let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
         let packagesVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.PaymentPackagesViewController) as? LIPaymentPackagesViewController
+        packagesVC?.delegate = self
         self.navigationController?.pushViewController(packagesVC!, animated: true)
+    }
+    
+    // MARK:- PaymentPackages Delegate
+    func refresPaymentStatus() {
+        self.shouldRefreshPaymentStatus = true
     }
 }
 

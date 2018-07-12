@@ -59,8 +59,10 @@ class LIAPIClient: NSObject {
 //            SPUtilities.showOkAlertControllerWith("", message: NSLocalizedString("ERROR_OCCURRED", comment: ""), onViewController: (AppDelegate.getAppDelegateInstance().window?.rootViewController)!)
             return
         }
-//        JSONEncoding.default
-        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: URLEncoding.default, headers: requestHeader).responseJSON { (response:DataResponse) in
+//  JSONEncoding.default
+//        URLEncoding.default
+        let encoding:ParameterEncoding = httpMethod == .post ? JSONEncoding.default : URLEncoding.default
+        request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: encoding, headers: requestHeader).responseJSON { (response:DataResponse) in
             
             debugPrint("Printing Response- \n",response)
             debugPrint("Printing Requst- \n",response.request?.httpBody ?? "")

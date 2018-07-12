@@ -84,7 +84,7 @@ class LIAccountManager: NSObject {
         
     }
     
-    func saveOTPForTheUser(_ otp:Int) {
+    func saveOTPForTheUser(_ otp:String) {
         UserDefaults.standard.set(otp, forKey: savedOTP)
         UserDefaults.standard.synchronize()
     }

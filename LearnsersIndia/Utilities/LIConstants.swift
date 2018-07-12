@@ -87,6 +87,10 @@ struct LIColors {
 struct LIUserTypes {
     static let Student = "student"
 }
+
+struct LINotifications {
+    static let RefreshPaidStatus = "RefreshPaidStatus"
+}
 struct LIProfileItemTitles {
     static let Profile = "Profile"
     static let Questions = "My Questions"

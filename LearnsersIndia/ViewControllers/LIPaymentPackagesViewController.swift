@@ -8,6 +8,9 @@
 
 import UIKit
 
+protocol paymentPackagesDelegate:class {
+    func refresPaymentStatus()
+}
 class LIPaymentPackagesViewController: UIViewController {
     
     @IBOutlet weak var paymentCollectionView: UICollectionView!
@@ -18,9 +21,11 @@ class LIPaymentPackagesViewController: UIViewController {
     var transactionParam:PUMTxnParam?
     var payuResponseHash:String?
     let payuMoneyHashError = "Hash Error"
+    weak var delegate:paymentPackagesDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.callPaymentPackagesApi()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
     
@@ -31,10 +36,13 @@ class LIPaymentPackagesViewController: UIViewController {
     
     
     @IBAction func backButtonTapped(_ sender: Any) {
-        self.navigateToHomeScreen()
+        self.navigateToHomeScreenAndShouldRefresh(false)
     }
     
-    func navigateToHomeScreen(){
+    func navigateToHomeScreenAndShouldRefresh(_ refresh:Bool){
+        if refresh {
+            self.delegate?.refresPaymentStatus()
+        }
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -194,16 +202,16 @@ extension LIPaymentPackagesViewController {
     }
     
     func callPayuPaymentSucessApiWithSucessStatus(_ status:Bool, and result:[String:Any]){
-//        let responseData:[String:Any] = ["result":result]
+        let responseData:[[String:Any]] = [result]
         let parameters:[String:Any] = ["package_id":self.selectedPackage?.packageId as Any,
                                        LIAPIResponseKeys.responseType: status ? LIAPIResponse.sucessResponse : LIAPIResponse.errorResponse,
-                                       LIAPIResponseKeys.responseData : result]
+                                       LIAPIResponseKeys.responseData : responseData]
         ActivityIndicator.setUpActivityIndicator(baseView: self.view)
         LIUserStudentAPIsHandler.callPayuPaymentSucessAPIWith(parameters, shouldAddToken: true, success: { (sucess) in
             ActivityIndicator.dismissActivityView()
             if sucess {
                 LIUtilities.showOkAlertControllerWith("Greetings", message: LIConstants.premiumUpradeSucessMessage, onViewController: self, with: { (action) in
-                     self.navigateToHomeScreen()
+                     self.navigateToHomeScreenAndShouldRefresh(true)
                 })
             }
             else {
@@ -211,7 +219,10 @@ extension LIPaymentPackagesViewController {
             }
         }, failure: { (responseMessage) in
             ActivityIndicator.dismissActivityView()
-            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+//            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+            LIUtilities.showOkAlertControllerWith("Error", message: responseMessage, onViewController: self, with: { (action) in
+                self.navigateToHomeScreenAndShouldRefresh(true)
+            })
             
         }) { (error) in
             ActivityIndicator.dismissActivityView()
