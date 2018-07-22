@@ -13,6 +13,7 @@ import AVKit
 class LIUtilities: NSObject {
     
     class func showErrorAlertControllerWith(_ message:String?, onViewController:UIViewController ) {
+        ActivityIndicator.dismissActivityView()
         self.showOkAlertControllerWith(LIConstants.errorAlertTitle, message: message, onViewController: onViewController)
     }
     

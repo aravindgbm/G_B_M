@@ -43,6 +43,7 @@ struct LIConstants {
     static let paidUserlabelText = "You are a premium member"
     static let unpaidUserlabelText = "Unlock the rest of the list with premium"
     static let premiumUpradeSucessMessage = "You account has been upgraded to premium membership"
+    static let transactionQuitAlertMessage = "Are you sure you want to cancel the transaction ?"
 
 }
 
@@ -66,6 +67,7 @@ struct LIViewControllerIdentifier {
     static let AskQuestionViewController = "LIAskQuestionViewController"
     static let AnswerViewController = "LIAnswerViewController"
     static let PaymentPackagesViewController = "LIPaymentPackagesViewController"
+    static let CCAvenueViewController = "LICCAvenueViewController"
 }
 
 struct LIStoryboards {

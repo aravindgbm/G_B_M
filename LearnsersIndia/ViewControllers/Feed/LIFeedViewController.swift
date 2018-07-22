@@ -220,7 +220,7 @@ extension LIFeedViewController:videosTableViewCellDelegate,feedBannerCellDelegat
     }
     
     // MARK:- PaymentPackages Delegate
-    func refresPaymentStatus() {
+    func refreshPaymentStatus() {
         self.shouldRefreshPaymentStatus = true
     }
 }

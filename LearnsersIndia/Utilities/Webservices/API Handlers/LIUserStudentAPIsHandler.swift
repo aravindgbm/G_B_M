@@ -530,4 +530,38 @@ class LIUserStudentAPIsHandler: NSObject {
             error(err)
         }
     }
+    
+    class func callGenerateCCAvenueHashAPIWith(_ requestParams:[String:Any]?,shouldAddToken:Bool,success:
+        @escaping ((LICCAvenueModel?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        var request = requestParams
+        if shouldAddToken && requestParams != nil{
+            request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
+        }
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.generateCCAvenueHashUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let CCAvenueData = reponseDict[LIAPIResponseKeys.responseData] as? [String:AnyObject] {
+                    if let CCAvenueObject = LICCAvenueModel(CCAvenueData) {
+                        success(CCAvenueObject)
+                    }
+                    else {
+                        success(nil)
+                    }
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+            else {
+                success(nil)
+            }
+            
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
 }

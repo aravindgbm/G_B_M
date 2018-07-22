@@ -65,6 +65,28 @@
             </objects>
             <point key="canvasLocation" x="172" y="-276"/>
         </scene>
+        <!--CCAvenue-->
+        <scene sceneID="mRp-J0-ke7">
+            <objects>
+                <viewController storyboardIdentifier="LICCAvenueViewController" id="BpN-c6-sQf" customClass="LICCAvenueViewController" customModule="LearnsersIndia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I7T-my-wfT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="tXG-mb-5fT"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CCAvenue" id="PPC-gZ-Bee">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="giV-ZZ-HIh">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="BpN-c6-sQf" id="tWt-qc-hfJ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItE-lk-zL6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1356" y="510"/>
+        </scene>
         <!--Packages-->
         <scene sceneID="RB2-gj-avT">
             <objects>

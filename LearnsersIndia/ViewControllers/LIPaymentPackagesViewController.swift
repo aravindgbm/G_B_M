@@ -9,7 +9,7 @@
 import UIKit
 
 protocol paymentPackagesDelegate:class {
-    func refresPaymentStatus()
+    func refreshPaymentStatus()
 }
 class LIPaymentPackagesViewController: UIViewController {
     
@@ -39,12 +39,6 @@ class LIPaymentPackagesViewController: UIViewController {
         self.navigateToHomeScreenAndShouldRefresh(false)
     }
     
-    func navigateToHomeScreenAndShouldRefresh(_ refresh:Bool){
-        if refresh {
-            self.delegate?.refresPaymentStatus()
-        }
-        self.navigationController?.popViewController(animated: true)
-    }
     
     func updateTransactionParameters(){
         self.transactionParam = PUMTxnParam()
@@ -126,7 +120,8 @@ class LIPaymentPackagesViewController: UIViewController {
             self.callGeneratePayuHashApi()
         }
         let ccAvenueAction = UIAlertAction(title: "Pay using CCAvenue", style: .default) { (action) in
-            LIUtilities.showOkAlertControllerWith("Sorry", message: "This feature will be available soon", onViewController: self)
+//            LIUtilities.showOkAlertControllerWith("Sorry", message: "This feature will be available soon", onViewController: self)
+            self.callGenerateCCAvenueHashApi()
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(payuMoneyAction)
@@ -134,9 +129,22 @@ class LIPaymentPackagesViewController: UIViewController {
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
     }
-    /*
-     // MARK: - Navigation
-     
+  //    MARK: - Navigation
+    func navigateToHomeScreenAndShouldRefresh(_ refresh:Bool){
+        if refresh {
+            self.delegate?.refreshPaymentStatus()
+        }
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func navigateToCCAvenuePaymentScreenWith(_ CCAvenueObject:LICCAvenueModel?){
+        let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
+        let CCAvenueVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.CCAvenueViewController) as? LICCAvenueViewController
+        CCAvenueVC?.CCAvenueObject = CCAvenueObject
+        let navigationVC = UINavigationController(rootViewController: CCAvenueVC!)
+        self.present(navigationVC, animated: true, completion: nil)
+    }
+     /*
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
@@ -175,6 +183,7 @@ extension LIPaymentPackagesViewController {
             ActivityIndicator.dismissActivityView()
         }
     }
+     //MARK: - PyuMoney methods
     
     func callGeneratePayuHashApi(){
         
@@ -228,6 +237,45 @@ extension LIPaymentPackagesViewController {
             ActivityIndicator.dismissActivityView()
             LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController:self)
         }
+    }
+    
+    //MARK: - CCAvenue methods
+    
+    func callGenerateCCAvenueHashApi(){
+        let parameters:[String:Any] = ["package_id":self.selectedPackage?.packageId as Any]
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        
+        LIUserStudentAPIsHandler.callGenerateCCAvenueHashAPIWith(parameters, shouldAddToken: true, success: { (response) in
+            ActivityIndicator.dismissActivityView()
+            
+//            //TODO: remove this test code
+//            let object = LICCAvenueModel()
+//            object.accessCode = "4YRUXLSRO20O8NIH"
+//            object.merchantId = "2"
+//            object.currency = "INR"
+//            object.amount = "1.00"
+//            let orderId = (arc4random() % 9999999) + 1
+//            object.orderId = String(orderId)
+//            object.cancelUrl = "https://test.ccavenue.com/jsp/ccavResponseHandler_test.jsp"
+//            object.redirectUrl = "https://test.ccavenue.com/jsp/ccavResponseHandler_test.jsp"
+//            object.rsaKeyUrl = "https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp"
+            if let _ = response {
+              self.navigateToCCAvenuePaymentScreenWith(response)
+            }
+            else {
+                 LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+         
+            
+            
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController:self)
+        }
+        
     }
 }
 

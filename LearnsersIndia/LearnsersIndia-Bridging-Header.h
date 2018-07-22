@@ -3,3 +3,5 @@
 //
 
 #import <PlugNPlay/PlugNPlay.h>
+#import "CCTool.h"
+#include "Base64.h"
