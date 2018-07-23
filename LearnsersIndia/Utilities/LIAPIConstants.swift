@@ -50,7 +50,7 @@ struct LIAPIURL{
     static let generatePayuHashUrl = "generate-payuhash"
     static let payuPaymentSucessUrl = "payu-payment-success"
     static let generateCCAvenueHashUrl = "generate-ccavenuehash"
-    
+    static let getCCAvenueDetailsUrl = "get-ccavenue-details"
 }
 
 struct LIAPIResponseKeys {

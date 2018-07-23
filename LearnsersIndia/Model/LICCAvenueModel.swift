@@ -27,12 +27,22 @@ class LICCAvenueModel: NSObject {
     }
     convenience init?(_ response:[String:Any]) {
         self.init()
-        guard let accCode = response["access_code"] as? String, let encRequest = response["encRequest"] as? String, let post_url = response["form_url"] as? String
+        guard let accCode = response["access_code"] as? String,let amountDetails = response["amount"] as? String , let redirect_url = response["redirect_url"] as? String,  let currencyDetails = response["currency"] as? String, let cancel_url = response["cancel_url"] as? String, let merchant_id = response["merchant_id"] as? String, let order_id = response["order_id"] as? String, let post_url = response["form_url"] as? String
             else {
             return nil
         }
+
+//        let encRequest = response["encRequest"] as? String
         self.accessCode = accCode
-        self.encryptedRequest = encRequest
+        self.amount = amountDetails
+//        self.encryptedRequest = encRequest
         self.postUrl = post_url
+        self.currency = currencyDetails
+        self.merchantId = merchant_id
+        self.orderId = order_id
+        self.cancelUrl = cancel_url
+        self.redirectUrl = redirect_url
+        self.rsaKeyUrl = "https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp"
+
     }
 }

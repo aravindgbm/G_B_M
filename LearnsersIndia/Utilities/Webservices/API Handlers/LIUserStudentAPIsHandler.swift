@@ -537,7 +537,7 @@ class LIUserStudentAPIsHandler: NSObject {
         if shouldAddToken && requestParams != nil{
             request![LIAPIRequestKeys.token] = LIAccountManager.sharedInstance.getAccesToken()
         }
-        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.generateCCAvenueHashUrl, shouldAddHeaderParams: false, successBlock: { (response) in
+        LIAPIClient.sharedInstance.callRequest(request, httpMethod: .get, shouldAddParams: true, urlString: LIAPIURL.getCCAvenueDetailsUrl, shouldAddHeaderParams: false, successBlock: { (response) in
             if let reponseDict = response {
                 if let CCAvenueData = reponseDict[LIAPIResponseKeys.responseData] as? [String:AnyObject] {
                     if let CCAvenueObject = LICCAvenueModel(CCAvenueData) {

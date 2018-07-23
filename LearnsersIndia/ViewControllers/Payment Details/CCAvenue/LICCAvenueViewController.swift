@@ -40,22 +40,22 @@ class LICCAvenueViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-//        self.getRsaKey { (success, response) in
-//            if success {
-//                if let responseData = response as? Data {
-//                    self.encyptCardDetails(data: responseData)
-//                }
-//                else {
-//
-//                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-//                }
-//            }
-//            else{
-//                LIUtilities.showErrorAlertControllerWith(response as? String, onViewController: self)
-//            }
-//        }
+        self.getRsaKey { (success, response) in
+            if success {
+                if let responseData = response as? Data {
+                    self.encyptCardDetails(data: responseData)
+                }
+                else {
+
+                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+                }
+            }
+            else{
+                LIUtilities.showErrorAlertControllerWith(response as? String, onViewController: self)
+            }
+        }
         
-        self.callPaymentInitiateApi()
+//        self.callPaymentInitiateApi()
     }
     
     override func viewDidAppear(_ animated: Bool) {
