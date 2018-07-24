@@ -43,6 +43,9 @@ class LICCAvenueModel: NSObject {
         self.cancelUrl = cancel_url
         self.redirectUrl = redirect_url
         self.rsaKeyUrl = "https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp"
+        if let rsa = response["RSAkey"] as? String {
+         self.rsaKey = rsa
+        }
 
     }
 }

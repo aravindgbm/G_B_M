@@ -40,21 +40,21 @@ class LICCAvenueViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.getRsaKey { (success, response) in
-            if success {
-                if let responseData = response as? Data {
-                    self.encyptCardDetails(data: responseData)
-                }
-                else {
-
-                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-                }
-            }
-            else{
-                LIUtilities.showErrorAlertControllerWith(response as? String, onViewController: self)
-            }
-        }
-        
+//        self.getRsaKey { (success, response) in
+//            if success {
+//                if let responseData = response as? Data {
+//                    self.encyptCardDetails(data: responseData)
+//                }
+//                else {
+//
+//                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+//                }
+//            }
+//            else{
+//                LIUtilities.showErrorAlertControllerWith(response as? String, onViewController: self)
+//            }
+//        }
+        self.encyptCardDetailsWithRSA()
 //        self.callPaymentInitiateApi()
     }
     
@@ -293,7 +293,89 @@ extension LICCAvenueViewController {
         }
         
     }
+    
+    private func encyptCardDetailsWithRSA(){
+        
+        guard let _ = self.CCAvenueObject, let _ = self.CCAvenueObject?.rsaKey
+            else {
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+                return
+        }
+            self.CCAvenueObject?.rsaKey =  self.CCAvenueObject!.rsaKey.trimmingCharacters(in: CharacterSet.newlines)
+            self.CCAvenueObject?.rsaKey =  "-----BEGIN PUBLIC KEY-----\n\(self.CCAvenueObject!.rsaKey)\n-----END PUBLIC KEY-----\n"
+            print("rsaKey :: ", self.CCAvenueObject!.rsaKey)
+            
+            let myRequestString = "amount=\( self.CCAvenueObject!.amount)&currency=\( self.CCAvenueObject!.currency)"
+            
+            let ccTool = CCTool()
+            var encVal = ccTool.encryptRSA(myRequestString, key: self.CCAvenueObject?.rsaKey)
+            
+            encVal = CFURLCreateStringByAddingPercentEscapes(
+                nil,
+                encVal! as CFString,
+                nil,
+                "!*'();:@&=+$,/?%#[]" as CFString,
+                CFStringBuiltInEncodings.UTF8.rawValue) as String?
+            LICCAvenueViewController.statusCode = 0
+            
+            //Preparing for webview call
+            if LICCAvenueViewController.statusCode == 0{
+                let urlAsString = "https://secure.ccavenue.com/transaction/initTrans"
+                let encryptedStr = "merchant_id=\(self.CCAvenueObject!.merchantId)&order_id=\(self.CCAvenueObject!.orderId)&redirect_url=\(self.CCAvenueObject!.redirectUrl)&cancel_url=\(self.CCAvenueObject!.cancelUrl)&enc_val=\(encVal!)&access_code=\(self.CCAvenueObject!.accessCode)"
+                
+                print("encValue :: \(encVal ?? "No val for encVal")")
+                
+                print("encryptedStr :: ",encryptedStr)
+                let myRequestData = encryptedStr.data(using: String.Encoding.utf8)
+                // request = NSMutableURLRequest(url: URL(string: urlAsString)!)
+                
+                request = NSMutableURLRequest(url: URL(string: urlAsString)! as URL, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 30)
+                request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "content-type")
+                request.setValue(urlAsString, forHTTPHeaderField: "Referer")
+                request.httpMethod = "POST"
+                request.httpBody = myRequestData
+                print("\n\n\nwebview :: ",request.url as Any)
+                print("\n\n\nwebview :: ",request.description as Any)
+                print("\n\n\nwebview :: ",request.httpBody?.description as Any)
+                print("\n\n\nwebview :: ",request.allHTTPHeaderFields! as Any)
+                
+                let session = URLSession(configuration: URLSessionConfiguration.default)
+                print("session",session)
+                
+                session.dataTask(with: request as URLRequest) {
+                    (data, response, error) -> Void in
+                    
+                    if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode{
+                        
+                        guard let data = data else{
+                            print("No value for data")
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            self.viewWeb.loadRequest(self.request as URLRequest)
+                        }
+                        print("data :: ",data)
+                    }
+                    else{
+                        print("into else")
+                        //                        self.displayAlert(msg: "Unable to load webpage currently, Please try again later.")
+                        LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+                    }
+                    }.resume()
+                
+                //                print(viewWeb.isLoading)
+            }
+            else{
+                print("Unable to create requestURL")
+                LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+            }
+        
+    }
+    
 }
+
+
+
 
 extension LICCAvenueViewController: UIWebViewDelegate {
     //MARK: WebviewDelegate Methods
