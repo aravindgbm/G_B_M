@@ -303,10 +303,10 @@ extension LICCAvenueViewController {
                 return
         }
             self.CCAvenueObject?.rsaKey =  self.CCAvenueObject!.rsaKey.trimmingCharacters(in: CharacterSet.newlines)
-            self.CCAvenueObject?.rsaKey =  "-----BEGIN PUBLIC KEY-----\n\(self.CCAvenueObject!.rsaKey)\n-----END PUBLIC KEY-----\n"
+            self.CCAvenueObject?.rsaKey =  "\(LICCAvenueConstants.rsaKeyBegin)\(self.CCAvenueObject!.rsaKey)\(LICCAvenueConstants.rsaKeyEnd)"
             print("rsaKey :: ", self.CCAvenueObject!.rsaKey)
             
-            let myRequestString = "amount=\( self.CCAvenueObject!.amount)&currency=\( self.CCAvenueObject!.currency)"
+            let myRequestString = "\(LICCAvenueConstants.amountRequestKey)\( self.CCAvenueObject!.amount)&\(LICCAvenueConstants.currencyRequestKey)\( self.CCAvenueObject!.currency)"
             
             let ccTool = CCTool()
             var encVal = ccTool.encryptRSA(myRequestString, key: self.CCAvenueObject?.rsaKey)
@@ -321,8 +321,8 @@ extension LICCAvenueViewController {
             
             //Preparing for webview call
             if LICCAvenueViewController.statusCode == 0{
-                let urlAsString = "https://secure.ccavenue.com/transaction/initTrans"
-                let encryptedStr = "merchant_id=\(self.CCAvenueObject!.merchantId)&order_id=\(self.CCAvenueObject!.orderId)&redirect_url=\(self.CCAvenueObject!.redirectUrl)&cancel_url=\(self.CCAvenueObject!.cancelUrl)&enc_val=\(encVal!)&access_code=\(self.CCAvenueObject!.accessCode)&merchant_param1=\(self.CCAvenueObject!.merchantParam1)&merchant_param2=\(self.CCAvenueObject!.merchantParam2)"
+                let urlAsString = LICCAvenueConstants.initiateTransactionUrl
+                let encryptedStr = "\(LICCAvenueConstants.merchantIdRequestKey)\(self.CCAvenueObject!.merchantId)&\(LICCAvenueConstants.orderIdRequestKey)\(self.CCAvenueObject!.orderId)&\(LICCAvenueConstants.redirectUrlRequestKey)\(self.CCAvenueObject!.redirectUrl)&\(LICCAvenueConstants.cancelUrlRequestKey)\(self.CCAvenueObject!.cancelUrl)&\(LICCAvenueConstants.encryptedValueRequestKey)\(encVal!)&\(LICCAvenueConstants.accessCodeRequestKey)\(self.CCAvenueObject!.accessCode)&\(LICCAvenueConstants.merchantParam1RequestKey)\(self.CCAvenueObject!.merchantParam1)&\(LICCAvenueConstants.merchantParam2ReqeuestKey)\(self.CCAvenueObject!.merchantParam2)"
                 
                 print("encValue :: \(encVal ?? "No val for encVal")")
                 

@@ -145,4 +145,19 @@ enum LIAnswerOptionId:Int {
     case option4
 }
 
-
+struct LICCAvenueConstants {
+    static let rsaKeyUrl = "https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp"
+    static let initiateTransactionUrl = "https://secure.ccavenue.com/transaction/initTrans"
+    static let rsaKeyBegin = "-----BEGIN PUBLIC KEY-----\n"
+    static let rsaKeyEnd = "\n-----END PUBLIC KEY-----\n"
+    static let amountRequestKey = "amount="
+    static let currencyRequestKey = "currency="
+    static let merchantIdRequestKey = "merchant_id="
+    static let orderIdRequestKey = "order_id="
+    static let redirectUrlRequestKey = "redirect_url="
+    static let cancelUrlRequestKey = "cancel_url="
+    static let encryptedValueRequestKey = "enc_val="
+    static let accessCodeRequestKey = "access_code="
+    static let merchantParam1RequestKey = "merchant_param1="
+    static let merchantParam2ReqeuestKey = "merchant_param2="
+}
