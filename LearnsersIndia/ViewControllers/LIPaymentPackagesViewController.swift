@@ -141,8 +141,9 @@ class LIPaymentPackagesViewController: UIViewController {
         let storyBoard = UIStoryboard.init(name: LIStoryboards.Home, bundle: nil)
         let CCAvenueVC = storyBoard.instantiateViewController(withIdentifier: LIViewControllerIdentifier.CCAvenueViewController) as? LICCAvenueViewController
         CCAvenueVC?.CCAvenueObject = CCAvenueObject
-        let navigationVC = UINavigationController(rootViewController: CCAvenueVC!)
-        self.present(navigationVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(CCAvenueVC!, animated: true)
+//        let navigationVC = UINavigationController(rootViewController: CCAvenueVC!)
+//        self.present(navigationVC, animated: true, completion: nil)
     }
      /*
      // In a storyboard-based application, you will often want to do a little preparation before navigation

@@ -75,3 +75,9 @@ struct LIAPIResponse {
 struct LIAPIRequestKeys {
     static let token = "tocken"
 }
+
+struct LICCAvenueConstants {
+    static let rsaKeyUrl = "https://secure.ccavenue.com/transaction/jsp/GetRSA.jsp"
+    static let rsaKeyBegin = "-----BEGIN PUBLIC KEY-----\n"
+    static let rsaKeyEnd = "\n-----END PUBLIC KEY-----\n"
+}

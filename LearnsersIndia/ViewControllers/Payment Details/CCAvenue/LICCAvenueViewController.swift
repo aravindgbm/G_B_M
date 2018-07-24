@@ -91,7 +91,8 @@ class LICCAvenueViewController: UIViewController {
     func showPaymentQuitAlert(){
         let alert = UIAlertController(title: "", message: LIConstants.transactionQuitAlertMessage, preferredStyle: .alert)
         let yesAction = UIAlertAction(title: "Yes", style: .default) { (action) in
-            self.dismiss(animated: true, completion: nil)
+//            self.dismiss(animated: true, completion: nil)
+            self.navigationController?.popViewController(animated: true)
         }
         alert.addAction(yesAction)
         let noAction = UIAlertAction(title: "No", style: .default, handler: nil)
@@ -321,7 +322,7 @@ extension LICCAvenueViewController {
             //Preparing for webview call
             if LICCAvenueViewController.statusCode == 0{
                 let urlAsString = "https://secure.ccavenue.com/transaction/initTrans"
-                let encryptedStr = "merchant_id=\(self.CCAvenueObject!.merchantId)&order_id=\(self.CCAvenueObject!.orderId)&redirect_url=\(self.CCAvenueObject!.redirectUrl)&cancel_url=\(self.CCAvenueObject!.cancelUrl)&enc_val=\(encVal!)&access_code=\(self.CCAvenueObject!.accessCode)"
+                let encryptedStr = "merchant_id=\(self.CCAvenueObject!.merchantId)&order_id=\(self.CCAvenueObject!.orderId)&redirect_url=\(self.CCAvenueObject!.redirectUrl)&cancel_url=\(self.CCAvenueObject!.cancelUrl)&enc_val=\(encVal!)&access_code=\(self.CCAvenueObject!.accessCode)&merchant_param1=\(self.CCAvenueObject!.merchantParam1)&merchant_param2=\(self.CCAvenueObject!.merchantParam2)"
                 
                 print("encValue :: \(encVal ?? "No val for encVal")")
                 
@@ -399,44 +400,56 @@ extension LICCAvenueViewController: UIWebViewDelegate {
         let string = (webView.request?.url?.absoluteString)!
         print("String :: \(string)")
         if let _ = self.CCAvenueObject {
-            if(string.contains(self.CCAvenueObject!.redirectUrl)) //("http://122.182.6.216/merchant/ccavResponseHandler.jsp"))//
+            if(string.contains(self.CCAvenueObject!.redirectUrl) || string.contains(self.CCAvenueObject!.cancelUrl)) //("http://122.182.6.216/merchant/ccavResponseHandler.jsp"))//
             {
                 print(viewWeb.isLoading)
                 guard let htmlTemp:NSString = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML") as NSString? else{
                     print("failed to evaluate javaScript")
+                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
                     return
                 }
                 
-                let html = htmlTemp
+                let html:String = htmlTemp as String
                 print("html :: ",html)
                 var transStatus = "Not Known"
-                
-                if ((html ).range(of: "tracking_id").location != NSNotFound) && ((html ).range(of: "bin_country").location != NSNotFound) {
-                    if ((html ).range(of: "Aborted").location != NSNotFound) || ((html ).range(of: "Cancel").location != NSNotFound) {
-                        transStatus = "Transaction Cancelled"
-                        //                    let controller: CCResultViewController = CCResultViewController()
-                        //                    controller.transStatus = transStatus
-                        //                    self.present(controller, animated: true, completion: nil)
-                    }
-                    else if ((html ).range(of: "Success").location != NSNotFound) {
-                        transStatus = "Transaction Successful"
-                        //                    let controller: CCResultViewController = CCResultViewController()
-                        //                    controller.transStatus = transStatus
-                        //                    self.present(controller, animated: true, completion: { _ in })
-                    }
-                    else if ((html ).range(of: "Fail").location != NSNotFound) {
-                        transStatus = "Transaction Failed"
-                        //                    let controller: CCResultViewController = CCResultViewController()
-                        //                    controller.transStatus = transStatus
-                        //                    self.present(controller, animated: true, completion: { _ in })
-                    }
+                let htmlString = LIUtilities.getAttributedStringFromHtmlString(html)
+                LIUtilities.showOkAlertControllerWith("", message: htmlString?.string, onViewController: self) { (action) in
+                    self.navigationController?.popToRootViewController(animated: true)
                 }
-                else{
-                    print("html does not contain any related data")
-                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-                    //                displayAlert(msg: "html does not contain any related data for this transaction.")
-                }
+//                if ((html ).range(of: "tracking_id").location != NSNotFound) && ((html ).range(of: "bin_country").location != NSNotFound) {
+//                    if ((html ).range(of: "Aborted").location != NSNotFound) || ((html ).range(of: "Cancel").location != NSNotFound) {
+//                        transStatus = "Transaction Cancelled"
+//                        //                    let controller: CCResultViewController = CCResultViewController()
+//                        //                    controller.transStatus = transStatus
+//                        //                    self.present(controller, animated: true, completion: nil)
+//                    }
+//                    else if ((html ).range(of: "Success").location != NSNotFound) {
+//                        transStatus = "Transaction Successful"
+//                        //                    let controller: CCResultViewController = CCResultViewController()
+//                        //                    controller.transStatus = transStatus
+//                        //                    self.present(controller, animated: true, completion: { _ in })
+//                    }
+//                    else if ((html ).range(of: "Fail").location != NSNotFound) {
+//                        transStatus = "Transaction Failed"
+//                        //                    let controller: CCResultViewController = CCResultViewController()
+//                        //                    controller.transStatus = transStatus
+//                        //                    self.present(controller, animated: true, completion: { _ in })
+//                    }
+//                }
+//                else{
+//                    print("html does not contain any related data")
+//                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+//                    //                displayAlert(msg: "html does not contain any related data for this transaction.")
+//                }
             }
+            
+//            else if (string.contains(self.CCAvenueObject!.cancelUrl)) {
+//                guard let htmlTemp = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")  else{
+//                    print("failed to evaluate javaScript")
+//                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+//                    return
+//                }
+//            }
             
         }
         else {
