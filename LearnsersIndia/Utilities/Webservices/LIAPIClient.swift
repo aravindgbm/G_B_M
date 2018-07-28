@@ -46,13 +46,19 @@ class LIAPIClient: NSObject {
 //        } else {
 //            requestParams = nil
 //        }
-        
+        #if DEBUG
         debugPrint("Request Url - \(webServiceURLString)")
+        #endif
         if requestParams != nil {
+            #if DEBUG
             debugPrint("Params - \(requestParams!)")
+            #endif
+            
         }
-        
+        #if DEBUG
         debugPrint("header - \(requestHeader)")
+        #endif
+        
         let webServiceURL = URL(string: webServiceURLString)
         if webServiceURL == nil {
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
@@ -63,14 +69,18 @@ class LIAPIClient: NSObject {
 //        URLEncoding.default
         let encoding:ParameterEncoding = httpMethod == .post ? JSONEncoding.default : URLEncoding.default
         request(webServiceURL!, method: httpMethod, parameters: requestParams, encoding: encoding, headers: requestHeader).responseJSON { (response:DataResponse) in
-            
+            #if DEBUG
             debugPrint("Printing Response- \n",response)
             debugPrint("Printing Requst- \n",response.request?.httpBody ?? "")
+            #endif
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
             if response.result.isSuccess {
                 
                 if let responseArray = response.result.value as? [[String:AnyObject]] {
+                    #if DEBUG
                     print("\(responseArray)")
+                    #endif
+                   
                 }
                 if let responseData = response.result.value as? [String:AnyObject],let responseStatusCode = response.response?.statusCode {
                     if responseStatusCode >= HTTP_STATUS_OK && responseStatusCode <= HTTP_STATUS_UNASSIGNED {

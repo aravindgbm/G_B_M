@@ -42,10 +42,10 @@ class LIGameViewController: UIViewController {
         self.navigationItem.title = self.gameLevelObject?.levelName
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            print("AVAudioSession Category Playback OK")
+//            print("AVAudioSession Category Playback OK")
             do {
                 try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
+//                print("AVAudioSession is Active")
                 
             } catch let error as NSError {
                 print(error.localizedDescription)
