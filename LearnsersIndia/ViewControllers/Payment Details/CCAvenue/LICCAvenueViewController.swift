@@ -16,7 +16,7 @@ class LICCAvenueViewController: UIViewController {
     static var statusCode = 0
     weak var delegate:CCAvenuePaymentDelegate?
     var request = NSMutableURLRequest()
-    lazy var viewWeb: UIWebView = {
+    lazy var webView: UIWebView = {
         let webView = UIWebView()
         webView.frame = self.view.bounds
         webView.backgroundColor = .white
@@ -65,21 +65,21 @@ class LICCAvenueViewController: UIViewController {
     private func setupWebView(){
         
         //setup webview
-        view.addSubview(viewWeb)
+        view.addSubview(webView)
         if #available(iOS 11.0, *) {
-            viewWeb.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-            viewWeb.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+            webView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+            webView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         } else {
             // Fallback on earlier versions
-            viewWeb.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            viewWeb.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+            webView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+            webView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         }
         
-        viewWeb.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        webView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         
-        viewWeb.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        webView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         
-        _ = [viewWeb .setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: UILayoutConstraintAxis.vertical)]
+        _ = [webView .setContentCompressionResistancePriority(UILayoutPriority(rawValue: 1000), for: UILayoutConstraintAxis.vertical)]
     }
     
     
@@ -219,7 +219,7 @@ extension LICCAvenueViewController {
                             return
                         }
                         DispatchQueue.main.async {
-                            self.viewWeb.loadRequest(self.request as URLRequest)
+                            self.webView.loadRequest(self.request as URLRequest)
                         }
                         print("data :: ",data)
                     }
@@ -230,7 +230,7 @@ extension LICCAvenueViewController {
                     }
                     }.resume()
                 
-                //                print(viewWeb.isLoading)
+                //                print(webView.isLoading)
             }
             else{
                 print("Unable to create requestURL")
@@ -277,7 +277,7 @@ extension LICCAvenueViewController {
                         return
                     }
                     DispatchQueue.main.async {
-                        self.viewWeb.loadRequest(self.request as URLRequest)
+                        self.webView.loadRequest(self.request as URLRequest)
                     }
                     print("data :: ",data)
                 }
@@ -304,7 +304,10 @@ extension LICCAvenueViewController {
         }
             self.CCAvenueObject?.rsaKey =  self.CCAvenueObject!.rsaKey.trimmingCharacters(in: CharacterSet.newlines)
             self.CCAvenueObject?.rsaKey =  "\(LICCAvenueConstants.rsaKeyBegin)\(self.CCAvenueObject!.rsaKey)\(LICCAvenueConstants.rsaKeyEnd)"
-            print("rsaKey :: ", self.CCAvenueObject!.rsaKey)
+        #if DEBUG
+        print("rsaKey :: ", self.CCAvenueObject!.rsaKey)
+        #endif
+        
             
             let myRequestString = "\(LICCAvenueConstants.amountRequestKey)\( self.CCAvenueObject!.amount)&\(LICCAvenueConstants.currencyRequestKey)\( self.CCAvenueObject!.currency)"
             
@@ -324,9 +327,9 @@ extension LICCAvenueViewController {
                 let urlAsString = LICCAvenueConstants.initiateTransactionUrl
                 let encryptedStr = "\(LICCAvenueConstants.merchantIdRequestKey)\(self.CCAvenueObject!.merchantId)&\(LICCAvenueConstants.orderIdRequestKey)\(self.CCAvenueObject!.orderId)&\(LICCAvenueConstants.redirectUrlRequestKey)\(self.CCAvenueObject!.redirectUrl)&\(LICCAvenueConstants.cancelUrlRequestKey)\(self.CCAvenueObject!.cancelUrl)&\(LICCAvenueConstants.encryptedValueRequestKey)\(encVal!)&\(LICCAvenueConstants.accessCodeRequestKey)\(self.CCAvenueObject!.accessCode)&\(LICCAvenueConstants.merchantParam1RequestKey)\(self.CCAvenueObject!.merchantParam1)&\(LICCAvenueConstants.merchantParam2ReqeuestKey)\(self.CCAvenueObject!.merchantParam2)"
                 
-                print("encValue :: \(encVal ?? "No val for encVal")")
+//                print("encValue :: \(encVal ?? "No val for encVal")")
                 
-                print("encryptedStr :: ",encryptedStr)
+//                print("encryptedStr :: ",encryptedStr)
                 let myRequestData = encryptedStr.data(using: String.Encoding.utf8)
                 // request = NSMutableURLRequest(url: URL(string: urlAsString)!)
                 
@@ -335,27 +338,28 @@ extension LICCAvenueViewController {
                 request.setValue(urlAsString, forHTTPHeaderField: "Referer")
                 request.httpMethod = "POST"
                 request.httpBody = myRequestData
-                print("\n\n\nwebview :: ",request.url as Any)
-                print("\n\n\nwebview :: ",request.description as Any)
-                print("\n\n\nwebview :: ",request.httpBody?.description as Any)
-                print("\n\n\nwebview :: ",request.allHTTPHeaderFields! as Any)
-                
+//                print("\n\n\nwebview :: ",request.url as Any)
+//                print("\n\n\nwebview :: ",request.description as Any)
+//                print("\n\n\nwebview :: ",request.httpBody?.description as Any)
+//                print("\n\n\nwebview :: ",request.allHTTPHeaderFields! as Any)
+//
                 let session = URLSession(configuration: URLSessionConfiguration.default)
-                print("session",session)
+//                print("session",session)
                 
                 session.dataTask(with: request as URLRequest) {
                     (data, response, error) -> Void in
                     
                     if let response = response as? HTTPURLResponse, 200...299 ~= response.statusCode{
                         
-                        guard let data = data else{
+                        guard let _ = data else{
                             print("No value for data")
+                            LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
                             return
                         }
                         DispatchQueue.main.async {
-                            self.viewWeb.loadRequest(self.request as URLRequest)
+                            self.webView.loadRequest(self.request as URLRequest)
                         }
-                        print("data :: ",data)
+//                        print("data :: ",data)
                     }
                     else{
                         print("into else")
@@ -364,7 +368,7 @@ extension LICCAvenueViewController {
                     }
                     }.resume()
                 
-                //                print(viewWeb.isLoading)
+                //                print(webView.isLoading)
             }
             else{
                 print("Unable to create requestURL")
@@ -381,79 +385,98 @@ extension LICCAvenueViewController {
 extension LICCAvenueViewController: UIWebViewDelegate {
     //MARK: WebviewDelegate Methods
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
-        print("webViewDidStartLoad",webView.request!)
-        print(viewWeb.isLoading)
-        //        print(request?.httpBodyStream as Any)
-        //        print(request?.httpBody as Any)
-        
-    }
+//    func webViewDidStartLoad(_ webView: UIWebView) {
+////        print("webViewDidStartLoad",webView.request!)
+//        print(webView.isLoading)
+//        //        print(request?.httpBodyStream as Any)
+//        //        print(request?.httpBody as Any)
+//
+//    }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        print("Failed to load  webview")
+        ActivityIndicator.dismissActivityView()
+//        LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+//        print("Failed to load  webview")
+    }
+    func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
+        if let  string = request.url?.scheme {
+            if string == "inapp" && request.url?.host == "capture" {
+                if let count = self.navigationController?.viewControllers.count {
+                    if let paymentVC = self.navigationController?.viewControllers[count - 2] as? LIPaymentPackagesViewController{
+                        paymentVC.delegate?.refreshPaymentStatus()
+                    }
+                }
+                self.navigationController?.popToRootViewController(animated: true)
+                return false
+            }
+            
+        }
+        return true
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
        ActivityIndicator.dismissActivityView()
-        
-        //covert the response url to the string and check for that the response url contains the redirect/cancel url if true then chceck for the transaction status and pass the response to the result controller(ie. CCResultViewController)
-        let string = (webView.request?.url?.absoluteString)!
-        print("String :: \(string)")
-        if let _ = self.CCAvenueObject {
-            if(string.contains(self.CCAvenueObject!.redirectUrl) || string.contains(self.CCAvenueObject!.cancelUrl)) //("http://122.182.6.216/merchant/ccavResponseHandler.jsp"))//
-            {
-                print(viewWeb.isLoading)
-                guard let htmlTemp:NSString = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML") as NSString? else{
-                    print("failed to evaluate javaScript")
-                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-                    return
-                }
-                
-                let html:String = htmlTemp as String
-                print("html :: ",html)
-                var transStatus = "Not Known"
-                let htmlString = LIUtilities.getAttributedStringFromHtmlString(html)
-                LIUtilities.showOkAlertControllerWith("", message: htmlString?.string, onViewController: self) { (action) in
-                    self.navigationController?.popToRootViewController(animated: true)
-                }
-//                if ((html ).range(of: "tracking_id").location != NSNotFound) && ((html ).range(of: "bin_country").location != NSNotFound) {
-//                    if ((html ).range(of: "Aborted").location != NSNotFound) || ((html ).range(of: "Cancel").location != NSNotFound) {
-//                        transStatus = "Transaction Cancelled"
-//                        //                    let controller: CCResultViewController = CCResultViewController()
-//                        //                    controller.transStatus = transStatus
-//                        //                    self.present(controller, animated: true, completion: nil)
-//                    }
-//                    else if ((html ).range(of: "Success").location != NSNotFound) {
-//                        transStatus = "Transaction Successful"
-//                        //                    let controller: CCResultViewController = CCResultViewController()
-//                        //                    controller.transStatus = transStatus
-//                        //                    self.present(controller, animated: true, completion: { _ in })
-//                    }
-//                    else if ((html ).range(of: "Fail").location != NSNotFound) {
-//                        transStatus = "Transaction Failed"
-//                        //                    let controller: CCResultViewController = CCResultViewController()
-//                        //                    controller.transStatus = transStatus
-//                        //                    self.present(controller, animated: true, completion: { _ in })
-//                    }
-//                }
-//                else{
-//                    print("html does not contain any related data")
-//                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-//                    //                displayAlert(msg: "html does not contain any related data for this transaction.")
-//                }
-            }
-            
-//            else if (string.contains(self.CCAvenueObject!.cancelUrl)) {
-//                guard let htmlTemp = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")  else{
+    }
+//    might need this in future
+//
+//        //covert the response url to the string and check for that the response url contains the redirect/cancel url if true then chceck for the transaction status and pass the response to the result controller(ie. CCResultViewController)
+//        let string = (webView.request?.url?.absoluteString)!
+//        print("String :: \(string)")
+//        if let _ = self.CCAvenueObject {
+//            if(string.contains(self.CCAvenueObject!.redirectUrl) || string.contains(self.CCAvenueObject!.cancelUrl)) //("http://122.182.6.216/merchant/ccavResponseHandler.jsp"))//
+//            {
+//                print(webView.isLoading)
+//                guard let htmlTemp:NSString = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML") as NSString? else{
 //                    print("failed to evaluate javaScript")
 //                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
 //                    return
 //                }
+//                
+//                let html:String = htmlTemp as String
+//                print("html :: ",html)
+////                var transStatus = "Not Known"
+////                let htmlString = LIUtilities.getAttributedStringFromHtmlString(html)
+////                LIUtilities.showOkAlertControllerWith("", message: htmlString?.string, onViewController: self) { (action) in
+////                    self.navigationController?.popToRootViewController(animated: true)
+////                }
+////                if ((html ).range(of: "tracking_id").location != NSNotFound) && ((html ).range(of: "bin_country").location != NSNotFound) {
+////                    if ((html ).range(of: "Aborted").location != NSNotFound) || ((html ).range(of: "Cancel").location != NSNotFound) {
+////                        transStatus = "Transaction Cancelled"
+////                        //                    let controller: CCResultViewController = CCResultViewController()
+////                        //                    controller.transStatus = transStatus
+////                        //                    self.present(controller, animated: true, completion: nil)
+////                    }
+////                    else if ((html ).range(of: "Success").location != NSNotFound) {
+////                        transStatus = "Transaction Successful"
+////                        //                    let controller: CCResultViewController = CCResultViewController()
+////                        //                    controller.transStatus = transStatus
+////                        //                    self.present(controller, animated: true, completion: { _ in })
+////                    }
+////                    else if ((html ).range(of: "Fail").location != NSNotFound) {
+////                        transStatus = "Transaction Failed"
+////                        //                    let controller: CCResultViewController = CCResultViewController()
+////                        //                    controller.transStatus = transStatus
+////                        //                    self.present(controller, animated: true, completion: { _ in })
+////                    }
+////                }
+////                else{
+////                    print("html does not contain any related data")
+////                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+////                    //                displayAlert(msg: "html does not contain any related data for this transaction.")
+////                }
 //            }
-            
-        }
-        else {
-            LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
-        }
-    }
+//            
+////            else if (string.contains(self.CCAvenueObject!.cancelUrl)) {
+////                guard let htmlTemp = webView.stringByEvaluatingJavaScript(from: "document.documentElement.outerHTML")  else{
+////                    print("failed to evaluate javaScript")
+////                    LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+////                    return
+////                }
+////            }
+//            
+//        }
+//        else {
+//            LIUtilities.showErrorAlertControllerWith(LIConstants.tryAgainMessage, onViewController: self)
+//        }
+//    }
 }

@@ -161,3 +161,10 @@ struct LICCAvenueConstants {
     static let merchantParam1RequestKey = "merchant_param1="
     static let merchantParam2ReqeuestKey = "merchant_param2="
 }
+
+func LIDebugPrint(_  items: Any..., separator: String = " ", terminator: String = "\n") {
+//    #if DEBUG
+    Swift.print(items, separator:separator, terminator: terminator)
+//    #endif
+}
+
