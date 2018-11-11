@@ -28,6 +28,7 @@ struct LIAPIURL{
     static let forgotPasswordURL = ""
     static let logOutURL = ""
     static let getBoardURL = "get-board"
+    static let getMediumURL = "get-medium"
     static let getClassURL = "get-class"
     static let validateOTP = "validate-otp-student-signup"
     static let resendOTP = "resend-otp-student-signup"
@@ -65,6 +66,7 @@ struct LIAPIResponseKeys {
     static let exercisesData = "exercises_data"
     static let questionData = "question_data"
     static let answerData = "answer_data"
+    static let mediumData = "medium_data"
 }
 
 struct LIAPIResponse {

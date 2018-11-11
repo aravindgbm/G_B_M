@@ -9,9 +9,13 @@
 import UIKit
 import Alamofire
 import AlamofireImage
+import DropDown
 
 var selectedBoardID = Int()
 var selectedBorad = String()
+var CBSEBoardId:Int = 1
+var CBSEMediumId:Int = 1
+let dropDown = DropDown()
 
 class YourBoardViewController: UIViewController,navigateProtocol {
     
@@ -66,7 +70,21 @@ class YourBoardViewController: UIViewController,navigateProtocol {
      
         
     }
-
+    func setUpDropDownWithMediumList(_ mediumList: NSArray){
+        dropDown.anchorView = self.view
+        dropDown.bottomOffset = CGPoint(x: screenSize.width/4, y:screenSize.height/2)
+        dropDown.dataSource = mediumList.value(forKeyPath:"medium") as? [String] ?? [String]()
+        dropDown.width = screenSize.width/2
+        dropDown.dimmedBackgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
+        dropDown.selectionAction =  { (index, item) in
+            print("Selected item: \(item) at index: \(index)")
+            guard let medium = mediumList[index] as? [String:AnyObject], let mediumId = medium["med_id"] else {
+                return
+            }
+            UserDefaults.standard.set(mediumId, forKey: "selectedMediumId")
+        }
+        dropDown.show()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -143,6 +161,23 @@ class YourBoardViewController: UIViewController,navigateProtocol {
             ActivityIndicator.dismissActivityView()
             if let responseArray = response as NSArray? {
                   self.arrangeValues(array: responseArray)
+            }
+        }, failure: { (responseMessage) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(responseMessage, onViewController: self)
+        }) { (error) in
+            ActivityIndicator.dismissActivityView()
+            LIUtilities.showErrorAlertControllerWith(error?.localizedDescription, onViewController: self)
+        }
+    }
+    
+    func callGetBoardMediumAPI(){
+        ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let requestParams:[String:AnyObject] = ["syl_id":selectedBoardID as AnyObject]
+        LIAuthenticationAPIsHandler.callGetBoardMediumAPIWith(requestParams , success: { (response) in
+             ActivityIndicator.dismissActivityView()
+             if let responseArray = response as NSArray? {
+                self.setUpDropDownWithMediumList(responseArray)
             }
         }, failure: { (responseMessage) in
             ActivityIndicator.dismissActivityView()
@@ -232,9 +267,16 @@ class YourBoardViewController: UIViewController,navigateProtocol {
     }
     
 
-    /*
-    // MARK: - Navigation
 
+    // MARK: - Navigation
+    
+    func navigateToGradeVC() {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "YourGradeViewController") as! YourGradeViewController
+        //        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+/*
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
@@ -276,9 +318,29 @@ extension YourBoardViewController : UITableViewDataSource,UITableViewDelegate
         selectedBoardID = syl_idArray[indexPath.row]
         selectedBorad = syllabusArray[indexPath.row]
         UserDefaults.standard.set(selectedBoardID, forKey: "selectedBoardID")
-        let vc = storyboard?.instantiateViewController(withIdentifier: "YourGradeViewController") as! YourGradeViewController
-//        self.present(vc, animated: true, completion: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
+        if selectedBoardID == CBSEBoardId{
+        let selectedMediumId = CBSEMediumId
+        UserDefaults.standard.set(selectedMediumId, forKey: "selectedMediumId")
+           self.navigateToGradeVC()
+        }
+        else {
+            self.callGetBoardMediumAPI()
+//            let alert = UIAlertController(title: nil, message: "Please select the medium", preferredStyle: .alert)
+//            let payuMoneyAction = UIAlertAction(title: "Pay using PayU Money", style: .default) { (action) in
+//                self.callGeneratePayuHashApi()
+//            }
+//            let ccAvenueAction = UIAlertAction(title: "Pay using CCAvenue", style: .default) { (action) in
+//                //            LIUtilities.showOkAlertControllerWith("Sorry", message: "This feature will be available soon", onViewController: self)
+//                self.callGenerateCCAvenueHashApi()
+//            }
+//            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+//            alert.addAction(payuMoneyAction)
+//            alert.addAction(ccAvenueAction)
+//            alert.addAction(cancelAction)
+//            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat

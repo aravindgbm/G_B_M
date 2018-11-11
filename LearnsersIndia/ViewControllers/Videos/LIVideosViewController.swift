@@ -72,10 +72,12 @@ extension LIVideosViewController:videosTableViewCellDelegate {
 extension LIVideosViewController {
     func callGetVideosApi(){
         ActivityIndicator.setUpActivityIndicator(baseView: self.view)
+        let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
         let parameters:[String:Any] = ["syl_id":chapterObject?.sylabusId ?? 0,
                           "class_id":chapterObject?.classId ?? 0,
                           "sub_id":chapterObject?.subjectId ?? 1,
-                          "chap_id":chapterObject?.chapterId ?? 0]
+                          "chap_id":chapterObject?.chapterId ?? 0,
+                          "med_id":loggedInUser?.mediumId ?? 1]
         LIUserStudentAPIsHandler.callGetVideosAPIWith(parameters, shouldAddToken: true, success: { (response) in
             ActivityIndicator.dismissActivityView()
             if let _ = response {

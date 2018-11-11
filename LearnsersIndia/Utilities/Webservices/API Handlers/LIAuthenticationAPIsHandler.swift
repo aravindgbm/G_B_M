@@ -35,6 +35,30 @@ class LIAuthenticationAPIsHandler: NSObject {
         }
     }
     
+    class func callGetBoardMediumAPIWith(_ requestParams:[String:AnyObject]?,success:
+        @escaping (([[String:AnyObject]]?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
+        LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .get, shouldAddParams: false, urlString: LIAPIURL.getMediumURL, shouldAddHeaderParams: false, successBlock: { (response) in
+            if let reponseDict = response {
+                if let responseArray = reponseDict[LIAPIResponseKeys.mediumData] as? [[String:AnyObject]] {
+                    success(responseArray)
+                }
+                else{
+                    success(nil)
+                }
+                
+            }
+            else {
+                success(nil)
+            }
+        }, failureBlock: { (response) in
+            if let responseDict = response {
+                failure(responseDict[LIAPIResponseKeys.responseText] as? String)
+            }
+        }) { (err) in
+            error(err)
+        }
+    }
+    
     class func callGetClassAPIWith(_ requestParams:[String:AnyObject]?,success:
         @escaping (([[String:AnyObject]]?) -> Void),failure: @escaping ((String?) ->Void), error:@escaping ((Error)?) ->Void) {
         LIAPIClient.sharedInstance.callRequest(requestParams, httpMethod: .get, shouldAddParams: false, urlString: LIAPIURL.getClassURL, shouldAddHeaderParams: false, successBlock: { (response) in

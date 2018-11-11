@@ -29,6 +29,7 @@ class LIUserModel: NSObject,NSCoding {
     var stateName:String?
     var studentId:NSNumber?
     var subjectId:NSNumber? = 1
+    var mediumId:NSNumber?
     
     required override init() {
         super.init()
@@ -56,7 +57,7 @@ class LIUserModel: NSObject,NSCoding {
         stateName = aDecoder.decodeObject(forKey: "stateName") as! String?
         studentId = aDecoder.decodeObject(forKey: "studentId") as! NSNumber?
         subjectId = aDecoder.decodeObject(forKey: "subjectId") as! NSNumber?
-        
+        mediumId = aDecoder.decodeObject(forKey: "mediumId") as! NSNumber?
     }
     func encode(with aCoder: NSCoder) {
         
@@ -80,6 +81,7 @@ class LIUserModel: NSObject,NSCoding {
         aCoder.encode(stateName, forKey: "stateName")
         aCoder.encode(studentId, forKey: "studentId")
         aCoder.encode(subjectId, forKey: "subjectId")
+        aCoder.encode(mediumId, forKey: "mediumId")
     }
     
     func updateUserObjectWith(_ response:[String:Any]) {
@@ -100,6 +102,7 @@ class LIUserModel: NSObject,NSCoding {
         }
         self.stateName = response["state"] as? String
         self.studentId = response ["std_id"] as? NSNumber
+        self.mediumId = response["med_id"] as? NSNumber
     }
     convenience init?(_ response:[String:Any]) {
     self.init()
@@ -110,6 +113,7 @@ class LIUserModel: NSObject,NSCoding {
     self.classId = response["cls_id"] as? NSNumber
     self.gradeName = response["gradename"] as? String
     self.syllabusId = response["syl_id"] as? NSNumber
+    self.mediumId = response["med_id"] as? NSNumber
     if let otpVerificationStatus = response["verified"] as? Int{
         self.isOTPVerified = otpVerificationStatus == 1
     }

@@ -140,7 +140,8 @@ extension LIFeedViewController {
         let loggedInUser = LIAccountManager.sharedInstance.getLoggedInUser()
         let paramters = ["syl_id":loggedInUser?.syllabusId ?? 0,   //selectedBoardID,
             "class_id":loggedInUser?.classId ?? 0,
-            "sub_id":loggedInUser?.subjectId ?? 1] as [String : Any] //"sub_id":1
+            "sub_id":loggedInUser?.subjectId ?? 1,
+            "med_id":loggedInUser?.mediumId ?? 1] as [String : Any] //"sub_id":1
         LIUserStudentAPIsHandler.callGetDemoVideosAPIWith(paramters, shouldAddToken: true, success: { (response) in
             ActivityIndicator.dismissActivityView()
             if let _ = response {
