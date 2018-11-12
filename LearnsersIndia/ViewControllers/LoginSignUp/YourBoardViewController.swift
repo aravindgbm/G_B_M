@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import AlamofireImage
 import DropDown
+import Sheeeeeeeeet
 
 var selectedBoardID = Int()
 var selectedBorad = String()
 var CBSEBoardId:Int = 1
 var CBSEMediumId:Int = 1
-let dropDown = DropDown()
+var selectedMediumID = Int()
 
 class YourBoardViewController: UIViewController,navigateProtocol {
     
@@ -70,20 +71,27 @@ class YourBoardViewController: UIViewController,navigateProtocol {
      
         
     }
-    func setUpDropDownWithMediumList(_ mediumList: NSArray){
-        dropDown.anchorView = self.view
-        dropDown.bottomOffset = CGPoint(x: screenSize.width/4, y:screenSize.height/2)
-        dropDown.dataSource = mediumList.value(forKeyPath:"medium") as? [String] ?? [String]()
-        dropDown.width = screenSize.width/2
-        dropDown.dimmedBackgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
-        dropDown.selectionAction =  { (index, item) in
-            print("Selected item: \(item) at index: \(index)")
-            guard let medium = mediumList[index] as? [String:AnyObject], let mediumId = medium["med_id"] else {
-                return
+    
+    
+    func createStandardActionSheetWithMediumList( mediumList: [[String:Any]]) {
+        let titleItem = ActionSheetTitle(title: "Select the medium")
+        var actionSheetItems = [ActionSheetItem]()
+        actionSheetItems.append(titleItem)
+        for medium in mediumList {
+            if let mediumTitle = medium["medium"] as? String {
+                let item = ActionSheetItem(title:mediumTitle , subtitle: nil, value: medium["med_id"], image: nil, tapBehavior: .dismiss)
+                actionSheetItems.append(item)
             }
-            UserDefaults.standard.set(mediumId, forKey: "selectedMediumId")
         }
-        dropDown.show()
+        let cancelButtonItem = ActionSheetCancelButton(title: "Cancel")
+        actionSheetItems.append(cancelButtonItem)
+        let actionSheet = ActionSheet(items: actionSheetItems, action: { (actionSheet, item) in
+            if let value = item.value as? Int {
+                selectedMediumID = value
+                self.navigateToGradeVC()
+            }
+        })
+        actionSheet.present(in: self, from: self.view)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -176,8 +184,10 @@ class YourBoardViewController: UIViewController,navigateProtocol {
         let requestParams:[String:AnyObject] = ["syl_id":selectedBoardID as AnyObject]
         LIAuthenticationAPIsHandler.callGetBoardMediumAPIWith(requestParams , success: { (response) in
              ActivityIndicator.dismissActivityView()
-             if let responseArray = response as NSArray? {
-                self.setUpDropDownWithMediumList(responseArray)
+             if let responseArray = response {
+//                self.setUpDropDownWithMediumList(responseArray)
+                self.createStandardActionSheetWithMediumList(mediumList: responseArray)
+//                actionSheet.present(in: self, from: self.view)
             }
         }, failure: { (responseMessage) in
             ActivityIndicator.dismissActivityView()

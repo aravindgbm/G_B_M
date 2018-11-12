@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController {
     var city = String()
     var state = String()
     var country = String()
-    var className = String()
+    var gradeName = String()
     var boardName = String()
     var profile = String()
 
@@ -185,17 +185,17 @@ extension ProfileViewController
                             self.name = userData.object(forKey: "full_name") as! String
                             self.email_id = userData.object(forKey: "email_id") as! String
                             self.phone = userData.object(forKey: "phoneno") as! String
-                            self.className = userData.object(forKey: "gradename") as! String
+                            self.gradeName = userData.object(forKey: "gradename") as! String
                             self.boardName = userData.object(forKey: "boardname") as! String
                             
 
                             print(self.name)
-                            print(self.className)
+                            print(self.gradeName)
                             print(self.boardName)
                             
   //                          self.studentIdLabel.text = String(self.studentID)
                             self.nameLabel.text = self.name
-                            self.classLabel.text = self.className
+                            self.classLabel.text = self.gradeName
                             self.boardLabel.text = self.boardName
 
                             

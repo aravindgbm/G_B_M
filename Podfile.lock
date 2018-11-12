@@ -14,6 +14,7 @@ PODS:
   - SDWebImage (4.3.3):
     - SDWebImage/Core (= 4.3.3)
   - SDWebImage/Core (4.3.3)
+  - Sheeeeeeeeet (1.0.1)
   - TextFieldEffects (1.4.0)
 
 DEPENDENCIES:
@@ -25,6 +26,7 @@ DEPENDENCIES:
   - MRCountryPicker (~> 0.0.7)
   - PayUmoney_PnP
   - SDWebImage (~> 4.0)
+  - Sheeeeeeeeet
   - TextFieldEffects
 
 SPEC REPOS:
@@ -39,6 +41,7 @@ SPEC REPOS:
     - PayUmoney_CoreSDK
     - PayUmoney_PnP
     - SDWebImage
+    - Sheeeeeeeeet
     - TextFieldEffects
 
 SPEC CHECKSUMS:
@@ -52,8 +55,9 @@ SPEC CHECKSUMS:
   PayUmoney_CoreSDK: cfb8fca58220ce424a37b9d83400efbc411b1d25
   PayUmoney_PnP: 0aaec816e992fd6b67d34514204f4bc5b0c14388
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
+  Sheeeeeeeeet: 7fd02a640d50f63e1b615dac7e17b8b5068c3db0
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 9aab0271a9a49a5c392774725c789c56044ba4c5
+PODFILE CHECKSUM: 8b90d8932b0e1430695bb26254987bb84fd0d925
 
 COCOAPODS: 1.5.0

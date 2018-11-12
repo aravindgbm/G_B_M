@@ -334,7 +334,8 @@ extension SignUpViewController
                          "password":passwordTextFeild.text ?? "",
                          "board":selectedBoardID,
                          "class":selectedCls_id,
-                         "country_tel_code":selectedCountryCode]
+                         "country_tel_code":selectedCountryCode,
+                         "med_id":selectedMediumID]
         
   
         LIAuthenticationAPIsHandler.callSignUpAPIWith(paramters as [String : AnyObject], success: { (response) in

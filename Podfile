@@ -14,5 +14,6 @@ pod 'DropDown'
 pod 'MRCountryPicker', '~> 0.0.7'
 pod 'SDWebImage', '~> 4.0'
 pod 'PayUmoney_PnP'
+pod 'Sheeeeeeeeet'
 #pod 'SAConfettiView'
 end
